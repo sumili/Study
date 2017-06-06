@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UFR-8">
+    <meta keywords="关键词描述">
+    <meta description="120字以内的关键短句">
+    <title>
+        Bibiboomer的练习
+    </title>
+</head>
+<body>
+    
+    <div style="color:#808080">
+        <h1>
+            1.语言基础
+        </h1>
+            <blockquote>
+                <p>
+                    <b>HTML+CSS+JS：</b> 前端基础包括三种语言各自的新版本特性，HTML5、CSS3、ES6+ </p>
+                <p>
+                    <b>浏览器调试、排版技巧、浏览器兼容性</b></p>
+                <p>
+                    <b>事件冒泡、面向对象、跨域、js异步编程、模块化</b>></p>
+            </blockquote>
+    </div>
+    
+    <div style="color:#808080">
+        <h1>
+            2. jQuery框架+JQuery插件
+        </h1>
+            <blockquote>
+                <p>
+                    <b>jQuery：</b> js面向过程的经典框架，涵盖了传统前端业务中的大部分功能，主要是DOM操作，Ajax </p>
+                <p>
+                    <b>jQueryUI</b></p>
+                <p>
+                    <b>jQueryMobile</b></p>
+                <p>
+                    <b>swiper…：</b>>以swiper为例的各种jQuery插件，根据常见功能需求去了解，例如轮播图</p>
+            </blockquote>
+    </div>
+
+    <div style="color:#808080">
+        <h1>
+            3. 布局框架
+        </h1>
+            <blockquote>
+                <p>
+                    <b>Bootstrap：</b> 主要掌握框架，同时了解一下其它类似框架，重点在于<b>栅格系统</b>和<b>Font-Icon</b></p>
+                <p>
+                    <b>Foudation</b><br/></p>        
+                <p>
+                    <b>Materialize</b></p>
+            </blockquote>
+    </div>
+
+    <div style="color:#808080">
+        <h1>
+            4. 前端工程化
+        </h1>
+            <blockquote>
+                <p>
+                    <b>Less/Sass + ES + … … ：</b> 至少会快速配置css和js的预编译 </p>
+                <p>
+                    关于css，可能会有sass、less需要编译;以后还可能会用到stylus和compass（建议 不要用，效用对不起学习成本）
+                    <br/>
+                    关于js，可能会有ES6+、TypeScript、CoffeeScript（ruby式写法，非ruby程序员不建议使用，还是因为效用对不起学习成本）</p>
+                <p>
+                    <b>前端构建工具</b>>（工程化工具）：</p>
+                <p>
+                    gulp、grunt;</p>
+                <p> 
+                    koala-app（比较推荐，虽然没有命令行那么ZB，但是基于扫描机制，只编译所修改的文件，性能比较好，尤其项目大了之后，编译速度非常快）</p>
+                <p>
+                    <b>AMD/CMD+webpack</b></p>
+                <p>
+                    <i>// CMD</i><br/>
+                    define(function(require, exports, module) {<br/>
+                    var a = require('./a')<br/>
+                    a.doSomething()<br/>
+                    <i>// 此处略去 100 行</i><br/>
+                    var b = require('./b') // 依赖可以就近书写<br/>
+                    b.doSomething()<br/>
+                    // ...<br/>
+                    <p>})</p>
+                    <i>// AMD 默认推荐的是</i><br/>
+                    define(['./a', './b'], function(a, b) { <i>// 依赖必须一开始就写好</i>><br/>
+                    a.doSomething()<br/>
+                    <i>// 此处略去 100 行</i><br/>
+                    <p>b.doSomething()</p>
+                    })
+                </p>
+            </blockquote>
+    </div>
+
+    <div style="color:#808080">
+        <h1>
+            5. WEBAPI 
+        </h1>
+            <blockquote>
+                <p>多参考MDN的WEB API列表，会语言基础，但是不会API，能做
+                的前端开发也就会很有限，要逐渐理解，js本身是单线程的，前端异步编程
+                是借助<b>浏览器</b>的线程实现的。理解这一点之后，比较容易理解哪些东西可能
+                会导致异步拥塞，也容易理解<b>Promise</b>和<b>Generator</b>异步编程原理
+                js(V8) -> Web
+                </p>
+            </blockquote>
+    </div>
+
+    <div style="color:#808080">
+        <h1>
+            6. 数据绑定框架
+        </h1>
+            <blockquote>
+                <p>
+                    <b>Angular：</b> 三种框架有差异，至少熟悉一种</p>
+                <p>
+                    <b>Vue</b></p>
+                <p>
+                    <b>React</b></p>
+                <p>ionic<br/>ember<br/>react native</p>   
+            </blockquote>
+    </div>
+
+    <div style="color:#808080">
+        <h1>
+            7. 数据库
+        </h1>
+            <blockquote>
+                ORM <br/>
+                Mysql MongodbSQLyog：会至少一种图像化数据库管理工具非常重要，就算是传统前端，也需要在调试中用到<br/>
+                SQL：有精力的时候，学习一下SQL语法<br/>
+            </blockquote>
+    </div>
+
+    <div style="color:#808080">
+        <h1>
+            8. Express 项目框架
+        </h1>
+            <blockquote>
+                Node项目可以选择Express-generator生成基本架构<br/>
+                也可以选择基于Express手动创建<br/>
+                还可以把Express作为参考，整体自主开发<br/>
+                (www+app+router)+public+view<br/>
+            </blockquote>
+    </div>
+
+    <div style="color:#808080">
+        <h1>
+            9. 模板引擎
+        </h1>
+            <blockquote>
+                ejs -> php、jsp<br/>
+                jade -> velocity<br/>
+                还可以把Express作为参考，整体自主开发<br/>
+                如果非前端全栈项目，还应该了解php、jsp、velocity等类似模板引擎<br/>
+            </blockquote>
+    </div> 
+
+    <div style="color:#808080">
+        <h1>
+            10. 打包工具
+        </h1>
+            <blockquote>
+                <b>Electron、NWjs：</b>桌面软件打包<br/>
+                <b>Cordova：</b> 移动平台打包<br/>
+                <b>Hbuilder、Android Studio / Mac+Xcode:</b>可打包的开发工具<br/>
+            </blockquote>
+    </div>
+
+    <div style="color:#808080">
+        <h1>11. 开发工具</h1>
+            <blockquote>
+                <b>
+                    最性感的编辑器
+                </b>
+                    Electron、NWjs：<br/>
+                    Hbuilder：安卓开发<br/>
+                    Electron、NWjs：<br/>
+                <b>VS code：</b>
+                    属于编辑器，功能类似IDE，集成GIT、terminal，支持断点调试<br/>
+                <p>
+                    WebStrom：功能强大，但是有时候扫描机制有点让人受不了<br/>
+                    <del>
+                        ATOM 娱乐性，好玩，不建议开发用，会卡
+                    </del><br/>
+                    此外，编辑器要注意按照自己的习惯配置，做好插件的收集、整理、使用和备份<br/>
+                </p>
+            </blockquote>
+    </div>
+
+    <div style="color:#808080">
+        <h1>
+            拓展
+        </h1>
+            <blockquote>
+                <p>
+                    <b>Ps</b>：UI并不太懂技术，甚至完全不懂，因此偶尔图片编码问题什么的，自己会用Ps省很多事<br/>
+                    <b>Markdown：</b>方便跨平台写文档，能够跟你的开发工具很好的结合<br/>
+                    <b>其他知识</b>：例如3D、数据可视化、大数据、游戏开发 … … 根据兴趣和需要进行了解、多多益善<br/>
+                    画图工具（流程图之类的）<br/>
+                </p>
+        </blockquote>   
+    </div>  
+</body>
