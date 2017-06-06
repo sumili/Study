@@ -28,7 +28,7 @@ SWI集中式版本控制系统
     尽量多做
 
     git commit -m ""
-    可以简单理解为保存代码版本"add+名字"
+    可以简单理解为保存代码版本"add+名字"jsd
     git log/git relog
 
 # 8.git reset [版本编号] [--hard]
