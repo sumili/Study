@@ -9,3 +9,11 @@
 
 
 ## 基本属性
+
+# 代码版本保存
+
+git add .
+git commit -m ""
+git log-copy版本号
+git reset + 版本号
+git pull origin master
