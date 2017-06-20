@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <form action="">
+        <!--输入框没有输入数值的理应设置value属性-->
+        <input type="button" value="提交">
+        <input type="text" value="设置只读，不可编辑" readonly>
+        <input type="text" value="这是默认值，可以删除">
+        <br>
+
+        <input type="checkbox" checked="true">张三
+        <input type="checkbox" >李四
+        <br>
+
+        <input id="meal" type="radio" name="sex" checked="true">
+        <!--lable标签可以使选框样式较为丰富，可进一步尝试其他样式-->
+                <label for="meal" >男
+                </label>
+        <input type="radio" name="sex">女
+        <br>
+
+        *<input type="text" placeholder="请输入账号" required >
+        <input type="text" maxlength="6">
+        <input  type="submit" value="提交">
+        
+        <input type="color">
+        <input type="number" min="3" max="6">
+        <input type="range" min="0" max="8" step="2">
+        <input type="email">
+        <input type="date">
+        <!--在表单中，input type value 值是image时，定义的是图像形式的提交按钮-->
+        <input type="image" width="20" height="20" src="time.jpg" >
+        <input type="file">
+        <input type="reset" value="reset">
+
+        <textarea name="" id="" cols="3" rows="10" placeholder="这里可输入7个字的长文本"
+                    maxlength="7"></textarea>
+    </form>
+</body>
+</html>

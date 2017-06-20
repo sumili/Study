@@ -1,0 +1,19 @@
+div{
+    width:100px;
+}
+
+.ele{
+    width:490px;
+    height: 500px;
+    background: url('test_1.jpg');
+}
+
+.ele:hover{
+    width: 980px;
+    height: 1000px;
+    background: url('test_2.jpg');
+}
+
+.ele:active{
+    border: 4px solid red;
+}

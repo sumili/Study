@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <form>
+        你好&nbsp;啊啊啊
+        <select name="ciyt1" size="4" multiple>
+            <option value="1">北京</option>
+            <option value="2">上海</option>
+            <option value="3" selected>杭州</option>
+            <option value="4">武汉</option>
+            <option value="5">南京</option>
+            <option value="6" disabled>深圳</option>
+            <option value="7">广州</option>
+        </select>
+        <input list="city2" name="data">
+            <datalist id="city2">
+                <option value="nanjin">
+                <option value="beijin">
+                <option value="shanghai">
+                <option value="guangzhou">
+            </datalist>
+        <input type="submit">
+        <fieldset>
+            <legend>一线城市信息</legend>
+            <select name="ciyt2" size="4" multiple>
+            <option value="1">北京</option>
+            <option value="2">上海</option>
+            </select>
+        </fieldset>
+        <fieldset> 
+            <legend>二线城市信息</legend>
+            <input list="city2" name="data1">
+            <datalist id="city2">
+                <option value="nanjin">
+                <option value="beijin">
+            </datalist>
+        </fieldset>
+    </form>
+</body>
+</html>

@@ -1,0 +1,51 @@
+html,body{
+    background: black;
+    padding: 0px;
+    margin: 0px;
+}
+
+div.ele{
+    background: url('0620_test01.png');
+    color: white;
+    text-align: center;
+    width:434px;
+    height: 365px;
+    border: 10px solid white;
+}
+
+.height{
+    height: 25px;
+}
+
+.some1.some{
+    height: 68px;
+    font-size:26px;
+}
+
+.some1.some div{
+    display: inline-block;
+    width: 350px;
+    height: 60px;
+    text-align: left;
+}
+
+.some2.some{
+    height: 70px;
+    
+    font-size:50px;
+}
+
+.some3.some{
+    
+    background: white;
+    color: #b82a29;
+    font-size: 20px;
+    font-family: "微软雅黑";
+    width: 350px;
+}
+
+.some4.some{
+    
+    font-size: 88px;
+    color: white;
+}

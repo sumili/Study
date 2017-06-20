@@ -1,0 +1,45 @@
+html,body{
+    padding: 0px;
+    margin: 0px;
+    background: black;
+}
+
+.container{
+    background: url('0620_test01.png');
+    width:414px;
+    height: 345px;
+    color: white;
+    border: 10px solid white;   
+    text-shadow: 2px 2px 2px black;
+}
+
+.some1{
+    font-size:28px;
+    width:355px;
+    padding: 30px 30px 0px;
+}
+
+.some2{
+    width:355px;
+    padding:0px 30px;
+    font-size: 50px;
+}
+
+.some3{
+    line-height: 40px;
+    font-size: 21px;
+    font-weight: bold;
+    text-align: center;
+    color:#b82828;
+    padding: 0px 30px;
+}
+
+.some3_3{
+    text-shadow: none;
+    background: white;
+}
+
+.some4{
+    font-size: 88px;
+    padding: 0PX 30px;
+}

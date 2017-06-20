@@ -1,0 +1,26 @@
+html.body{
+    margin: 0;
+    padding: 0;
+}
+p{
+    font-family: "微软雅黑",Arial, Helvetica, sans-serif;
+
+    font-size: 23px;
+
+    line-height: 26px;
+
+    font-weight: bold;
+
+    font-style: italic;
+
+    font:16px/24px "微软雅黑" ;
+
+    font:italic bold 16px/24px "微软雅黑" ;
+
+    text-shadow: 3px 4px 5px red;
+
+}
+
+p .some some2{
+
+}

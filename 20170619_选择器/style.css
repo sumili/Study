@@ -1,0 +1,29 @@
+.css{
+    border-top: 0px solid red;
+    border-bottom:15px solid white;
+    border-left: 15px solid red;
+    border-right: 15px solid white;
+}
+
+
+.weight{
+    font-weight: 100px;
+    }
+    
+
+.size{
+    font-size:14px;
+    color: gray;
+}
+
+div{
+    background:rgb(247, 247, 247);
+}
+
+#css{
+    font-weight: 600;
+}
+
+.diss{
+    color:rgb(99,181,207);
+}

@@ -1,0 +1,34 @@
+# 表单
+## form
+
+### input
+
+属性 网站学习（MDN）
+
+    value 
+
+    name   
+
+    type   text 文本
+            password
+            number
+            email 检查有问题 H5新出的标签
+            date 
+
+            color 不同系统不一样的颜色选择器/取色器
+            range
+
+            checkbox
+            radio    
+
+            button
+            submit
+            reset   重置按钮
+            image  可能和。。。
+
+            file
+            收藏官网的表单详情页
+            
+            add.Even
+            di
+
