@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <!--<form id="Form">
+        <input name="sex" checked="true" type="radio" value="1">男
+        <input name="sex" type="radio" value="0">女
+        <br>
+        兴趣
+        <br>
+        <input checked="true" type="checkbox">运动
+        <input type="checkbox">美食
+        <input type="checkbox">摄影
+        <br>
+        <input type="text" name="username">
+        <br>
+        <input type="number" min="3" max="5">
+        <br>
+        <input type="email">
+        <br>
+        <input type="date">
+        <br>
+        <input type="color">
+        <br>
+        <input type="range" name="range" min="0" max="8" step="2">
+        
+        <br>
+        <input type="password">
+    
+    
+        <br>
+        <input type="reset" value="reset">
+        <br>
+        <input type="file">
+        <br>
+        <input type="image" src="./button.jpg">
+    </form>-->
+
+    <form id="Form" action="">
+        <!--<label for="text">
+            胜多负少巅峰时代
+            <input id="text" type="text" required placeholder="这里可以输入用户名,邮箱">
+        </label>
+        <textarea name="" id="" cols="3" rows="5"></textarea>
+        <label for="male">
+            男
+        </label>
+        <input type="radio" id="male" name="sex" value="1">
+        <label for="female">
+            女
+        </label>
+        <input type="radio" id="female" name="sex" value="1">-->
+
+        <label id="fxk_label" for="fxk" style="display:block;width:120px;height:120px;background:url('./button.jpg') center"></label>
+        <input id="fxk" name="fuxuankuang" type="checkbox">
+        <input type="submit">
+    </form>
+
+    <script>
+        var fxk_label = document.querySelector('#fxk_label');
+        fxk_label.addEventListener('click',function(e){
+            var self = this;
+            var labelFor = document.querySelector('#'+self.htmlFor);
+            if(!labelFor.checked){
+                fxk_label.style.border = "2px solid #00f"
+            }else{
+                fxk_label.style.border = ""
+            }
+        })
+    </script>
+</body>
+</html>
