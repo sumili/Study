@@ -9,8 +9,8 @@ html,body{
 
 .margintop_bug::before{ 
     content: " ";
-    overflow: hidden;
     display: block;
+    overflow: hidden;
 }
 .logo1.left{
     line-height: 114px;
@@ -34,7 +34,7 @@ html,body{
 .nav .right2{
     width:17px;
     height: 80px;
-     background: #d0d0d0;
+    background: #d0d0d0;
 }
 .nav .right3{
     border-top: 8.5px solid #5f0000;
@@ -46,13 +46,37 @@ html,body{
 .message{
     width: 962px;
     height: 80px;
-    margin: 17px;
+    margin-top: 17px;
     background: #d0d0d0;
+    color: red;
     font-size: 18px;
-    line-height: 80px;
     font-family: "微软雅黑";
+
 }
 
 .ul_0 .ul{
-    display: inline;
+  
+    float:left;
+
+}
+
+.ul_0 .ul{
+    margin-left: 38px;
+ }
+
+.ul_0{
+    width: 380px;
+    margin-left:355px;
+    margin-top:28px;
+}
+
+a:link{
+    color:yellow;
+    text-decoration: none;
+}
+.ul a:hover{
+color:#a34;
+}
+a:visited{
+    color:#a34;
 }
