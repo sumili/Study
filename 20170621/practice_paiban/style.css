@@ -1,0 +1,58 @@
+html,body{
+    padding: 0;
+    margin: 0px;
+}
+
+.logo .logo1,.ul_0{
+    float: left;
+}
+
+.margintop_bug::before{ 
+    content: " ";
+    overflow: hidden;
+    display: block;
+}
+.logo1.left{
+    line-height: 114px;
+    vertical-align: middle;
+    text-align: center;
+    width: 146px;
+    height: 114px;
+    background: #ab0000;
+    font-size: 28px;
+    color: white;
+    font-family: "微软雅黑";
+    text-shadow: 3px 3px 4px #5f0000;
+}
+
+.nav .right1{
+    border-top: 8.5px solid white;
+    border-right: 8.5px solid white;
+    border-bottom: 8.5px solid #6f0000;
+    border-left: 8.5px solid #5f0000;
+}
+.nav .right2{
+    width:17px;
+    height: 80px;
+     background: #d0d0d0;
+}
+.nav .right3{
+    border-top: 8.5px solid #5f0000;
+    border-right: 8.5px solid white;
+    border-bottom: 8.5px solid white;
+    border-left: 8.5px solid #5f0000;
+}
+
+.message{
+    width: 962px;
+    height: 80px;
+    margin: 17px;
+    background: #d0d0d0;
+    font-size: 18px;
+    line-height: 80px;
+    font-family: "微软雅黑";
+}
+
+.ul_0 .ul{
+    display: inline;
+}
