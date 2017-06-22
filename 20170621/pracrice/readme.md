@@ -1,3 +1,6 @@
 # float
 float  aanvbb
-浮动
+```
+display:block 
+会产生边距
+```

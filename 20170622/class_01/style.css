@@ -1,0 +1,78 @@
+html,body{
+    padding:0px;
+    margin:0px;
+    height:100%;
+    width:100%;
+    position:absolute;
+    text-align: center;
+}
+/*以下两种居中方式对应的html代码编号为一*/
+/*.center{
+    width:100px;
+    height: 100px;
+    background: blueviolet;
+    top:50%;
+    left: 50%;
+    position:absolute;
+    margin-top:-50px;
+    margin-left:-50px;
+    }*/
+
+
+/*.center{
+    width:100px;
+    height:100px;
+    background:blueviolet;
+    position:absolute;
+    top:0;
+    right:0;
+    bottom:0;
+    left:0;
+    margin:auto;
+}*/
+
+/*以下居中方式对应的html代码编号为二*/
+/*.cen{
+    display:inline-block;
+    vertical-align: middle;
+}
+.box{
+    background:blueviolet;
+    width:100px;
+    height:100px;
+    position:relative;
+}
+.start{
+    width:0px;
+    height:100%;
+    background:yellow;
+}  
+.end{
+    width:0px;
+    height:100%;
+    background:yellow;
+}*/
+
+
+/*万能：以下居中方式对应的html代码编号为三*/
+.center{
+    display:inline-block;
+    vertical-align: middle;
+    width:100px;
+    height:100px;
+    background:blueviolet;
+}
+body::before{
+    content:" ";
+    display: inline-block;
+    vertical-align: middle;
+    height:100%;
+
+}
+body::after{
+    content:" ";
+    display: inline-block;
+    vertical-align: middle;
+    height:100%;
+}
+
