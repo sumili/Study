@@ -1,0 +1,128 @@
+/*initialization*/
+html,body{
+    padding:0px;
+    margin:0px;
+}
+.clear-top::before{
+    content:"";
+    display:block;
+    overflow:hidden;
+}
+.clear-float::after{
+    content:"";
+    display:block;
+    clear:both;
+}
+
+/*nav*/
+#nav{
+    width:100%;
+    height:78px;
+    background:#ec0;
+    background:url('./images/logo.gif');
+    background-repeat: no-repeat;
+    background-position-x: 187px;
+    
+}
+.nav_{
+    float:left;
+}
+/*.navLogo>*/
+.nav_.logo{ 
+    /*display: inline-block;*/
+    width:300px;
+    height:78px;
+    /*background: #000;*/
+    margin-left: 187px;  
+}
+.navMessage{
+    width:611px;
+    height:78px;
+    /*background-image:url('./images/nav.gif');*/
+    /*使该标签不随窗口大小改变而移动位置*/
+    position: relative;
+    top:0px;
+    /*left:487px;*/
+    /*显示框：122×78*/
+}
+.nav-on{
+    width: 611px;
+    height: 78px;
+    /*background-color: rgba(0,0,0,0.5);*/
+    /*margin-left: 56px;*/
+}
+.nav-on ul{
+    display: inline;
+}
+.nav-on li{
+    width: 126px;
+    height: 76px;
+    /*border: 1px solid beige;*/
+    float: left;
+    list-style-type: none;
+    /*background-image:url('./images/nav-on.gif');*/
+}
+.Home a{
+    margin-left: 52px;
+    display:block;
+    width: 125px;
+    height: 76px; 
+}
+.nav-on .Home{
+    width:177px;
+    height: 76px;
+    background-image:url('./images/nav-on.gif');
+}
+.Wec a{
+    display:block;
+    width:128px;
+    height:76px;
+    background-image:url('./images/nav.gif');
+    background-position:-177px;
+}
+.Wec a:hover{
+    background-image:url('./images/nav-on.gif'); 
+    background-position:-177px;
+} 
+.Open a{
+    display:block;
+    width:128px;
+    height:76px;
+    background-image:url('./images/nav.gif');
+    background-position:-309px;
+}
+.Open a:hover{
+    background-image:url('./images/nav-on.gif'); 
+    background-position:-309px;    
+}
+.Online a{
+    display:block;
+    width:128px;
+    height:76px;
+    background-image:url('./images/nav.gif');
+    background-position:-447px;
+}
+.Online a:hover{
+    background-image:url('./images/nav-on.gif'); 
+    background-position:-447px;    
+}
+.sign{
+    width:250px;
+    height:63px; 
+    margin-top:15px;
+}
+.sign .word{
+    font-size:12px;
+    color:#a1968c;
+}
+#Form{
+    position:absolute;
+
+}
+
+/*text140*25;*/
+/*logo300*78*/
+
+
+
+/*banner*/
