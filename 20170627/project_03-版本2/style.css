@@ -1,0 +1,217 @@
+html,body{
+    margin:0px;
+    padding:0px;
+}
+.clear-top::before{
+    content:"";
+    display:block;
+    overflow:hidden;
+}
+.clear-float::after{
+    content:"";
+    display:block;
+    clear:both;
+}
+
+/*topnav-style样式*/
+.topnav{
+    position:relative;
+    height:78px;
+}
+.topnav>.container{
+    position:absolute;
+    margin: auto;
+    left:0;
+    right:0;
+    width:1070px;
+    height:78px;
+}
+.topnav>.container>*{
+    float:left;
+}
+.topnav .logo{
+    width:300px;
+    height:78px;
+    background-image:url('images/logo.gif');
+}
+.home{
+    width:518px;
+    height:78px;  
+    margin-left:55px;
+}
+.home>ul{
+    padding:0px;
+    margin:0px;
+    list-style-type:none;
+}
+.home ul>*{
+    float:left;
+    width:125px;
+    height:78px;
+    background-image:url('images/nav.gif');
+
+}
+.home ul>*:hover{
+    background-image:url('images/nav-on.gif');
+}
+.home .HOME{
+    background-image:url('images/nav-on.gif');
+    background-position:0px;
+}
+
+.home .WEC{
+    background-position:-125px;
+}
+.WEC:hover{
+    background-position:-125px;
+}
+.home .SCHOOL{
+    background-position:-250px;
+    width:145px;
+}
+.SCHOOL:hover{
+    background-position:-250px;  
+}
+.home .ONLINE{
+    background-position:-394px;
+    width:122px;
+}
+.ONLINE:hover{
+
+    background-position:-394px;     
+}
+.sign{
+    margin-top:15px;
+    margin-left:55px;
+}
+.sign>.word{
+    font-size:12px;
+    color: #a1968c;
+    text-align: right;
+}
+.sign input{
+    margin-top:6px;
+    width:138px;
+    height:22px;
+    border:1px solid #cdb6a1;
+    background-image:url('images/Bigglass.gif');
+    background-repeat: no-repeat;
+    background-position: right;
+}
+/*banner-style样式*/
+.banner{
+    width:100%;
+    height:360px;
+    position:relative;
+    /*text-align: center;*/
+
+}
+.bannerbox{
+    position:relative;
+    /*margin:auto;
+    top:0px;
+    bottom:0px;
+    right:0px;
+    left:0px;*/
+}
+.bannerbox>.container{
+    width:1300px;
+    height:360px;
+    position: absolute;
+    right:0px;
+    left:0px;
+    margin:auto;
+    /*float:left;*/
+    background-image:url('images/banner1.jpg');
+}
+.bannerbox>.src{
+    width:60px;
+    height:60px;
+    position: absolute;
+    right:0px;
+    left:0px;
+    margin:auto;
+    /*float:left;*/
+}
+.banner2{
+    float:left;
+    background-image:url('images/banner2.jpg');  
+}
+.banner3{
+    float:left;
+    background-image:url('images/banner3.jpg');
+}
+
+.bannerbox .scr{
+    position: absolute;
+    display: inline-block;
+    width:60px;
+    height:60px;
+    background-image: url('images/navc.png');
+    background-repeat: no-repeat;
+    list-style-type:none;
+    top: 328px;
+    z-index: 50;
+
+}
+.cir1{
+    left: 1867px;
+}
+.cir2{
+    left: 1813px;  
+}
+.cir3{
+    left: 1755px;     
+}
+.cir1:hover + .banner1{
+    z-index:1000;
+    background-image:url('images/banner1.jpg');
+}
+.cir2:hover + .banner2{
+    z-index:1000;
+    background-image:url('images/banner2.jpg');
+}
+.cir3:hover + .banner3{
+    z-index:1000;
+    background-image:url('images/banner3.jpg');
+}
+
+
+
+
+
+
+/*.banner2{
+    background-image:url('images/banner2.jpg'); 
+}
+.banner3{
+    background-image:url('images/banner3.jpg'); 
+    display:none;    
+}
+.scro1:hover{
+    
+}*/
+
+/*.scro1{
+    background-image:url('images/banner1.jpg'); 
+/*}*/
+
+
+
+
+
+
+.bannerborder{
+    width:100%;
+    height:37px;
+    background-color: #ffffff;
+    text-align: center;
+}
+.bannerborder>*{
+    width:1066px;
+    height:36px;
+    background-image: url('images/cirl.gif');
+    background-repeat: no-repeat;
+    background-position: center;
+    display: inline-block;
+}
