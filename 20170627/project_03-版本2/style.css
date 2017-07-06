@@ -512,9 +512,6 @@ html,body{
     background-image:url('images/Dry01.gif');
     border:20px solid #ffffff;
 }
-.share .images{
-    /*border-right:0px solid #8cbe00;*/
-}
 .share2 .images{
     background-image:url('images/Dry02.gif');
 }
@@ -544,7 +541,7 @@ div>.word3{
     background-image: url('images/clock.gif');
     background-repeat:no-repeat;
 }
-div>word4{
+div>.word4{
     font-size:14px;
 }
 .active{
