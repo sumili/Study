@@ -1,0 +1,439 @@
+html,body{
+    padding:0px;
+    margin:0px;
+}
+.clear-top::before{
+    content:"";
+    display:block;
+    overflow:hidden;
+}
+.clear-float::after{
+    content:"";
+    display:block;
+    clear:both;
+}
+.xiecheng{
+    width:1264px;
+    height:3478px;
+    position:relative;
+    margin: 0 auto;
+}
+/*banner以上logo行的样式*/
+.logo_box{
+    width:1264px;
+    height:59px;
+}
+.logo_content{
+    margin-left: 42px;
+    width:1180px;
+    height:59px;
+}
+.logo_content>*{
+    float:left;
+}
+.logo_content>a{
+    display: block;
+    width:118px;
+    height:59px;
+    background-image: url('images/logo.png');
+}
+.logo_content>.serch{
+    width:589px;
+    height:59px;
+    background-image: url('images/serach.png');
+}
+.logo_content input{
+    margin-left: 53px;
+    margin-top: 16px;
+    width: 337px;
+    height: 26px;
+    border: none;
+    font-size:11px;
+    color:#a8aaa9;
+    float:left;
+}
+.serch>a{
+    display: block;
+    float:left;
+    width:40px;
+    height:28px;
+    margin-top: 16px;
+}
+.logo_content>.texts{
+    padding-left:30px;
+    width:275px;
+    height:59px;
+    margin: 0 19px 0 0px;
+    background-image: url('images/amercian.png');
+    background-repeat: no-repeat;
+}
+.logo_content li{
+        line-height: 23px;
+    list-style-type:none;
+    margin-top: 19px;
+    width:70px;
+    float:left;
+    font-size:11px;
+    font-family: Arial, Helvetica, sans-serif;
+
+}
+.logo_content .text3{
+    width:120px;
+}
+.logo_content .redbag{
+    width:135px;
+    height:59px;
+    background-image: url('images/redbag.png');
+}
+.logo_content .angle{
+    width:14px;
+    height:59px;
+    background-image: url('images/angle.png');
+}
+.angle>a{
+    display: block;
+    width:14px;
+    height:14px;
+    margin-top: 33px;
+}
+
+/*banner以上导航的样式*/
+.topnav_box{
+    margin-top: -16px;
+    height:40px;
+    background-color: #2577e3;
+}
+.topnav_content{
+    width:1180px;
+    height:40px;
+    margin-left:42px;
+}
+.topnav_content ul{
+    padding: 0px;
+    margin-top:0px;
+}
+.topnav_content li{
+    list-style-type:none;
+    display: block;
+    float:left;
+    font-size: 15px;
+    color:#ffffff;
+    width:68px;
+    height:40px;
+    background-color: #000000;
+    background-image: url('images/topnav.png');
+}
+.topnav_content a{
+    display: block;
+    width:51px;
+    height:40px;
+}
+.topnav_content .nav1{
+    background-image: url('images/topnav_on.png');
+    width:51px;
+    background-position: 0px 0px;
+}
+.topnav_content .nav1:hover{
+    background-image: url('images/topnav_on.png');
+    width:51px;
+    background-position: 0px 0px; 
+}
+
+.topnav_content .w_56:hover{
+    width:56px;
+    background-image: url('images/topnav_on.png');
+    background-position: -51px 0px; 
+}
+.topnav_content .w_56{
+    width:56px;
+    background-position: -51px 0px;
+}
+.topnav_content .nav3{
+    background-position: -107px 0px;
+}
+.topnav_content .nav3:hover{
+    background-position: -107px 0px; 
+}
+.topnav_content .nav4{
+    background-position: -163px 0px;
+}
+.topnav_content .nav4:hover{
+    background-position: -163px 0px; 
+}
+.topnav_content .nav5{
+    background-position: -219px 0px;
+}
+.topnav_content .nav5:hover{
+    background-position: -219px 0px; 
+}
+.topnav_content .w_72{
+    width:72px;
+}
+.topnav_content .w_72:hover{
+    width:72px;
+    background-image: url('images/topnav_on.png');
+}
+.topnav_content .nav6{
+    background-position: -275px 0px;
+}
+.topnav_content .nav6:hover{
+    background-position: -275px 0px; 
+}
+.topnav_content .nav7{
+    background-position: -347px 0px;
+}
+.topnav_content .nav7:hover{
+    background-position: -347px 0px; 
+}
+.topnav_content .nav8{
+    background-position: -403px 0px;
+}
+.topnav_content .nav8:hover{
+    background-position: -403px 0px; 
+}
+.topnav_content .nav9{
+    background-position: -459px 0px;
+}
+.topnav_content .nav9:hover{
+    background-position: -459px 0px; 
+}
+.topnav_content .nav10{
+    background-position: -515px 0px;
+}
+.topnav_content .nav10:hover{
+    background-position: -515px 0px; 
+}
+.topnav_content .nav11{
+    background-position: -564px 0px;
+}
+.topnav_content .nav11:hover{
+    background-position: -564px 0px; 
+}
+.topnav_content .nav12{
+    background-position: -636px 0px;
+}
+.topnav_content .nav12:hover{
+    background-position: -636px 0px; 
+}
+.topnav_content .nav13{
+    background-position: -708px 0px;
+}
+.topnav_content .nav13:hover{
+    background-position: -708px 0px; 
+}
+.topnav_content .nav14{
+    background-position: -764px 0px;
+}
+.topnav_content .nav14:hover{
+    background-position: -764px 0px; 
+}
+.topnav_content .nav15{
+    background-position: -820px 0px;
+}
+.topnav_content .nav15:hover{
+    background-position: -820px 0px; 
+}
+.my_xc{
+    float:left;
+    width:160px;
+    height:40px;
+    margin-left: 137px;
+}
+.my_xc>*{
+    float:left;
+}
+.my_xc .icon_peo{
+    width:33px;
+    height:40px;
+    background-image: url('images/people.png');
+}
+.my_xc .texts{
+    line-height: 20px;
+    width:127px;
+    height:40px;
+    background-image: url('images/peo_bground.png');
+    color: #fff;
+}
+.my_xc .texts1{
+    font-size:11px;
+}
+.my_xc .texts2{
+    display:inline-block;
+    width:54px;
+    font-size:12px;
+}
+.my_xc a{
+    width: 15px;
+    height: 15px;
+    margin: 0px;
+    padding: 0px;
+    display: inline-block;
+}
+/*banner以上 国际直通车样式*/
+.zt_car{
+    width:1264px;
+    height:42px;
+}
+.zt_car_content{
+    overflow: hidden;
+    width:1180px;
+    height:42px;
+    margin-left:42px;
+    background: url('images/ztong_car.png');
+}
+.zt_car_content ul{
+    margin-left: -29px;
+    line-height: 10px;
+}
+.zt_car_content .title{
+    color:#fff;
+    font-weight: bold;
+    display:block;
+    float:left;
+    list-style-type: none;
+    font-size:12px;
+}
+.zt_car_content a{
+    text-decoration: none;
+}
+.zt_car_content .zt{
+    text-align: center;
+    width:151px;
+    border-right:27px;
+    display:block;
+    float:left;
+    list-style-type: none;
+    font-size:12px;
+}
+.zt_car_content .car2{
+   width:48px; 
+}
+.zt_car_content .car3{
+   width:143px; 
+}
+.zt_car_content .car4{
+   width:84px; 
+}
+.zt_car_content .car6{
+   width:36px; 
+}
+.zt_car_content .car7{
+   width:133px; 
+}
+.zt_car_content .car8{
+   width:38px; 
+}
+.zt_car_content .car9{
+   width:135px; 
+}
+.zt_car_content .car10{
+   width:58px; 
+}
+.zt_car_content .zt:hover{
+    color:#2577e3;
+}
+
+/*banner的样式*/
+/*banner以内表单的样式*/
+.banner_box .Form{
+    position:absolute;
+    width:577px;
+    height:300px;
+    background-color: #000;
+    z-index:1000;
+    border:1px solid #b0ccd8;
+    border-left:4px solid #fc991a;
+    margin:18px 0 18px 42px;
+}
+.ftab{
+    font-size:15px;
+    color:#fff;
+    width:86px;
+    height:41px;
+    border-bottom: 
+}
+
+
+
+
+/*banner切换样式*/
+.banner_box{
+    width:1264px;
+    height:338px;
+    position: relative;
+    border-bottom:1px solid #b0ccd8;
+}
+.banner_box .banner_{
+    width:1264px;
+    height:340px;
+    position:absolute;
+    z-index:50;
+}
+
+
+
+.banner_box .banner6{
+    background-image:url('images/banner.png');
+}
+.tab.a6:hover+.banner_{
+    z-index:100;
+}
+.banner_box .banner2{
+    background-color:rgb(244,0,0);
+}
+.tab.a2:hover+.banner_{
+    z-index:100;
+}
+.banner_box .banner3{
+    background-color:rgb(184,199,0);
+}
+.tab.a3:hover+.banner_{
+    z-index:100;
+}
+.banner_box .banner4{
+    background-color:rgb(0, 128,0);
+}
+.tab.a4:hover+.banner_{
+    z-index:100;
+}
+.banner_box .banner5{
+    background-color:rgb(244, 0,220);
+}
+.tab.a5:hover+.banner_{
+    z-index:100;
+}
+.banner_box .banner1{
+    background-color:rgb(0, 200,220);
+}
+.tab.a1:hover+.banner_{
+    z-index:100;
+}
+.banner_box .tab{
+    position:absolute;
+    z-index: 1000;
+    bottom:20px;
+    right:265px;
+    display:block;
+    float:left;
+    list-style-type:none;
+    width:12px;
+    height:12px;
+    background-image: url('images/banner_button.png');
+}
+.banner_box .a5{
+    right:285px;
+}
+.banner_box .a4{
+    right:305px;
+}
+.banner_box .a3{
+    right:325px;
+}
+.banner_box .a2{
+    right:345px;
+}
+.banner_box .a1{
+    right:365px;
+}
+
+
