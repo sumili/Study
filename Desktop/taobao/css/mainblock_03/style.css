@@ -1,0 +1,417 @@
+#mainblock{
+    width:100%;
+    height:3350px;
+    background-color: #f1f1f1;
+    position:relative;
+}
+#mainblock .mainblockbox{
+    position:absolute;
+    margin:auto;
+    top:0;
+    bottom:0;
+    right:0;
+    left:0;
+    width:1190px;
+    height:3350px;
+    background-color: #f1f1f1;
+}
+#mainblock .mainblockbox>div{
+    float: left;
+    height: 3350px;
+}
+#mainblock  .miancontent.left{
+    width:900px;
+    background-color: #f00;
+}
+#mainblock  .mainnav.right{
+    width:290px;
+    background-color: #ff0;
+}
+
+/*(.thememarket_ul>.market_li$>.tab+.content)*17*/
+/*主要内容的第一板块：主题市场-左边*/
+#mainblock>.thememarket{
+    position:relative;
+    width:900px;
+}
+#mainblock .thememarket_ul .tab{
+    width:190px;
+    height:30px;
+    /*该属性可删除*/
+    background-color: rgb(255, 101, 55);
+}
+#mainblock .thememarket_ul span{
+    display: inline-block;
+    width:20px;
+    color: #fff;
+}
+#mainblock .thememarket_ul span>a{
+    font-size:14px;
+    color: #fff;
+    font-weight: bold;
+    line-height: 34px;
+    margin-left: 10px;
+    text-decoration: none;
+    display: inline-block;
+    width:56px;
+    background-image: none;
+}
+#mainblock .thememarket_ul .tab{
+    background-image: url('images/theme_nav.png');
+    background-repeat: no-repeat;
+}
+
+#mainblock .thememarket_ul .tab:hover{
+    background-image: url('images/theme_nav_on.png');
+    background-color: rgb(249, 74, 20);
+}
+#mainblock .thememarket_ul .tab>a:hover{
+    text-decoration:underline;
+}
+#mainblock .market_li3 .tab{
+    background-position:0 -30px;
+}
+#mainblock .market_li4 .tab{
+    background-position:0 -60px;
+}
+#mainblock .market_li5 .tab{
+    background-position:0 -90px;
+}
+#mainblock .market_li6 .tab{
+    background-position:0 -120px;
+}
+#mainblock .market_li7 .tab{
+    background-position:0 -150px;
+}
+#mainblock .market_li8 .tab{
+    background-position:0 -180px;
+}
+#mainblock .market_li9 .tab{
+    background-position:0 -210px;
+}
+#mainblock .market_li10 .tab{
+    background-position:0 -240px;
+}
+#mainblock .market_li11 .tab{
+    background-position:0 -270px;
+}
+#mainblock .market_li12 .tab{
+    background-position:0 -300px;
+}
+#mainblock .market_li13 .tab{
+    background-position:0 -330px;
+}
+#mainblock .market_li14 .tab{
+    background-position:0 -360px;
+}
+#mainblock .market_li15 .tab{
+    background-position:0 -390px;
+}
+#mainblock .market_li16 .tab{
+    background-position:0 -420px;
+}
+#mainblock .market_li17 .tab{
+    background-position:0 -450px;
+}
+#mainblock .market_li1 .tab{
+    height:34px;
+    margin-top: -34px;
+    background-color: rgb(255, 101, 55);
+    background-image: none;
+}
+#mainblock .market_li1 .tab:hover{
+     background-image: none;
+}
+#mainblock .thememarket_ul .tab>span:nth-of-type(2){
+    margin-left: 29px;
+}
+#mainblock .market_li4 .tab>span:nth-of-type(2){
+    margin-left: 5px;
+}
+#mainblock .market_li6 .tab>span:nth-of-type(2){
+    margin-left: 17px;
+}
+#mainblock .market_li14 .tab>span:nth-of-type(2){
+    margin-left: 17px;
+}
+#mainblock .market_li15 .tab>span:nth-of-type(2){
+    margin-left: 8px;
+}
+#mainblock .market_li16 .tab>span:nth-of-type(2){
+    margin-left: 5px;
+}
+#mainblock .market_li17 .tab>span:nth-of-type(2){
+    margin-left: 5px;
+}
+#mainblock .market_li1 .tab>span+a{
+    width: 45px;
+    height: 23px;
+    display: inline-block;
+    background-image: url('images/threeline.png');
+    background-position: 4px -6px;
+    margin: 0 0 -6px 125px;
+}
+#mainblock .thememarket_ul a{
+    font-size:12px;
+    margin-left:6px;
+    color: #fff;
+    font-weight: bold;
+    text-decoration: none;
+}
+#mainblock .themeend{
+    width:190px;
+    height:40px;
+    background-image:url('images/themeend.png');
+}
+/*主题市场列表切换-一级切换*/
+#mainblock .thememarket_ul .content{
+    position:absolute;
+    top:2px;
+    left:190px;
+    background-color: #f1f1f1;
+    width:711px;
+    height:518px;
+}
+/*列表：主题市场content内容，默认样式*/
+#mainblock .market_li1 .content{
+    z-index: 1; 
+}
+/*主题市场content内部xlbanner界面切换样式*/
+#mainblock .market_li1 .content>div{
+    float:left;
+    margin-top: 2px;
+    /*border-top:5px solid #f1f1f1;*/
+    margin: 5px 0px 0 9px;
+}
+#mainblock .market_li1 .content>.bannertab{
+    width:520px;
+    height:511px;
+    /*border-top:10px solid #f1f1f1;*/
+    /*border:10px 9px 0 10px;*/
+    /*border-width:10px 9px 0 10px;*/
+    border-color: #f1f1f1; 
+    background-color: #00f;
+}
+#mainblock .market_li1 .content>.bannerfix{
+    margin: 5px 11px 0 9px;
+    width:160px;
+    height:511px;
+    /*border-width: 10px 11px 0 9px; */
+    border-color: #f1f1f1; 
+    background-color: #000;                                                                                      
+}
+#mainblock .market_li1 .content .xl_banner{
+    width:520px;
+    height:280px;
+    background-color: #0f0;
+}
+#mainblock .market_li1 .content .xs_banner{
+    width:520px;
+    height:231px;
+    background-color: #0fb;
+}
+#mainblock .market_li1 .xl_banner{
+    position: relative;
+}
+#mainblock .market_li1 .xs_banner{
+    position: relative;
+}
+/*#mainblock .market_li1 .xl_banner>div{
+    float:left;
+}*/
+/*s*/
+/*#mainblock .market_li1 .xl_banner .tabbanner{
+    background-color: #000;
+}*/
+#mainblock .market_li1 .xl_banner a{
+    display:block;
+    width:9px;
+    height:9px;
+    border-radius: 50%;
+    background-color: #B7B7B7;
+    position: absolute;
+    margin-left: 6px;
+    left:50%;
+    top:260px; 
+    z-index: 1000;
+}
+#mainblock .market_li1 .xl_banner>div:nth-of-type(1) a{
+    margin-left: -22px;
+}
+#mainblock .market_li1 .xl_banner>div:nth-of-type(2) a{
+    margin-left: -8px;
+}
+#mainblock .market_li1 .xl_banner>div:nth-of-type(4) a{
+    margin-left: 18px;
+}
+#mainblock .market_li1 .xl_banner>div:nth-of-type(5) a{
+    margin-left: 32px;
+}
+#mainblock .market_li1 .xl_banner .contentbanner{
+    position: absolute;
+    width:520px;
+    height:280px;  
+}
+#mainblock .market_li1 .xl_banner:nth-of-type(1) .contentbanner{
+    position: absolute;
+    width:520px;
+    height: 280px;
+    background-image: url('images/themebanner01png.png');
+    z-index: 1;
+}
+#mainblock .market_li1 .xl_banner a:hover{
+    background-color: #F40;
+}
+#mainblock .market_li1 .xl_banner>div:nth-of-type(2) a:hover+.contentbanner{
+    background-image:url('images/themebanner02png.png');
+    z-index: 2;     
+}
+#mainblock .market_li1 .xl_banner>div:nth-of-type(3) a:hover+.contentbanner{
+    background-image:url('images/themebanner03png.png');
+    z-index: 3;     
+}
+#mainblock .market_li1 .xl_banner>div:nth-of-type(4) a:hover+.contentbanner{
+    background-image:url('images/themebanner04png.png');
+    z-index: 4;     
+}
+#mainblock .market_li1 .xl_banner>div:nth-of-type(5) a:hover+.contentbanner{
+    background-image:url('images/themebanner05png.png');
+    z-index: 5;     
+}
+#mainblock .market_li1 .xs_banner .Tmalllogo{
+    width:520px;
+    height:27px;
+    border-bottom: 2px solid #c12c26;
+    background-color: #f1f1f1;
+    background-image: url('images/tmall.gif');
+    background-repeat: no-repeat;
+    background-position: 0px 10px;
+}
+#mainblock .thememarket_ul .xs_banner .Tmalllogo>.text1{
+    font-size: 14px;
+    font-weight: bold;
+    color:#3c3c3c;
+    width:100px;
+    margin-top: 10px;
+    margin-left: 50px;
+}
+#mainblock .thememarket_ul .xs_banner .Tmalllogo>.text2{
+    font-size: 12px;
+    /*font-weight: bold;*/
+    color:#666;
+    width:130px;
+    margin-left: -45px;
+    font-size: 12px;
+}
+#mainblock .market_li1 .xs_banner a{
+    display:block;
+    width:9px;
+    height:9px;
+    border-radius: 50%;
+    background-color: #B7B7B7;
+    position: absolute;
+    margin-left: 6px;
+    left:50%;
+    top:210px; 
+    z-index: 1000;
+}
+#mainblock .market_li1 .xs_banner>.bannerbox:nth-of-type(2) a{
+    margin-left: -37px;
+}
+#mainblock .market_li1 .xs_banner>.bannerbox:nth-of-type(3) a{
+    margin-left: -22px;
+}
+#mainblock .market_li1 .xs_banner>.bannerbox:nth-of-type(4) a{
+    margin-left: -8px;
+}
+#mainblock .market_li1 .xs_banner>.bannerbox:nth-of-type(5) a{
+    margin-left: 8px;
+}
+#mainblock .market_li1 .xs_banner>.bannerbox:nth-of-type(6) a{
+    margin-left: 23px;
+}
+#mainblock .market_li1 .xs_banner>.bannerbox:nth-of-type(7) a{
+    margin-left: 37px;
+}
+#mainblock .market_li1 .xs_banner:nth-of-type(2) .contentbanner{
+    position: absolute;
+    width:520px;
+    height:204px;
+    background-image: url('images/themebanner03png.png');
+    background-size: 520px 231px;
+    z-index:1;
+}
+#mainblock .market_li1 .xs_banner a:hover{
+    background-color: #F40;
+}
+#mainblock .market_li1 .xs_banner>div:nth-of-type(2) a:hover+.contentbanner{
+    background-image:url('images/themebanner02png.png');
+    z-index: 2;     
+}
+#mainblock .market_li1 .xs_banner>div:nth-of-type(3) a:hover+.contentbanner{
+    background-image:url('images/themebanner03png.png');
+    z-index: 3;     
+}
+#mainblock .market_li1 .xs_banner>div:nth-of-type(4) a:hover+.contentbanner{
+    background-image:url('images/themebanner04png.png');
+    z-index: 4;     
+}
+#mainblock .market_li1 .xs_banner>div:nth-of-type(5) a:hover+.contentbanner{
+    background-image:url('images/themebanner05png.png');
+    z-index: 5;     
+}
+/*主题市场列表女装的样式-market_li2*/
+/*#mainblock .market_li2:hover>.content{
+    z-index: 100;
+}*/
+/*写完后代码要恢复至hover状态*/
+#mainblock .market_li2>.content{
+    z-index: 100;
+}
+#mainblock .market_li2>.content>*{
+    float:left;
+}
+#mainblock .market_li2 .dressitem{
+    width:455px;
+    height:484px;
+    background-color:#fff;
+    padding: 23px 0 11px 0;
+}
+
+
+#mainblock .market_li2 .dressitem>div{
+    width:455px;
+    height: 161px;
+    margin-left: 18px;
+}
+#mainblock .market_li2 .dressitem .dresstitle{
+    background-image: url('images/wo_dress.jpg');
+    background-repeat: no-repeat;
+    background-size: 30px 30px;
+}
+#mainblock .market_li2 .mandress>.dresstitle{
+    background-image: url('images/man_dress.jpg');
+}
+#mainblock .market_li2 .underdress>.dresstitle{
+    background-image: url('images/underdress.jpg');
+}
+/*#mainblock .market_li2 .dressitem .dresstitle a{*/
+    /*font-size: 14px;
+    color: #3C3C3C;
+    /*position: relative;*/
+    /*left:35px;
+    font-weight: normal;
+    top:9px;*/
+    /*margin-right:420px;*/
+
+#mainblock .market_li2 .dressitem .dresstitle{
+    width:427px;
+    height:30px;
+    border-bottom:1px solid #e0e0e0;
+}
+
+#mainblock .market_li2 .guesslike{
+    width:255px;
+    height:518px;
+    background-color: #c12c26;
+}
