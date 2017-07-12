@@ -1,0 +1,148 @@
+html,body{
+    padding:0px;
+    margin:0px;
+}
+.container{
+    position:relative;
+    margin: 0 auto;
+    width:476px;
+    height:440px;
+    /*background-image: url('robotat1.png');*/
+    background-repeat: no-repeat;
+}
+div{
+    position: relative;
+}
+.head1{
+    width: 237px;
+    height: 224px;
+    background-color:rgb(0,160,234);
+    /*background-color: rgba(10,182,232,0.8);*/
+    float: left;
+}
+.head1.block01{
+    border-top-left-radius: 210px;
+    border-top: 4px solid #30606e;
+    border-left: 4px solid #30606e;
+    background-repeat: no-repeat;
+}
+.head1.block02{
+    width: 218px;
+    height: 224px;
+    border-top-right-radius: 210px;
+    border-top: 4px solid #30606e;
+    border-right: 4px solid #30606e;
+    background-repeat: no-repeat;
+}
+.head1.block03{
+    width: 218px;
+    height: 179px;
+    border-bottom-left-radius: 210px;
+    border-left: 4px solid #30606e;
+    border-bottom: 4px solid #30606e;
+    background-repeat: no-repeat;
+}
+.head1.block04{
+    width: 237px;
+    height: 179px;
+    border-bottom-right-radius: 210px;
+    border-right: 4px solid #30606e;
+    border-bottom: 4px solid #30606e;
+    background-repeat: no-repeat;
+}
+.block01>.face{
+    margin-left: 31px;
+    margin-top: 102px;
+    background-color: #fff;
+    width: 191px;
+    height: 222px;
+    border-top-left-radius: 169px;
+}
+.block02>.face{
+    margin-top: 102px;
+    background-color:#fff;
+    width: 193px;
+    height: 153px;
+    border-top-right-radius: 169px;
+    margin-left: -15px;
+}
+.block03>.face{
+    margin-left: 38px;
+    margin-top: 0px;
+    background-color:#fff;
+    width: 187px;
+    height: 177px;
+    border-bottom-left-radius: 169px;
+}
+.block04>.face{
+    margin-left: 0px;
+    background-color: #fff;
+    width: 193px;
+    height: 177px;
+    border-bottom-right-radius: 169px;
+}
+.block01>.lefteye{
+    width: 101px;
+    height: 117px;
+    border-radius: 47px;
+    background-color: #fff;
+    border: 2px solid #000;
+    z-index: 1;
+    top: -265px;
+    left: 119px;
+}
+.block02>.righteye{
+    width: 101px;
+    height: 117px;
+    border-radius: 47px;
+    background-color:#fff;
+    border: 2px solid #000;
+    z-index: 1;
+    top: -195px;
+    left: -12px;
+}
+.lefteye>.eyebox{
+    width: 20px;
+    height: 20px;
+    background-color: #000;
+    border-radius: 20px;
+    top: 57px;
+    left: 68px;
+}
+.righteye>.eyebox{
+    width: 20px;
+    height: 20px;
+    background-color: #000;
+    border-radius: 20px;
+    top: 56px;
+    left: 16px;
+}
+.nose{
+    left: 79px;
+    top: 78px;
+    width: 45px;
+    height: 45px;
+    background-color: #d23709;
+    z-index: 1;
+    border-radius: 100%;
+    border: 2px solid #000;
+}
+.lingdai{
+    top: 376px;
+    width: 331px;
+    height: 31px;
+    background-color: #9c1e05;
+    border: 2px solid #000;
+    border-radius: 15px;
+    z-index: 2;
+    left: 63px;
+}
+.bg{
+    top: 189px;
+    left: 61px;
+    background: url('robotat04.png');
+    width: 337px;
+    height: 169px;
+    z-index: 100;
+    position: absolute;
+}

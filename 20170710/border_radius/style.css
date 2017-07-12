@@ -1,0 +1,39 @@
+html,body{
+    padding:0px;
+    margin: 0px;
+}
+.container{
+    width:200px;
+    height:200px;
+    background-color: #ff0;
+    /*float:left;*/
+}
+.son{
+    float:left;
+    transition: all 0.55s;
+    width:100px;
+    height:100px;
+    background-color:#00f;
+    border-radius: none;
+}
+.son1:hover{
+    border-top-left-radius: 100px;
+}
+.son2:hover{
+    border-top-right-radius: 100px;
+}
+.son3:hover{
+    border-bottom-left-radius: 100px;
+}
+.son4:hover{
+    border-bottom-right-radius: 100px;
+}
+.bannerbox{
+    width:1600px;
+    height: 900px;
+    background-image: url('bgyellow.jpg'),url('banner.jpg');
+    background-blend-mode:soft-light;
+    background-repeat: no-repeat;
+    background-size:100% 900px;
+    background-size:contain;
+}

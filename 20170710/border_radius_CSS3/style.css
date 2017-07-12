@@ -1,0 +1,61 @@
+html,body{
+    padding:0px;
+    margin:0px;
+}
+
+.father{
+    width:400px;
+    height:400px;
+    background-color: #f00;
+}
+.father>*{
+    width:20px;
+    height:20px;
+    background-color: #00F;
+}
+.father [title="logo"]{
+    background-color: #ff0;
+}
+.box{
+    float:left;
+    width:500px;
+    height:500px;
+    border: 2px solid #ff0;
+}
+.box>*{
+    float:left;
+    width:250px;
+    height:500px;
+}
+img{
+    background-color: #00F;
+}
+
+/*.box:nth-child(4n+2)>div{
+    background-color: #f00;
+}
+.box:nth-child(4n+3)>div{
+    background-color: #f00;
+}*/
+
+/*有疑惑*/
+
+body .box:nth-child(4n+2)>*{
+    float:right;
+    /*float:right;*/
+    /*background-color: #f00;*/
+}
+.box:nth-child(4n+3)>*{
+     float:right;
+    /*background-color: #f00;*/
+}
+.box:nth-child(4n+3)>*:hover{
+    border-radius: 50px;
+}
+    /*background-color: #f00;
+
+/*.box:nth-child(2)
+}*/
+/*.box>div{
+padding: 2px;
+}*/
