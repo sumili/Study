@@ -395,15 +395,48 @@
 #mainblock .market_li2 .underdress>.dresstitle{
     background-image: url('images/underdress.jpg');
 }
-/*#mainblock .market_li2 .dressitem .dresstitle a{*/
-    /*font-size: 14px;
-    color: #3C3C3C;
-    /*position: relative;*/
-    /*left:35px;
+#mainblock .market_li2 .dressitem .dresstitle a{
+    font-size:14px;
+    color:#3C3C3C;
+    position:relative;
+    left:35px;
+    font-weight:normal;
+    top:9px;
+}
+#mainblock .market_li2 .dressitem a:hover{
+    color: #F40;
+}
+#mainblock .market_li2 .dressitem .dresstitle a+a{
+    font-size:12px;
+    color:#3C3C3C;
+    position:relative;
+    left:35px;
+    font-weight:normal;
+    top:9px;
+    margin-left: 325px;
+}
+#mainblock .market_li2 .dressitem .dresstitle a+a:hover{
+    color:#F40;
+}
+#mainblock .market_li2 .dressitem .dressitems{
+    width:427px;
+}
+#mainblock .market_li2 .dressitem .dressitems>a{
+    font-size:12px;
+    color: #666;
+    display: inline-block;
+    margin-right: 12px;
     font-weight: normal;
-    top:9px;*/
-    /*margin-right:420px;*/
-
+    margin-left: 0px;
+    border-bottom: 5px;
+    line-height: 24px;
+}
+#mainblock .market_li2 .dressitem .dressitems>a:hover{
+    color:#F40;
+}
+#mainblock .market_li2 .dressitem .dressitems>.color_red{
+    color: #f40;
+}
 #mainblock .market_li2 .dressitem .dresstitle{
     width:427px;
     height:30px;
