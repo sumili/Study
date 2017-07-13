@@ -169,7 +169,7 @@
     top:2px;
     left:190px;
     background-color: #f1f1f1;
-    width:711px;
+    width:710px;
     height:518px;
 }
 /*列表：主题市场content内容，默认样式*/
@@ -198,7 +198,30 @@
     height:511px;
     /*border-width: 10px 11px 0 9px; */
     border-color: #f1f1f1; 
-    background-color: #000;                                                                                      
+    /*background-color: #000;                                                                                      */
+}
+#mainblock .market_li1 .content>.bannerfix>a{
+    display: block;
+}
+#mainblock .market_li1 .content>.bannerfix>a:nth-of-type(1){
+    width:160px;
+    height:280px;
+    margin-left: 0px;
+    background-image: url('images/fixbanner01.png');
+}
+#mainblock .market_li1 .content>.bannerfix>div{
+    font-size: 12px;
+    font-weight: 400;
+    background: #f1f1f1;
+    color: #a1a1a1;
+    line-height: 24px;
+    padding-top: 6px;
+}
+#mainblock .market_li1 .content>.bannerfix>a:nth-of-type(2){
+    width:162px;
+    height:203px;
+    margin-left: 0px;
+    background-image: url('images/fixbanner02.png');
 }
 #mainblock .market_li1 .content .xl_banner{
     width:520px;
@@ -361,13 +384,13 @@
     z-index: 5;     
 }
 /*主题市场列表女装的样式-market_li2*/
-/*#mainblock .market_li2:hover>.content{
-    z-index: 100;
-}*/
-/*写完后代码要恢复至hover状态*/
-#mainblock .market_li2>.content{
+#mainblock .market_li2:hover>.content{
     z-index: 100;
 }
+/*写完后代码要恢复至hover状态*/
+/*#mainblock .market_li2>.content{
+    z-index: 100;
+}*/
 #mainblock .market_li2>.content>*{
     float:left;
 }
@@ -446,5 +469,300 @@
 #mainblock .market_li2 .guesslike{
     width:255px;
     height:518px;
-    background-color: #c12c26;
+    /*background-color: #c12c26;*/
+}
+#mainblock .market_li2 .guesstitle>*{
+    float:left;
+    display: block;
+}
+#mainblock .market_li2 .guesstitle>div:nth-of-type(1){
+    width:45px;
+    height:1px;
+    background-color: #e6e6e6;
+    margin: 27px 0 0 37px;
+}
+#mainblock .market_li2 .guesstitle>div:nth-of-type(2){
+    width:45px;
+    height:1px;
+    background-color: #e6e6e6;
+    margin: 27px 0 0 0px;
+}
+#mainblock .market_li2 .guesstitle>span{
+    width: 56px;
+    line-height: 20px;
+    height: 20px;
+    font-size: 14px;
+    text-align: center;
+    font-style: normal;
+    color: #3c3c3c;
+    background-image: url('images/guesstitle_1918.png');
+    background-repeat: no-repeat;
+    margin: 17px 0 0 0;
+    padding: 0 0 0 25px;
+}
+#mainblock .market_li2 .guesslike .uptext>span{
+    line-height: 18px;
+    font-size: 12px;
+    color: #999;
+    text-align: center;
+    display: block;
+    width:132px;
+    margin-left: 62px;
+    border-bottom: 17px solid #f4f4f4;
+}
+#mainblock .market_li2 .guesstitle{
+    width:255px;
+    height:37px;
+}
+#mainblock .market_li2 .guessitem{
+    width:231px;
+    height:432px;
+    padding: 0 9px 14px 15px;
+}
+#mainblock .market_li2 .guessitem>a:nth-of-type(2n+1){
+    margin-right: 11px;
+}
+#mainblock .market_li2 .guessitem>a>span{
+    width:110px;
+    height:24px;
+    text-align: center;
+    margin-top:86px;
+    line-height: 24px;
+    font-size:12px;
+    color: #666;
+    font-weight: normal;
+    background-color:rgba(255,255,255,.8);
+}
+#mainblock .market_li2 .guessitem>a>span:hover{
+    color: #F40;
+    background-color: #fff;
+}
+#mainblock .market_li2 .guessitem>a:nth-of-type(1){
+    background-image: url('images/guessitem_01.png');
+}
+#mainblock .market_li2 .guessitem>a:nth-of-type(2){
+    background-image: url('images/guessitem_02.png');
+}
+#mainblock .market_li2 .guessitem>a:nth-of-type(3){
+    background-image: url('images/guessitem_03.png');
+}
+#mainblock .market_li2 .guessitem>a:nth-of-type(4){
+    background-image: url('images/guessitem_04.png');
+}
+#mainblock .market_li2 .guessitem>a:nth-of-type(5){
+    background-image: url('images/guessitem_05.png');
+}
+#mainblock .market_li2 .guessitem>a:nth-of-type(6){
+    background-image: url('images/guessitem_06.png');
+}
+#mainblock .market_li2 .guessitem>a{
+    float:left;
+    width:110px;
+    height:110px;
+    display: block;
+    margin-left: 0px;
+    border-bottom:34px solid #f4f4f4;
+    background-size: 110px 110px;
+}
+/*主题市场板块顶部小bannner*/
+/*.themebottombanner.container>(.thebottom_box>div+div>span*3)*5*/
+#mainblock .themebottombanner{
+    background-color: #fff;
+    width:890px;
+    height: 76px;
+    border-right: 10px solid #f1f1f1;
+    margin-top:10px;
+}
+#mainblock .thebottom_box{
+    float: left;
+    width:178px;
+    height: 74px;
+}
+#mainblock .thebottom_box>*{
+    float:left;
+}
+#mainblock .thebottom_box>div>span{
+    display:block;
+    height:24px;
+}
+/*选择每个.thebottom_box的第一个div*/
+#mainblock .thebottom_box>div:nth-of-type(1){
+    /*border:1px solid #ededed;*/
+    height:60px;
+    width:60px;
+    margin-top: 8px;
+    margin-right: 8px;
+    margin-left: 10px;
+    background-image:url('images/themebottom_nav01.png');
+    border: 1px solid #ededed;
+    border-radius: 100%;
+}
+#mainblock .thebottom_box:hover>.thebot{
+    border-color: #9a745f;
+}
+#mainblock .thebottom_box:hover>.thebottom02{
+    border-color: #81c18f; 
+}
+#mainblock .thebottom_box>.thebottom02.thebot+div>.thebottext{
+    color: #81c18f; 
+}
+#mainblock .thebottom_box:hover>.thebottom03{
+    border-color: #72a5f6;
+}
+#mainblock .thebottom_box>.thebottom03.thebot+div>.thebottext{
+    color: #72a5f6;
+}
+#mainblock .thebottom_box:hover>.thebottom04{
+    border-color: #846fc7;
+}
+#mainblock .thebottom_box>.thebottom04.thebot+div>.thebottext{
+    color: #846fc7;
+}
+#mainblock .thebottom_box:hover>.thebottom05{
+    border-color: #de525e;
+}
+#mainblock .thebottom_box>.thebottom05.thebot+div>.thebottext{
+    color: #de525e;
+}
+/*选择每个.thebottom_box的第2个div*/
+#mainblock .thebottom_box>div:nth-of-type(2)>span:nth-child(1){
+    height: 24px;
+    overflow: hidden;
+    margin-top: 6px;
+    display: block;
+    font-size: 16px;
+    width:98px;
+    font-weight: bold;
+    color: #9a745f;    
+}
+#mainblock .thebottom_box>div:nth-of-type(2)>span:nth-child(2){
+    overflow: hidden;
+    display: block;
+    height: 16px;
+    font-size: 12px;
+    line-height: 16px;
+    color: #9a745f;
+}
+#mainblock .thebottom_box>div:nth-of-type(2)>span:nth-child(3){
+    background-image: url('images/hotnum.png');
+    background-repeat: no-repeat;
+    padding-left: 18px;
+    width:80px;
+    color: #999;
+    font-size: 12px;
+    overflow: hidden;
+    margin-top: 6px;
+    line-height: 16px;
+    height: 16px;
+}
+#mainblock .themebottombanner .thebottom_box>.thebottom02{
+    background-image:url('images/themebottom_nav02.png');
+}
+#mainblock .themebottombanner .thebottom_box>.thebottom03{
+    background-image:url('images/themebottom_nav03.png');
+}
+#mainblock .themebottombanner .thebottom_box>.thebottom04{
+    background-image:url('images/themebottom_nav04.png');
+}
+#mainblock .themebottombanner .thebottom_box>.thebottom05{
+    background-image:url('images/themebottom_nav05.png');
+}
+/*主要内容的第二板块：我常逛的-我常逛标题*/
+#mainblock .i_see{
+    width:900px;
+    height:37px;
+    margin-top: 15px;
+    background-color: #f1f1f1;
+}
+#mainblock .i_see>*{
+    display: block;
+    float:left;
+}
+#mainblock .centerbg{
+    background-repeat: no-repeat;
+    background-position: center -600px;
+    background-image: url('images/cneterbg.png');
+}
+#mainblock .i_see.centerbg>a{
+    margin-top: 8px;
+    margin-left: 828px;
+    text-align: center;
+    width: 60px;
+    border-radius: 10px;
+    background-color: #fff;
+    text-decoration: none;
+    padding-bottom: 4px;
+}
+#mainblock .i_see.centerbg>a>span{
+    font-size:8px;
+}
+#mainblock .i_see.centerbg>a:hover{
+    background-color: #F40;
+}
+#mainblock .i_see.centerbg>a:hover>span{
+    color: #fff;
+}
+/*主要内容的第二板块：我常逛的-我常逛内容4个div*/
+/*.i_see.container>(.i_content$>.icontent_left+.icontent_right)*4*/
+#mainblock .i_seecontainer{
+    width:890px;
+    height:744px;
+}
+#mainblock .i_seecontainer>div{
+    float:left;
+    width:440px;
+    height:362px;
+    margin-bottom: 10px;
+    /*background-color: #000;*/
+}
+#mainblock .i_seecontainer>div:nth-of-type(2n+1){
+    margin-right: 9px;
+}
+#mainblock .i_seecontainer>div>*{
+    float: left;
+    height:362px;
+}
+#mainblock .i_seecontainer .icontent_left{
+    width:100px;
+    background-image: #f00;
+}
+#mainblock .i_seecontainer .icontent_right{
+    width:340px;
+    background-color: #00f;
+}
+#mainblock .i_seecontainer .icontent_left>.icontent_leftlink{
+    display: block;
+    width:100px;
+    height:100px;
+}
+#mainblock .i_content1 a{
+    background-image: url('images/i_left.png');
+}
+#mainblock .i_content2 a{
+    background-image: url('images/i_right.png');
+}
+#mainblock .i_content3 a{
+    background-image: url('images/i_left02.png');
+}
+#mainblock .i_content4 a{
+    background-image: url('images/i_right02.png');
+}
+#mainblock .i_seecontainer .icontent_left>.icontent_leftlist{
+    display: block;
+    width:100px;
+    height:262px;
+}
+#mainblock .i_content1 .icontent_leftlist>*{
+background-color: #406cc0;
+}
+#mainblock .i_content1 .icontent_leftlist:nth-of-type(1){
+    color: #fff;
+    font-size:14px;
+    font-weight: bold;
+    height: 29px;
+    background-color: #406cc0;
+    padding-top: 8px;
+    margin-bottom: 4px;
+    margin-left: 8px;
+    width:90px;
 }
