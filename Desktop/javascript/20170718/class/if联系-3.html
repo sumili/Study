@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+        // 这是注释
+        /*
+            一行注释
+            二行注释
+        */
+        alert('你好');
+        console.log("'你好'");
+        var a = 100;
+        console.log(typeof a);
+        parseInt(3.9994);
+        parseInt("3年6班");
+        parseInt("哈哈哈3年3月");
+        parseInt("0xf",16);
+        var b = 4;
+        var c = "4";
+        console.log(b === c);
+        console.log("哈哈" && undefined);
+        var a = prompt("请输入你的分数")
+        if(a>=60){
+            alert("恭喜你，及格了")
+        }else{
+            alert("恭喜你，不及格，等着罚抄吧")
+        }
+        var sex = prompt("输入你的性别");
+        if (sex == "男"){
+            var age = prompt("请输入你的年龄");
+            if(age<22){
+                alert("男同志,你好，不可以结婚");
+            }
+            else{
+                alert("男同志，你好，可以结婚");
+            }
+        }else if(sex == "女"){
+                var age = prompt("请输入你的年龄");                
+            if(age<18){
+                alert("女同志，你好,不可以结婚");
+            }else{
+                alert("男同志，你好，可以结婚");
+            };
+        }else{
+            alert("sorry,你输入的信息有误！请重新输入")
+        }
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

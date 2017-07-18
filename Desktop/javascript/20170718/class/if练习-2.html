@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <script type="text/javascript">
+
+            // var sex = prompt("请输入您的性别");
+
+            // if( sex == "男"){
+
+            //     var age = prompt("请输入您的年龄");
+            //     if(  age>= 23 ){
+            //         alert("你好先生！您的年龄可以结婚~");
+            //     }else{
+            //         alert("你还太小~等两年吧~");
+            //     }
+
+            // }else if( sex == "女"){
+
+
+            // }else{
+            //     alert("输入错误~请重新输入~");
+            // }
+
+            var bmi=1.8;
+            var kg=parseFloat(prompt("请输入你的体重(kg)"));
+            var he=parseFloat(prompt("请输入你的身高(cm)"));
+            var bmi=kg/Math.pow(he,2);
+            if(bmi<18.5){
+                alert("你的体重是"+kg+",过轻");
+            }
+            else if(kg<25){
+                alert("你的体重是"+kg+" ,正常");
+            }
+            else if(kg<28){
+                alert("你的体重是"+kg+",过重");
+            }
+            else if(kg<32){
+                alert("你的体重是"+kg+",肥胖");
+            }
+            else{
+                alert("你的体重是"+kg+",非常肥胖");
+            }
+            // bmi
+            // 获取用户信息
+            // 80kg 180
+            // 计算
+            // var bmi = 80 / (1.8*1.8)
+            // 80 /  Math.pow(1.8,2)
+            //     判断
+            // if (true) {}
+
+            //     <18.5  过轻
+            //     <25    正常
+            //     <28    过重
+            //     <32    肥胖
+            //     else   非常肥胖
+
+        </script>
+    </head>
+    <body>
+    </body>
+</html>
