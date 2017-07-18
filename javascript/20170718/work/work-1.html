@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+        var a = parseFloat(prompt("请输入一个数值"));
+        if(a%5==0&&a%6==0 == true){
+            alert("这个数值同时能被5和6整出");
+        }
+        else if(a%5!==0&&a%6!==0 ==true){
+            alert("这个数既不能被整除，也不能被6整除");
+        }
+        else if(a%5==0&&a%6!==0 ==true){
+            alert("这个数能被5整除，但是不能被6整除");
+        }
+        else if(a%5!==0&&a%6==0 ==true){
+            alert("这个数能被6整除，但是不能被5整除")
+        }
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
