@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <script type="text/javascript">
+
+            // 从2开始试验到100结束，一个一个试验谁是质数
+            // 质数? = 约数有两个  一个自身 一个是1
+            for( var i = 2;i<=100;i++){
+
+                var count = 0;
+                // 所以我们要从1开始 i除以这个数
+
+                //循环获取约数
+                for( var j = 1;j<=i;j++){
+                    //判断约数的个数
+                    if(i % j == 0){
+                        count++;
+                    }
+                }
+
+                //判断约数个数为2，是质数输出
+                if( count == 2){
+                    console.log(i);
+                }
+
+            }
+        </script>
+    </head>
+    <body>
+    </body>
+</html>

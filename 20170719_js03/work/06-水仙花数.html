@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+            var num=100;
+        for(;num<=999;num++){
+            // 为什么下面这三个语句在for之前就无法实现-因为
+            //放在for外面，num值就不会随着循环产生变化，必须放里面
+            var n=parseInt(num/100);
+            var u=parseInt(num/10)%10;
+            var m=num%10;
+          
+            var i=Math.pow(n,3)+Math.pow(u,3)+Math.pow(m,3)
+            if(num==i){
+                console.log(num+"是一个水仙花数")
+            }
+        }
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

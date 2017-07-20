@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <script type="text/javascript">
+
+        // 考拉数
+        // 考拉数是一个三位数，它的每个位数的阶乘和，等于它自己
+
+        //阶乘函数，接受一个参数，返回这个数字的阶乘
+            function jiecheng(a){
+
+                var s = 1;  //累乘器
+
+                for(var i = 1;i<=a;i++){
+                    s*=i;
+                }
+                return s;  //返回阶乘
+            }
+
+            // 从100-999之间
+            for( var i = 100;i<=999;i++){
+
+                // 拆分
+                var gewei = i%10;
+                var shiwei = parseInt( i / 10) % 10;
+                var baiwei = parseInt( i / 100);
+
+                if( jiecheng(gewei) + jiecheng(shiwei) + jiecheng(baiwei) == i){
+                    console.log(i);
+                }
+            }
+        </script>
+    </head>
+    <body>
+    </body>
+</html>
