@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+        for(var i=1;i<10000;i++){//列举1~1000
+            var count=0;
+            for(j=1;j<=i;j++){//列举从1到i的数
+                if(i%j==0){//找到公约数
+                    count++ //质数的公约数只有两个
+                }
+            }
+            if(count==2){
+                console.log(i)
+            }
+        }
+        
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

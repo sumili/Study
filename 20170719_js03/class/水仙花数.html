@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Document</title>
+    <script type="text/javascript">
+
+        // 153  1 + 125 + 27=153
+
+        //穷举法
+        for(var i = 100;i<=999;i++){
+
+            //拆分位
+            var gewei = i % 10;
+            var shiwei = parseInt( i / 10) % 10;
+            var baiwei = parseInt( i / 100);
+
+            //判断
+            if( Math.pow(gewei,3) + Math.pow(shiwei,3) +Math.pow(baiwei,3)  ==i){
+                console.log("水仙花数是"+i);
+            }
+        }
+    </script>
+</head>
+<body>
+
+</body>
+</html>
