@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <style type="text/css">
+            div{
+                width: 200px;
+                height: 200px;
+                float: left;
+            }
+            .oDiv1{
+                background-color: red;
+            }
+            .oDiv2{
+                background-color: blue;
+            }
+            .oDiv3{
+                background-color: orange;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="oDiv1"></div>
+        <div class="oDiv2"></div>
+        <div class="oDiv3"></div>
+
+        <script type="text/javascript">
+            oDiv = document.getElementsByTagName("div");
+
+            for( var i = 0;i<oDiv.length;i++){
+
+                oDiv[i].onclick=function (){
+                    this.style.display = "none";
+                }
+            }
+
+
+
+        </script>
+    </body>
+</html>

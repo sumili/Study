@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+        //定义一个函数，用来输出某个数的阶乘
+        function jiecheng(m){
+            var s=1;
+            for(var i=1;i<=m;i++){
+                s*=i
+            }return s;
+        }console.log(jiecheng(3));
+        var i=100;
+        for(;i<=999;i++){
+            var gewei=i%10;
+            var shiwei=parseInt(i/10)%10;
+            var baiwei=parseInt(i/100);
+            if(jiecheng(gewei)+jiecheng(shiwei)+jiecheng(baiwei)==i){
+                console.log(i);
+            }
+        }  
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

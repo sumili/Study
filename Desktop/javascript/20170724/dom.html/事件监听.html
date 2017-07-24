@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <style type="text/css">
+            div{
+                width: 200px;
+                height: 200px;
+                background-color: red;
+            }
+        </style>
+        <script type="text/javascript">
+            // window.onload=function(){
+
+                var box = document.getElementById("box");
+                var oInput = document.getElementsByTagName("input")[0];
+
+                    box.onclick = fun;//注意这个fun后面是没有加();
+
+
+                    function fun(){
+                        // alert("我是一个盒子~你点我干嘛~");
+                        box.style.backgroundColor="purple";
+                        box.style.width="300px";
+                    }
+
+                    //可以得到是行内的样式
+                    // alert(box.style.width);
+                    //
+            //         //
+            //     oInput.onfocus=function(){
+            //         oInput.style.backgroundColor="orange";
+            //         oInput.value = "123";
+            //         oInput.style.color = "blue";
+            //     }
+            //     oInput.onblur=function(){
+            //         oInput.style.backgroundColor="white";
+            //         oInput.value = "我是一个文本输入框";
+
+            //     }
+
+            // }
+
+
+        </script>
+
+        <!--<script>
+            var oDiv = document.getElementById("oDiv");
+            var oImg = document.getElementById("oImg");
+            // alert(typeof oDiv);
+            oDiv.style.backgroundColor="#00f";
+            // alert(oImg.src);
+            oImg.src="img/2.png";
+            // alert(document.title);
+            document.title="今天好困呀~";
+        </script>-->
+
+
+    </head>
+    <body>
+        <div id="box">
+
+        </div>
+
+        <input type="text " value="我是一个文本输入框" />
+        <script type="text/javascript">//程序是自上而下，自左到右执行的，
+            window.onload=function(){
+
+                var box = document.getElementById("box");
+                var oInput = document.getElementsByTagName("input")[0];
+
+                    box.onclick = fun;//注意这个fun后面是没有加();
+
+
+                    function fun(){
+                        // alert("我是一个盒子~你点我干嘛~");
+                        box.style.backgroundColor="purple";
+                        box.style.width="300px";
+                    }
+
+                    //可以得到是行内的样式
+                    alert(box.style.width);
+                    
+                    
+                oInput.onfocus=function(){
+                    oInput.style.backgroundColor="orange";
+                    oInput.value = "123";
+                    oInput.style.color = "blue";
+                }
+                oInput.onblur=function(){
+                    oInput.style.backgroundColor="white";
+                    oInput.value = "我是一个文本输入框";
+
+                }
+
+            }
+
+
+        </script>
+        
+    </body>
+</html>

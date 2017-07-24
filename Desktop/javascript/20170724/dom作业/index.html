@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style type="text/css">
+        /*.divbox{
+            width:600px;
+            height:200px;
+            border: 10px solid #fff;;
+        }*/
+        div{
+            width:200px;
+            height:200px;
+            float:left;
+            margin: 10px;
+        }
+        /*.divbox>.odivs{
+           background-color: #fff;
+        }*/
+        .oDiv1{
+            background-color: #f00;
+        }
+        .oDiv2{
+            background-color: #ff0;
+        }
+        .oDiv3{
+            background-color: #0f0;
+        }
+
+    </style>
+</head>
+<body>
+        <div class="oDiv1 oDivs"></div>
+        <div class="oDiv2 oDivs"></div>
+        <div class="oDiv3 oDivs"></div>
+    <!--<div class="divbox">
+        <div class="oDiv1 odivs"></div>
+        <div class="oDiv2 odivs"></div>
+        <div class="oDiv3 odivs"></div>
+    </div>  -->
+
+    <script type="text/javascript">
+        oDiv = document.getElementsByClassName("oDivs");
+        // odiv = document.getElementsByClassName("odivs");
+
+        // for(var i=0;i<odiv.length;i++){
+        //     odiv[i]=function(){
+        //         this.style.display="block"
+        //     }
+        // }
+        
+        // for (var i=0;i<oDiv.length;i++){
+        //     oDiv[i].onclick=function (){
+        //         this.style.margin="";//当前对象本身 
+                
+
+        //         }
+        //     } 
+        // }
+
+        
+        // for (var i=0;i<oDiv.length;i++){
+        //     odiv[i].onclick=function (){
+        //     } 
+        // }
+
+        
+    </script>
+</body>
+</html>

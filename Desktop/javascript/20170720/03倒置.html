@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+        function rev(m){//6829
+            var a=(m+"").length;//得到循环次数
+            var b=0;//记录每次获得的数
+            for(var i=1;i<=a;i++){
+                var gewei=m%10;
+                m=(m-gewei)/10//减去最后一个数
+                b=b*10+gewei;
+            }return b;
+        }
+        console.log(rev(12345));
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

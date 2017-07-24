@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+        //3apple 
+        //2pear
+        //1peach
+        //apple+pear+peach=100
+        //3*apple+2*pear+peach<=200
+        //apple<peach
+        var count=0;
+        for(var peach=0;peach<100;peach++){//列举桃子所以可能性
+            for(var apple=0;apple<100;apple++){//列举苹果所有可能性
+                for(var pear=0;pear<100;pear++){
+                    if(peach+apple+pear==100&&3*apple+2*pear+peach==200){
+                        console.log(apple,pear,peach);
+                        count++
+                    }
+                }
+            }
+        }
+                        console.log(count);
+        
+        // var peach;
+        // var pear=100-peach-apple;
+        // for(var apple =0;apple<peach;apple++){
+            
+        // }
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

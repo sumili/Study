@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <script type="text/javascript">
+
+            //生成一个地雷，用随机数
+            //地雷1-100
+            var dilei = parseInt( Math.random() *100) +1;
+
+            //上限和下限
+            var shangxian = 100;
+            var xiaxian = 1;
+
+            //用户输入一个数字，死循环，直到踩到地雷
+            while(true){
+
+                //用户输入数字
+                var a = parseInt( prompt("请输入数字，范围" +xiaxian + "到" +shangxian));
+
+                // 判断
+                if( a > xiaxian && a<shangxian){
+
+                    //根据用户输入的数字，调整上限和下限
+                    //如果用户输入的数字，大于地雷，改变上限，反之就是改变下限
+
+                    if( a > dilei){
+                        shangxian = a;
+                    }else if(a < dilei){
+                        xiaxian = a;
+                    }else if( a == dilei){
+                        alert("你中奖了！！踩到地雷了！~");
+                        break;
+                    }
+
+                }else{
+                    alert("输入的数字不在范围内！请从新输入~");
+                }
+
+
+            }
+
+
+
+        </script>
+    </head>
+    <body>
+    </body>
+</html>

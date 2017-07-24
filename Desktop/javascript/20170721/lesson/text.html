@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+        // function rev(m){
+        //     var a=(m+"").length;
+        //     var b=0;
+        //     for(var i=1;i<=a;i++){
+        //         var gewei=m%10;
+        //             m=(m-gewei)/10;
+        //             b=b*10+gewei;
+        //     }
+        // }return b;
+            
+        // function pingfanghe(a,b){
+        //     function pingfang(m){
+        //         return Math.pow(m,2);
+        //     }
+        //     return pingfang(a)+pingfang(b);
+        // }
+        // // pingfang(4);
+        // alert(pingfanghe(2,3));
+        //作用域
+        function outer(){
+            var a=1;
+            inner();
+            function inner(){
+                var b=2;
+                console.log(a);
+                console.log(b);
+            }
+        }
+        outer();
+        console.log(a);
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

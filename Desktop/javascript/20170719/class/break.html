@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <script type="text/javascript">
+
+            // for(var i = 0;i<=100;i++){
+            //     console.log(i);
+
+            //     // 找到i = 5时候！立即终止循环
+            //     if( i == 5){
+            //         break;  //立即终止循环
+            //     }
+            // }
+
+            // break只中断最内层循环，外层循环还在继续
+            // 外层循环
+            // for( var i = 0;i<=10;i++){
+
+            //     // 内层循环
+            //     for( var j=0;j<=10;j++){
+
+            //         console.log(i,j);
+
+            //         if(j == 5){
+            //             break;
+            //         }
+            //     }
+            // }
+
+            // 需要给外层循环加上一个label
+            // 外层循环
+             waiceng:for( var i = 0;i<=10;i++){
+
+                // 内层循环
+                for( var j=0;j<=10;j++){
+
+                    console.log(i,j);
+
+                    if(j == 5){
+                        break waiceng;  //break label的语法
+                    }
+                }
+            }
+
+        </script>
+    </head>
+    <body>
+    </body>
+</html>

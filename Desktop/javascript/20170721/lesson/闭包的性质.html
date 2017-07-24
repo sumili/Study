@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <script type="text/javascript">
+
+            function outer(){
+                var count = 0;  //局部变量
+                function inner(){
+                    count++;
+                    console.log(count);
+                }
+
+                return inner;
+            }
+
+            var inn1 = outer();
+            var inn2 = outer();
+
+            inn1();   //1
+            inn1();   //2
+            inn1();   //3
+            inn2();   //1
+            inn2();   //2
+            inn1();   //4
+        </script>
+    </head>
+    <body>
+    </body>
+</html>

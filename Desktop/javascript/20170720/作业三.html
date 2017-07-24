@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <script type="text/javascript">
+
+
+            function rev(m){//6829
+                    var a=(m+"").length;//得到循环次数
+                    var b=0;//记录每次获得的数
+                    for(var i=1;i<=a;i++){
+                        var gewei=m%10;
+                        m=(m-gewei)/10//减去最后一个数
+                        b=b*10+gewei;
+                    }return b;
+                }
+                console.log(rev(12345));
+
+
+
+            function rev(a){
+
+                var b = 0; //每次调用这个函数的时候，b重置为0；
+
+                while(a){
+
+                    b = b * 10 + a % 10;
+
+                    a = parseInt( a / 10);
+                }
+
+                return b;
+            }
+
+            alert(rev(123456));
+        </script>
+    </head>
+    <body>
+    </body>
+</html>
