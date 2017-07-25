@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <script type="text/javascript">
+
+        function outer(m,n){
+            function inner(m){
+                alert(m+n);
+            }
+            return inner;
+        }
+
+        var inn = outer(3,4);
+
+        inn(6);  //10
+
+        </script>
+    </head>
+    <body>
+    </body>
+</html>
