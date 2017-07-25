@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <style type="text/css">
+            div{
+                width: 600px;
+                height: 100px;
+                border:1px solid gray;
+            }
+            p{
+                float:left;
+                width: 60px;
+                height: 60px;
+                background-color: #ccc;
+                margin-right: 10px;
+            }
+
+        </style>
+    </head>
+    <body>
+        <div id="box1">
+            <p></p>
+            <p></p>
+            <p></p>
+            <p></p>
+            <p></p>
+            <p></p>
+            <p></p>
+            <p></p>
+        </div>
+        <div id="box2">
+            <p></p>
+            <p></p>
+            <p></p>
+            <p></p>
+            <p></p>
+            <p></p>
+            <p></p>
+            <p></p>
+        </div>
+
+        <script type="text/javascript">
+            //点击第一排的p标签，第二排对应p变红
+            //得到两个p序列
+            var box1Ps = document.getElementById("box1").getElementsByTagName("p");
+            var box2Ps = document.getElementById("box2").getElementsByTagName("p");
+
+            // 编号法
+            //循环语句添加监听，给第一排所有p绑定事件
+            for( var i = 0;i<box1Ps.length;i++){
+                //编号
+                box1Ps[i].index = i;
+
+                //添加监听
+                box1Ps[i].onclick = function(){
+                    box2Ps[this.index].style.backgroundColor="red";
+                }
+
+
+            }
+            //
+
+
+            //方法2 IIFE
+            //循环语句添加监听，给第一排所有p绑定事件
+            // for( var i=0;i<box1Ps.length;i++){
+
+            //     (function(i){
+            //         box1Ps[i].onclick=function(){
+            //             box2Ps[i].style.backgroundColor="red";
+            //         }
+            //     })(i);
+
+            // }
+        </script>
+    </body>
+</html>

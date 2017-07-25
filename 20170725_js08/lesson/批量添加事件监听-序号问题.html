@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <style type="text/css">
+            p{
+                width: 60px;
+                height: 60px;
+                float:left;
+                margin-right: 10px;
+                background-color: yellowgreen;
+            }
+
+        </style>
+    </head>
+    <body>
+        <p></p>
+        <p></p>
+        <p></p>
+        <p></p>
+        <p></p>
+        <p></p>
+        <p></p>
+
+
+        <script type="text/javascript">
+            var oPs = document.getElementsByTagName("p");
+
+            //第一种IIFE
+            // for(var i=0;i<oPs.length;i++){
+            //     (function(i){
+            //         oPs[i].onclick =function(){
+            //             alert("我是老" +i+ "点我干嘛~");
+            //         }
+            //     })(i);
+
+            // }
+
+
+            //第二种  编号
+            for( var i=0;i<oPs.length;i++){
+                oPs[i].index = i;  //先编号，大家约定俗成，实际上叫什么都可以
+
+                oPs[i].onclick =function(){
+                    alert("我是老" + this.index + "点我干嘛~");
+                }
+            }
+
+
+        </script>
+    </body>
+</html>

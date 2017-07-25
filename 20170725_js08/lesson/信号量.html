@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <style type="text/css">
+            .oDiv{
+                width:200px;
+                height: 200px;
+                background-color: skyblue;
+                position: absolute;
+                top:100px;
+            }
+
+        </style>
+    </head>
+    <body>
+        <button>往左边</button>
+        <button>往右边</button>
+        <div class="oDiv" id="oDiv" style="left:100px;"></div>
+
+
+        <script type="text/javascript">
+            var btn1 = document.getElementsByTagName("button")[0];
+            var btn2 = document.getElementsByTagName("button")[1];
+            var oDiv = document.getElementById("oDiv");
+
+
+            btn1.onclick = function(){
+                // alert( oDiv.style.left);  // 100px
+
+                var a = parseInt(oDiv.style.left);
+
+                a -= 10;
+                oDiv.style.left = a + "px";
+            }
+
+            btn2.onclick = function(){
+
+                var a = parseInt(oDiv.style.left);
+
+                a += 10;
+                oDiv.style.left = a + "px";
+            }
+        </script>
+    </body>
+</html>

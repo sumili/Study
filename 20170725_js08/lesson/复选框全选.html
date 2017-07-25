@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+    </head>
+    <body>
+        <div id="box">
+            <p><input type="checkbox" checked/>吃饭</p>
+            <p><input type="checkbox" />吃饭</p>
+            <p><input type="checkbox" />吃饭</p>
+            <p><input type="checkbox" />吃饭</p>
+            <p><input type="checkbox" />吃饭</p>
+            <p><input type="checkbox" />吃饭</p>
+        </div>
+
+        <input type="button" value="选择" id="btn" />
+
+
+        <script type="text/javascript">
+            var aInputs = document.getElementsByTagName("input");
+            var btn = document.getElementById("btn");
+
+            //信号量
+            var state = 0; //都没选，1都选了
+
+            btn.onclick=function(){
+                //信号量 如果是 0 那么就要变成1，如果是1，就要变成0；
+                state = state == 0? 1 : 0;
+
+
+                // checked的状态，是""或者checked
+                var str = state == 0 ? "" : "checked";
+
+                //按钮文本
+                this.value = state == 0 ? "全选" : "全不选";
+
+
+                for(var i = 0;i<aInputs.length;i++){
+
+                    //批量设置所有复选框
+                    aInputs[i].checked = str;
+
+                }
+
+
+            }
+
+        </script>
+    </body>
+</html>

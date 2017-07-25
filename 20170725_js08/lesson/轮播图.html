@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+    </head>
+    <body>
+        <input type="button" value="上一张" id="leftBtn" />
+        <img src="img/1.jpeg" alt="" id="pic" />
+        <input type="button" value="下一张" id="rightBtn" />
+
+        <p>
+            <input type="text" id="numTxt" value="1" />
+            <input type="button" value="go" id="goBtn" />
+        </p>
+
+
+        <script type="text/javascript">
+            var leftBtn = document.getElementById("leftBtn");
+            var rightBtn = document.getElementById("rightBtn");
+            var pic = document.getElementById("pic");
+            var numTxt = document.getElementById("numTxt");
+            var goBtn = document.getElementById("goBtn");
+
+            var index = 1;  //图片编号 1-5
+
+            leftBtn.onclick = function(){
+                //先改变信号量
+                index--;
+                if(index<1 ){
+                    index = 5;
+                }
+
+                //调用业务函数
+                go();
+            }
+            rightBtn.onclick = function(){
+                //先改变信号量
+                index++;
+                if(index>5 ){
+                    index = 1;
+                }
+
+                //调用业务函数
+                go();
+            }
+            goBtn.onclick=function(){
+                // alert(numTxt.value);
+                index = numTxt.value;
+
+                //调用业务函数
+                go();
+            }
+
+            // 业务函数
+            function go(){
+                // pic.src = "img/1.jpeg";
+                pic.src = "img/" + index +  ".jpeg";
+            }
+        </script>
+    </body>
+</html>

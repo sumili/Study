@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <style type="text/css">
+            img{
+                position:absolute;
+                left:577px;
+                top:100px;
+            }
+        </style>
+    </head>
+    <body>
+        <input type="button" value="移动" id="btn" />
+        <img src="img/22.png" alt="" id="pic" />
+
+
+        <script type="text/javascript">
+            var oImg = document.getElementById("pic");
+            var btn = document.getElementById("btn");
+
+            //信号量
+            var oImgLeft = 577;
+
+            btn.onclick=function(){
+
+                //范围
+                // if( oImgLeft >0){
+                //     oImgLeft-=40;
+                // }else{
+                //     oImgLeft=0;
+                // }
+                oImgLeft-=40;
+                if(oImgLeft < 0){
+                    oImgLeft = 0;
+                }
+
+
+
+                // 赋值（移动）
+                oImg.style.left = oImgLeft + 'px';
+            }
+
+        </script>
+
+    </body>
+</html>

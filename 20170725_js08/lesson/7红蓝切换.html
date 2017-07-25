@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        div{
+            width: 100px;
+            height: 100px;
+            background-color: #f00;
+        }
+    </style>
+</head>
+<body>
+    <div id="box">
+    </div>
+    <script>
+        var box = document.getElementById("box");
+        var state = 0;//0蓝色； 1黑色
+        box.onclick =function(){
+            if(state==0){
+                state=1;
+                this.style.backgroundColor="red";
+            }else{
+                state=0;
+                this.style.backgroundColor="blue";
+            }
+        }
+    </script>
+</body>
+</html>

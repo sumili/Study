@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <script type="text/javascript">
+            var arr = [54,12,3,4,5,6,7,33,44];
+
+            for( var j = 0;j<arr.length-1;j++){
+
+                if(arr[j] > arr[j+1]){
+
+                    var temp = arr[j+1];
+                    //仓库 = 第二个12     仓库=12
+                    arr[j+1] = arr[j];
+                    //第二个12 = 第一个54     第二个=54
+                    arr[j] = temp;
+                    //第一个54 = 仓库12     第一个 12
+                }
+
+            }
+            console.log(arr);
+        </script>
+    </head>
+    <body>
+    </body>
+</html>

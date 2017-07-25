@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <style type="text/css">
+            *{
+                padding:0;
+                margin:0;
+            }
+            .content{
+                width: 400px;
+                height: 200px;
+                font-size: 18px;
+                line-height: 30px;
+                border:1px solid red;
+            }
+
+            .active-1{
+                width: 600px;
+                height: 300px;
+                background-color: skyblue;
+                font-size: 12px;
+                color:purple;
+            }
+            .active-2{
+                width: 300px;
+                height: 400px;
+                background-color: orange;
+                font-size: 16px;
+                color:yellow;
+            }
+        </style>
+    </head>
+    <body>
+        <input type="button" value="字号加大"  />
+        <input type="button" value="字号减小"  />
+        <input type="button" value="样式1"  />
+        <input type="button" value="样式2"  />
+
+        <div class="content" id="box">
+            <p>文字文字文字文字文字文字文字文字</p>
+            <p>文字文字文字文字文字文字文字文字</p>
+            <p>文字文字文字文字文字文字文字文字</p>
+        </div>
+
+
+        <script type="text/javascript">
+            var btn1 = document.getElementsByTagName("input")[0];
+            var btn2 = document.getElementsByTagName("input")[1];
+            var btn3 = document.getElementsByTagName("input")[2];
+            var btn4 = document.getElementsByTagName("input")[3];
+            var box = document.getElementById("box");
+
+            // 信号量
+            var fs = 18;
+
+            btn1.onclick = function(){
+                //先改变信号量
+                fs+=2;
+                if(fs >= 30){
+                    fs = 30;
+                }
+
+
+                // 业务
+                box.style.fontSize = fs + "px";
+            }
+            btn2.onclick = function(){
+                //先改变信号量
+                fs-=2;
+                if(fs <= 12){
+                    fs = 12;
+                }
+
+
+                // 业务
+                box.style.fontSize = fs + "px";
+            }
+
+            btn3.onclick = function(){
+               box.className = "active-1";
+            }
+            btn4.onclick = function(){
+               box.className = "active-2";
+            }
+        </script>
+    </body>
+</html>

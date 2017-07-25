@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <style type="text/css">
+            div{
+                width: 600px;
+                height: 100px;
+                border:1px solid gray;
+            }
+            p{
+                float:left;
+                width: 60px;
+                height: 60px;
+                background-color: #ccc;
+                margin-right: 10px;
+                border-radius: 50%;
+            }
+        </style>
+    </head>
+    <body>
+        <h1 id="title">哈哈</h1>
+
+        <div id="box1">
+            <p></p>
+            <p></p>
+            <p></p>
+            <p></p>
+            <p></p>
+            <p></p>
+            <p></p>
+            <p></p>
+        </div>
+
+        <script type="text/javascript">
+            var box = document.getElementById("box1");
+            var title = document.getElementById("title");
+            var oPs = box.getElementsByTagName("p");
+
+            //事件监听只有onmouseover没有onmouseout
+            //批量添加事件
+            for( var i=0;i<oPs.length;i++){
+                //编号
+                oPs[i].index = i;
+
+                oPs[i].onmouseover = function(){
+                    //碰到每个p的时候，实际上是两回事
+                    //第一件事，让所有人（包括自己）都变成灰色
+
+                    for(var j = 0;j<oPs.length;j++){
+                        oPs[j].style.backgroundColor="#ccc";
+                    }
+
+
+                    //第二件事，让自己变红
+                    this.style.backgroundColor="red";
+
+
+                    //第三件事
+                    // alert(title.innerHTML);
+                    title.innerHTML = this.index;
+                }
+
+
+            }
+
+
+        </script>
+    </body>
+</html>
