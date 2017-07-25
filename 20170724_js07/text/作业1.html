@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        div{
+            width:400px;
+            height:100px;
+        }
+        div:nth-of-type(2)>p{
+            visibility: hidden;
+        }
+        p{
+            float: left;
+            width:100px;
+            height:60px;
+        }
+        p:nth-child(1){
+            background-color: #f00;
+        }
+        P:nth-child(2){
+            background-color: #ff0;
+        }
+        p:nth-child(3){
+            background-color: #0ff;
+        }
+    </style>
+</head>
+<body>
+    <div id="box1">
+        <p></p>
+        <p></p>
+        <p></p>
+    </div>
+    <div id="box2">
+        <p></p>
+        <p></p>
+        <p></p>
+    </div>
+    <script>
+        var box1Ps =document.getElementById("box1").getElementsByTagName("p");
+        var box2Ps =document.getElementById("box2").getElementsByTagName("p");
+        //编号法
+        //循环语句添加监听，给第一排所有p绑定事件
+        var state = "visible";//1选择第一排:viisible，0选择第二排:hidden;
+
+        for( var i =0;i < box1Ps.length;i++){
+            //先编号
+            box1Ps[i].index = i;
+            //事件监听
+            box1Ps[i].onclick =function(){
+                //第一件事
+                box1Ps[this.index].style.visibility="hidden"; 
+                //第二件事
+                box2Ps[this.index].style.visibility="visible";
+            }
+            //先编号
+            box2Ps[i].index = i;
+            //事件监听
+            box2Ps[i].onclick =function(){
+                //第一件事
+                box2Ps[this.index].style.visibility="hidden"; 
+                //第二件事
+                box1Ps[this.index].style.visibility="visible";
+            }
+
+        }
+    </script>
+</body>
+</html>

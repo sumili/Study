@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+// 案例1
+         // alert(a);   //function a(){alert(4);}
+         // var a = 1;
+         // alert(a);   // 1
+         // function a(){alert(2);}//函数声明
+         // alert(a);   //  1
+         // var a = 3;
+         // alert(a);   // 3
+         // function a(){alert(4);}
+         // alert(a);   //3
+         //声明了一个函数，函数的预声明是无节操的
+
+//案例1的等价写法
+        //  function a(){alert(2);}//函数声明，
+        //  function a(){alert(4);}//函数声明
+        //  var a;
+        //  alert(a);
+        //  a=1;
+        //  alert(a);
+        //  a=3;
+        //  alert(a);
+        //  alert(a);
+// 总结：1:函数声明的预解析式优先。2:函数的调用""名称()"。3:参数和变量是不同的
+// 案例2
+        //  var a = 1;
+        //  function fun(){
+        //     alert(a);   // 未定义
+        //     var a = 2;
+        //  }
+        //  fun();
+        //  alert(a);  //  1
+//案例2的等价写法
+        //  function fun(){
+        //      var a;
+        //      alert(a);
+        //      a=2;
+        //  }
+        //  var a;
+        //  a=1;
+        //  fun();//undefined
+        //  alert(a);//1
+// 总结：1:函数声明的预解析式优先。2:函数的调用""名称()"。3:参数和变量是不同的
+// 案例3  (作用域链)
+         // var a = 1;
+         // function fun(){
+         //    alert(a);   //  1
+         //    a = 2;
+         // }
+         // fun();
+         // alert(a);  //  2
+// 案例3  (作用域链)等价写法       
+         var a;
+         function fun(){
+             alert(a);//1
+             a=2
+         }
+         a=1;
+         fun();//1
+         alert(a);//2
+// 总结：1:内部环境可以通过作用域链访问所有的外部环境，但外部环境不能访问内部环境中的任何变量和函数。
+// 总结：2：每个环境可以都可以向上搜索作用链，以查询变量和函数名;但任何环境都不能向下搜索作用域链而进入另一个执行环节。
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

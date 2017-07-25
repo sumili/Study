@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        html,body{
+            background-color: #3c3c3c;
+            position: relative;
+            width:100%;
+            height:100%;
+            overflow: hidden;
+        }
+        form{
+            position: absolute;
+        }
+        input{
+            width:200px;
+            height:50px;
+        }
+        #b_box{
+            width:200px;
+            height:200px;
+            border: 2px solid #fff;
+            background-color: #000;
+            border-radius: 100%;
+            position: absolute;
+            margin: auto;
+            top:0;
+            left:0;
+            right:0;
+            bottom:0;
+        }
+        #b_button{
+            width:400px;
+            height:800px;
+            background-color:rgba(233, 233, 233, 1);
+            position: absolute;
+            top:80px;
+            display: none;
+        }
+        li{
+            width:200px;
+            height:50px;
+            line-height: 50px;
+            font-size:18px;
+            color: #fff;
+            font-weight: bold;
+            font-family: "微软雅黑";
+            background-color: #3c3c3c;
+            margin-left: 50px;
+        }
+        li:hover{
+            color: #000;
+        }
+
+    </style>
+</head>
+<body>
+    <form>
+        <input type="text" value="不知道干啥用得一个文本框">
+        <input class="b_input" type="button" value="鬼一样的控制按钮">
+    </form>
+    <div id="b_box"></div>
+    <div id="b_button">
+        <ul>
+            <li>大小</li>
+            <li>300*300px</li>
+            <li>400*400px</li>
+            <li>500*500px</li>
+        </ul>
+        <ul>
+            <li>颜色</li>
+            <li>红色</li>
+            <li>黄色</li>
+            <li>蓝色</li>
+        </ul>
+        <ul>
+            <li>重置</li>
+            <li>关闭</li>
+        </ul>
+    </div>
+    </div>
+    <script>
+        var b_input = document.getElementsByClassName("b_input");
+        var b_button= document.getElementById("b_button");
+        var b_li=document.getElementsByTagName("li");
+        var b_box=document.getElementById("b_box");
+        // b_inputs.onclick = function(){
+        //     b_buttons.style.display="block";
+        // }
+        b_input[0].onclick = function (){
+        b_button.style.display="block";
+    }
+        b_li[1].onclick = function(){
+            b_box.style.width="300px";
+            b_box.style.height="300px";       
+        }
+        b_li[2].onclick = function(){
+            b_box.style.width="400px";
+            b_box.style.height="400px";       
+        }
+        b_li[3].onclick = function(){
+            b_box.style.width="500px";
+            b_box.style.height="500px";       
+        }
+        b_li[5].onclick = function(){
+            b_box.style.backgroundColor="#f00";       
+        }
+        b_li[6].onclick = function(){
+            b_box.style.backgroundColor="#ff0";       
+        }
+        b_li[7].onclick = function(){
+            b_box.style.backgroundColor="#0ff";       
+        }
+        b_li[8].onclick = function () {
+            b_box.style.backgroundColor = "#000";
+            b_box.style.height = "200px";
+            b_box.style.width = "200px";
+        }
+        b_li[9].onclick = function () {
+            b_button.style.display="none";
+        }
+    </script>
+</body>
+</html>

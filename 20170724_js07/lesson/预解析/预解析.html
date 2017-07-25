@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <script type="text/javascript">
+        /*
+             作用域
+                域：空间、范围、区域
+               作用：读 写
+
+                全局变量  全局函数
+                自上而下
+                函数
+                函数内部也是一个域
+
+                有内而外
+
+               浏览器
+               "js解析器"
+                  一.预解析
+                      1.找一些东西： var function 参数
+                          a = 1
+
+                        所有变量在 正式运行之前都被赋予一个值，未定义
+
+                        所有的函数，正式运行之前，都是这个函数快
+
+                        遇到重名的，只留一个
+                        变量和函数重名了，就留下函数
+
+                  二.逐行执行代码
+                       表达式 ： = + - * / %  参数
+
+         */
+
+         // 案例1
+
+         // alert(a);   //function a(){alert(4);}
+         // var a = 1;
+         // alert(a);   // 1
+         // function a(){alert(2);}
+         // alert(a);   //  1
+         // var a = 3;
+         // alert(a);   // 3
+         // function a(){alert(4);}
+         // alert(a);   //3
+
+          // 案例2
+         // var a = 1;
+         // function fun(){
+         //    alert(a);   // 未定义
+         //    var a = 2;
+         // }
+         // fun();
+         // alert(a);  //  1
+
+
+          // 案例3  (作用域链)
+         // var a = 1;
+         // function fun(){
+         //    alert(a);   //  1
+         //    a = 2;
+         // }
+         // fun();
+         // alert(a);  //  2
+
+          // 案例4
+         // var a = 1;
+         // function fun(a){
+         //    alert(a);   //未定义   参数开始的是未定义
+         //    a = 2;         //到这步后参数值为2
+         // }
+         // fun();
+         // alert(a);  //  1
+
+         // 案例5
+         var a = 1;
+         function fun(a){ //参数a是从全局变量a哪里获取的值为1
+                            // 但是这个a是参数，不是全局变量的a
+            alert(a);   //1
+            a = 2;
+            alert(a);  //2
+         }
+         fun(a);  //全局变量a
+         alert(a);  //  1
+
+
+
+        </script>
+    </head>
+    <body>
+    </body>
+</html>
