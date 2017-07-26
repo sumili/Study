@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <style type="text/css">
+            div{
+                width: 200px;
+                background-color: yellowgreen;
+                padding:10px 20px 30px;
+                border:10px solid red;
+            }
+        </style>
+    </head>
+    <body>
+        <div>
+            文字文字文字文字文字文字文字文字文字文字文
+        </div>
+
+
+        <script type="text/javascript">
+          var oDiv = document.getElementsByTagName("div")[0];
+
+          // alert(oDiv.style.width);
+          // console.log(window.getComputedStyle(oDiv));
+          // console.log(window.getComputedStyle(oDiv).getPropertyValue("width"));
+
+
+          //不用写window
+          // console.log(getComputedStyle(oDiv).getPropertyValue("width"));
+
+          //注意引号里面的值 不是驼峰命名
+          // console.log(getComputedStyle(oDiv).getPropertyValue("padding-left"));
+
+          //可以不写getPropertyValue
+          // console.log( getComputedStyle(oDiv)["paddingLeft"]);
+          // console.log( getComputedStyle(oDiv)["padding-left"]);
+
+          //所谓的计算后样式，就是不一定显示在css里面罗列
+          // console.log( getComputedStyle(oDiv)["height"]);
+          // alert( getComputedStyle(oDiv)["height"]);
+          //
+
+
+          //上面写的IE6,7,8，一律视为错误
+          // ======================================
+          alert( oDiv.currentStyle.width);  //200px
+
+          // alert( oDiv.currentStyle.paddingLeft);  //20px
+
+          // alert( oDiv.currentStyle.height);   //auto
+
+          // alert( oDiv.currentStyle["width"] );
+        </script>
+    </body>
+</html>
