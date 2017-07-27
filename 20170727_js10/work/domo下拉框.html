@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        #box{
+            margin: 100px auto;
+            width:100px;
+            height: 30px;
+            position: relative;
+            background-color: #000;;
+        }
+        #box:hover>#spanbox{
+            display: block;
+        }
+        #spanbox{
+            display: none;
+        }
+
+        #box div{
+            cursor: pointer;
+        }
+        span{
+            font-size:14px;
+            color: #f00;
+            line-height: 30px;
+            position: relative;
+            /*background-color: #c3c3c3;*/
+        }
+
+    </style>
+<body>
+    <!--提示：切换信号量-->
+    <div id="box">
+            <div class="oTop"><span>找案例</span></div>
+        <div id= "spanbox">
+            <div><span>找图片</span></div>
+            <div><span>找设计师</span></div>
+            <div><span>找问答</span></div>
+        </div>
+    </div>
+    <script>
+        //第一步：获取所有事件中的元素
+        var oBox = document.getElementById("box");
+        var oSpan = document.getElementsByTagName("span");
+
+
+        // 第二步：获得信号量
+        var oSpan_a = oSpan[0].innerHTML;
+        var oSpan_b = oSpan[1].innerHTML;
+        var oSpan_c = oSpan[2].innerHTML;
+        var oSpan_d = oSpan[3].innerHTML;
+
+        //用函数封装多个语句
+        function tab(){
+            
+            //监听事件遍历
+            for(var i = 0 ; i < oSpan.length ; i++){
+
+                //先编号，增加index属性
+                oSpan[i].index = i;
+
+                //仓库
+                var store =  "";
+
+                oSpan[i].onclick = function(){
+
+                    store = oSpan[0].innerHTML;
+
+                    oSpan[0].innerHTML = this.innerHTML;
+
+                    this.innerHTML  = store;
+
+                }
+            }
+
+        }
+        tab();
+    </script>
+</body>
+</html>
