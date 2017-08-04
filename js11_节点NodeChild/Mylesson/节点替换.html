@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+    </head>
+    <body>
+        <div>
+            <p>杨幂</p>
+            <p id="oP">Angelababy</p>
+            <p>刘诗诗</p>
+        </div>
+
+        <script type="text/javascript">
+            var oDiv =document.getElementsByTagName("div")[0];
+            var oP = document.getElementById("oP");
+
+            //创建节点，孤儿节点
+            var oP1 = document.createElement("p");
+
+            oP1.innerHTML = "黄晓明";
+
+            //替换节点
+            oDiv.replaceChild(oP1, oP);
+
+
+        </script>
+    </body>
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <style type="text/css">
+            div{
+                width: 200px;
+                height: 200px;
+                background-color: yellowgreen;
+            }
+            p{
+                width: 100px;
+                height: 100px;
+                background-color: gold;
+            }
+        </style>
+    </head>
+    <body>
+        <div>
+            <p></p>
+        </div>
+
+        <script type="text/javascript">
+            var oDiv = document.getElementsByTagName("div")[0];
+
+            var count = 0;
+            // oDiv.onmouseover=function(event){
+            //      // 计数器累加并打印
+            //     console.log(++count);
+            //     // event.bubbles检测事件是否冒泡类型
+            //     console.log(event.bubbles);
+
+            // }
+            // oDiv.onmouseout=function(event){
+            //      // 计数器累加并打印
+            //     console.log(++count);
+            //     // event.bubbles检测是否冒泡
+            //     console.log(event.bubbles);
+
+            // }
+            // onmouseenter穿入onmouseleave穿出
+            oDiv.onmouseenter=function(event){
+                console.log(++count);
+                console.log(event.bubbles);//不是起泡类型
+
+            }
+            oDiv.onmouseleave=function(event){
+                console.log(++count);
+                console.log(event.bubbles);
+
+            }
+
+        </script>
+    </body>
+</html>

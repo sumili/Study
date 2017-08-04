@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <script type="text/javascript">
+            var str = "adf858e698adsf01ada0d84f09adsf12";
+
+
+
+
+             function findNumber(str){
+                var arr = [];  //一个空数组，存放符合条件的字符串
+                var newStr = '';  //用来存放+=后数字的
+                for(var i=0;i<str.length;i++){
+                    // 判断是不是数字
+                    if(str.charAt(i)<=9 && str.charAt(i)>=0){
+                        // 存储到空字符串中
+                        newStr+=str.charAt(i);
+                    }else{
+                        // 碰到不是数字的，判断newStr有没有
+                        if(newStr) {
+                            arr.push( newStr );
+                            newStr="";
+                        }
+
+                    }
+                    }
+                     if(newStr){
+                            arr.push( newStr );
+                            newStr="";
+                     }
+
+                return arr;
+            }
+
+            alert( findNumber(str) );
+        </script>
+
+    </head>
+    <body>
+    </body>
+</html>

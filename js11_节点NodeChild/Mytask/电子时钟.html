@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+            font-size:40px;
+        }
+        img{
+            width: 40px;
+        }
+    </style>
+</head>
+<body>
+    <img src="img/0.png" alt="">
+    <img src="img/0.png" alt="">
+    :
+    <img src="img/0.png" alt="">
+    <img src="img/0.png" alt="">
+    :
+    <img src="img/0.png" alt="">
+    <img src="img/0.png" alt="">
+    
+    <button>点击替换</button>
+
+
+    <script>
+        //获取系统的时间
+        // var oDate = new Date();
+        
+        // // console.log(oDate);
+        // console.log(oDate.getHours());//得到小时
+        // console.log(oDate.getMinutes());//得到分钟
+        // console.log(oDate.getSeconds());//得到秒
+
+        //获取触发事件的元素以及被触发的元素
+
+        var oImg = document.getElementsByTagName("img");
+        var oBtn = document.getElementsByTagName("button");
+
+        //第一步：if分支两种情况；
+
+        function toDouble(num){
+
+            if (num < 10 ){
+                return "0"+num ;
+            }else{
+                return ""+ num ;
+            }
+        }
+
+        function fun(){
+            var oDate = new Date();
+
+            // 用字符串连接  
+            var str = toDouble(oDate.getHours())+toDouble(oDate.getMinutes())+toDouble(oDate.getSeconds());
+           
+            for ( var i = 0 ; i < str.length ;i++){
+
+                oImg[i].src = "img/"+str[i]+".png";
+            }
+        }
+
+    setInterval(fun,1000);
+
+    fun();
+
+
+//怎么实现页面是的数字是一只变化
+//点击刷新时时间不显示为000000；
+
+
+    </script>
+</body>
+</html>

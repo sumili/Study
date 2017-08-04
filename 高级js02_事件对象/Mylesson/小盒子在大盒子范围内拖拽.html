@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <style type="text/css">
+            *{
+                padding:0;
+                margin:0;
+            }
+            div{
+                width: 500px;
+                height: 400px;
+                border: 1px solid red;
+                margin:100px;
+                position:relative;
+            }
+            div>p{
+                width: 60px;
+                height: 60px;
+                background-color: gold;
+                position:absolute;
+                top:0;
+                left:0;
+            }
+        </style>
+    </head>
+    <body>
+        <div>
+            <p></p>
+        </div>
+
+
+        <script type="text/javascript">
+            var oDiv = document.getElementsByTagName("div")[0];
+            var oP = document.getElementsByTagName("p")[0];
+
+            //拖拽给p标签
+
+            op
+            oP.onmousedown = function(e){
+                e = e || window.event;
+
+                //增量，这个是当前鼠标的视口位置-p标签相对于父亲的位置
+                //所以减出来的结果，就是把oDiv的相对视口位置给的出来了
+                var disX = e.clientX - oP.offsetLeft;
+                var disY = e.clientY - oP.offsetTop;
+
+                oDiv.onmousemove = function(e){
+                    e = e || window.event;
+
+                    var x = e.clientX - disX;
+                    var y = e.clientY - disY;
+
+                    //在大盒子中拖拽，范围设置
+                    if( x <0 ) x = 0;
+                    if( y <0 ) y = 0;
+
+                    if( x > oDiv.clientWidth- oP.clientWidth) {
+                        x = oDiv.clientWidth- oP.clientWidth;
+                    }
+                    if( y > oDiv.clientHeight- oP.clientHeight) {
+                        y = oDiv.clientHeight- oP.clientHeight;
+                    }
+
+                    oP.style.left = x + "px";
+                    oP.style.top = y + "px";
+
+                }
+                oDiv.onmouseup = function(){
+                    oDiv.onmousemove = null;
+                }
+
+
+
+            }
+
+
+        </script>
+    </body>
+</html>

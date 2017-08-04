@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <style type="text/css">
+            body{height: 6000px;}
+            div{width: 200px;height: 200px;background-color: gold;}
+        </style>
+    </head>
+    <body>
+
+        <div></div>
+
+        <script type="text/javascript">
+            var oDiv = document.getElementsByTagName("div")[0];
+
+            //有三个兼容
+
+            function mousewheelhandler(event){
+                event = event || window.event;
+
+                //阻止默认事件
+                if(event.preventDefault){
+                    event.preventDefault();
+                }else{
+                    event.returnValue = false;
+                }
+
+                //Chrome，IE用的是event.wheelDelta
+                if( event.wheelDelta ){
+                    var direction = event.wheelDelta > 0 ? 1 : -1;
+
+                // 三元运算符 判断鼠标滚轮如果是
+                // 往上滚动 120  1  往下滚动 -120 -1
+                }else{
+                    //火狐用的是event.detail
+                    var direction = event.detail > 0 ? -1 : 1;
+
+                    // 三元运算符 判断鼠标滚轮如果是
+                // 往上滚动 -3  1  往下滚动 3 -1
+                }
+
+
+                oDiv.innerHTML = direction;
+            }
+
+            // 这里不用根据不同浏览器进行判断，这是因为事件添加了如果浏览器不认识，不报错
+            // 给Chrome IE添加事件
+            oDiv.onmousewheel = mousewheelhandler;
+
+            try{
+                oDiv.addEventListener("DOMMouseScroll", mousewheelhandler, false);
+            }catch(err){
+
+            }
+
+
+        </script>
+    </body>
+</html>

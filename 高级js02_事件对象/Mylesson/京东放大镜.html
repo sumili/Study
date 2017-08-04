@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <style type="text/css">
+            *{
+                padding:0;
+                margin:0;
+            }
+            .smallPic{
+                width: 350px;
+                height: 350px;
+                border:1px solid #ccc;
+                margin:100px;
+                position: relative;
+            }
+            .smallPic .zoom{
+                position:absolute;
+                top:100px;
+                left:100px;
+                width: 175px;
+                height: 175px;
+                background-color: #FEDE4F;
+                opacity: 0.5;
+                display:none;
+            }
+            .bigPic{
+                width: 400px;
+                height: 400px;
+                background:url(img/da.jpg) no-repeat;
+                position:absolute;
+                top:100px;
+                left:500px;
+                display:none;
+            }
+
+        </style>
+    </head>
+    <body>
+        <div class="smallPic" id="smallPic">
+            <img src="img/xiao.jpg" alt="" />
+            <div class="zoom" id="zoom"></div>
+        </div>
+
+        <div class="bigPic" id="bigPic"></div>
+
+        <script type="text/javascript">
+            var smallPic = document.getElementById("smallPic");
+            var zoom = document.getElementById("zoom");
+            var bigPic = document.getElementById("bigPic");
+
+            // 比例怎么算 ？ 大图 800*800 大图盒子 400*400
+            // 小图盒子   350*350  放大镜 175*175
+            // 所以放大镜行程 175   大图总行程 400
+
+            var rate = 400/175;
+
+            //鼠标移入显示
+            smallPic.onmouseover=function(){
+                zoom.style.display = "block";
+                bigPic.style.display = "block";
+
+            }
+            //鼠标移出隐藏
+            smallPic.onmouseout=function(){
+                zoom.style.display = "none";
+                bigPic.style.display = "none";
+
+            }
+
+            smallPic.onmousemove = function(event){
+                event = event || window.event;
+
+                //得到页面卷动值
+                var scrollTop = document.body.scrollTop || document.documentElement.scrollTop;
+                var scrollLeft = document.body.scrollLeft || document.documentElement.scrollLeft;
+
+                var x = event.clientX - (getAllLeft(smallPic) - scrollLeft  ) - 87;
+                var y = event.clientY - (getAllTop(smallPic) - scrollTop  ) -87;
+
+                //范围
+                if( x < 0) x = 0;
+                if( y < 0) y = 0;
+                if( x > 175) x = 175;
+                if( y > 175) y = 175;
+
+                // 放大镜移动
+                zoom.style.left = x + "px";
+                zoom.style.top = y + "px";
+
+                // 小图每移动1px 大图移动相应比例的距离
+                bigPic.style.backgroundPosition = -x*rate + "px"+" " + -y*rate+"px";
+            }
+
+
+            function getAllTop(obj){
+            //累加器，累加器的初始值不是0，而是自己现在的offsetTop
+            //一会儿while语句直接从他父级开始
+            var allTop = obj.offsetTop;
+
+            //当前正算高度的元素
+            var currentObj = obj;
+            while( currentObj = currentObj.offsetParent){
+                allTop += currentObj.offsetTop;
+            }
+
+            return allTop;
+        }
+
+        function getAllLeft(obj){
+            //累加器，累加器的初始值不是0，而是自己现在的offsetLeft
+            //一会儿while语句直接从他父级开始
+            var allLeft = obj.offsetLeft;
+
+            //当前正算高度的元素
+            var currentObj = obj;
+            while( currentObj = currentObj.offsetParent){
+                allLeft += currentObj.offsetLeft;
+            }
+
+            return allLeft;
+        }
+
+        </script>
+    </body>
+</html>

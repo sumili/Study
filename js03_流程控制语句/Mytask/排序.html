@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+
+
+
+        // var n = 1452;
+
+        
+        var arr = new Array();
+        for ( var i = 0 ; i < 5 ; i++ ){
+             arr[i] = parseInt(prompt("请输入一个数"));
+        }
+        //input 5 3 1 2 4    ///output 1 2 3 4 5
+        var max = arr.length;
+
+        // alert(arr.length);
+        
+        for ( i = 0 ;i < max ; i++){ //  得到下标
+            // var i = arr[i];//将数组对应的下标
+
+            var store;
+            for ( j = 0 ; j < max - i; j++)
+            {   
+                if ( arr[i] < arr[j])
+                {
+                    store = arr[j]
+                    arr[j] = arr[i];
+                    arr[i] = store;
+                }
+            }
+        }
+            console.log(arr);
+       q
+    </script>
+</body>
+</html>

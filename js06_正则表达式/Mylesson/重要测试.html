@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var str = "ABCDEFG";
+        var re = /[A-Z]/;
+
+        // console.log( str.match(re));//A
+        // console.log( str.match(re));//A
+        // console.log( str.match(re));//A
+        
+        // console.log(re.exec(str));//A//找到了就返回数组
+        // console.log(re.exec(str));//A
+        // console.log(re.exec(str));//A
+
+
+        var str = "ABCDEFG";
+        var re = /[A-Z]/g;
+
+        console.log( str.match(re));//A,B,C,D,E,F,G
+        console.log( str.match(re));//A,B,C,D,E,F,G
+        console.log( str.match(re));//A,B,C,D,E,F,G
+        
+        console.log(re.exec(str));//A
+        console.log(re.exec(str));//B
+        console.log(re.exec(str));//C
+        console.log(re.exec(str));//D
+        //因为参数是一个数组
+
+        // <script type="text/javascript">
+        //     var str = "aaacccbbbbeebbccbbbaa";
+
+        //     // 通过match方法，得到匹配正则的内容
+        //    console.log( str.match(/b+/g)); // bbbbb,bb,bbb,
+
+        //    console.log( str.match(/(\w)\1+/)); // aaa ,a
+        //    //没有加g的时候保留()的规则
+        //    console.log( str.match(/bb/));// bb
+
+        //    window.test = str.match(/(\w)\1+/);
+        </script>
+    </script>
+</body>
+</html>

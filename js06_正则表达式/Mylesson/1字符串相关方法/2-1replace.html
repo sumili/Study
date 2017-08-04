@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <script type="text/javascript">
+
+            var str = "www.ucai.cn";
+
+
+            // 替换str.replace（）第一个参数正则，替换的内容
+            // console.log( str.replace( /ucai\.cn/,"ucai.com"));
+            //
+            // 第一个参数正则，第二个参数是一个函数，通过return得到内容
+            // console.log( str.replace( /ucai\.cn/,function(){
+            //     return "ucai.com";
+            // }));
+
+            var str = "我是字符串，数字123要消失了";
+            console.log(str.replace(/123/,function(){
+                return "新的一二三哦";
+            }))//我是字符串，数字(新的一二三哦)要消失了
+            console.log(typeof str);string
+        </script>
+    </head>
+    <body>
+    </body>
+</html>

@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <style type="text/css">
+            *{
+                padding:0;
+                margin:0;
+            }
+            .box{
+                width: 800px;
+                height: 400px;
+                border:1px solid red;
+                margin:50px auto;
+                position:relative;
+                overflow: hidden;
+            }
+            .box .content{
+                position:absolute;
+                width: 740px;
+                top:0;
+                left:0;
+                line-height: 150%;
+                font-size: 14px;
+                padding:20px;
+            }
+            .box .content p{
+                margin-bottom: 20px;
+            }
+            .box .bar{
+                position:absolute;
+                top:0;
+                right: 0;
+                width: 20px;
+                height: 400px;
+                background-color: #ccc;
+            }
+            .box .bar b{
+                position:absolute;
+                width: 20px;
+                height: 34px;
+                background-color: orange;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="box" id="box">
+            <div class="bar" id="bar">
+                <b id="barB"></b>
+            </div>
+            <div class="content" id="content">
+                <p>多家海滨浴场现“人狗同浴” 浴场：无权禁止狗入内</p>
+                <p>多家海滨浴场现“人狗同浴” 浴场：无权禁止狗入内</p>
+                <p>多家海滨浴场现“人狗同浴” 浴场：无权禁止狗入内</p>
+                <p>多家海滨浴场现“人狗同浴” 浴场：无权禁止狗入内</p>
+                <p>多家海滨浴场现“人狗同浴” 浴场：无权禁止狗入内</p>
+                <p>多家海滨浴场现“人狗同浴” 浴场：无权禁止狗入内</p>
+                <p>多家海滨浴场现“人狗同浴” 浴场：无权禁止狗入内</p>
+                <p>多家海滨浴场现“人狗同浴” 浴场：无权禁止狗入内</p>
+                <p>多家海滨浴场现“人狗同浴” 浴场：无权禁止狗入内</p>
+                <p>多家海滨浴场现“人狗同浴” 浴场：无权禁止狗入内</p>
+                <p>多家海滨浴场现“人狗同浴” 浴场：无权禁止狗入内</p>
+                <p>多家海滨浴场现“人狗同浴” 浴场：无权禁止狗入内</p>
+                <p>多家海滨浴场现“人狗同浴” 浴场：无权禁止狗入内</p>
+                <p>多家海滨浴场现“人狗同浴” 浴场：无权禁止狗入内</p>
+                <p>多家海滨浴场现“人狗同浴” 浴场：无权禁止狗入内</p>
+                <p>多家海滨浴场现“人狗同浴” 浴场：无权禁止狗入内</p>
+                <p>多家海滨浴场现“人狗同浴” 浴场：无权禁止狗入内</p>
+                <p>多家海滨浴场现“人狗同浴” 浴场：无权禁止狗入内</p>
+                <p>多家海滨浴场现“人狗同浴” 浴场：无权禁止狗入内</p>
+                <p>多家海滨浴场现“人狗同浴” 浴场：无权禁止狗入内</p>
+                <p>多家海滨浴场现“人狗同浴” 浴场：无权禁止狗入内</p>
+                <p>多家海滨浴场现“人狗同浴” 浴场：无权禁止狗入内</p>
+                <p>多家海滨浴场现“人狗同浴” 浴场：无权禁止狗入内</p>
+                <p>多家海滨浴场现“人狗同浴” 浴场：无权禁止狗入内</p>
+                <p>多家海滨浴场现“人狗同浴” 浴场：无权禁止狗入内</p>
+                <p>多家海滨浴场现“人狗同浴” 浴场：无权禁止狗入内</p>
+                <p>多家海滨浴场现“人狗同浴” 浴场：无权禁止狗入内</p>
+                <p>多家海滨浴场现“人狗同浴” 浴场：无权禁止狗入内</p>
+                <p>多家海滨浴场现“人狗同浴” 浴场：无权禁止狗入内</p>
+                <p>多家海滨浴场现“人狗同浴” 浴场：无权禁止狗入内</p>
+                <p>多家海滨浴场现“人狗同浴” 浴场：无权禁止狗入内</p>
+                <p>多家海滨浴场现“人狗同浴” 浴场：无权禁止狗入内</p>
+                <p>多家海滨浴场现“人狗同浴” 浴场：无权禁止狗入内</p>
+                <p>多家海滨浴场现“人狗同浴” 浴场：无权禁止狗入内</p>
+                <p>多家海滨浴场现“人狗同浴” 浴场：无权禁止狗入内</p>
+                <p>多家海滨浴场现“人狗同浴” 浴场：无权禁止狗入内</p>
+                <p>多家海滨浴场现“人狗同浴” 浴场：无权禁止狗入内</p>
+                <p>多家海滨浴场现“人狗同浴” 浴场：无权禁止狗入内</p>
+                <p>多家海滨浴场现“人狗同浴” 浴场：无权禁止狗入内</p>
+                <p>多家海滨浴场现“人狗同浴” 浴场：无权禁止狗入内</p>
+            </div>
+        </div>
+        <script>
+            //得到元素
+            var box = document.getElementById("box");
+            var content = document.getElementById("content");
+            var barB = document.getElementById("barB");
+            console.log("我是获取元素阶段");
+
+            //小盒子与大内容比 
+            var rate = box.clientHeight / content.clientHeight;
+            //内容越多，滑块越小// 都需要与box对比
+
+            rate = rate>1 ? 1 : rate;
+
+            //设置滑块的一个初始高度
+            barB.style.height = box.clientHeight*rate+"px";
+            console.log("我是比例的后面");
+            console.log(rate);
+            console.log(barB.style.height);
+            //事件监听
+            //who>>barB  dowhat：跟随鼠标一起动 ，让content的内容也一起动
+
+            barB.onmousedown = function(event){//do1，do2和do3都包含在do1里面
+
+                //先考虑兼容问题
+                // event = event || window.event;
+
+                //鼠标按住时，得到鼠标相对于barB左上角的位置:只需要一个top
+                var barB_Y = event.clientY - barB.offsetTop;//老师这里是减去barB.offsetTop
+                
+                //do2：obarB跟着鼠标一起动,这里不要选鼠标来除法事件，这样即使不按住鼠标
+                //即onmousedown,obarB也能跟着鼠标一起动了,和实际想要的效果不一致，所以是document来触发
+                console.log(barB_Y);
+                console.log(event.clientY);
+                console.log(barB.offsetTop);
+
+
+                document.onmousemove =function (event){
+
+                    //先考虑兼容
+                    event = event || window.event;
+                    //oBar 的位置改变  //同时conten的内容与鼠标往相反的方向移动
+                    //要判断obarB的临界点
+                     var y = event.clientY-barB_Y;
+
+                    // barB.style.top = event.clientY - barB_Y+"px";
+                    // if( barB.offsetTop >box.clientHeight-barB.clientHeight){
+                    //     barB.offsetTop = box.clientHeight-barB.clientHeight;
+                    // }if(barB.offsetTop < 0){
+                    //     barB.offsetTop = 0;//
+                    // }//barB.offsetTop无法直接复制和改动所以要先把他们肤质给变量
+                    console.log(barB.offsetTop);//11
+                    console.log(box.clientHeight-barB.clientHeight);//305
+
+                    //效果优化：content比例升高，内容比滑块大，随意内容应该步大/速度快
+                    //内容：滑块 = 1px ：
+
+                    content.style.top = -parseInt(barB.style.top)/rate +"px";//bar.style.top是字符串，******不能直接参与运算******
+                    console.log( barB.style.top);
+                    console.log( rate);
+                    console.log( content.style.top);
+
+                    return false;//这样就不会圈选文字了
+                }
+                //放开鼠标
+                document.onmouseup = function(){
+                    document.onmousemove = null;
+                }
+
+            }
+
+
+
+        </script>
+    </body>
+</html>

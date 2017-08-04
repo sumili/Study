@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        #oDiv{
+            position: absolute;
+            width: 100px;
+            height: 100px;
+            background-color: #000;
+        }
+    </style>
+</head>
+<body>
+    <div id = "oDiv"></div>
+    <script>
+
+        var oDiv = document.getElementById("oDiv");
+
+        //函数封装：理清需要的事件
+        //1:鼠标按住[obj]
+        //2.鼠标移动[obj移动]
+        //3.鼠标放开[移动结束在当前位置]
+        //4：判断3个事件需要什么参数
+
+        mouseDrag(oDiv);
+        function mouseDrag(obj){
+   
+            //最大一个事件,记得把所有的oDiv换成obj
+            obj.onmousedown = function(event){
+                //鼠标按住，得到oDiv的位置(鼠标的位置)
+                //存储两个值，鼠标当前位置减去鼠标当前拖拽div的left、top
+
+                //divX = event.clientX - this.offsetLeft;
+                //你说是divX是鼠标相对于方块的位置，但是爸爸不是这样想的
+                //因为：图1
+
+                var divX = event.clientX - this.offsetLeft;
+                var divY = event.clientY - this.offsetTop;
+                //当鼠标松开是时，清楚所有，停在当前的位置
+
+            //鼠标动的时候，对象也跟着一起动//这里是文档的鼠标移动，
+            //如果选对象，则不需要按住，对象也能移动，与题目不符合
+                document.onmousemove = function(event){//这个事件可以理解
+
+                //对象的位置也发生变化
+                    obj.style.left = event.clientX-divX +"px";
+                    obj.style.top = event.clientY-divY + "px";
+                }
+
+                document.onmouseup = function(){
+
+                    //按住事件需要清除与不清楚不影响结果，那位什么老师的代码中没有清楚呢
+                    document.onmouseup = document.onmousemove = null; 
+                }
+
+            }
+            // return false;
+        }
+
+    </script>
+</body>
+</html>

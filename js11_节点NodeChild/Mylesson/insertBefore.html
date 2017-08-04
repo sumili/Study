@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+    </head>
+    <body>
+        <input type="text" id="txt" />
+        <input type="button" value="点我" id="btn" />
+        <ul>
+            <li>我是第1个</li>
+            <li>我是第2个</li>
+            <li>我是第3个</li>
+            <li>我是第4个</li>
+        </ul>
+
+        <script type="text/javascript">
+            var oUl = document.getElementsByTagName("ul")[0];
+            var lis = oUl.getElementsByTagName("li");
+            var txt = document.getElementById("txt");
+            var btn = document.getElementById("btn");
+
+            btn.onclick = function(){
+                console.log(lis);
+
+                //创建一个新的li，创建出来以后就是孤儿节点
+                var oLi = document.createElement("li");
+
+                //改变li的内容 innerHTML
+                oLi.innerHTML = txt.value;
+
+                //在lis[].的前面插入
+                oUl.insertBefore(oLi,lis[2]);
+            }
+
+        </script>
+    </body>
+</html>

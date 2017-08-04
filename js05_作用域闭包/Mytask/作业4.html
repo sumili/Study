@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <script type="text/javascript">
+
+        //得到a的约数和
+            function yueshuhe(a){
+                var sum = 0;  //累加器
+                for(var i =1 ;i<a;i++){
+                    //找到约数
+                    if( a % i == 0){
+                        // 让约数相加
+                        sum+=i;
+                    }
+
+                }
+                return sum;
+            }
+            // console.log(yueshuhe(10));
+
+
+            //亲密数
+            for( var A = 1;A<=3000;A++){
+                var B = yueshuhe(A);
+                if( A != B && yueshuhe(B)==A){
+                    console.log(A,B);
+                }
+            }
+
+        </script>
+    </head>
+    <body>
+    </body>
+</html>

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <style type="text/css">
+            p{
+                width: 30px;
+                height: 30px;
+                background-color: #ccc;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="box">
+            <p></p>
+            <p></p>
+            <p></p>
+            <p id="xiaoming">xiaoming</p>
+            <p></p>
+            <p></p>
+        </div>
+
+
+        <script type="text/javascript">
+            var oDiv = document.getElementById("box");
+            var xiaoming = document.getElementById("xiaoming");
+
+            // // 返回一个obj的前面一个兄弟节点
+            // function prevSibling(obj){
+            //     //把小明这个p标签给变量prev
+            //     var prev = obj;
+            //     // 找prev的上一个节点，循环
+            //     while( prev = prev.previousSibling){
+            //         // 判断找到的节点是不是元素节点
+            //         if( prev.nodeType == 1){
+            //             // 如果是元素节点，返回
+            //             return prev;
+            //         }
+
+            //     }
+            //     // 如果没有返回一个null
+            //     return null;
+            // }
+
+            // prevSibling(xiaoming).style.backgroundColor="red";
+
+
+            // 返回obj前面所有的元素节点
+            function prevAll(obj){
+                // var prev = obj;
+                var arr = [];
+
+
+            //     while( prev = prev.previousSibling){
+            //         // 判断找到的节点是不是元素节点
+            //         if( prev.nodeType == 1){
+            //             // 如果是元素节点，返回
+            //             arr.push(prev);
+            //         }
+
+            //     }
+            //     return arr;
+            // }
+
+
+            while( obj = obj.previousSibling){
+                                // 判断找到的节点是不是元素节点
+                                if( obj.nodeType == 1){
+                                    // 如果是元素节点，返回
+                                    arr.push(obj);
+                                }
+
+                            }
+                            return arr;
+            }
+
+            var array = prevAll(xiaoming);
+            for( var i=0;i<array.length;i++){
+                array[i].style.backgroundColor="red";
+            }
+
+        </script>
+    </body>
+</html>

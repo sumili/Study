@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <script type="text/javascript">
+
+            // function sum(a,b){
+            //     console.log(a+b);
+            // }
+
+            // sum(3,5);   //8
+            // sum(8,11);   //19
+            // sum("5",12);   //512
+            // sum(10);   //NaN
+            // sum(10,20,30,40,3,4,65,66);  //30
+
+            // 封装一个函数，函数计算m - n的和
+            // m 3- n7   3,4,5,6,7
+            function sum(m,n){
+                //累加器
+                var s = 0;
+
+                for(var i = m;i<=n;i++){
+                    s+=i;
+                }
+                console.log(s);
+
+            }
+            function sum(m,n){
+                var s = 0
+            }
+
+            sum(1,100); //5050
+            sum(10,13); //46
+            sum(13,10);  //输出0，函数顺序关键
+            sum(1,6);  //21
+        </script>
+    </head>
+    <body>
+    </body>
+</html>

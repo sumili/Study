@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <script type="text/javascript">
+            // 验证邮箱
+            /*
+            要有@  @不需要转义
+            .点   在@后面
+            @前面只有有一位
+            @前面不能有特殊符号
+            只能有一个@
+            不能有空格
+            以字母或者数字开头
+            以字母结尾
+            @和.点之间有字符
+
+            37357765@qq.com
+
+            /^\w+@\w+\.[a-z]{2,3}$/;
+
+
+             */
+
+            var re = /^\w+@\w+\.[a-z]{2,3}$/;
+
+            var str = prompt("请输入一个邮箱");
+
+            if( re.test( str )){
+                alert("正则是对的~完美~");
+            }else{
+                alert("有瑕疵~");
+            }
+
+
+        </script>
+    </head>
+    <body>
+    </body>
+</html>

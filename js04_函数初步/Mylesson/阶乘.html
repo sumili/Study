@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <script type="text/javascript">
+        // 5!  5 * 4 * 3 * 2 * 1 =120
+        // 4!  4 * 3 * 2 *1  =24
+            //阶乘函数，接受一个参数，返回这个数字的阶乘
+            function jiecheng(a){
+
+                var s = 1;  //累乘器
+
+                for(var i = 1;i<=a;i++){
+                    s*=i;
+                }
+                return s;  //返回阶乘
+            }
+
+            // console.log(jiecheng(4));  //24
+            // console.log(jiecheng(5));  //120
+
+            // 计算 1!+2!+3!...+10!
+            var sum = 0;  //累加器
+
+            // 用for来调用10次jiecheng(a)函数
+            for( var i = 1;i<=10;i++){
+                sum += jiecheng(i);
+            }
+
+            console.log(sum);
+        </script>
+    </head>
+    <body>
+    </body>
+</html>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>//获取五个数，从大到小排列 :
+    
+        //简单想：比较a 与 b 大小
+        //a的值有个范围，b的值有个范围，所以都需要穷举，两个for 循环
+
+        //获取用户输入的五个数;
+        
+        var arr = new Array();
+
+        for( var i = 0 ;i < 5 ; i++){
+            
+            arr[i] = parseInt(prompt("来输入5个数，这是第"+i+"个数"));
+        }
+
+        //第一步：下标为0上的数：arr[0] 与 下标范围1到4的的数比较，其中arr[0]的值如果始终是最大值，则值不变
+        //否则变化，但始终是arr[0]在与其他比较
+        //第二部：下标为1上的数：arr[1]与下标范围2到4的数比较.
+        
+        for( i = 0 ; i < arr.length ; i ++){//取下标i的值与下标范围：i+1到arr.length-i；的值比较 
+            
+
+            var  chucun = 0;
+
+            //降序
+            for( j = i+1;  j <= arr.length  ; j++) //当i = 1时, 是与下标范围2到4的值比较，所以范围缩小，与i的下标有关
+
+             if( arr [i] < arr [j]){                 //a[i]   >    b[j] //j的起点在变化
+                                                    //i = 0          j = 1~4   = 1~()
+                                                //    i = 1          j = 2~4    
+                chucun = arr [j];               //    i = 2          j = 3~4
+                arr[j] = arr[i];                //    i = 3          j =  4
+                arr[i] = chucun
+             }
+
+
+             //升序
+            for ( j = i+ 1 ; j<= arr.length ;j++){
+
+                if ( arr [i] > arr [j]){
+                    
+                    chucun = arr [j] ;
+                    arr[j] = arr [i] ;
+                    arr[i] = chucun ;
+                }
+            }
+
+
+
+            
+        }
+        console.log(arr);
+    </script>
+</body>
+</html>

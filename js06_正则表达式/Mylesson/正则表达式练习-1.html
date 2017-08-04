@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <script type="text/javascript">
+
+            // replace就是替换
+
+            var str = "张三同学学会了正则，张三好厉害啊~";
+
+            // 但是只会替换第一个内容，后面的就不匹配了~
+            // console.log(str.replace("张三","李四"));
+
+            // replace第一个参数是正则，g是全局替换
+            // console.log(str.replace(/张三/g,"李四"));
+
+            // replace第二个参数，如果是一个函数，那么每次匹配都会调用这个函数，这个函数天生有参数，return是要替换的内容
+            console.log( str.replace(/张三/g,function(a,b,c){
+                    // a 是匹配的内容
+                    // b 是下标
+                    // c 是字符串
+                    console.log(a,b,c);
+                    return "李四";
+                       
+            }))
+
+
+
+            // replace 动态替换
+            // var str = "我每天挣200元，每天饭钱40元";
+
+            // console.log( str.replace( /\d+元/g,function(a){
+                    // console.log(a);
+
+                    // 保留两位小数
+            //         return "$"+ Math.round((parseInt(a)/6)*100)/100;
+            // }))
+
+            //如果用分组，函数可以得到更多的参数
+            // var str = "red blue";
+
+            // var re = /(\w+)\s(\w+)/;
+
+            // // console.log( str.replace(re,"$2 $1"));
+
+            // console.log( str.replace(re,function(match,$1,$2,index,str){
+            //         console.log("match 是"+ match);  //匹配项
+            //         console.log("$1 是"+ $1);    //分组1
+            //         console.log("$2 是"+ $2);     //分组2
+            //         console.log("index 是"+ index); //下标
+            //         console.log("str 是"+ str);    //原字符串
+            //         return $2+ " " + $1;    //返回值
+            // }) );
+        </script>
+    </head>
+    <body>
+    </body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <style type="text/css">
+            div{
+                width: 200px;
+                height: 200px;
+                background: red;
+            }
+        </style>
+    </head>
+    <body>
+        <div></div>
+
+        <script type="text/javascript">
+            /*
+            绑定事件，三个参数
+            第一个参数， 需要绑定事件的元素
+            第二个参数， 事件名 没有on
+            第三个参数，事件处理函数
+             */
+            // obj 元素  eventType 事件名 fn函数
+             function addEvent(obj,eventType,fn){
+                //判断能力
+                if( obj.addEventListener ){
+                    //DOM2级事件绑定
+                    obj.addEventListener(eventType,fn,false);
+                }else if(obj.attachEvent){
+                    // IE低版本事件绑定
+                    obj.attachEvent("on"+eventType,function(){
+                        //改变this指向
+                        fn.call(obj);
+                    });
+                }else{
+                    // DOM0级事件绑定
+                    obj["on"+eventType] = fn;
+                }
+
+             }
+
+
+             var oDiv = document.getElementsByTagName("div")[0];
+
+             addEvent(oDiv,"click",function(){
+                this.style.backgroundColor="orange";
+             })
+        </script>
+    </body>
+</html>
