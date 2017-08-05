@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <style type="text/css">
+            *{
+                padding:0;
+                margin:0;
+            }
+            ul{
+                list-style: none;
+                width: 150px;
+                height: 40px;
+                margin:100px auto;
+                background-color: skyblue;
+            }
+            ul li{
+                width: 27px;
+                height: 29px;
+                cursor: pointer;
+                float:left;
+                background: url(img/11.png) no-repeat;
+            }
+        </style>
+        <script type="text/javascript">
+            window.onload=function(){
+                var oUl = document.getElementsByTagName("ul")[0];
+                var aLi = oUl.getElementsByTagName("li");
+
+                for(var i =0;i<aLi.length;i++){
+                    //编号
+                    aLi[i].index = i;
+
+                    aLi[i].onmouseover = function(){
+
+                        //循环里面每个li和当前里的下标比
+                        //小于和等于下标的改变背景图片路径
+                        for(var j = 0;j<aLi.length;j++){
+
+                            if( j<=this.index){
+                                aLi[j].style.background="url(img/22.png) no-repeat";
+                            }else{
+                                aLi[j].style.background="url(img/11.png) no-repeat";
+                            }
+                        }
+                    }
+
+
+                    aLi[i].onclick =function(){
+                        alert("亲~恭喜你"+(this.index+1) +"星！评价~");
+                    }
+
+                }
+
+
+
+
+            }
+
+        </script>
+    </head>
+    <body>
+        <ul>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+        </ul>
+    </body>
+</html>

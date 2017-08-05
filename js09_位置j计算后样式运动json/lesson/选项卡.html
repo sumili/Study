@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <style type="text/css">
+            *{
+                padding:0;
+                margin:0;
+            }
+            .oDiv{
+                width: 300px;
+                height: 200px;
+                border:1px solid red;
+                overflow:hidden;
+            }
+            .oDiv>div{
+                width: 300px;
+                height: 200px;
+                background-color: orange;
+                display: none;
+            }
+            .current{
+                background-color: burlywood;
+                color:blue;
+            }
+        </style>
+    </head>
+    <body>
+        <input type="button" value="风景" class="current" />
+        <input type="button" value="汽车" />
+        <input type="button" value="旅游" />
+
+        <div class="oDiv" id="oDiv">
+            <div style="display:block;">
+                风景风景风景风景风景
+            </div>
+            <div>
+                汽车汽车汽车汽车汽车
+            </div>
+            <div>
+                旅游旅游旅游旅游旅游
+            </div>
+        </div>
+
+        <script type="text/javascript">
+            var oInputs = document.getElementsByTagName("input");
+            var oDiv = document.getElementById("oDiv");
+            var aDiv = oDiv.getElementsByTagName("div");
+
+            // alert(oInputs.length);
+            // alert(aDiv.length);
+
+            //循环一级每一个，
+            for( var i = 0;i<oInputs.length;i++){
+                 //编号
+                 oInputs[i].index = i;
+
+                 //给一级每个都加上一个点击事件
+                oInputs[i].onclick = function(){
+
+
+                    //排他  让所有样式清空
+                    for(var j = 0;j<oInputs.length;j++){
+                        oInputs[j].className='';
+                        aDiv[j].style.display = "none";
+                    }
+                    //单独给当前元素和对应元素加上样式
+                    this.className = "current";
+                    aDiv[this.index].style.display="block";
+                }
+            }
+
+
+        </script>
+    </body>
+</html>

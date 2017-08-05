@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <style type="text/css">
+            div{
+                float:left;
+                border:10px solid red;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="box">
+            <img src="img/pangzi.png" alt="" id="tutu" />
+        </div>
+
+
+        <script type="text/javascript">
+            var oDiv = document.getElementById("box");
+            var tutu = document.getElementById("tutu");
+
+
+
+            tutu.onload=function(){
+                alert( oDiv.offsetWidth);
+            }
+        </script>
+    </body>
+</html>

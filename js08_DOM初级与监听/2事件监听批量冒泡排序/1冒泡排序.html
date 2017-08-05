@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+
+        <script>
+            //冒泡排序：让一组字符串里的数字从大到小
+            // var arr = [54,12,3,4,5,6,7,33,44];
+            var arr = [1,4,6,7,43,3,10,7,9,2,5];
+            var house = "";                                   
+
+            for( var i = 0 ; i < arr.length ;i++){
+
+                for ( var j = 1+i ; j < arr.length; j++){          
+                    if( arr[i] > arr [j]){  
+                        house = arr[j];                             
+                        arr[j] = arr[i];
+    
+                        arr[i] = house;                           
+                    }                                                       
+                }
+            }
+            console.log(arr);
+
+ //arr.length=11 .j的起点在变化：关键是j的起点在变化，j比i永远多1；
+  //i =0   j = 1 
+  //i= 0   j = 2..arr.length
+  //i = 1  j = 2 
+   //i = 1  j = 3 ..arr.length
+        </script>
+        <!--<script type="text/javascript">
+            var arr = [54,12,3,4,5,6,7,33,44];
+
+            for( var j = 0;j<arr.length-1;j++){
+
+                if(arr[j] > arr[j+1]){
+
+                    var temp = arr[j+1];
+                    //仓库 = 第二个12     仓库=12
+                    arr[j+1] = arr[j];
+                    //第二个12 = 第一个54     第二个=54
+                    arr[j] = temp;
+                    //第一个54 = 仓库12     第一个 12
+                }
+
+            }
+            console.log(arr);
+        </script>-->
+    </head>
+    <body>
+    </body>
+</html>
