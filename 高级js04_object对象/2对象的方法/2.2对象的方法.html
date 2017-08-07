@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <script type="text/javascript">
+
+        // var xiaohong = {
+        //     name : "小红",
+        //     age : 18,
+        //     sex : "女",
+        //     sayHello : function(){
+        //         alert("你好，我是" + this.name);
+        //         alert("我今年" + this.age);
+        //         alert("我是可爱的小" + this.sex + "生");
+        //     },
+        //     zhangda : function(){
+        //         this.age++;
+        //     },
+        //     bianxing : function(){
+        //         if( this.sex == "男"){
+        //             this.sex = "女";
+        //         }else{
+        //             this.sex = "男";
+        //         }
+        //     }
+        // }
+
+        var xiaohong = {
+            name : "小红",
+            age : 18,
+            sex : "女",
+            sayHello : function(){
+                alert("你好，我是"+this.name);
+                alert("我今年"+this.age);
+                alert("我是可爱的小"+this.sex+"生"),
+                console.log(this);
+
+            },
+            zhangda : function(){
+                this.age++;
+            },
+            bianxing : function(){
+                if( this.sex == "男"){
+                    this.sex = "女";
+                }else{
+                    this.sex = "男";
+                }
+            }
+        }
+
+        xiaohong.zhangda();  //19
+        xiaohong.zhangda();  //20
+        xiaohong.zhangda();  //21
+        xiaohong.zhangda();  //22
+        xiaohong.zhangda();  //23
+        xiaohong.bianxing();  //男
+        xiaohong.bianxing();  //女
+        xiaohong.sayHello();
+
+
+        </script>
+    </head>
+    <body>
+    </body>
+</html>

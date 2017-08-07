@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        div{
+            width: 80px;
+            height: 108px;
+            background: url('img/girl.png') no-repeat;
+            background-position: 0 -223px;
+            position:absolute;
+            top:100px;
+            left:0;
+        }
+    </style>
+</head>
+<body>
+    <script>
+         /*
+            定义小女孩的属性
+            DOM     div小女孩DOM
+            left    位置
+            top
+            timer   定时器
+            speed  速度
+            buzi   步子
+
+
+            方法（生命周期和普通方法）
+            init
+            行走
+            die
+             */
+            // 属性：//         who[dom]    →   where[left,top]  →  move[timer+speed、帧数步子]
+
+
+                    // ↑(创建dom:不设形参)        ↑(设为形参传入)      ↑(speed设为形参;timer与帧数不变不设形参)
+
+
+            // 方法[函数] ：//  初始[init]   →   行走[move]      →    停止[clear]
+
+            // count=0;
+
+
+            // function People(name,age,sex){
+            // this.name = name;
+            // this.age = age;
+            // this.sex = sex;
+            // }//深入理解这个构造函数的原理
+            // var xiaoming = new People("小明",18,"男");   
+
+            function Girl(top,left,speed){
+                //设置大类的属性与属性值
+                this.top = top ;
+                this.left = left;
+                this.speed = speed;
+
+                //设置方法的必要属性与属性值
+                this.dom = null // 初始化的对象创建
+                this.timer = null;//运动方法
+                this.zhenshu = 0; //运动需要的帧数
+
+                //设置大类的方法1//外层函数都是作为一种方法使用，返回的this都是调用他的函数
+                this.init = function(){
+                    this.dom = document.createElement("div");
+                         document.body.appendChild(this.dom);
+
+                    this.dom.style.top = top + "px";
+                    this.dom.style.left = left + "px";
+                };
+
+                //设置大类的方法2
+                //因为定时器的this对象返回window，所以要把this转存在一个属性中，在进入方法2
+                this.moving = function(){
+                var  self = this ;
+
+                self.timer = setInterval(function(){
+                    self.left++;
+                    if(self.left > 1000){
+                        self.die();
+                    }
+
+                    self.zhenshu++;
+                    if(self.zhenshu > 7){
+                        self.zhenshu = 0;
+                    }
+                    self.dom.style.left = self.left + "px";
+                    self.dom.style.backgroundPositionX = -self.zhenshu*80+"px";
+                },this.speed)//this.speed在函数外
+                }
+
+                //设置大类的方法3
+                this.die = function(){
+                    clearInterval(this.timer);
+                    document.body.removeChild(this.dom);
+                }
+
+                this.init();
+                this.moving();
+            }    
+
+            setInterval(function(){
+                new Girl (Math.random()*400,Math.random()*100,Math.random()*100)
+            },1000) 
+    </script>
+</body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <script type="text/javascript">
+
+            // function People(name,age){
+            //     this.name = name;
+            //     this.age = age;
+            //     this.sayHello=function(){
+
+            //         alert("你好~我是" + this.name + "我今年" + this.age + "岁了！");
+            //     }
+            // }
+            // var xiaoming = new People("小明",18);
+            // var xiaohong = new People("小红",18);
+
+            // // xiaoming.sayHello();
+            // // xiaohong.sayHello();
+
+            // alert( xiaoming.sayHello == xiaohong.sayHello);
+
+
+             function People(name,age){
+                this.name = name;
+                this.age = age;
+
+            }
+            People.prototype.sayHello=function(){
+
+                    alert("你好~我是" + this.name + "我今年" + this.age + "岁了！");
+                }
+
+            var xiaoming = new People("小明",18);
+            var xiaohong = new People("小红",19);
+
+            // xiaoming.sayHello();
+            // xiaohong.sayHello();
+
+            alert( xiaoming.sayHello == xiaohong.sayHello);
+        </script>
+    </head>
+    <body>
+    </body>
+</html>

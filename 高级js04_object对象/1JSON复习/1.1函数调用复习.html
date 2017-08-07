@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Document</title>
+    <style type="text/css">
+        *{
+            font-size: 26px;
+        }
+        span{
+            font-size: inherit;
+        }
+    </style>
+    <script type="text/javascript">
+
+
+    // function fun(a,b){
+    //     console.log(a+b);
+    // }
+
+    // fun(3,4);   //7
+    // console.log(fun(3,4));   //...
+
+    // function fun(a,b){
+    //     console.log(a+b);
+    //     return;
+    // }
+
+    // console.log(fun()); //Nan undefind
+    // console.log(fun(3,4));  //7 undefind
+
+     function fun(a,b){
+        console.log(a+b);
+        return a+b; //return 后面如果没有值得话 就是undefined
+    }
+
+    console.log( 8 + fun(3,4)); //7  15
+
+
+    // function fun(a,b){
+    //     console.log(a+b);
+    // }
+    
+    // console.log(fun());//NaN defined
+    var a =  8 + fun(3,4);//15
+
+    console.log(a * 3);//45
+
+    // var a ;
+    // console.log(a);   //...
+
+    // 兴趣点
+    // 自学能力
+    // 调试
+
+    // 字面量
+    // "字符串"
+    // 1
+    // []
+    // true
+    // false
+    // {}
+    // function(){}
+
+    // console.log( ["aa","bb","cc"] );
+    // console.log( { name:"aa",age:"bb"} );
+
+
+
+    </script>
+</head>
+<body>
+    <div>div</div>
+    <span>span</span>
+</body>
+</html>

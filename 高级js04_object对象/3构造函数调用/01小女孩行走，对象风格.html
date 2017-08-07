@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <style type="text/css">
+            div{
+                width: 80px;
+                height: 108px;
+                background: url(img/girl.png) no-repeat;
+                background-position: 0 -223px;
+                position:absolute;
+                top:100px;
+                left:0;
+            }
+
+
+        </style>
+    </head>
+    <body>
+
+
+
+        <script type="text/javascript">
+            /*
+            定义小女孩的属性
+            DOM     div小女孩DOM
+            left    位置
+            top
+            timer   定时器
+            speed  速度
+            buzi   步子
+
+
+            方法（生命周期和普通方法）
+            init
+            行走
+            die
+             */
+
+             function Girl(top,left,speed){
+                //定义小女孩的属性
+                this.top = top;
+                this.left = left;
+                this.speed = speed;
+                this.timer = null;
+                this.buzi = 0;
+                this.dom = null;
+
+                //定义一个初始化方法
+                this.init = function(){
+
+                    //创建div，然后添加div
+                    this.dom = document.createElement("div");
+                    // console.log(this);
+                    document.body.appendChild(this.dom);
+
+                    //设置样式
+                    this.dom.style.left = this.left + "px";
+                    this.dom.style.top = this.top + "px";
+                }
+
+                //设置方法
+                this.xingzou = function(){
+
+                    //要备份，因为进入setInterval之后this就是window
+                    var self = this;
+                    // console.log(self);
+
+                    this.timer = setInterval(function(){
+                        self.left++;
+                        self.buzi++;
+                        // 范围
+                        if( self.buzi > 7 ){
+                            self.buzi = 0;
+                        }
+                        if( self.left > 1000 ){
+                            self.die();
+                        }
+                        self.dom.style.left = self.left + "px";
+                        self.dom.style.backgroundPositionX = -self.buzi*80 + "px";
+
+                    },this.speed)
+
+                }
+                this.die = function(){
+                    // clearInterval(this.timer);
+                    // console.log(this.dom);
+                    document.body.removeChild(this.dom);
+                }
+
+                //调用初始化
+                this.init();
+                //直接调用行走
+                this.xingzou();
+             }
+
+             setInterval(function(){
+
+                new Girl(Math.random()*400,Math.random()*100,Math.random()*100);
+
+             },1000)
+        </script>
+    </body>
+</html>
