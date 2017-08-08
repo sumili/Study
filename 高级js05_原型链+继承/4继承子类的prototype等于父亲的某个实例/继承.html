@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript">
+
+		
+			function People(){//父级构造函数
+//				this.age = 19;   //4
+			}
+			
+			People.prototype.age = 30;  //5//父级构造函数的[原型]添加属性
+			
+			var xiaohong = new People();//父级构造函数的一个实例
+			
+//			xiaohong.age= 17;   //3
+			
+			function Student(){//子类构造函数
+				
+//				this.age = 10;  //2
+			}
+			Student.prototype = xiaohong;  //继承//子类构造函数的原型
+			
+			var xiaoming = new Student();//子类构造函数的实例
+//			xiaoming.age = 7;   // 1
+			
+			console.log(xiaoming.age);
+		</script>
+	</head>
+	<body>
+	</body>
+</html>
