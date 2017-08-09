@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .board{
+            width: 200px;
+            height: 4px;
+            position: absolute;
+            background-color: purple;
+            border-radius: 2px;
+        }
+        .ball{
+            width:30px;
+            height: 30px;
+            position: absolute;
+            border-radius: 50%;
+            background: skyblue;
+        }
+    </style>
+</head>
+<body>
+        <!--
+        数据结构[引用类型是一种数据结构] ：球的对象 挡板对象 游戏对象
+        算法  ：  反弹  ，检查碰到单板
+
+        算法：
+            反弹算法
+                到了边界就把迭代信号量取反   ， 10 -10 --10 ---10 ----10；
+        检测碰到挡板
+        ball.top+ball.直径 === border.top
+        && ball.left+ball.直径/2 >= border.offsetLeft;
+        && ball.left+ball.直径/2 《= border.left+border.width
+        -->
+    <script>
+        
+        /*// 数据结构
+        // 球
+        //     属性
+        //         top,left,speed,deltaX,delatY,d,color,dom,timer
+        //     方法
+        //         init(),move(),render()[信号量赋值，呈现数据以特定方式显示给用户]
+
+        // 挡板
+        //     属性 
+        //         top,left
+        //     方法
+        //         init(),render(),bindEvent[绑定事件]
+        // 游戏
+        //      属性
+                //     score
+                // 方法
+                //     init(),render(),addScore();*/
+
+
+        /*// function 板(top , left){//把属性添加到构造函数中
+        //     this.top = top ;
+        //     this.left = left ;
+        //     this.dom = null;
+        // }
+
+        // 板.原型.init = function(){//把方法添加到原型中
+        //     this.dom = 创建元素
+        //     插入到body当中 
+        // }
+        // 板.原型.render = function(){
+        //     this.dom.style.top = this.top+"px";
+        //     this.dom.style.left = this.keft + "px";
+        // }
+        // 板.原型.bindEvent = function(){
+        //     给document 添加一个鼠标移动事件 = function(){
+        //         板.left = 获取鼠标位置
+        //         板.render();
+        //     }
+        // }*/
+        function Border(top,left){
+            this.top = top ;
+            this.left = left;
+            this.dom = null;
+            this.width = 200;
+            //方法，是从原型中继承的
+            this.init();
+            this.render();
+            this.bindEvent();
+        }
+        Border.prototype.init = function(){
+            this.dom = document.createElement("div");
+            this.dom.className = "board";
+            document.body.appendChild(this.dom);
+        }
+        Border.prototype.render = function(){
+            this.dom.style.top = this.top + "px";
+            this.dom.style.left = this.left + "px";
+        }
+        Border.prototype.bindEvent = function(){
+
+            var self = this;
+            document.onmousemove = function(event){
+
+                //兼容记得
+                event = event || window.event;
+                self.left = event.clientX;
+                self.render();
+            }
+        }
+
+        var oHeight = document.documentElement.clientHeight || document.body.clientHeight;
+        var oWidth = document.documentElement.clientWidth || document.body.clientWidth;
+
+
+        //通过构造函数new出一个对象实例
+        
+        var board = new Border(oHeight-4-100,(oWidth-200)/2);
+
+
+
+        /*构造函数添加属性和值*/
+        function Ball(top,left,delatX,delatY){
+            this.top = top;
+            this.left = left;
+            this.delatX = delatX; //步长
+            this.delatY = delatY;
+            this.speed = 30;
+            this.dom = null;
+            this.timer = null;
+            this.d = 30;
+
+            /*//构造函数的方法添加[从原型中继承来的]*/
+            this.init();
+            this.render();
+            this.moving();
+        }
+
+        Ball.prototype.init = function(){
+            this.dom = document.createElement("div");
+            this.dom.className = "ball";
+            document.body.appendChild(this.dom);
+        }
+        Ball.prototype.render = function(){
+            this.dom.style.left = this.left + "px";
+            this.dom.style.top  = this.top + "px";
+        }
+        Ball.prototype.moving = function(){
+
+            var self = this;
+            this.timer =setInterval(function(){
+                self.top += self.delatY;
+                self.left += self.delatX;
+
+                //小球折返，像光线一样传播if，判断折返点
+                if( self.left < 0 || self.left >= oWidth -self.d){
+                    self.delatX = -self.delatX;//步长方向取反方向
+                }if(self.top <= 0 ){
+                    self.delatY = -self.delatY;
+                }
+                //先判断球有没有比挡板高，这是碰到挡板的条件必要条件之一,d是直径
+                if(self.top+self.d >= board.top){
+
+                    //再判断球是否在单板之间
+                    if(self.left+self.d/2 >= board.dom.offsetLeft
+                    && self.left + self.d/2 <= board.dom.offsetLeft+board.width){
+                        self.delatY = -self.delatY;
+                        //得分
+                        game.addScore();
+                    }else{
+                        clearInterval(self.timer);
+                        alert("Game over");
+                    }
+                }
+                self.render();//渲染的函数在事件之后调用
+            },this.speed)
+        }
+
+            var ball = new Ball(0,0,5,10);
+
+
+            //构造函数添加属性和值
+            function Game(score){
+                this.score = 0;
+                this.dom = null;
+
+                this.init();
+                this.render();
+                // this.addScore();
+            }
+            
+            Game.prototype.init=function(){
+                this.dom = document.createElement("h1");
+                document.body.appendChild(this.dom);
+            }
+            Game.prototype.render= function(){
+                this.dom.innerHTML = this.score;
+            }
+            Game.prototype.addScore= function(){
+                this.score+=1;
+                this.render();
+            }
+            var game =new Game();
+
+
+
+    </script>
+</body>
+</html>

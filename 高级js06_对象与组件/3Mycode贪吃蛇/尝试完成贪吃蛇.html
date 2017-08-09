@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			table{
+				margin:100px auto;
+			}
+			table,tr,td{
+				background: green;
+			}
+			td{
+				width: 18px;
+				height: 18px;
+				border:1px solid yellowgreen;
+			}
+		</style>
+	</head>
+	<body>
+		<table id="oTable">
+			
+		</table>
+		
+		<script type="text/javascript">
+			var oTable = document.getElementById("oTable");
+			var tds = [];  //二维数组
+			
+			
+			//两层for循环干了两件事
+			//1.创建了DOM对象,创建了400个td,20个tr,追加了table
+			//2.将400个td放到tds数组里面了,tds是一个二维数组,存放着td的DOM元素
+			//按理说,地图初始化,也应该用类
+			
+			for(var i = 0;i < 20; i++){
+				var tr = document.createElement("tr");
+				var thisrowtd = []; //存放当前行td的数组，存放的是DOM对象
+				
+				for( var j = 0;j < 20; j++){
+					var td = document.createElement("td");
+					tr.appendChild(td);  //存放入每行tr标签内
+					thisrowtd.push(td);  //存放到每行的数组内（跟上面不冲突）
+					//
+				}
+				
+				oTable.appendChild(tr); //把每行tr添加到页面表格中
+				tds.push(thisrowtd);  //把当前行的变量放入tds二维数组里面
+			}
+			
+			
+			function 蛇(){
+				
+				this.身体 = [
+					{x:3,y:4}
+					{x:4,y:4}
+					{x:5,y:4}
+					{x:6,y:4}
+				]	
+				
+				
+			}
+			蛇.原型.render = function(){
+				页面中所有的元素td,都没有类名
+				for(var i= 0;i<20;i++){
+					for(var j= 0;j<20;j++){
+						tds[i][j].className=""
+					}
+				}
+				
+				//让自己的细胞这些小格加red类名
+				for(var i=0;i<身体.length;i++){
+					tds[身体[i].x][身体[i].y].className= "颜色"
+				}
+			}
+			蛇.原型.update=function(){
+				身体.pop();  //删除尾巴
+				
+				switch(方向){
+					case "right":
+					在头部添加一项
+					身体.unshift({ x : 身体[0].x , y : 身体[0].y+1})
+					break;
+				}
+				
+				检查自己有没有吃到食物
+			}
+			蛇.原型.bindEvent=function(){
+				
+				this备份
+				document.onkeydown =function(){
+					event兼容处理
+					switch( event.keyCode){
+						case 37:
+						if( 方向 == "right"){
+							return
+						}
+						方向 = "left"
+						break;
+					}
+					
+				}
+			}
+			
+			
+			var 蛇 = new 蛇()
+			
+			定时器{
+				蛇.update();
+				蛇.render();
+			}
+			
+		</script>
+	</body>
+</html>
+
+	

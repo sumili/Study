@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        table{
+            margin:100px auto;
+        }
+        table,tr,td{
+            background:green;
+        }
+        td{
+            width: 18px;
+            height: 18px;
+            border: 1px solid yellowgreen;
+        }
+    </style>
+</head>
+<body>
+</body>
+    <table id="oTable">
+
+    </table>
+    <script>
+    
+        var oTable = document.getElementById("oTable");
+        var tds = []; //这是一个二维数组
+
+        //两层for循环做两件事
+        //1 .创建DOM对象，创建了400个td，20个tr
+        //2 .讲这400个td放在一个二维数组里面
+
+
+        //查阅所得，二维数组的length=多维数组第一维的长度
+        //二维数组的排列方式。
+        // persons[0][0] = "zhangsan";
+        // persons[0][1] = 25;
+        // persons[1][0] = "lisi";
+        // persons[1][1] = 22;
+        // persons[2][0] = "wangwu";
+        // persons[2][1] = 32;
+        // persons[0] = ["zhangsan", 25];
+        // persons[1] = ["lisi", 21];
+        // persons[2] = ["wangwu", 32];
+        for( i = 0 ; i < 20 ; i++){
+            var tr = document.createElement("tr");
+            var oTrs = [];//二维数组的盒子
+
+            for( j = 0 ; j < 20 ; j++){
+                var td = document.createElement("td");
+                tr.appendChild(td);//把i=0[第一行]+j从0到20[第一列到20列]  //把这行创建得20[0<<20j]个
+                                //td加到这行[i=0]中
+                oTrs.push(td)  //把第一行创建的20个td添加到i= 0 这一行 oTrs[0][0]=oTrs[0][1]=oTrs[0][2]=oTrs[0][3]...
+            }
+            oTable.appendChild(tr);
+            oTrs.push(td);//把每行都加到这个二维数组中
+        }
+
+
+            分析数据结果 蛇的对象
+            算法 ： 数组第一位呈现，数组最后一位消失
+
+            算法 ：
+                一维数组下标最大[头]  ：添加类名red
+                 [头]：向上：oTrs[i][j] →→oTrs[i-1][j]
+
+                 [头]：向右：oTrs[i][j] →→oTrs[i][j+1]
+
+                 
+                 [头]：向下：oTrs[i][j] →→oTrs[i+1][j]
+
+                 
+                 [头]：向左：oTrs[i][j] →→oTrs[i][j-1]
+                
+                一维数组下标最小[尾] ： 无类名
+
+            数据结构
+                    蛇
+                        属性
+                            [x,y]
+
+    </script>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript">
+			
+			function Dog(){
+				
+			}
+			
+			function Cat(){
+				
+			}
+			
+			Cat.prototype = new Dog();
+			
+			var hellokitty = new Cat();
+			
+//			console.log( hellokitty.constructor ); //Dog
+//			console.log(hellokitty instanceof Cat);  //t
+//			console.log(hellokitty instanceof Dog);  //t
+			
+			
+			var arr = [];
+			console.log( typeof arr);   //object
+			
+			var obj = {};
+			console.log( typeof obj);   //object
+			
+			var obj1 = /1[35789]\d{9}/;
+			console.log(typeof obj1);   //object
+			
+			var arr1 = [];
+			console.log(arr1 instanceof Array);
+			console.log(Array.isArray(arr1));
+		</script>
+	</head>
+	<body>
+	</body>
+</html>
