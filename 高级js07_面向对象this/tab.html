@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			*{
+				padding:0;
+				margin:0;
+				
+			}
+			.oDiv div{
+				width: 200px;
+				height: 200px;
+				border:1px solid black;
+				display: none;
+				text-align: center;
+				line-height: 200px;
+			}
+			.active{
+				background: red;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="oDiv" id="oDiv">
+			<input type="button" value="汽车" class="active"/>
+			<input type="button" value="旅游"/>
+			<input type="button" value="动漫"/>
+			<div style="display: block;">汽车汽车汽车</div>
+			<div>旅游旅游旅游</div>
+			<div>动漫动漫动漫</div>
+		</div>
+		
+		<div class="oDiv" id="oDiv1">
+			<input type="button" value="健身" class="active"/>
+			<input type="button" value="车展"/>
+			<input type="button" value="故事"/>
+			<div style="display: block;">健身健身健身</div>
+			<div>车展车展车展</div>
+			<div>故事故事故事</div>
+		</div>
+		
+		<script type="text/javascript">
+//			var oDiv = document.getElementById("oDiv");
+//			var oDiv1 = document.getElementById("oDiv1");
+			
+			
+			function Tab(id){
+				//全局变量就是属性
+				this.oDiv = document.getElementById(id);
+			 	this.aInput = this.oDiv.getElementsByTagName("input");
+			 	this.aDiv = this.oDiv.getElementsByTagName("div");
+				this.iNew = 0;
+			}
+		
+			Tab.prototype.init=function(){
+				var This = this;
+				for(var i=0;i<this.aInput.length;i++){
+
+				this.aInput[i].index = i;
+				
+				this.aInput[i].onclick=function(){
+					// var self = this;
+					This.fun(self);  //this当前触发的元素
+				};
+				}
+			}
+			
+			
+			Tab.prototype.fun=function(obj){
+					for(var j=0;j<this.aInput.length;j++){
+						this.aInput[j].className="";
+						this.aDiv[j].style.display="none";
+					}
+					obj.className = "active";
+					this.aDiv[obj.index].style.display="block";
+				}
+			Tab.prototype.autoPlay=function(t){
+				var This = this;
+				
+				setInterval(function(){
+					//范围
+					if( This.iNew == This.aInput.length-1){
+						This.iNew = 0;
+					}else{
+						This.iNew++;
+					}
+					
+					//排他
+					for(var j=0;j<This.aInput.length;j++){
+						This.aInput[j].className="";
+						This.aDiv[j].style.display="none";
+					}
+					This.aInput[This.iNew].className = "active";
+					This.aDiv[This.iNew].style.display="block";
+					
+					
+				},t);
+			}
+			
+		
+			var tab = new Tab("oDiv");
+			tab.init();
+			// tab.autoPlay("500");
+			var tab1 = new Tab("oDiv1");
+			tab1.init();
+			// tab1.autoPlay("2000");
+			
+		</script>
+	</body>
+</html>

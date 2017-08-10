@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			*{
+				padding:0;
+				margin:0;
+				
+			}
+			#oDiv div{
+				width: 200px;
+				height: 200px;
+				border:1px solid black;
+				display: none;
+				text-align: center;
+				line-height: 200px;
+			}
+			.active{
+				background: red;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="oDiv">
+			<input type="button" value="汽车" class="active"/>
+			<input type="button" value="旅游"/>
+			<input type="button" value="动漫"/>
+			<div style="display: block;">汽车汽车汽车</div>
+			<div>旅游旅游旅游</div>
+			<div>动漫动漫动漫</div>
+		</div>
+		
+<!--面向过程风格-->
+<!--	
+		<script type="text/javascript">
+			var oDiv = document.getElementById("oDiv");
+			var aInput = oDiv.getElementsByTagName("input");
+			var aDiv = oDiv.getElementsByTagName("div");
+			
+			for(var i=0;i<aInput.length;i++){
+//				先编号
+				aInput[i].index = i;
+				
+				aInput[i].onclick=function(){
+					for(var j=0;j<aInput.length;j++){
+						aInput[j].className="";
+						aDiv[j].style.display="none";
+					}
+					this.className = "active";
+					aDiv[this.index].style.display="block";
+				}
+			}-->
+		</script>
+
+<script>
+
+	var oDiv = document.getElementById("oDiv");
+	var oInput = oDiv.getElementsByTagName("input");
+	var ooDiv = oDiv.getElementsByTagName("div");
+
+	for ( var i = 0 ; i < oInput.length ; i++){
+
+		//先编号
+		//
+		oInput[i].index = i;
+
+		oInput[i].onclick = function(){
+			for ( var j = 0 ; j < oInput.length ; j++){
+				oInput[j].className = "";
+				ooDiv[j].style.display= "none";
+			}
+		this.className = "active";
+		ooDiv[i].style.display = "block";
+		// console.log(this.index);
+		}
+	}
+</script>
+
+	<!--函数风格-->
+		<!--<script>
+			// 数据结构
+			// 对象   按钮  【变化链的顶端：带动了大div和小div的变化】
+			// 算法：
+			// 	按钮 ：切换与排他
+			var oDiv = null;
+			var oInput = null;
+			var ooDiv = null;
+
+			
+			oDiv = document.getElementById("oDiv");
+			oInput = document.getElementsByTagName("input");
+			ooDiv = oDiv.getElementsByTagName("div");
+			
+			init();
+			
+			function init(){//存放一些变量
+				for( var i = 0 ; i < oInput.length ; i++){
+				oInout[i].index = i ;
+				oInput[i].onclick  = funtab//funtab是一个函数 方法，不是结果
+				// 面向对象时徐亚超给、
+
+				//函数就是用来封装语句的。这里functab是对象oInput[i]的方法
+				//当改为面向对象时，oInput是作为Tab的属性。
+				this.oInput[i].onclick = function(){
+					var self = this;//方法中也就是函数的调用对象被嵌套里层
+					this.funtab(self);//这个
+				}
+				}
+			}
+
+			function funtab(){
+		
+				for( var j = 0 ; j <oInput.length ;j++){
+					oInput[j].className = "";
+					aDiv[j].style.dispaly = "none";
+				}
+				this.className = "active";
+				aDiv[this.index].style.dispaly = "block";
+			}	
+		</script>-->
+
+<!--面向对象风格-->
+		<!--<script>
+		
+			function Tab(){//构造函数
+				oDiv = document.getElementById("oDiv");
+				oInput = document.getElementsByTagName("input");
+				ooDiv = oDiv.getElementsByTagName("div");
+			}
+
+			Tab.prototype.init = function(){
+
+				// var self = this;
+
+				for( var i = 0 ; i < this.oInput.length ; i++){
+
+				this.oInout[i].index = i ;
+
+				this.oInput[i].onclick  = function(){
+					var self = this;
+					self.funtab(self);//传入当前触发的对象
+				}
+				}
+			}
+		</script>-->
+	</body>
+</html>
