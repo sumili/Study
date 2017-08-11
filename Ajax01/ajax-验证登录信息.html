@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			.tip{
+				display: none;
+				
+			}
+			.wrong{
+				background: yellow;
+				color:red;
+			}
+			.correct{
+				background: greenyellow;
+				color:green;
+			}
+			.box{
+				width: 500px;
+				height: 500px;
+				margin: 100px auto;
+				background: lightyellow;
+				overflow: hidden;
+			}
+			.logo{
+				/*background: url(images/1.jpg) no-repeat;*/
+				width: 80px;
+				height: 60px;
+				background-size: 100%;
+				margin-top: 50px;
+				margin-left: 40px;
+				float: left;
+			
+			}
+			.box h1{
+				text-align: center;
+				color: darkcyan;
+				display: inline-block;
+				margin-top: 50px;
+				margin-left: 100px;
+			}
+			.box2{
+				width: 300px;
+				height: 100px;
+				margin: 0 auto;
+			}
+			.box3{
+				width: 200px;
+				height: 38px;
+				margin: 0 auto;
+			}
+			.box3 button{
+				width: 80px;
+				height: 30px;
+				color: honeydew;
+				background: darkcyan;
+				border: none;
+			}
+			.box4 {
+				width: 162px;
+				height: 40px;
+				margin: 0 auto;
+			}
+			.box4 .a1{
+				width: 30px;
+				height: 40px;
+				/*background: url(images/timg_07.jpg) no-repeat;*/
+				background-color: #000;
+				background-size: 100%;
+				margin-right: 20px;
+				display: inline-block;
+				
+			}
+			.box4 .a2{
+				width: 30px;
+				height: 40px;
+				/*background: url(images/timg_09.jpg) no-repeat;*/
+				background-size: 100%;
+				margin: 0 auto;
+				display: inline-block;
+				margin-right: 20px;
+			}
+			.box4 .a3{
+				width: 30px;
+				height: 40px;
+				/*background: url(images/timg_03.jpg) no-repeat;*/
+				background-size: 100%;
+				margin: 0 auto;
+				display: inline-block;
+				margin-right: 20px;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="box" class="box">
+			<div class="logo">
+				
+			</div>
+			<h1>登录</h1>
+			<div id="box2" class="box2">
+				<p>
+					请输入账号：<input type="text" id="unTxt" />
+				</p>
+				<p class="tip" id="tip1"></p>
+				<p>
+					请输入密码：<input type="text" id="upTxt" />
+				</p>
+				<p class="tip" id="tip2"></p>
+			</div>
+			<div id="box3" class="box3">
+				<button>登录</button>
+				<button>注册</button>
+			</div>
+			<!--<div id="box4" class="box4">
+				<a href="#" class="a1"></a>
+				<a href="#" class="a2"></a>
+				<a href="#" class="a3"></a>
+			</div>-->
+		</div>
+		
+		
+		<script type="text/javascript">
+			var unTxt = document.getElementById("unTxt");
+			var upTxt = document.getElementById("upTxt");
+			var tip = document.getElementById("tip1");
+			
+			unTxt.onblur = function(){
+				
+				//得到文本框中的内容
+				var un = unTxt.value;
+				
+				//Ajax固定的模板
+				//第一步，创建一个xhr对象，使用new关键词来调用一个内置构造函数
+				var xhr = new XMLHttpRequest();
+				
+//				第二步,指定接受回来的内容,怎么处理,
+//				监听xhr对象的onreadystatechange事件
+//				这个事件在xhr对象的"就绪状态"改变的时候触发
+//				我们只关心就绪状态 4 的时候的事情
+				xhr.onreadystatechange = function(){
+					
+					if( xhr.readyState == 4){
+						
+						//结果回来之后干什么
+						console.log(xhr.responseTe);
+						if( xhr.responseText == "y"){
+							tip.style.display="block";
+							tip.className="correct";
+							tip.innerHTML = "恭喜，用户名正确";
+						}else if( xhr.responseText == "n"){
+							tip.style.display="block";
+							tip.className="wrong";
+							tip.innerHTML = "账号错误！";
+						}
+					}
+				}
+				
+				//第三步，创建一个请求，第一个参数是请求的类型，
+//				第二个参数是请求的路径，第三个参数叫做是否使用异步
+				
+				
+				xhr.open("get","php/un.php?un=" +un);
+				
+				//第四步，发送请求，圆括号里面是请求头内容，get请求没有报文头写null
+				xhr.send(null);
+			}
+			
+		</script>
+	</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<h1 id="oH">====</h1>
+		<input type="button" id="btn" value="点我异步读取文件" />
+		
+		<script type="text/javascript">
+			var oH = document.getElementById("oH");
+			var btn = document.getElementById("btn");
+			
+			
+			
+			btn.onclick = function(){
+				
+				var xhr = new XMLHttpRequest();
+				
+				xhr.onreadystatechange = function(){
+					
+					if(xhr.readyState == 4){
+						oH.innerHTML = xhr.responseText;
+					}
+				}
+				
+				var str = "我是一个文本";
+//				encodeURIComponent就是把当前字符集的文字转换为URI编码
+				xhr.open("get","php/do.php?wenben="+encodeURIComponent(str),true);
+				
+				xhr.send(null);
+			}
+		</script>
+	</body>
+</html>
