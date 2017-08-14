@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <script type="text/javascript">
+            // 找到字符串中数字的部分
+            // var str = "今年涨工资了！现在工资20000元。房贷还有-5.3万，今年又大了1岁，现在29岁";
+
+            // var re = /-?\d+\.?\d?/g;
+            // console.log( str.match(re));
+
+            // 正则中 没有g修饰 match exec是一样的
+            // var str = "ABCDEFG";
+
+            // var re = /[A-Z]/;
+
+
+            // console.log(str.match(re));  //A
+            // console.log(re.exec(str));   //A
+
+
+
+
+            // 寻找连续相同的
+            // var str = "aaacccbbbbbfffffyddddddeeegg";
+
+             // (\w)一个字符，被调用一次以上
+            // var re = /(\w)\1+/g;
+
+            // var re = /(\w)\1+/g;//"\1+"：表示被调用一次以上
+
+            // console.log( str.match(re));
+
+            // 修饰词i  不区分大小写
+            // var str = "abc";
+            // var re = /A/i;
+
+            // console.log( re.test(str) );
+
+
+
+
+
+
+            // 寻找连续的,且最长的字母
+
+
+            // var str = "aaacccbbbbbfffffffffyddddddeeegg";
+            //  var re = /(\w)\1+/g;
+
+            //  // 通过正则，找到了符合条件的数组，里面存储了字符串
+            // var array= str.match(re);
+
+            // console.log(array);
+
+            // var maxLength = 0; //符合条件的数组长度的初始值；从0开始比较
+            //                    //，一直在变，值等于二者比较中的比较大的一个值
+            
+            // var maxStr = ''; //仓库，用来储存每一次符合条件的最大值，直到最大
+
+
+            // for( var i=0;i<array.length;i++){
+            //     if(array[i].length > maxLength){
+                    
+            //         maxLength=array[i].length; //谁大maxlength就是谁的值
+            //         maxStr=array[i];
+            //     }
+            // }
+
+            // console.log( maxStr );
+
+            // 找到第一个连续的，得到下标
+            var str = "abadsf2222adsgaoooasdfa";
+
+            var re = /(\w)\1+/;//至少调用一次
+
+            console.log( str.match(re)); // “2222，“2”
+            console.log(str.search(re));  //下标 6
+        </script>
+    </head>
+    <body>
+    </body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>我是一个标题</title>
+        <style type="text/css">
+            div{
+                width:200px;;
+                height: 200px;
+                background-color: #f00;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="oDiv">
+
+        </div>
+        <!--测试笔记-->
+        <img src="img/1.jpg" alt="" id="oImg" />
+        <script>
+            var oDiv = document.getElementById("oDiv");
+            var oImg = document.getElementById("oImg");
+            // alert(typeof oDiv);
+            oDiv.style.backgroundColor="#00f";
+            // alert(oImg.src);
+            oImg.src="img/2.png";
+            // alert(document.title);
+            document.title="今天好困呀~";
+        </script>
+         <!--老师笔记-->
+        <!--<script type="text/javascript">
+
+            var oDiv = document.getElementById("oDiv");
+            var oImg = document.getElementById("oImg");
+
+            alert(typeof oDiv);
+
+            oDiv.style.backgroundColor="blue";
+
+            // alert(oImg.src);  //读操作
+
+            oImg.src = "img/2.png";   //写操作
+
+            // alert(document.title);
+            document.title = "今天开始DOM学习~很开心~";
+
+        </script>-->
+    </body>
+
+</html>

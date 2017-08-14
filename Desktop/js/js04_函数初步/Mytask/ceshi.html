@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function outer(){
+			var a = 333;
+			function inner(){
+				alert(a);
+		}
+            alert(7);//333
+			return inner;	//outer返回了inner的引用
+		}
+	    var a = outer();//a == inner
+        a();
+        //alert()
+        //var object = outer();
+        //objec;
+
+    </script>
+</body>
+</html>

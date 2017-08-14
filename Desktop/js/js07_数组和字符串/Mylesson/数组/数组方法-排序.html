@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <script type="text/javascript">
+            // 数组倒置
+            // var arr = ["A","S","Z","D","E","F","G","H"];
+
+            // arr.reverse();
+
+            // console.log(arr);
+
+
+
+            // var arr = [ 3,6,4,2,1];
+            // arr.sort();
+
+            // console.log(arr);
+
+
+
+            // var arr = [23,435,456,23,12,345,2,32,11,324,32,43,65,667,78,43];
+
+            // arr.sort();
+            // // 数字会隐式转换 字符串   根据字符编码排序
+
+            //  console.log(arr);
+            //
+
+            var arr = [23,435,-456,23,12,345,2,32,11,324,32,43,65,667,78,43];
+
+            arr.sort( function(a,b){
+                //如果a要放在b前面，那么返回负数
+                //如果a要放在b后面，那么返回正数
+                //如果a和b不区分大小，那么返回0
+                // if( a < b){
+                //     return -1;
+                // }else if( a > b){
+                //     return 1;
+                // }else if( a == b){
+                //     return 0;
+                // }
+
+                return a - b;
+            });
+
+             console.log(arr);
+        </script>
+    </head>
+    <body>
+    </body>
+</html>

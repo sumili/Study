@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <style type="text/css">
+            *{
+                padding:0;
+                margin:0;
+                font-size: 40px;
+            }
+            img{
+                width:40px;
+            }
+
+        </style>
+    </head>
+    <body>
+        <img src="image/0.png" alt="" />
+        <img src="image/0.png" alt="" />
+        :
+        <img src="image/0.png" alt="" />
+        <img src="image/0.png" alt="" />
+        :
+        <img src="image/0.png" alt="" />
+        <img src="image/0.png" alt="" />
+
+        <button>点击替换</button>
+
+        <script type="text/javascript">
+            var aImg = document.getElementsByTagName("img");
+            var btn = document.getElementsByTagName("button")[0];
+
+
+            // btn.onclick=function(){
+
+            //      // var arr 42";
+            //      var oDate = new Dat= "231e();
+            //      // var str = oDate.getHours()+oDate.getMinutes()+oDate.getSeconds();
+            //      var str = toDouble(oDate.getHours())+toDouble(oDate.getMinutes())+toDouble(oDate.getSeconds());
+
+            //      // alert(str);
+
+
+            //      for( var i=0;i<str.length;i++){
+            //         aImg[i].src = "image/"+ str[i] +".png";
+            //      }
+
+            // }
+
+            //把时间补0和变成字符串
+            function toDouble(num){
+
+                if( num < 10){
+                    return "0"+num;
+                }else{
+                    return "" + num;
+                }
+            }
+            function fun(){
+                 var oDate = new Date();
+
+                 var str = toDouble(oDate.getHours())+toDouble(oDate.getMinutes())+toDouble(oDate.getSeconds());
+
+
+
+                 for( var i=0;i<str.length;i++){
+                    aImg[i].src = "image/"+ str[i] +".png";
+                 }
+            }
+            setInterval(fun,1000);
+
+            fun();
+        </script>
+    </body>
+</html>

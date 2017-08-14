@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style type="text/css">
+            div{
+                width: 200px;
+                height: 200px;
+                background: red;
+            }
+    </style>
+</head>
+<body>
+    <div></div>
+    <script>
+        var oDiv = document.getElementsByTagName("div")[0];
+        //经典轮子：函数封装 // who>>ele dowhat>>eventtype  how>>fn
+        function addEvent(ele,eventType,fn){
+            //能力判断
+            if(ele.addEventListener){
+                ele.addEventListener(eventType,fn,false);
+            }else if(ele.attachEvent){
+                oDiv.attachEvent("on"+eventType,fn);
+                fn.call(ele)
+            }else{
+                ele["on"+eventType]
+            }
+        }    
+        addEvent( oDiv , "click" , function(){
+            this.style.background = "blue";
+        })
+    </script>
+</body>
+</html>

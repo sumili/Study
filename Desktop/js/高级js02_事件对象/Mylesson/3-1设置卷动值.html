@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <style type="text/css">
+            body{
+                height: 5000px;
+            }
+        </style>
+    </head>
+    <body>
+        <input type="button" value="点我去3100的位置" id="btn" />
+                <!--oH1.innerHTML = document.body.scrollTop || document.documentElement.scrollTop;-->
+
+
+        <script type="text/javascript">
+            var btn = document.getElementById("btn");
+
+            btn.onclick=function(){
+
+                document.body.scrollTop = 3100;
+
+            }
+
+            // var btn = document.getElementById("btn");
+
+            // btn.onclick = function (){
+            //     document.body.scrollTop = 3100;
+            // }
+        </script>
+    </body>
+</html>

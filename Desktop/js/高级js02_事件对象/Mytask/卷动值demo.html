@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        body{
+
+            height: 2000px;
+        }
+        /*body{
+            padding-top: 20px;
+            /*position: relative;*/
+            #oDiv{
+            /*margin-top: 20px;*/
+            width:1000px;
+            height:50px;
+            position: absolute;
+            background-color: #f00;
+            display:none;
+        }    
+    </style>
+</head>
+<body>
+    <div id = "oDiv" style="display:none">我出现了</div>
+    <script>
+        var oDiv = document.getElementById("oDiv");
+
+    
+
+// var oH1 = document.getElementsByTagName("h1")[0];
+
+            //当窗口卷动的时候触发这个事件
+            // window.onscroll = function(){
+            //     //高级浏览器认为卷动是body属性
+            //     //IE6，7,8认为卷动是html标签的属性
+            //     //如何得到html标签 JS中document.documentElement就是html标签
+            //     // document.body是 body
+
+
+            //     oH1.innerHTML = document.body.scrollTop || document.documentElement.scrollTop;
+            // }
+
+        // var oDivY = oDiv.offsetTop;
+        // alert(oDivY);
+        window.onscroll = function(){
+            count = document.body.scrollTop || document.documentElement.scrollTop;
+            console.log(count);
+        // if(count == 100){
+        //     oDiv.style.display="block";
+        //     console.log(1);
+        //     console.log(oDiv.style.display);
+        // }
+        }
+        
+    </script>
+</body>
+</html>

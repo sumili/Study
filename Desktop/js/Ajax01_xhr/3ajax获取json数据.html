@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    
+    var xhr = new XMLHttpRequest;
+
+    xhr.onreadystatechange = function(){
+        if(xhr.readyState == 4){
+
+            //先得到数据，就是把字符串转换为json
+            var response = JSON.parse(xhr.responseText);
+                console.log(response);
+            
+
+            //DOM操作
+            for( var i = 0 ; i <response.data.length; i++){
+                console.log(1);
+
+                //DOM操作
+                var oDiv = document.createElement("div");
+                document.body.appendChild(oDiv);
+
+                oDiv.innerHTML = response.data[i].cat_name;
+
+            }
+
+        }
+    }
+
+
+    xhr.open("GET" , "http://h6.duchengjiu.top/shop/api_cat.php");
+    xhr.send(null);
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    // var xhr = new XMLHttpRequest();
+
+    // xhr.onreadystatechange = function(){
+
+    //     console.log(response);
+    //     // console.log(xhr.readyState);
+    //      if( xhr.readyState ==4){
+
+    //         //获取数据
+    //         //console.log( xhr.responseText);//接收到的东西，永远是string，无论它长得多么像JSON。
+
+    //         //console.log( typeof xhr.responseText);//string
+
+    //     var response = JSON.parse(xhr.responseText);//JSON.parse  :  字符串 → JSON
+    //                                                 //JSON.stringify   ： JSON → 字符串
+
+    //      console.log(response);
+    //     // console.log( typeof response);//object
+
+
+    //     //DOM 操作
+    //     //对象有一个data属性：值为一个Array。
+    //     for ( var i = 0 ; i < response.data.length ; i++){
+    //         var obj =response.data[i];
+
+    //         document.body.appendChild(oDiv);
+    //         var oDiv = document.createElement("div");
+
+    //         oDiv.innerHTML = obj.cat_name;
+    //     }
+       
+    // }
+
+    // xhr.open ( "get" ,"http://h6.duchengjiu.top/shop/api_cat.php");//方法get：从指定URL资源获取数据
+
+    // xhr.send( null);
+
+    //真正的过程是 0 open send 3 4(满足4之后做的事);
+    </script>
+</body>
+</html>

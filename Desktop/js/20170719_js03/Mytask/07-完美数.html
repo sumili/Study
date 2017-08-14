@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+
+        for(var i =1;i<10000;i++){
+            
+            var count=0;//关键是把这条语句放在了外面，而不是第二级for循环里面。
+            for(var j=1;j<i;j++){
+                if(i%j==0){
+                    count=count+j;
+                }
+            }
+            if(count==i){
+            console.log(i+"是完美数")
+            }
+        }
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

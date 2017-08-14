@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			table{
+				margin:100px auto;
+			}
+			table,tr,td{
+				background: green;
+			}
+			td{
+				width: 18px;
+				height: 18px;
+				border:1px solid yellowgreen;
+			}
+			.red{
+				background: red;
+			}
+			.blue{
+				background:url(body.gif);
+			}
+		</style>
+	</head>
+	<body>
+		<table id="oTable">
+			
+		</table>
+		<audio src="snake_bg.mp3" autoplay></audio>
+		
+		<script type="text/javascript">
+			var oTable = document.getElementById("oTable");
+			var tds = [];  //二维数组
+			var timer = null;
+			
+			//两层for循环干了两件事
+			//1.创建了DOM对象,创建了400个td,20个tr,追加了table
+			//2.将400个td放到tds数组里面了,tds是一个二维数组,存放着td的DOM元素
+			//按理说,地图初始化,也应该用类
+			
+			for(var i = 0;i < 20; i++){
+				var tr = document.createElement("tr");
+				var thisrowtd = []; //存放当前行td的数组，存放的是DOM对象
+				
+				for( var j = 0;j < 20; j++){
+					var td = document.createElement("td");
+					tr.appendChild(td);  //存放入每行tr标签内
+					thisrowtd.push(td);  //存放到每行的数组内（跟上面不冲突）
+				}
+				
+				oTable.appendChild(tr); //把每行tr添加到页面表格中
+				tds.push(thisrowtd);  //把当前行的变量放入tds二维数组里面
+			}
+			
+			
+			function Snake(){
+				//身体的各个方块
+				this.bodyArr = [
+					{x:3,y:4},
+					{x:4,y:4},
+					{x:5,y:4},
+					{x:6,y:4}
+				];	
+				//移动的方向
+				this.direction = "right"; //top,bottom,left
+				
+				this.render();
+				
+				this.bindEvent();
+			}
+			//渲染
+			Snake.prototype.render = function(){
+				//重置画布让所有的td都没有类名
+				for(var i= 0;i<20;i++){
+					for(var j= 0;j<20;j++){
+						tds[i][j].className=""
+					}
+				}
+				
+				//让自己的细胞这些小格加red类名
+				for(var i=0;i<this.bodyArr.length;i++){
+					tds[this.bodyArr[i].x][this.bodyArr[i].y].className= "red"
+				}
+			}
+			//更新自己
+			Snake.prototype.update=function(){
+				this.bodyArr.pop();  //删除尾巴
+				
+				switch(this.direction){
+					case "right":
+//					在头部添加一项
+						this.bodyArr.unshift({ x : this.bodyArr[0].x , y : this.bodyArr[0].y+1})
+						break;
+					case "top":
+//					在头部添加一项
+						this.bodyArr.unshift({ x : this.bodyArr[0].x -1, y : this.bodyArr[0].y})
+						break;
+					case "bottom":
+//					在头部添加一项
+						this.bodyArr.unshift({ x : this.bodyArr[0].x +1, y : this.bodyArr[0].y})
+						break;
+					case "left":
+//					在头部添加一项
+						this.bodyArr.unshift({ x : this.bodyArr[0].x , y : this.bodyArr[0].y-1})
+						break;
+				}
+				
+				//检查自己有没有吃到食物
+				if( this.bodyArr[0].x == food.x 
+					&& this.bodyArr[0].y == food.y){
+						food.change();  //让食物刷新
+						this.growup();   //让蛇长大
+					}
+				
+				
+				//判断范围
+//				console.log(this.bodyArr[0].x);
+				if(this.bodyArr[0].x < 0 ||this.bodyArr[0].x > 19
+				|| this.bodyArr[0].y < 0 || this.bodyArr[0].y > 19){
+					clearInterval(timer);
+					alert("GAME OVER");
+					return;
+				}
+				
+				
+				this.render();
+			}
+			Snake.prototype.bindEvent=function(){
+				
+//				this备份
+				var self = this;
+				document.onkeydown =function(event){
+//					event兼容处理
+					event = event || window.event;
+					switch( event.keyCode){
+						case 37:  //往左left
+							if( self.direction == "right"){
+								return;
+							}
+							self.direction = "left";
+							break;
+						case 38:  //往上
+							if( self.direction == "bottom"){
+								return;
+							}
+							self.direction = "top";
+							break;
+						case 39:  //往右
+							if( self.direction == "left"){
+								return;
+							}
+							self.direction = "right";
+							break;
+						case 40:  //往下
+							if( self.direction == "top"){
+								return;
+							}
+							self.direction = "bottom";
+							break;
+					}
+					
+				}
+			}
+			//长大方法
+			Snake.prototype.growup=function(){
+				switch(this.direction){
+					case "right":
+//					在头部添加一项
+						this.bodyArr.unshift({ x : this.bodyArr[0].x , y : this.bodyArr[0].y+1})
+						break;
+					case "top":
+//					在头部添加一项
+						this.bodyArr.unshift({ x : this.bodyArr[0].x -1, y : this.bodyArr[0].y})
+						break;
+					case "bottom":
+//					在头部添加一项
+						this.bodyArr.unshift({ x : this.bodyArr[0].x +1, y : this.bodyArr[0].y})
+						break;
+					case "left":
+//					在头部添加一项
+						this.bodyArr.unshift({ x : this.bodyArr[0].x , y : this.bodyArr[0].y-1})
+						break;
+				}
+			}
+			
+			function Food(x,y){
+				this.change();
+			}
+//			渲染
+			Food.prototype.render = function(){
+				tds[this.x][this.y].className = "blue";
+			}
+			//改变位置
+			Food.prototype.change = function(){
+				this.x = parseInt(Math.random()*20);
+				this.y = parseInt(Math.random()*20);
+				
+				for(var i = 0 ;i< snake.bodyArr.length;i++){
+					if( this.x == snake.bodyArr[i].x 
+						&& this.y == snake.bodyArr[i].y){
+						this.change();
+						return;
+					}
+				}
+			}
+//			
+			
+			
+			var snake = new Snake();
+			var food = new Food();
+			
+			timer = setInterval(function(){
+				//每500毫秒都在更新，每半秒蛇都在渲染
+				snake.update();
+				
+				//食物也要产生
+				food.render();
+			},500)
+			
+		</script>
+	</body>
+</html>
+
+	

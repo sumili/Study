@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+    //得到约数个数
+        function yueshu(m){
+            var count=0;
+            for(var i=1;i<=m;i++){
+                if(m%i==0){
+                    count++
+                }
+            }return count;
+        }
+       console.log(yueshu(6));
+       //依据count=2是否为质数
+       function zhishu(m){
+           if(yueshu(m)==2){
+               return true;
+           }else{
+               return false;
+
+           }
+       }
+       for(i=1;i<=1000;i++){
+           if(zhishu(i)==true){
+               console.log(i)
+           }
+       }
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

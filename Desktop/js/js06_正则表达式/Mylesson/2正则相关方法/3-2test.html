@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <script type="text/javascript">
+
+        // var str = "hello ucai";
+
+        // var re = /hello/;
+
+        // 判断str字符串是否匹配我们re规则
+        // console.log( re.test(str) );  //t
+
+        //如果有空格是false   没有空格是true
+        // var str1 = prompt("不准输入空格");
+
+
+        // // /\s/.test(str1)匹配用户输入内容，如果有空格为true
+        // //用 ！取反   true 变成false
+        // alert( !/\s/.test(str1) );
+
+
+
+        var re = /\^a/;
+
+
+        console.log(re.test("bb^acc"));//t
+
+        var re = /\\m/;  //特殊字符要转义
+        console.log(re.test("aafb\\masdfad"));//t
+
+        //匹配回车符
+        var str = 'a\nb';
+
+        var re = /\n/;
+
+        console.log(str);//a,b
+        console.log( re.test(str));//t
+        </script>
+    </head>
+    <body>
+    </body>
+</html>

@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <style type="text/css">
+            *{
+                padding:0;
+                margin:0;
+            }
+            .rolling{
+                width: 800px;
+                height: 130px;
+                border:10px solid #ccc;
+                margin:100px auto;
+                position:relative;
+                overflow: hidden;
+            }
+            .rolling .m_unit{
+                /*这是运动的单位*/
+                /*这个宽度足以致命，为了让所有li能够排列*/
+                /*这个宽度随便取，大一点*/
+                width: 5000px;
+                position:absolute;
+                top:0;
+                left:0;
+            }
+            .rolling ul{
+                list-style: none;
+            }
+            .rolling ul li{
+                float:left;
+                margin-right: 10px;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="rolling" id="rolling">
+            <div class="m_unit" id="m_unit">
+                <ul>
+                    <li><a href="#"><img src="img/0.png" alt="" /></a></li>
+                    <li><a href="#"><img src="img/1.png" alt="" /></a></li>
+                    <li><a href="#"><img src="img/2.png" alt="" /></a></li>
+                    <li><a href="#"><img src="img/3.png" alt="" /></a></li>
+                    <li><a href="#"><img src="img/4.png" alt="" /></a></li>
+                    <li><a href="#"><img src="img/5.png" alt="" /></a></li>
+                    <li><a href="#"><img src="img/6.png" alt="" /></a></li>
+                    <li><a href="#"><img src="img/7.png" alt="" /></a></li>
+                </ul>
+            </div>
+        </div>
+
+        <script type="text/javascript">
+            //得到元素
+            var rolling = document.getElementById("rolling");
+            var m_unit = document.getElementById("m_unit");
+            var aUl = document.getElementsByTagName("ul")[0];
+
+            //得到图片的数量，计算折返点，210*图片数量
+            var lisLength = aUl.getElementsByTagName("li").length;
+
+            var timer = null;
+
+            //复制一倍的li
+            // alert(aUl.innerHTML);
+            aUl.innerHTML += aUl.innerHTML;
+
+            // 信号量
+            var newLeft = 0;
+            var num = 5;
+
+            // 先调用
+            move();
+
+            function move(){
+                // 设表先停
+                clearInterval(timer);
+
+                // 运动
+                timer = setInterval(function(){
+                    newLeft+= num ;
+
+                    //范围
+                    if( newLeft  < -210*lisLength){
+                        newLeft = 0;
+                    }
+                    if( newLeft > 0 ){
+                        newLeft = -210*lisLength;
+                    }
+
+
+                   m_unit.style.left =  newLeft + "px";
+                },400);
+
+
+            }
+        </script>
+    </body>
+</html>

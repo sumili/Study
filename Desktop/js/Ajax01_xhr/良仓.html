@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        #box{
+            width: 300px;
+            height: 586px;
+            position: relative;
+            margin: 0 auto;
+        }
+        #logo{
+            position: absolute;
+            width: 113px;
+            height: 200px;
+            margin : 60px 95px;
+            background: url('img/logo.png') no-repeat;
+            background-position: -12px -11px;
+        }
+        #phone{
+            width: 300px;
+            height: 35px;
+            background: url('img/phone.png') no-repeat;
+            background-position: 0px 0px ;
+        }
+        #check{
+            width: 300px;
+            height: 59px;
+            background: url('img/check.png') no-repeat;
+            background-position: 0px 0px ;
+            
+        }
+        #check>input{
+            float: left;
+        }
+        #checkto{
+            border: solid 1px #000;
+            height: 35px;
+            line-height: 34px;
+            width: 110px;
+            font-size: 16px;
+            margin-left: 12px;
+            border-radius: 4px;
+            color: #333;
+            float: right;
+            cursor: pointer;
+        }
+        #allcheck{
+            width:300px;
+            height:
+        }
+        #allcheck>input{
+            cursor: pointer;
+            width: 300px;
+            height: 50px;
+            border: 0;
+            background: #25292e;
+            font-size: 18px;
+            border-radius: 4px;
+            color: #ffffff;
+            margin-top: 9px;
+            margin-bottom: 30px;
+        }
+    </style>
+</head>
+<body>
+    <div id="box">
+        <form>
+            <a href="" id = "logo"></a>
+
+            <div id = "phone"><input type="text" value="输入手机号"></div>
+            <div id="check">
+                <input type="text" value="输入验证码">
+                <div id="checkto">获取验证码</div>
+            </div>
+            <div id = "allcheck"><input type="checkbox"><span>自动登录</span></div>
+            <div><input type="button" value="登录"></div>
+            <a href="#">更多登录方式 ></a>
+        </form>
+    </div>
+</body>
+</html>

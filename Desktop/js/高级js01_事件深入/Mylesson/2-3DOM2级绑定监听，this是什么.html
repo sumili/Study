@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <style type="text/css">
+            #box1{
+                width: 400px;
+                height: 400px;
+                background-color: yellowgreen;
+            }
+            #box2{
+                width: 300px;
+                height: 300px;
+                background-color: skyblue;
+            }
+            #box3{
+                width: 200px;
+                height: 200px;
+                background-color: gold;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="box1">
+            <div id="box2">
+                <div id="box3">
+
+                </div>
+            </div>
+        </div>
+
+        <script type="text/javascript">
+            var box1 = document.getElementById("box1");
+            var box2 = document.getElementById("box2");
+            var box3 = document.getElementById("box3");
+
+           function changeColor(){
+                this.style.backgroundColor="red";
+           }
+
+           box1.addEventListener("click", changeColor, false);
+           box2.addEventListener("click", changeColor, false);
+           box3.addEventListener("click", changeColor, false);
+
+        </script>
+    </body>
+</html>

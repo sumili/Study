@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <style type="text/css">
+            li{
+                width: 20px;
+                height: 30px;
+                background-color: orange;
+                margin:10px;
+            }
+        </style>
+    </head>
+    <body>
+        <ul id="oUl">
+            <li>1</li>
+            <li>2</li>
+            <li>3</li>
+            <li>4</li>
+            <li>5</li>
+        </ul>
+
+        <script type="text/javascript">
+            var oUl = document.getElementById("oUl");
+            // var lis = oUl.childNodes;
+
+            // console.log(lis.length);
+
+            // document.onclick=function(){
+            //     for( var i=0;i<lis.length;i++){
+
+            //         if( lis[i].nodeType === 1){
+            //             lis[i].style.width = "150px";
+            //         }
+
+            //     }
+            // }
+
+
+            // children 不是一个标准的属性，但是每个浏览器都支持
+            // 找到每个元素下，所有的元素节点
+            var lis = oUl.children;
+
+            //console.log(lis); //输出5个li
+            document.onclick=function(){
+                for( var i=0;i<lis.length;i++){
+
+                        lis[i].style.width = "150px";
+
+                }
+            }
+
+           // nodeType 节点类型  children 所有元素节点
+                                //childNodes 所有节点
+        </script>
+    </body>
+</html>

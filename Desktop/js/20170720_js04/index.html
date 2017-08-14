@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+        function fun(a){
+            console.log(a+"很开心");
+        }
+        fun("小李");
+        //得到约数个数
+        function yueshu(m){
+            var count=0;
+            for(var i=1;i<=m;i++){
+                if(m%i==0){
+                    count++
+                }
+            }return count;
+        }
+    //    console.log(yueshu(6));
+       //依据count=2是否为质数
+       function zhishu(m){
+           if(yueshu(m)==2){
+               return true;
+           }else{
+               return false;
+
+           }
+       }
+        // console.log(zhishu(2));
+        //若是true则为zhishu
+        // function Zhishu(count)
+        // for(var i=1;i<100;i++){
+        //     if(zhishu(m)==2){
+        //     console.log(i);
+        // }
+        var oushu=parseInt( prompt("请输入一个偶数") );
+        for(var i=1;i<=oushu;i++){
+            if(zhishu(i)&&zhishu(oushu-i)){
+                console.log(oushu+"可以拆分为"+i+"与"+(oushu-i)+"之和");
+            }
+        }
+    function jiecheng(a){
+        var s=1;
+        for(var i=1;i<=a;i++){
+            s*=i;
+        }return s;
+    }
+    console.log(jiecheng(7));
+    for(var i=100;i<900;i++){
+        var geshu=i%10;
+        var shiweishu=parseInt(i/10)%10;
+        var baiwei=parseInt(i/100)%10;
+        if(jiecheng(geshu)+jiecheng(shiweishu)+jiecheng(baiwei)==i){
+            console.log(i)
+        }
+    }
+    function digui(n){
+        if(n==1||n==2){
+            return 1;
+        }else{
+            return digui(n-1)+digui(n-2);//1 1 2 3 5
+        }
+    }
+    console.log(digui(1));
+    console.log(digui(2));
+    console.log(digui(3));
+    console.log(digui(4));
+    console.log(digui(5));
+    fun
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

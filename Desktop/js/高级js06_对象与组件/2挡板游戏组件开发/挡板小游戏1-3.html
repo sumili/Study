@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			.board{
+				width: 200px;
+				height: 4px;
+				position: absolute;
+				background: purple;
+				border-radius: 2px;				
+			}
+			.ball{
+				width: 30px;
+				height: 30px;
+				position: absolute;
+				border-radius: 50%;
+				background: skyblue;
+			}
+		</style>
+	</head>
+	<body>
+		
+		
+		<script type="text/javascript">
+			/*
+			 数据结构： 球的对象 ， 挡板对象，游戏对象
+			 算法  ： 反弹  ，检查碰到挡板
+			 
+			 算法：
+			 	反弹算法
+			 		到了边界就把迭代信号量取反  ， 10  -10 --10  ---10
+			 	
+			 	检测碰到挡板
+			 	ball.top + ball.直径=== board.top
+			 	&& ball.left + ball.直径/2 >= board.offsetLeft
+			 	&& ball.left + ball.直径/2 <= board.offsetLeft + board.width
+			 * 
+			 * 数据结构
+			 *   球
+			 * 		属性
+			 * 			top,left,speed,deltaX,deltaY,d,color,dom,timer
+			 * 		方法
+			 * 			init(),move(),render()
+			 * 
+			 * 	挡板
+			 * 		属性
+			 * 			top , left 
+			 * 		方法
+			 * 			init(),render(),bindEvent
+			 * 
+			 * 游戏
+			 * 		属性
+			 * 			score
+			 * 		方法
+			 * 			init(),render(),addScore();
+			 * */
+			
+			
+//			function 板(top,left){
+//				this.top = top;
+//				this.left = left;
+//				this.dom = null;
+//			}
+//			板.原型.init = function(){
+//				this.dom = 创建元素
+//				插入到body当中
+//			}
+//			板.原型.rander = function(){
+//				this.dom.style.top = this.top + "px";
+//				this.dom.style.left = this.left + "px";
+//			}
+//			板.原型.bindEvent = function(){
+//				给document添加一个鼠标移动事件 = function(){
+//					板.left  = 获取鼠标位置;
+//					板.render();
+//				}
+//			}
+			function Board(top,left){
+				this.top = top;
+				this.left = left;
+				this.dom = null;
+				this.width = 200;
+				this.init();
+				this.rander();
+				this.bindEvent();
+			}
+			Board.prototype.init = function(){
+				this.dom = document.createElement("div");
+				this.dom.className = "board";
+				document.body.appendChild(this.dom);
+			}
+			Board.prototype.rander = function(){
+				this.dom.style.top = this.top + "px";
+				this.dom.style.left = this.left + "px";
+			}
+			Board.prototype.bindEvent = function(){
+				
+				var self = this;  //备份this
+				document.onmousemove = function(event){
+					event = event || window.event;
+					self.left  = event.clientX;
+					
+					if( self.left < 0 ){
+						self.left = 0;
+					}
+					if( self.left >  width - self.width){
+						self.left = width - self.width;
+					}
+					self.rander();
+				}
+			}
+			
+			var height = document.documentElement.clientHeight || document.body.clientHeight;
+			var width = document.documentElement.clientWidth || document.body.clientWidth;
+			
+			var board = new Board(height -4 -100,(width - 200)/2);
+			
+//			function 球(top,left,deltaX,deltaY){
+//				this.top = top;
+//				this.left = left;
+//				this.deltaX = deltaX;  //x步长
+//				this.deltaY = deltaY;  //y步长
+//				this.speed = 30;
+//				this.dom = null;
+//				this.timer = null;
+//				this.d = 30;
+//				
+//			}
+//			球.原型.init(){
+//				创建元素
+//				放到页面
+//			}
+//			球.原型.move(){
+//				开启一个定时器(function(){
+//					left属性 += deltaX;
+//					top属性 += deltaY;
+//					
+//					//判断折返
+//					if(到达左右边界){
+//						步长x的值 = -步长x的值
+//					}
+//					if(到达顶部){
+//						步长y的值 = -步长y的值
+//					}
+//					检测碰到挡板
+//			 	if (ball.top + ball.直径=== board.top){
+//			 		if(ball.left + ball.直径/2 >= board.offsetLeft
+//			 	&& ball.left + ball.直径/2 <= board.offsetLeft + board.width
+//			 ){
+//			 	步长y的值 = -步长y的值
+//			 	得分
+//			 }else{
+//			 	定时器清除
+//			 	提示游戏结束
+//			 }
+//			 	}
+//					球的渲染()
+//				},this.speed)
+//			}
+//			
+//			球.原型.render=function(){
+//				球的DOM.左边的值 = left属性 + 单位
+//				球的DOM.上边的值 = top属性 + 单位
+//			}
+		function Ball(top,left,deltaX,deltaY){
+				this.top = top;
+				this.left = left;
+				this.deltaX = deltaX;  //x步长
+				this.deltaY = deltaY;  //y步长
+				this.speed = 30;
+				this.dom = null;
+				this.timer = null;
+				this.d = 30;
+				
+				this.init();
+				this.move();
+			}
+			Ball.prototype.init=function(){
+				this.dom = document.createElement("div");
+				this.dom.className = "ball";
+				document.body.appendChild(this.dom);
+			}
+			Ball.prototype.move=function(){
+				
+				var self = this;  //备份this
+				this.timer = setInterval(function(){
+					self.left += self.deltaX;
+					self.top  += self.deltaY;
+					
+//					范围
+					if( self.left < 0 ){
+						self.left = 0;
+					}
+					if( self.left > width - self.d ){
+						self.left = width - self.d;
+					}
+					if( self.top < 0 ){
+						self.top = 0;
+					}
+					if( self.top > board.top - self.d ){
+						self.top = board.top - self.d;
+					}
+					
+					//判断折返
+					if( self.left <= 0 || self.left >= width - self.d){
+						self.deltaX = -self.deltaX;
+					}
+					if( self.top <= 0 ){
+						self.deltaY = -self.deltaY;
+					}
+					//检测碰到挡板
+			 	if (self.top + self.d >= board.top){
+			 		
+			 		//球是否在板子上
+			 		if(self.left + self.d/2 >= board.dom.offsetLeft
+			 	&& self.left + self.d/2 <= board.dom.offsetLeft + board.width
+			 ){
+			 	self.deltaY = -self.deltaY;
+			 	game.addScore();
+			 }else{
+			 	clearInterval(self.timer);
+			 	alert("game over");
+			 }
+			 	}
+					self.rander()
+				},this.speed)
+			}
+			
+			Ball.prototype.rander=function(){
+				this.dom.style.left =this.left + "px";
+				this.dom.style.top =this.top + "px";
+			}
+			
+			var ball = new Ball(0,0,5,10);
+			
+			
+			
+			function Game(){
+				this.score = 0;
+				this.scoreDom = null;
+				this.init();
+				this.rander();
+			}
+			Game.prototype.init=function(){
+				this.scoreDom = document.createElement("h1");
+				this.scoreDom.className = "score";
+				document.body.appendChild(this.scoreDom);
+			}
+			Game.prototype.rander=function(){
+				this.scoreDom.innerHTML = "分数：" + this.score;
+			}
+			Game.prototype.addScore=function(){
+				this.score += 1 ;
+				this.rander();
+			}
+			 var game = new Game();
+		</script>
+	</body>
+</html>

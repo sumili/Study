@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <style type="text/css">
+            body{
+                height: 5000px;
+            }
+            div{
+                width: 100px;
+                height: 100px;
+                background-color: red;
+                position:absolute;
+                top:100px;
+                left:100px;
+            }
+        </style>
+    </head>
+    <body>
+        <div></div>
+
+
+        <script type="text/javascript">
+
+            var oDiv = document.getElementsByTagName("div");
+
+            //信号量
+
+            var newLeft= 100;
+
+            //事件监听
+            docu.onmousewheel = function(event){
+                //信号量改变之前先能力判断能力
+                event = event || window.event 
+
+                newLeft += 10;
+
+                //组织默认行为先能力判断
+                if(event.preventDefault){
+                    event.preventDefault;
+                }else{
+                    event.returnValue = false;
+                }
+                
+
+            }
+
+
+            var oDiv = document.getElementsByTagName("div")[0];
+
+            var newLeft = 100;//信号量
+
+            document.onmousewheel=function(event){
+                event = event || window.event;
+
+                newLeft +=10;
+
+
+
+                //阻止默认的滚动事件，阻止方法有浏览器兼容问题；就是窗口此时不能滚动
+                if(event.preventDefault){
+                    event.preventDefault();
+                }else{
+                    event.returnValue = false;
+                }
+
+                oDiv.style.left = newLeft + "px";
+
+            }
+
+        </script>
+    </body>
+</html>

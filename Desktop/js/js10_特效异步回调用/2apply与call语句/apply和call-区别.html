@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <script type="text/javascript">
+
+            var obj = {
+                "name" : "考拉",
+                "age"  : 18,
+                "sex"  : "男"
+            }
+
+            // .call和.apply区别：apply后面的参数需要放在一个数组内
+            // function fun(a,b,c){
+            //     console.log(this.name);
+            //     console.log(a+b+c);
+            // }
+
+            // fun.call(obj,2,3,4);
+            // fun.apply(obj,[2,3,4]);
+
+            function fun1(n){
+                for(var i=1;i<=n;i++){
+                    console.log(this.name);
+                }
+            }
+
+             // fun1.call(obj,5);
+            fun1.apply(obj,[4]);
+
+
+        </script>
+    </head>
+    <body>
+    </body>
+</html>

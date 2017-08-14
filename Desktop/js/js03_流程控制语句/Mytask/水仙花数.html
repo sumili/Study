@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <!--水仙花数：1^3 + 5^3+ 3^3 = 153 --> 
+    <!--从100～1000中输出水仙花数 -->
+
+    <script>
+
+        // var num = 100;
+        for( var i = 100 ; i<1000 ; i++){
+            
+            //得到个位数+百位数+十位数
+            var baiwei = parseInt(i/100);
+            var shiwei = parseInt((i%100)/10);
+            var gewei =  i % 10;
+            var istrue = Math.pow(baiwei,3)+Math.pow(shiwei,3)+Math.pow(gewei,3);
+            if ( istrue == i){
+                console.log(i+"是水仙花数");
+            }
+        }
+
+
+    </script>
+
+
+</body>
+</html>

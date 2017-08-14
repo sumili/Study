@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        .rolling{
+            width:1000px;
+            height:130px;
+            border:10px solid #ccc;
+            margin: 100px auto;
+            position: relative;
+            overflow: hidden;
+        }
+        .side{
+            width:55px;
+            height: 55px;
+            position: absolute;
+            top:145px;
+            left:175px;
+        }
+        #btnR{
+            left:1120px;
+        }
+        .rolling .m_unit{
+            width:5000px;
+            position: absolute;
+            top:0;
+            left:0;
+        }
+        .rolling ul{
+            list-style: none;
+        }
+        .rolling ul li{
+            float:left;
+            margin-right: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div id="rolling" class="rolling">
+        <div id="m_unit" class="m_unit">
+            <ul>
+                <li><a href="#"><img src="img/0.png" alt=""></a></li>
+                <li><a href="#"><img src="img/1.png" alt=""></a></li>
+                <li><a href="#"><img src="img/2.png" alt=""></a></li>
+                <li><a href="#"><img src="img/3.png" alt=""></a></li>
+                <li><a href="#"><img src="img/4.png" alt=""></a></li>
+                <li><a href="#"><img src="img/5.png" alt=""></a></li>
+                <li><a href="#"><img src="img/6.png" alt=""></a></li>
+                <li><a href="#"><img src="img/7.png" alt=""></a></li>
+                <li><a href="#"><img src="img/8.png" alt=""></a></li>
+                <li><a href="#"><img src="img/9.png" alt=""></a></li>
+                <li><a href="#"><img src="img/10.png" alt=""></a></li>
+            </ul>
+        </div>
+    </div>
+    <div id="btnL" class="side"><img src="img/slide-btnL.png" alt=""></div>
+    <div id="btnR" class="side"><img src="img/slide-btnR.png" alt=""></div>
+    <script>
+
+        //得到所有事件中的元素
+        var rolling  = document.getElementById("rolling");
+        var m_unit =document.getElementById("m_unit");
+        var aUl = document.getElementsByTagName("ul")[0];
+        var btnL = document.getElementById("btnL");
+        var btnR = document.getElementById("btnR");
+        
+
+        //得到图片的数量，计算返折点 210*图片数量
+        var lisLength = aUl.getElementsByTagName("li").length;
+
+        var timer = null;
+
+        //复制一倍的li
+        aUl.innerHTML += aUl.innerHTML;
+
+        //信号量
+        var newLeft = 0;
+
+        //事件
+        function moveleft(){
+        var num = -5 ;//移动的步伐
+            // var num = 5;
+            //设表格先停
+            clearInterval(timer);
+
+            //运动
+            timer = setInterval(function(){
+                //改变信号量
+                
+                //信号量的范围/条件
+                if( newLeft < -210*lisLength){
+                    newLeft = 0;
+                }
+                if( newLeft > 0){
+                    newLeft = -210*lisLength;
+                }
+
+                newLeft+=num ;
+                m_unit.style.left = newLeft + "px";
+            },40)
+        }
+        btnL.onclick =function(){
+        moveleft()
+        }
+
+
+
+
+
+        //在事件中改变信号量
+
+        function moveright(){
+        //朝右的信号量为正-信号量
+        var num = 5 ;//移动的步伐
+            // var num = 5;
+            //设表格先停
+            clearInterval(timer);
+
+            //运动
+            timer = setInterval(function(){
+                //改变信号量
+                newLeft+=num ;
+                
+                //信号量的范围/条件
+                if( newLeft < -210*lisLength){
+                    newLeft = 0;
+                }
+                if( newLeft > 0){
+                    newLeft = -210*lisLength;
+                }
+
+                m_unit.style.left = newLeft + "px";
+            },40)
+        }
+        btnR.onclick =function(){
+        moveright()
+        }
+        
+    </script>
+</body>
+</html>

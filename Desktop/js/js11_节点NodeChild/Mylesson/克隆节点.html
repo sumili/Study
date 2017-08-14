@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+    </head>
+    <body>
+        <ul>
+            <li>哈哈</li>
+            <li>嘻嘻</li>
+            <li>呵呵</li>
+        </ul>
+
+
+        <script type="text/javascript">
+            var oUl = document.getElementsByTagName("ul")[0];
+            var lis = document.getElementsByTagName("li");
+
+            oUl.appendChild( lis[0].cloneNode(true) );
+
+            // lis[0].cloneNode(true)复制节点
+            // appendChild添加节点到元素的后面
+        </script>
+    </body>
+</html>

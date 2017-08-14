@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        table{
+            margin:100px auto;
+        }
+        table,tr,td{
+            background:green;
+        }
+        td{
+            width: 18px;
+            height: 18px;
+            border: 1px solid yellowgreen;
+        }
+    .green{
+        background: green;
+    }
+    .red{
+        background: red;
+    }
+    .food{
+        width:18px;
+        height: 18px;
+        border-radius: 100%;
+        background: #ccc;
+    }
+
+    </style>
+</head>
+<body>
+</body>
+    <table id="oTable">
+
+    </table>
+    <script>
+    
+        var oTable = document.getElementById("oTable");
+        var tds = []; //这是一个二维数组
+        var timer = null;
+        // var num = parseInt(event.keyCode);
+
+        //两层for循环做两件事
+        //1 .创建DOM对象，创建了400个td，20个tr
+        //2 .讲这400个td放在一个二维数组里面
+
+
+        //查阅所得，二维数组的length=多维数组第一维的长度
+        //二维数组的排列方式。
+        // persons[0][0] = "zhangsan";
+        // persons[0][1] = 25;
+        // persons[1][0] = "lisi";
+        // persons[1][1] = 22;
+        // persons[2][0] = "wangwu";
+        // persons[2][1] = 32;
+        // persons[0] = ["zhangsan", 25];
+        // persons[1] = ["lisi", 21];
+        // persons[2] = ["wangwu", 32];
+        var count =0;
+        for( i = 0 ; i < 20 ; i++){
+            var tr = document.createElement("tr");
+            var oTrs = [];//存放当前行td的数组
+
+            for( j = 0 ; j < 20 ; j++){
+                var td = document.createElement("td");
+                tr.appendChild(td);//把i=0[第一行]+j从0到20[第一列到20列]  //把这行创建得20[0<<20j]个
+                                //td加到这行[i=0]中
+                oTrs.push(td)  //把第一行创建的20个td添加到i= 0 这一行 oTrs[0][0]=oTrs[0][1]=oTrs[0][2]=oTrs[0][3]...
+            }
+            oTable.appendChild(tr);
+            tds.push(oTrs);//把每行都加到这个二维数组中
+    
+        }
+           //console.log(tds[0][0]);
+        
+        //  var arr = [[1,2],[3,4]];
+        // console.log(arr[1][0]);//3
+        // console.log(arr);
+
+
+            // 分析数据结果 蛇的对象
+            // 算法 ： 数组第一位呈现，数组最后一位消失
+
+            // 算法 ：
+            //     一维数组下标最大[头]  ：添加类名red
+            //      [头]：向上：oTrs[i][j] →→oTrs[i-1][j]
+
+            //      [头]：向右：oTrs[i][j] →→oTrs[i][j+1]
+
+                 
+            //      [头]：向下：oTrs[i][j] →→oTrs[i+1][j]
+
+                 
+            //      [头]：向左：oTrs[i][j] →→oTrs[i][j-1]
+                
+            //     一维数组下标最小[尾] ： 无类名
+
+            // 数据结构
+            //         蛇
+            //             属性
+            //                 [x,y]
+
+            function Snake(){
+                
+                // 身体各个方块
+                this.sBody  = [
+                    {x:3,y:4},
+					{x:4,y:4},
+					{x:5,y:4},
+					{x:6,y:4},
+                ]
+
+                this.direct = "right";//控制方向
+                this.render();
+                this.bindEvent();
+            }
+            //渲染
+            Snake.prototype.render = function(){
+                for( var i = 0; i<20 ; i++){
+                    for( var j = 0 ; j < 20 ; j++){
+                        tds[i][j].className = "green";
+                    }
+                }
+                for ( var i = 0 ; i<this.sBody.length ; i++){
+                    tds[this.sBody[i].x][this.sBody[i].y].className = "red";
+                }
+            }
+
+            //更新自己
+            Snake.prototype.update = function(){
+                this.sBody.pop();//删除尾巴
+
+                switch(this.direct){
+                    case "left":
+                    // alert(this);
+                    this.sBody.unshift( {x: this.sBody[0].x , y:this.sBody[0].y-1});
+                    break;
+                    case "top":
+                    // alert(this);
+                    
+                    this.sBody.unshift( {x: this.sBody[0].x-1 , y:this.sBody[0].y});
+                    break;
+                    case "right":
+
+                    // alert(this);
+                    
+                    this.sBody.unshift( {x: this.sBody[0].x , y:this.sBody[0].y+1});
+                    break;
+                    case "down":
+                    // alert(this);
+                    
+                    this.sBody.unshift( {x: this.sBody[0].x+1 , y:this.sBody[0].y});
+                    break;  
+                }
+            
+                //检查自己有没有吃到食物
+                if( this.sBody[0].x == food.x && this.sBody[0].y == food.y){
+                    food.change();
+                    this.grouwup();
+                }
+
+                //判断是否在盒子里，如果出了盒子，游戏结束
+                if(this.sBody[0].x < 0 || this.sBody[0].x > 19
+                || this.sBody[0].y < 0 || this.sBody[0].y > 19){
+                    clearInterval(timer);
+                    alert("Game Over");
+                    return;//返回结束
+                }
+                this.render();
+
+            }
+
+            //通过键盘改变四个方向对应uddate中的四个字符串方向值
+            Snake.prototype.bindEvent = function(){//运动
+                var self = this;
+
+                document.onkeydown = function(event){
+                    if( self.direct === null){
+                        self.direct = "right";
+                    }
+                    event = event || window.event;
+                    switch(event.keyCode){
+                        case 38 :
+                            if( self.direct = "top"){
+                                return
+                            }
+                        self.direct = "down";
+                        break;
+                        case 40 :
+                            if( self.direct = "down"){
+                                return
+                            }
+                        self.direct = "down";
+                        break;
+                        case 37 :
+                            if( self.direct = "left"){
+                                return
+                            }
+                        self.direct = "right";
+                        break;
+                        case 39 :
+                            if( self.direct = "right"){
+                                return
+                            }
+                        self.direct = "left";
+                        break;
+                    }
+
+                    // self.render();
+                }
+            }
+                Snake.prototype.grouwup = function(){
+                switch(this.direct){
+                    case "left":
+                    // alert(this);
+                    this.sBody.unshift( {x: this.sBody[0].x , y:this.sBody[0].y-1});
+                    break;
+                    case "top":
+                    // alert(this);
+                    
+                    this.sBody.unshift( {x: this.sBody[0].x-1 , y:this.sBody[0].y});
+                    break;
+                    case "right":
+
+                    // alert(this);
+                    
+                    this.sBody.unshift( {x: this.sBody[0].x , y:this.sBody[0].y+1});
+                    break;
+                    case "down":
+                    // alert(this);
+                    
+                    this.sBody.unshift( {x: this.sBody[0].x+1 , y:this.sBody[0].y});
+                    break;  
+                }                    
+                }
+
+                function Food(x, y){//食物对象
+                    this.change();
+                }
+
+                Food.prototype.render = function(){
+                    tds[this.x][this.y].className = "food";
+                }
+                Food.prototype.change = function(){
+                    this.x = parseInt( Math.random()*20 );
+                    this.y = parseInt( Math.random()*20 );
+
+                    for ( var i = 0 ; i < snake.sBody.length ; i++){//排除在自己身体中的
+                        if ( this.x == snake.sBody[i].x && this.y == snake.sBody[i].y){
+                            this.change();
+                            return;
+                        }
+                    }
+
+                }
+
+
+              
+            
+
+
+
+
+            var snake = new Snake();
+            var food = new Food();
+            timer = setInterval(function(){
+                snake.update();
+                // snake.render();
+                // snake.bindEvent();
+
+                food.render();
+            },500)
+    </script>
+</html>

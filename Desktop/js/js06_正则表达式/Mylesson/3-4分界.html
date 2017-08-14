@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <script type="text/javascript">
+            //判断字符串是否是abc开头
+            // var re = /^abc/;
+            
+
+            // console.log( re.test("abcdef"));  //t
+            // console.log( re.test("hello"));  //f
+
+            //判断字符串是否是xyz结尾
+            // var re = /xyz$/;
+
+           
+            // console.log(re.test("abcdef")); //f
+            // console.log(re.test("helloxyz")); //t
+
+            //切割成单词
+            // var str = "how old are     you|abc";
+
+            // console.log( str.match( /\b[a-zA-Z]+\b/g));
+
+
+            var str = "how old are you|abc";
+            console.log(str.match(/\b^[a-zA-Z\s]+/g));//abc
+            // var str = "xiaoxshi";
+
+            // console.log( str.match(/\bx/g));  //第一个x
+            // console.log( str.match(/i\b/g));   //最后i
+        </script>
+    </head>
+    <body>
+    </body>
+</html>

@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        html{
+            height: 100%;
+        }
+        body{
+            height: 100%;
+            background: url('img/bg.jpg');
+            background-size: cover;
+            /*以上两条代码的顺序会影响效果*/
+            overflow: hidden;
+        }
+        div{
+            position: absolute;
+            /*top:1000px;*/
+            /*left:600px;*/
+            width:96px;
+            height: 123px;
+            background: url('img/ballon.png') no-repeat;
+            cursor: crosshair;
+        }
+        .boom{
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div></div>
+    <span id = "oNum">0</span>
+    <span id = "oTime">60</span>;
+    <script>
+
+        var oNum = document.getElementById("oNum");
+        var oTime = document.getElementById("oTime");
+
+        // oNum = 0;
+        // oTime = 60;
+
+        // console.log(oNum.innerHTML);
+        
+        var onclickNum = 0;
+        var onclickTime = 60;
+        
+        //创建气球对象[大类]的属性和方法
+
+        function Ballon(top,left){
+            
+            //给这个大类添加属性
+            this.top = top ;
+            this.left = left ;
+            // this.speed = speed ; 
+
+            //给这个大类添加方法中需要的属性
+            this.dom = null;//初始化时创建div元素
+            this.timer = null //运动方法
+            this.zhennumX = 0;
+            this.zhennumY = 0;
+            this.score = 0;
+
+            // console.log(this.zhennumX);
+
+            //给这个大类添加方法1
+            this.init = function(){
+
+
+                
+                this.dom = document.createElement("div");
+                    document.body.appendChild(this.dom);
+                
+                this.dom.style.top = this.top + "px";
+                this.dom.style.left = this.left + "px";
+
+                //随机产生所有的帧的位置(X,Y)--(4,3)
+                this.zhennumX =parseInt( Math.random()*4);
+                this.zhennumY =parseInt( Math.random()*3);
+
+
+                //测试
+                //console.log(this.zhennumX);//0
+                // console.log(this.dom.background-position);
+               // console.log(this.dom.style.backgroundPositionX);//0px
+                this.dom.style.backgroundPositionX = -this.zhennumX*96+"px";
+                this.dom.style.backgroundPositionY = -this.zhennumY*123+"px";
+
+                var self = this;
+                // setInterval(function(){
+                //         onclickTime--;
+                //         oTime.innerHTML = onclickTime;
+                //     },1000);
+                this.dom.onclick = function(){
+
+                    self.dom.className = "boom";
+                    //都是+1
+                    // onclickNum++;
+                    // oNum.innerHTML = onclickNum ;
+                    
+
+                    //根据情况来判断(代码有时间优化)
+                    if( self.zhennumX == 0 && self.zhennumY == 0){
+                        onclickNum+=1;
+                        oNum.innerHTML = onclickNum;
+                    }else if(self.zhennumX == 1 && self.zhennumy ==0){
+                        onclickNum+=2;
+                        oNum.innerHTML = onclickNum;
+                    }else if(self.zhennumX == 2 && self.zhennumY ==0){
+                        onclickNum+=3;
+                        oNum.innerHTML = onclickNum;
+                    }else if(self.zhennumX == 3 && self.zhennumY ==0){
+                        onclickNum+=4;
+                        oNum.innerHTML = onclickNum;
+                    }else if(self.zhennumX == 0 && self.zhennumY == 1){
+                        onclickNum+=5;
+                        oNum.innerHTML = onclickNum;
+                    }else if(self.zhennumX == 1 && self.zhennumY == 1){
+                        onclickNum+=6;
+                        oNum.innerHTML = onclickNum;
+                    }else if(self.zhennumX == 2 && self.zhennumY == 1){
+                        onclickNum+=7;
+                        oNum.innerHTML = onclickNum;
+                    }else if(self.zhennumX == 3 && self.zhennumY == 1){
+                        onclickNum+=8;
+                        oNum.innerHTML = onclickNum;
+                    }else if(self.zhennumX == 0 && self.zhennumY == 2){
+                        onclickTime = onclickTime*2;
+                        oTime.innerHTML = onclickTime;
+                     }else if(self.zhennumX == 1 && self.zhennumY == 2){
+                        onclickTime =parseInt( onclickTime / 2 );
+                        oTime.innerHTML = onclickTime;
+                     }else if(self.zhennumX == 2 && self.zhennumY == 2){
+                        onclickTime = 0;
+                        oTime.innerHTML = onclickTime;
+                     }
+
+
+                    oNum.innerHTML = onclickNum;
+
+                    
+                }
+            }
+
+            //给这个大类添加方法2
+            this.fly = function(){
+                var self = this;
+                this.timer =setInterval(function(){
+                    
+                    self.top-=10;
+                    if( self.top < -100){
+                        self.bomb();
+                    }
+                    self.dom.style.top = self.top + "px";
+                },100)
+            }
+
+            //给这个大类添加第三种方法
+            this.bomb = function(){
+                clearInterval(this.timer);
+                document.body.removeChild(this.dom);
+            }
+            
+            this.init();
+            this.fly();
+        }
+        
+        
+        
+        // var timer2 = setInterval(function(){
+
+        //     new Ballon( Math.random()*400,Math.random()*1350,1000);
+        //     oTime.innerHTML -= 1;
+        //     if(oTime.innerHTML < 0){
+        //         clearInterval(timer2);
+        //         // document.body.removeChild();
+        //     }
+        // },1000)
+
+        setInterval(function(){
+            new Ballon( Math.random()*600,Math.random()*1350,Math.random()*4,Math.random()*3);
+            onclickTime--;
+            if( onclickTime == 0){
+                
+            }
+            oTime.innerHTML = onclickTime;
+        },1000)
+       
+
+       //还有一个小bug记得调试：就是时间<0之后怎么停止所有
+    </script>
+</body>
+</html>

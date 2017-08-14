@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <script type="text/javascript">
+
+            // function outer(){
+            //     var a = 333;
+            //     function inner(){
+            //         console.log(a);
+            //     }
+
+            // }
+            //在全局调用inner但是全局没有inner的定义，所以报错
+           // inner();
+
+
+           //**********************************
+
+
+           //经典闭包
+           //函数嵌套函数  子级函数调用父级函数的变量或者参数
+           function outer(){
+                var a = 333;
+                function inner(){
+                    console.log(a);
+                }
+                return inner;   //outer返回了inner的引用
+            }
+
+            var inn = outer();   //inn就是inner函数
+
+            inn(); //333
+
+        </script>
+    </head>
+    <body>
+    </body>
+</html>

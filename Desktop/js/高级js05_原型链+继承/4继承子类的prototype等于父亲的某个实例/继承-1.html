@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript">
+//			People类  Student类
+//			Student继承People,Student能够拥有所有People的属性,方法;
+//			并且还能自己丰富一些
+			
+			function People(name,age,sex){
+				this.name = name;
+				this.age = age;
+				this.sex = sex;
+			}
+			People.prototype.sayHello = function(){
+				alert("你好！我是一个人，我叫" + this.name);
+			}
+			People.prototype.eatFood = function(){
+				alert("开始吃饭~");
+			}
+			
+			function Student(name,age,sex,xuehao,xiaohonghuageshu){
+//				People.apply(this,arguments);
+				//重新执行一次自己的构造器，自己的constructor是People
+				this.constructor.apply(this,arguments);
+				this.xuehao = xuehao;
+				this.xiaohonghuageshu = xiaohonghuageshu;
+			}
+			
+			//核心语句，继承的实现全靠这条语句
+			Student.prototype = People.prototype;//会覆盖父级原型的方法
+			Student.prototype = new People();
+			
+			Student.prototype.sayHello = function(){
+				alert("我是小学生，我的学号是" + this.xuehao);
+			}
+			Student.prototype.study = function(){
+				alert("好好学习，打王者农药~");
+			}
+			Student.prototype.lol = function(){
+				alert("玩游戏~");
+			}
+			
+			var xiaohong = new Student();
+//			alert(xiaohong.name);
+//			console.log(xiaohong.constructor);
+//			xiaohong.lol();
+//			xiaohong.study();
+			xiaohong.sayHello();
+			
+			
+			var xiaoming = new People("小明",22,"男");
+			
+			xiaoming.sayHello();
+		</script>
+	</head>
+	<body>
+	</body>
+</html>

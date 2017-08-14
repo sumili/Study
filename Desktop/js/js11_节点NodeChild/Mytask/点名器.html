@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        *{
+            padding: 0px;
+            margin: 0px;
+        }
+        body{
+            position: relative;
+            margin: 50px auto;
+        }
+        input{
+            width:100px;
+            height:50px;
+            background-color: skyblue;
+            color: #fff;
+            font-size: 14px;
+            margin: 100px;
+            font-family: "微软雅黑";
+            border:none;
+            margin: 0 auto;
+            display: inherit;
+            margin-bottom: 10px;
+        }
+        input .current{
+            background-color: #0c455d;
+        }
+        #box{
+            width:200px;
+            height:200px;
+            border-radius:50%;
+            background-color: rgba(12, 93, 29, 0.55);
+            margin: 0 auto;
+            text-align: center;
+        }
+        /*f方法1*/
+        span{
+
+            color:#fff;
+            font-size: 14px;
+            font-family: "微软雅黑";
+            line-height: 200px;
+            display: none;
+        }
+        span.current{
+            display: block;
+        }
+
+        /*方法2*/
+        span{
+            width:200px;
+            height: 200px;
+            float: left;
+            color:#fff;
+            font-size: 14px;
+            font-family: "微软雅黑";
+            line-height: 200px;
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <input type="button" value="点名器">
+    <div id="box">
+        <span>李明</span>
+        <span>周鹏</span>
+        <span>张强</span>
+        <span>翁鹏辉</span>
+        <span>马东东</span>
+        <span>叶昶</span>
+        <span>徐佳程</span>
+    </div>
+
+    <script>
+        var oBox = document.getElementById("box");
+        var oInput = document.getElementsByTagName("input")[0];
+        var oSpan = oBox.children;
+
+        //alert(str.length);
+        //在1到7之间产生一个随机数产生一个随机数
+        function getRandom (n){
+            // var num = str.length
+            var oRandom = Math.floor(Math.random()*n);//获取1-7的区间;
+            return oRandom;
+        }
+        // var span = oBox.children;
+
+        //alert( span[0].innerHTML)
+        oInput.onclick = function(){
+
+            var names = ["李明","周鹏","张强","徐佳程","翁鹏辉","马东东","叶昶"];
+          
+            var  str = getRandom (names.length);
+        
+            oBox.children[str].className = "current";
+            oBox.children[str].innerHTML = names[str]+"!&nbsp恭喜你~ 你被选中了";
+        }
+    </script>
+<!--
+   <script>
+        //获取元素
+        var oInput = document.getElementsByTagName[0];
+        var oSpan = document.getElementsByTagName("span");
+        var oBox = document.getElementById("box")
+
+        //复制一倍的span
+        // alert (oBox.innerHTML);
+        var oSpans = + oSpan.innerHTML;
+        // alert(oSpans);
+
+
+
+   </script> -->
+</body>
+</html>

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <script type="text/javascript">
+
+            // xiaohong对象和xiaomeng对象，都有相同的属性和方法名
+            // 创建起来不方便，那么怎么办？
+
+             var xiaohong = {
+                name : "小红",
+                age : 18,
+                sex : "女",
+                sayHello : function(){
+                    alert("你好，我是" + this.name);
+                    alert("我今年" + this.age);
+                    alert("我是可爱的小" + this.sex + "生");
+                },
+                zhangda : function(){
+                    this.age++;
+                },
+                bianxing : function(){
+                    if( this.sex == "男"){
+                        this.sex = "女";
+                    }else{
+                        this.sex = "男";
+                    }
+                }
+            }
+
+            var xiaomeng = {
+                name : "小萌",
+                age : 19,
+                sex : "女",
+                sayHello : function(){
+                    alert("你好，我是" + this.name);
+                    alert("我今年" + this.age);
+                    alert("我是可爱的小" + this.sex + "生");
+                },
+                zhangda : function(){
+                    this.age++;
+                },
+                bianxing : function(){
+                    if( this.sex == "男"){
+                        this.sex = "女";
+                    }else{
+                        this.sex = "男";
+                    }
+                }
+            }
+
+
+            xiaohong.zhangda();
+            xiaohong.zhangda();
+            xiaohong.zhangda();
+            xiaohong.zhangda();  //22
+            xiaomeng.zhangda();  //20
+
+
+            xiaohong.sayHello();
+            xiaomeng.sayHello();
+        </script>
+    </head>
+    <body>
+    </body>
+</html>

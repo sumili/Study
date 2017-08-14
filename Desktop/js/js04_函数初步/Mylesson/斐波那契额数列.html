@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <script type="text/javascript">
+
+
+            // 斐波那契数列指的是这样一个数列 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, 144, 233，377;
+
+            function fib(n){
+                if( n == 1|| n == 2){
+                    return 1;
+                }else{
+                    return fib(n -1) + fib( n -2);
+                }
+            }
+
+
+            
+            // console.log(fib(6));
+            // console.log(fib(7));
+            // console.log(fib(8));
+            // 
+
+            for(var i =1;i<=55;i++){
+
+                console.log(fib(i));
+
+            }
+
+        </script>
+    </head>
+    <body>
+    </body>
+</html>

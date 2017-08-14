@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<h1 id="oH">====</h1>
+		<input type="button" id="btn" value="点我异步读取文件" />
+		
+		<script type="text/javascript">
+			var oH = document.getElementById("oH");
+			var btn = document.getElementById("btn");
+			
+			
+			btn.onclick = function(){
+
+				var xhr = new XMLHttpRequest;
+
+				xhr.onreadystatechange =function(){
+
+					if( xhr.readyState == 4){
+					oH.innerHTML = xhr.responseText;
+						console.log(xhr.readyState);
+						
+					 }
+				}
+				xhr.open("POST","php/do2.php",false)
+				xhr.setRequestHeader("Content-Type","application/x-www-form-urlencoded");
+				xhr.send("xingming=fzz&age=3");
+
+
+
+
+
+
+			}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// 			btn.onclick = function(){
+				
+// 				//1：创建xhr
+// 				var xhr = new XMLHttpRequest();
+				
+// 				//2：判断请求状态
+// 				xhr.onreadystatechange = function(){
+					
+// 					if(xhr.readyState == 4){
+// 						oH.innerHTML = xhr.responseText;
+// 					}
+// 				}
+				
+// 				//3:创建请求
+// //				encodeURIComponent就是把当前字符集的文字转换为URI编码
+// 				xhr.open("post","php/do2.php",true);
+				
+// 				//如果用post发送请求，那么必须写一句话，模拟成form表单提交
+// 				//因为POST请求在服务器端比较难处理，需要用服务器写对应“流处理”程序
+// 				xhr.setRequestHeader("Content-Type","application/x-www-form-urlencoded");
+				
+
+// 				//  sendStr="xingming=kaola&age=28";
+// 				//&仅是一个分隔符
+
+
+// 				//4：发送请求[发送请求若有中文需要使用encodeURLComponent编码]
+// 				xhr.send("xingming=kaola&age=48");
+// 				//send的参数必须是字符串，
+// 			}
+// 		</script>
+	</body>
+</html>

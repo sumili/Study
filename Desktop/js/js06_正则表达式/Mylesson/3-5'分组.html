@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <script type="text/javascript">
+
+            var re = /ab(cd)\1\1e/;
+
+            var re = /ab(cd)\1\1e/
+            //将第1个括号里的内容：cd引用两次
+            // console.log(re.test("abcdcde"));  //f
+            // console.log(re.test("abcde"));  //f
+            // console.log(re.test("abcdcdcde"));  //t
+
+
+            // var re = /a(bc)d(ef)\2\1g/;
+                var re = /a(bc)d(ef)\2\1g/;
+
+                //将一个括号的内容和第二个括号的内容各引用两次;注意位置
+                var re = /abcdefefbcg/;
+                console.log(re.test("abcdefefbcg"));//t
+            // var re = /abcdefefbcg/;  \2调用第二组 \1调用第一组
+
+            // console.log( re.test("abcdefefbcg"));
+
+
+            var str = "abcde";
+
+            var str = "abcde";
+                console.log( str.replace( /ab(cd)e/,"ab$1$1$1e"))//abcdcdcde//把第一个括号里的内容储存在$1中
+                //把字符串str符合正则表达式的部分替换成参数2，也就是第二个参数
+                //另一种解释，就是说参数2出现了“$”符号，repalce将用于指定的子表达式“(cd)”相匹配的文本来替换
+            //
+
+            // console.log( str.replace(/ab(cd)e/,"ab$1$1$1e"));
+            console.log( str.replace(/ab(cd)\1e/,function(match,$1){
+                console.log("第一个参数是"+match);//macth是寻找到的匹配的部分//abcde
+                console.log("第二个参数是"+$1);//cd
+
+                return "ab"+$1+$1+"e";  //abcdcde
+            }));
+            //
+        </script>
+    </head>
+    <body>
+    </body>
+</html>

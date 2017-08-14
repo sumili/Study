@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			*{
+				padding:0;
+				margin:0;
+			}
+			html{
+				height: 100%;
+			}
+			body{
+				height: 100%;
+				background: url('img/bg.jpg');
+				background-size: cover;
+				overflow: hidden;
+			}
+			.ballon{
+				position: absolute;
+				width: 81px;
+				height: 119px;
+				background: url('img/ballon.png') no-repeat;
+				cursor:crosshair;
+			}
+			h1{
+				color: white;
+				font-size: 60px;
+			}
+		</style>
+	</head>
+	<body>
+		
+		
+		<script type="text/javascript">
+
+
+			//应该封装一个构造函数
+			function Ballon(){
+				//构造函数里添加大类[Ballon]的属性和方法[其中方法添加到构造函数的原型中]
+				this.top = 600;  //出现的高度
+				this.left = parseInt(Math.random()*1200);  //出现的左右位置
+				this.score = parseInt(Math.random()*7)+1;  //气球分值
+				this.timer = null;
+				
+
+				//方法
+				this.init();
+				this.fly();
+			}
+			
+			
+			//初始化
+			//把构造函数的方法添加到其原型中
+			Ballon.prototype.init = function(){
+				//创建DOM
+				//alert(this);//object
+
+
+				
+				this.dom = document.createElement("div");
+				
+				//更改类名
+				this.dom.className = "ballon";
+				
+//				追加这个元素,到body里面
+				document.body.appendChild(this.dom);
+				
+//				设置样式
+				this.dom.style.left = this.left + "px";
+				this.dom.style.top = this.top + "px";
+				
+				//设置背景定位，背景定位要根据自己分数来设置
+//				精灵图有bug,分数和自己真实的图差了1
+				var x = -(this.score-1) % 4 * 96;
+				var y =  -parseInt((this.score-1) / 4) * 128;
+				
+				this.dom.style.backgroundPosition = x + "px " + y +"px";
+				
+				var self = this;
+//				绑定监听
+				this.dom.onclick = function(){
+//					让气球爆炸
+					self.bomb();
+					
+					//累加分数
+					game.score += self.score;
+					game.oScore.innerHTML = game.score;
+					
+					//音效
+					game.oCMusic.play();
+				}
+			}
+			Ballon.prototype.fly = function(){
+//				备份自己的this
+				var self = this;
+				
+				this.timer = setInterval(function(){
+//					改变信号量
+					self.top -= 2 * self.score;
+					
+					//范围
+					if( self.top < -100){
+						self.bomb();
+					}
+					
+//					移动
+					self.dom.style.top = self.top + "px";
+				},20)
+				
+				
+				
+			}
+			//爆炸方法
+			Ballon.prototype.bomb = function(){
+				
+				clearInterval(this.timer);
+				//移出DOM
+				document.body.removeChild(this.dom);
+			}
+			
+			
+			function Game(score,time){
+				this.score = score;  //游戏得分
+				this.time = time;   //游戏时间
+				this.numCount = 0;   //计数器
+				this.timer = null;    //定时器
+				this.ballons = [];    //空数组，存放气球用
+				
+				this.init();
+			}
+			Game.prototype.start = function(){
+				
+				//设表先停
+				clearInterval(this.timer);
+				
+//				备份this
+				var self = this;
+				
+				//让定时器500毫秒创建一个气球
+				this.timer = setInterval(function(){
+					self.numCount++;  //计步器
+					
+					//走秒
+					if( self.numCount % 2 == 0){
+						self.time--;
+						self.oTime.innerHTML = self.time;
+					}
+					
+					if(self.time == 0){
+						return self.stop();  //时间到了，游戏停止
+					}
+					
+//					把气球放进空数组中
+					game.ballons.push(new Ballon());
+				},500)
+				
+			}
+			Game.prototype.stop=function(){
+				clearInterval(this.timer);
+//				处理游戏结束后的清理
+				for(var i=0;i<this.ballons;i++){
+				   clearInterval(this.ballons[i].timer);
+					document.body.removeChild(this.ballons[i]);
+				}
+//				结束的播报
+				alert("GAME OVER 你的分数是" + this.score);
+			}
+			Game.prototype.init = function(){
+				
+				//创建存放分数标签 h1
+				this.oScore = document.createElement("h1");
+				document.body.appendChild(this.oScore);
+				this.oScore.innerHTML = 0;
+				
+				//创建存放时间标签 h1
+				this.oTime = document.createElement("h1");
+				document.body.appendChild(this.oTime);
+				this.oTime.innerHTML = this.time;
+				
+				//创建背景音乐标签
+				this.oBgmMusic = document.createElement("audio");
+				document.body.appendChild(this.oBgmMusic);
+				this.oBgmMusic.src = "images2/bgm.mp3";
+				this.oBgmMusic.autoplay = true;
+				
+				//创建气球爆炸音乐标签
+				this.oCMusic = document.createElement("audio");
+				document.body.appendChild(this.oCMusic);
+				this.oCMusic.src = "images2/c.wav";
+			}
+			
+			var game = new Game(0,10);
+			game.start();
+			
+		</script>
+	</body>
+</html>

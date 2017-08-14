@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <style type="text/css">
+            body{
+                background-color: rgb(111,222,123);
+            }
+        </style>
+    </head>
+    <body>
+        <p>
+            r:
+            <input type="button" value="-" id="btnRL" />
+            <input type="text" id="txtR" value="111" />
+            <input type="button" value="+" id="btnRR" />
+        </p>
+        <p>
+            g:
+            <input type="button" value="-" id="btnGL" />
+            <input type="text" id="txtG" value="222" />
+            <input type="button" value="+" id="btnGR" />
+        </p>
+        <p>
+            b:
+            <input type="button" value="-" id="btnBL" />
+            <input type="text" id="txtB" value="123" />
+            <input type="button" value="+" id="btnBR" />
+        </p>
+        <p>
+            <input type="button" id="btnGo"  value="go" />
+        </p>
+
+
+        <script type="text/javascript">
+            //得到元素，一个三个文本框，和7个按钮
+            var txtR = document.getElementById("txtR");
+            var txtG = document.getElementById("txtG");
+            var txtB = document.getElementById("txtB");
+
+
+            var btnGo = document.getElementById("btnGo");
+            var btnRL = document.getElementById("btnRL");
+            var btnRR = document.getElementById("btnRR");
+            var btnGL = document.getElementById("btnGL");
+            var btnGR = document.getElementById("btnGR");
+            var btnBL = document.getElementById("btnBL");
+            var btnBR = document.getElementById("btnBR");
+
+            //信号量
+            var r = 111;
+            var g = 222;
+            var b = 123;
+
+            //事件监听
+            btnRL.onclick =function(){
+                // 改变信号量
+                r-=10;
+
+                // 调用业务函数
+                changeColor();
+            }
+            btnRR.onclick =function(){
+                // 改变信号量
+                r+=10;
+
+                // 调用业务函数
+                changeColor();
+            }
+
+            btnGL.onclick =function(){
+                // 改变信号量
+                g-=10;
+
+                // 调用业务函数
+                changeColor();
+            }
+            btnGR.onclick =function(){
+                // 改变信号量
+                g+=10;
+
+                // 调用业务函数
+                changeColor();
+            }
+
+            btnBL.onclick =function(){
+                // 改变信号量
+                b-=10;
+
+                // 调用业务函数
+                changeColor();
+            }
+            btnBR.onclick =function(){
+                // 改变信号量
+                b+=10;
+
+                // 调用业务函数
+                changeColor();
+            }
+
+            btnGo.onclick=function(){
+
+                r = txtR.value;
+                g = txtG.value;
+                b = txtB.value;
+
+                changeColor();
+            }
+
+            // 业务函数
+            function changeColor(){
+
+                if( r > 255) r=255;
+                if( g > 255) g=255;
+                if( b > 255) b=255;
+                if( r < 0) r = 0;
+                if( g < 0) g = 0;
+                if( b < 0) b = 0;
+
+                // 根据当前信号量来设置颜色
+                document.body.style.backgroundColor=
+                "rgb(" + r + "," + g + "," + b + ")";
+
+                txtR.value = r;
+                txtG.value = g;
+                txtB.value = b;
+
+            }
+
+        </script>
+    </body>
+</html>

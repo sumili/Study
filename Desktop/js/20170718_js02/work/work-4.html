@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+        var a = parseFloat(prompt("你好，请输入你的工作年限(年)"));
+        var b = parseFloat(prompt("你好，请输入你的月薪(元)"));
+        if(a<1){
+            if(b<8000){
+                alert("你的年终奖："+(b+b)+"");
+            }else{
+                // 关于浮点数丢失，可以将1.2转换为浮点数
+                alert("你的年终奖："+(b+b*parseFloat(1.2))+"");
+            }
+        }else if(1<=a&&a<2 ==true){
+             if(b<10000){
+                 alert("你的年终奖："+(b+b*15/10)+"");
+             }
+             else{
+                 alert("你的年终奖:"+(b+b*17/10)+"");
+             }
+        }else{
+            if(b<12000){
+                alert("你的年终奖："+(b+b*3)+"");
+            }
+            else{
+                alert("你的年终奖："+(b+b*32/10)+"");
+            }
+        }
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

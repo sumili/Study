@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <style type="text/css">
+            span{
+                position: absolute;
+                width: 200px;
+                height: 200px;
+                background-color: red;
+                opacity: 0.3;
+
+                /*兼容性问题，只有IE可以兼容filter，其他浏览器都可以兼容opacity*/
+                filter:alpha(opacity = 30);
+            }
+        </style>
+    </head>
+    <body>
+        <span>我是一个span</span>
+
+        <script type="text/javascript">
+            var oSpan = document.getElementsByTagName("span")[0];
+
+            alert(fetchComputedStyle(oSpan,"opacity") );
+
+
+
+
+
+            function fetchComputedStyle(obj,property){
+
+            if( window.getComputedStyle){
+
+              return  window.getComputedStyle(obj)[property];
+            }else{
+
+              return  obj.currentStyle[property];
+            }
+
+        }
+        </script>
+    </body>
+</html>

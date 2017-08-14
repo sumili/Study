@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <style type="text/css">
+            div{
+                width: 200px;
+                height: 200px;
+                background-color: red;
+                position:absolute;
+                top:100px;
+                left:111px;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="oDiv"></div>
+
+
+        <script type="text/javascript">
+            var oDiv = document.getElementById("oDiv");
+            var timer=null;
+            //信号量
+            var newLeft = 111;
+
+            //定时器  20毫秒执行一次
+            timer = setInterval(function(){
+                //改变信号量
+                newLeft+=10;
+
+                // 范围
+                if( newLeft >= 800){
+                    clearInterval(timer);
+                    newLeft = 800;
+                }
+
+                // 移动
+                oDiv.style.left = newLeft+"px";
+
+            },20);
+
+
+        </script>
+    </body>
+</html>

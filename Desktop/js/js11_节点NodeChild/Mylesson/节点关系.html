@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <style type="text/css">
+            p{
+                width: 60px;
+                height: 60px;
+                background-color: #ccc;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="box">
+            <p>1</p>
+            <p>2</p>
+            <p>3</p>
+            <p>4</p>
+        </div>
+
+
+        <script type="text/javascript">
+            var oDiv =document.getElementById("box");
+
+            // 封装一个children函数，这个函数返回obj的所有节点儿子
+            // 返回子节点集合
+            // obj 当前元素
+            // 要返回第几个儿子
+
+            function children(obj,num){
+
+                var arr = [];  //存放所有儿子
+
+                for( var i=0;i<obj.childNodes.length;i++){
+                    //寻找真正的html节点，不要考虑文本
+                    if( obj.childNodes[i].nodeType == 1){
+                        arr.push( obj.childNodes[i] );
+                    }
+                    // if( obj.childNodes[i].nodeType == Node.ELEMENT_NODE){
+                    //     arr.push( obj.childNodes[i] );
+                    // }
+
+                }
+
+                // 返回的是 如果用户传入num  返回的是某一个儿子
+                // 如果没有传入num 返回所有的儿子
+                return  num ? arr[num] : arr;
+            }
+
+
+            // alert(children(oDiv));
+            children(oDiv)[2].style.backgroundColor="red";
+            children(oDiv,3).style.backgroundColor="blue";
+        </script>
+    </body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <script type="text/javascript">
+            var obj = {
+                "name" : "考拉",
+                "age"  : 18,
+                "sex"  : "男"
+            }
+            var obj1 = {
+                "name" : "小智",
+                "age"  : 16,
+                "sex"  : "男"
+            }
+            function fun(){
+                alert(this.name);
+            }
+
+            //1、fun()函数调用
+            //2、同时这个函数内部的this就是obj
+            // fun.apply(obj);
+            fun.call(obj);
+            fun.call(obj1);
+        </script>
+    </head>
+    <body>
+
+    </body>
+</html>

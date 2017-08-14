@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript">
+			function Dog(){
+				
+			}		
+			var xiaobai = new Dog();
+			
+//			console.log(xiaobai);
+			console.log(xiaobai.__proto__);
+			console.log(xiaobai.__proto__.__proto__.constructor);
+			
+			
+			Object.prototype.haha = function(){
+				alert("哈哈");
+			}
+			
+			xiaobai.haha();
+			
+			var arr = [1,2,3];
+			arr.haha();
+		</script>
+	</head>
+	<body>
+	</body>
+</html>

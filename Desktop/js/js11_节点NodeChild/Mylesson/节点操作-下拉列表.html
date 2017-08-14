@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+    </head>
+    <body>
+        <select name="" id="year">
+
+        </select>
+
+
+        <script type="text/javascript">
+        var year = document.getElementById("year");
+
+
+        // for(var i=1950;i<=2017;i++){
+        //     // 创建节点
+        //     var op = document.createElement("option");
+
+        //     //改变创建节点的value属性和里面的内容
+        //     op.value = i;
+        //     op.innerHTML = i+"年";
+
+        //     // 父亲.appendChild(op)
+        //     year.appendChild(op);
+
+        // }
+
+        for(var i=1950;i<=2017;i++){
+
+            year.innerHTML += "<option value=" +i+ ">" +i+"年"+ "</option>";
+        }
+
+
+
+
+        </script>
+    </body>
+</html>

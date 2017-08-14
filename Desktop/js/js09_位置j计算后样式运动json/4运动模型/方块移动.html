@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <style type="text/css">
+
+            *{
+                padding:0;
+                margin:0;
+            }
+            div{
+                width:100px;
+                height: 100px;
+                background-color: red;
+                position:absolute;
+                top:50px;
+                left:20px;
+            }
+        </style>
+    </head>
+    <body>
+        <button>开始</button>
+        <button>停止</button>
+        <div id="oDiv"></div>
+
+
+        <script type="text/javascript">
+            var btn1 = document.getElementsByTagName("button")[0];
+            var btn2 = document.getElementsByTagName("button")[1];
+            var oDiv = document.getElementById("oDiv");
+            var timer = null;
+
+
+            //信号量
+            var newLeft = 20;
+            
+            
+
+            btn1.onclick = function(){
+
+                timer = setInterval(function(){
+                    newLeft += 5;
+                    oDiv.style.left = newLeft + "px";
+                },50);
+            }
+
+            btn2.onclick = function(){
+                clearInterval(timer);
+            }
+
+        </script>
+    </body>
+</html>

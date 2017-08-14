@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <style type="text/css">
+            div{
+                width: 400px;
+                height: 400px;
+                background-color: skyblue;
+                margin:100px;
+            }
+
+        </style>
+    </head>
+    <body>
+        <div></div>
+
+
+        <script type="text/javascript">
+            var oDiv = document.getElementsByTagName("div")[0];
+
+
+            oDiv.onmousemove =function(event){
+                event = event || window.event;
+
+                //offsetX，offsetY 直接得到坐标值，曾经有兼容问题
+                // var x  = event.offsetX;
+                // var y  = event.offsetY;
+
+
+                // 周转一下
+                var scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
+
+                var x = event.clientX - getAllLeft(oDiv);
+                var y = event.clientY - (getAllTop(oDiv) - scrollTop );
+
+                oDiv.innerHTML = x + " "+ y;
+
+            }
+
+
+            function getAllTop(obj){
+            //累加器，累加器的初始值不是0，而是自己现在的offsetTop
+            //一会儿while语句直接从他父级开始
+            var allTop = obj.offsetTop;
+
+            //当前正算高度的元素
+            var currentObj = obj;
+            while( currentObj = currentObj.offsetParent){
+                allTop += currentObj.offsetTop;
+            }
+
+            return allTop;
+        }
+
+        function getAllLeft(obj){
+            //累加器，累加器的初始值不是0，而是自己现在的offsetLeft
+            //一会儿while语句直接从他父级开始
+            var allLeft = obj.offsetLeft;
+
+            //当前正算高度的元素
+            var currentObj = obj;
+            while( currentObj = currentObj.offsetParent){
+                allLeft += currentObj.offsetLeft;
+            }
+
+            return allLeft;
+        }
+
+        </script>
+    </body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //获取需要设置的变量:上限,下限,地雷
+        var shangxian = 100 ;
+        var xiaxian = 1;
+        var dilei = parseInt(Math.random()*100+1);
+        
+        alert(dilei);
+        //获取用户输入的0到100的数；
+        var mydilei = parseInt(prompt("请输入一个范围为"+shangxian+"到"+xiaxian+"的值"));
+
+        while(true){
+            //先判断上限变化还是下限变化
+            if (mydilei >xiaxian && mydilei< shangxian){
+                if( mydilei == dilei){
+                    console.log("恭喜你～中奖了");
+                    break;
+                }else{
+                    console.log("啊～ 没有中奖了");                    
+                    break;
+                }
+            }
+        }
+        
+
+
+        //
+    </script>
+</body>
+</html>

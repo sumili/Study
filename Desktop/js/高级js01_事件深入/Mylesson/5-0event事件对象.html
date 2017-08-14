@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <style type="text/css">
+            div{
+                width: 200px;
+                height: 200px;
+                background-color: orange;
+            }
+
+        </style>
+    </head>
+    <body>
+        <div></div>
+
+        <script type="text/javascript">
+
+            var oDiv = document.getElementsByTagName("div")[0];
+
+            oDiv["onclick"]=function(event){//even是形式参数:js
+                //默认已经往事件处理函数传入一个实参，就是事件对象(有类的概念，有数组的功能)
+                //事件的类型，“click”，这里用形参event接受
+                //
+                console.log(event);
+                console.log(event.type);
+
+                //事件的触发元素
+                //clientX:73 clientY:143
+                console.log(event.target);
+            }
+        </script>
+    </body>
+</html>

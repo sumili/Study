@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			table,tr,td{
+				border: 1px solid #ccc;
+				border-collapse: collapse;
+			}
+		</style>
+	</head>
+	<body>
+		<table id="table">
+			<tr>
+				<td>学号</td>
+				<td>姓名</td>
+				<td>年龄</td>
+				<td>性别</td>
+			</tr>
+		</table>
+		
+		<!--在工程上，我们使用一个故意写错type的script标签存放模板-->
+		<script type="text/template" id="template">
+			<tr>
+				<td>%xuehao%</td>
+				<td>%xingming%</td>
+				<td>%nianling%</td>
+				<td>%xingbie%</td>
+			</tr>
+		</script>
+		<script src="js/ajax.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			
+			//数据绑定函数
+			function compile(templateString , dictionary){
+				return templateString.replace(/\%([a-z]+)\%/g , function(match,$1,index,string){
+					return dictionary[$1];
+				});	
+			}
+			
+			//找到表格
+			var table = document.getElementById("table");
+			
+			//找到模板的字符串
+			var templateString = document.getElementById("template").innerHTML;
+			
+			
+			
+			$.ajax({
+				"url":"student.json",
+				"success": function(str){
+//					console.log(str);
+					var obj = JSON.parse(str);
+//					console.log(obj);
+					
+					for(var i=0;i<obj.result.length;i++){
+						//拿到数据
+						var dictionary =  obj.result[i];
+						
+						//数据绑定
+						var DOMString = compile(templateString,dictionary);
+						console.log(DOMString);
+						//添加DOM
+						table.innerHTML += DOMString;
+					}
+				}
+			});
+			
+			
+			
+		</script>
+		
+	</body>
+</html>

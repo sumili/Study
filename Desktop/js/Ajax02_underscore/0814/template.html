@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript">
+			
+			//模板
+			var str = "昨天的天气是%tianqi%,因为天气原因心情是%xinqing%";
+			
+			var divt = {
+				"tianqi": "雨天",
+				"xinqing": "忧郁"
+			}
+			
+			//数据绑定函数
+			function compile(templateString , dictionary){
+				return templateString.replace(/\%([a-z]+)\%/g , function(match,$1,index,string){
+					return dictionary[$1];
+				});	
+			}
+
+			//调用数据绑定函数
+			
+			var str = compile(str,divt);
+			
+			console.log(str); //输出数据绑定之后的模板
+			
+		</script>
+	</head>
+	<body>
+		
+	</body>
+</html>

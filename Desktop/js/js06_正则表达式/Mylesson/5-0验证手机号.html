@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <script type="text/javascript">
+            // 手机号验证
+            // 11位
+            // 第一位 1
+            // 第二位 [34578]
+
+            var re = /^1[34578]\d{9}$/;
+
+            var str = prompt("请输入手机号");
+
+            if( re.test(str) ){
+                alert("输入的是一个手机号~成功~~！");
+            }else{
+                alert("输入的不是一个手机号~");
+            }
+        </script>
+    </head>
+    <body>
+    </body>
+</html>

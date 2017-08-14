@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        body{
+            height:5000px;
+        }
+        ul{
+            list-style-type: none;
+            position: fixed;
+            top:50px;
+            left:0;
+            margin-left: 20px;
+            width:100px;
+        }
+        li{
+            width:50px;
+            height:50px;
+            margin-bottom: 10px;
+            background-color: rgb(46,102,56);
+            color: #fff;
+            font-size: 16px;
+            font-family: "微软雅黑";
+        }
+        #box{
+            width:500px;
+            position: relative;
+            top:0;
+            right:0;
+            margin-left: 300px;
+        }
+        #box>div{
+            width:500px;
+            height:500px;
+            /*background-color: rgb(46,102,56);*/
+        }
+        
+    </style>
+</head>
+<body>
+    <ul>
+        <li>1楼</li>
+        <li>2楼</li>
+        <li>3楼</li>
+        <li>4楼</li>
+        <li>5楼</li>
+        <li>6楼</li>
+        <li>回到顶楼</li>
+    </ul>
+    <div id="box">
+        <div>你到1楼了~</div>
+        <div>你到2楼了~</div>
+        <div>你到3楼了~</div>
+        <div>你到4楼了~</div>
+        <div>你到5楼了~</div>
+        <div>你到6楼了~</div>
+    </div>
+    <script>
+        //先获取元素
+        var oli = document.getElementsByTagName("li");
+        var oBox = document.getElementById("box");
+        var oDiv = oBox.getElementsByTagName("div");
+
+        //先为oDiv加上颜色
+        oDiv[0].style.backgroundColor="#f00";
+        oDiv[1].style.backgroundColor="#ff0";
+        oDiv[2].style.backgroundColor="#00f";
+        oDiv[3].style.backgroundColor="#f0f";
+        oDiv[4].style.backgroundColor="#0f0";
+        oDiv[5].style.backgroundColor="#0ff";
+   
+
+
+        //点击li获取对应的scrollTop值;
+       for( var i =0 ; i < oDiv.length ; i++){
+           //先编号,每个i
+            oli[i].index = i;
+            // alert( this.index);
+           oli[i].onclick = function(){//
+               document.body.scrollTop =(this.index) *(500);
+           }
+       }
+
+            oli[6].onclick = function(){
+                document.body.scrollTop = 0;
+            }
+       //这种方法需要body的高度足够高
+    </script>
+</body>
+</html>
