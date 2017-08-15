@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    //模板
+    var str = "好@xingqing@啊，我买了一个@dongxi@，花了@qian@元钱";
+
+    //字典，数据:字典都是从Ajax读来的
+    var dictionary = {
+        "xingqing" : "高兴",
+        "dongxi" : "vivi手机" ,
+        "qian" : 7000
+    }
+
+    //数据绑定
+
+    str = str.replace(/\@([a-z]+)\@/g , function( match , $1 ,index , string){
+        return dictionary[$1];
+    })
+    console.log(str);
+    </script>
+</body>
+</html>

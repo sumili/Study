@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script type="text/javascript" src="main.js"></script>
+</head>
+<body>
+    <script>
+        //封装了一堆实用函数，这些实用函数基本都是针对数组[arry]、对象[obj]、函数[function];不涉及DOM、动画、Ajax不涉及DOM、动画、Ajax
+        //必须掌握_.max();_min();_.without();
+        var templatestring = "好<%=xingqing %>啊，我今天买了<%=dongxi %> ,花了<%=qian%>元";
+
+        //通过模板字符串来生成一个数据绑定函数
+        //template是underscore的一个内置函数
+
+
+        //字典 数据
+        var dictionary = {
+            "xingqing" : "高兴",
+            "dongxi" : "vivo手机",
+            "qian" : 7000
+        }
+
+        var compile = _.template ( templatestring);//_就是[underscore]
+        //调用数据绑定函数完成数据绑定，只需要传一个参数，就是字典[数据]
+        console.log( compile(dictionary));
+
+
+
+    </script>
+</body>
+</html>

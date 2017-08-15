@@ -143,7 +143,7 @@
 					if( xhr.readyState == 4){
 						
 						//结果回来之后干什么
-						console.log(xhr.responseTe);
+						console.log(xhr.responseText);
 						if( xhr.responseText == "y"){
 							tip.style.display="block";
 							tip.className="correct";
@@ -164,8 +164,7 @@
 				
 				//第四步，发送请求，圆括号里面是请求头内容，get请求没有报文头写null
 				xhr.send(null);
-			}
-			
+			}		
 		</script>
 	</body>
 </html>

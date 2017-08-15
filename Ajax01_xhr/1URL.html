@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<h1 id="oH">====</h1>
+		<input type="button" id="btn" value="点我异步读取文件" />
+		
+		<script type="text/javascript">
+			var oH = document.getElementById("oH");
+			var btn = document.getElementById("btn");
+			
+			
+			//服务器通信是在点击事件发生以后
+
+			btn.onclick = function(){
+				var xhr = new XMLHttpRequest;
+
+				xhr.onreadystatechange =function(){
+					if( xhr.readyState == 4){
+						oH.innerHTML = xhr.responseText;
+					}
+				}
+
+				var wenben = "hello world";
+
+
+				xhr.open("GET","php/do.php?wenben="+wenben,true);
+				xhr.send(null);
+
+			}
+
+
+			
+// 			btn.onclick = function(){
+				
+
+// 				//四步→第1：创建一个服务器通信对象的实例小黄人
+// 				var xhr = new XMLHttpRequest();
+				
+
+// 				//四步→第2：判断响应状态
+// 				xhr.onreadystatechange = function(){
+					
+// 					if(xhr.readyState == 4){
+// 						oH.innerHTML = xhr.responseText;
+// 					}
+// 				}
+// 				//详解：处理响应时
+// 				//什么也不要做，直到xmlHttp.readState的属性等于4
+// 				//服务器将把响应填充到xmlHttp.respnseText属性中
+				
+
+// 				// 普通DOM 或者JavaScript代码
+// 				var str = "我是一个文本";
+// //				encodeURIComponent就是把当前字符集的文字转换为URI编码
+				
+// 				//四步→ 第3：发送请求
+// 				xhr.open("get","php/do.php?wenben="+encodeURIComponent(str),true);
+				// ? 表示查询，？右边表示
+
+// 				xhr.send(null);
+// 			}
+			
+		</script>
+	</body>
+</html>

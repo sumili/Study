@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<input type="button" id="btn" value="点我" />
+		
+		<script type="text/javascript">
+			function fun(data){
+				console.log(data.result[2].name);
+			}
+		</script>
+		
+		<script type="text/javascript">
+			
+			//得到按钮
+			var btn = document.getElementById("btn");
+			
+			//按钮监听
+			btn.onclick=function(){
+				//创建一个script标签，孤儿节点
+				var scriptObj = document.createElement("script");
+				//追加这个script节点
+				document.body.appendChild(scriptObj);
+				
+				//一个script标签如果没有src属性，将什么都不做
+				//一个script标签如果一旦设置src属性，那么将立即发出HTTP请求
+				scriptObj.src = "jsonp.txt";
+				
+				
+				
+			}
+			
+			
+		</script>
+	</body>
+</html>

@@ -1,21 +1,4 @@
-<!DOCTYPE html>
-<html>
-	<head>
-		<meta charset="UTF-8">
-		<title></title>
-		<style type="text/css">
-			img{
-				width: 100px;
-				margin-left:20px;
-			}
-		</style>
-	</head>
-	<body>
-		
-		
-		<script type="text/javascript">
-			
-			var $ ={
+var $ ={
 				ajax: function(options){
 					//判断如果没有传递参数url的时候，弹出一个异常
 					var url = options.url; //先得到地址
@@ -75,45 +58,3 @@
 					
 				}
 			}
-			
-			$.ajax({ 
-				"url" :"http://h6.duchengjiu.top/shop/api_cat.php",
-				"type": "GET",
-				"dataType": "json",
-				"success":function(response){
-					console.log(response);
-				}
-			})
-			$.ajax({ 
-				"url" :"http://h6.duchengjiu.top/shop/api_goods.php",
-				"type": "GET",
-				"dataType": "json",
-				"success":function(response){
-					console.log(response);
-					
-//					for(var i=0;i<response.data.length;i++){
-//						var obj = response.data[i];
-//						
-////						console.log(obj.goods_thumb);
-//						var oImg = document.createElement("img");
-//							oImg.src = obj.goods_thumb;
-//							document.body.appendChild(oImg);
-//					}
-					var html = "";
-					for(var i=0;i<response.data.length;i++){
-						
-						html += "<div class='oDiv'><img src='" 
-						+ response.data[i].goods_thumb +
-						"'><p>"
-						+ response.data[i].goods_name + 
-						"</p><p>"
-						+ response.data[i].price +
-						"</p></div>";
-					}
-					
-					document.body.innerHTML = html;
-				}
-			})
-		</script>
-	</body>
-</html>
