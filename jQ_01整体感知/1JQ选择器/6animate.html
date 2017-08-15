@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			p{
+				width: 60px;
+				height: 60px;
+				background: orange;
+				position: absolute;
+				top:100px;
+				left:100px;
+			}
+			.box2{
+				top:300px;
+				background: gold;
+				
+			}
+		</style>
+	</head>
+	<body>
+		<p class="box1"></p>
+		<p class="box2"></p>
+		
+		
+		<script src="js/jquery-1.12.3.min.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			
+//			$("p").animate({"left":1000},2000,function(){
+//				$(this).css("background","red");
+//			});
+			
+			//动画排队，都是box1在动，所以要排队
+			//先横再竖
+//			$(".box1").animate({"left":1000},2000);
+//			$(".box1").animate({"top":400},2000);
+			
+			//斜着跑
+//			$(".box1").animate({"left":1000,"top":400},2000);
+			
+			//不同元素的懂，不排队
+			$(".box1").animate({"left":1000},2000);
+			$(".box2").animate({"left":900},2000);
+		</script>
+	</body>
+</html>

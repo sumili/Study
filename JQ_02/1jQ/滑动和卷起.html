@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			div{
+				width: 200px;
+				height: 200px;
+				background: yellowgreen;
+			}
+		</style>
+	</head>
+	<body>
+		<input type="button" value="slideDown"/>
+		<input type="button" value="slideUp"/>
+		<input type="button" value="slideToggle"/>
+		
+		<div></div>
+		
+		
+		<script src="js/jquery-1.12.3.min.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			
+			$("input").eq(0).click(function(){
+				$('div').slideDown(2000);
+			})
+			
+			$("input").eq(1).click(function(){
+				$('div').slideUp(2000);
+			})
+			
+			$("input").eq(2).click(function(){
+				$('div').slideToggle(2000);
+			})
+		</script>
+	</body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			p{
+				width: 60px;
+				height: 60px;
+				background: orange;
+				position: absolute;
+				top:100px;
+				left:100px;
+			}
+			.box2{
+				top:300px;
+				background: gold;
+				
+			}
+		</style>
+	</head>
+	<body>
+		<p class="box1"></p>
+		<p class="box2"></p>
+		
+		
+		<script src="../js/jquery-1.12.3.min.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			
+			// $("p").mouseenter(function(){
+				
+			// 	//鼠标穿入p标签之后的事情
+			// 	$(this).animate({"width":400},600);
+			// })
+			$("p").mouseenter( function(){
+				$(this).animate({"width":400},600);
+			})
+			
+
+			$("p").mouseleave( function(){
+				$(this).animate({"width":60},600);
+			})
+			// $("p").mouseleave(function(){
+				
+			// 	//鼠标穿出p标签之后的事情
+			// 	$(this).animate({"width":60},600);
+			// })
+		</script>
+	</body>
+</html>

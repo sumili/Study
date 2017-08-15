@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			.box1{
+				padding-top:300px;
+				position: relative;
+			}
+			.box2{
+				padding-top:100px;
+				position: relative;
+				border:10px solid #f50;
+			}
+			p{
+				margin-top: 100px;
+				background: yellowgreen;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="box1">
+			<div class="box2">
+				<p>1</p>
+			</div>
+		</div>
+		
+		<script src="../js/jquery-1.12.3.min.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			
+			var t = $("p").offset().top;
+			console.log(t);//518
+			console.log($("p").offset());//输出对象数据
+			console.log(typeof $("p").offset());//object
+
+			var t = $("p").offset().top;
+			console.log(t);
+			console.log($("p").offset());
+		</script>
+	</body>
+</html>

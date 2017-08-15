@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			p{
+				width: 60px;
+				height: 60px;
+				background: #ccc;
+			}
+		</style>
+	</head>
+	<body>
+		<p></p>
+		<p></p>
+		<p></p>
+		<p></p>
+		<p></p>
+		<p></p>
+		<p></p>
+		
+		
+		<script src="../js/jquery-1.12.3.min.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			
+			// $("p").css("background","red");  //所有p标签
+			
+			// $("p:first").css("background","orange");  //第一个p标签
+			
+			// $("p:last").css("background","purple");   //最后一个p标签
+			
+			// $("p:eq(2)").css("background","green");  //下标第二个p标签
+			
+			// $("p:lt(3)").css("width","300"); //选择前三个
+			
+			// $("p:gt(3)").animate({"width":500},1000);//选择后三个
+			
+			var a = 3;
+			
+			$("p").eq(a).animate({"width":1000},1000);
+			
+			$("p").eq(1).css("width","+=300px"); //增加一个300px
+		</script>
+	
+	</body>
+</html>

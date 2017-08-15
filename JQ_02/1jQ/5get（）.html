@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<p>00000</p>
+		<p>11111</p>
+		<p>22222</p>
+		
+		
+		<script src="../js/jquery-1.12.3.min.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			
+			//html方法表示修改里面的文字，相当于innerHTML
+//			$("p").eq(2).html("哈哈哈哈哈");
+			
+			//get方法得到的元素，帮你隐式的转为了原生js对象
+//			$("p").get(2).innerHTML = "哈哈哈哈哈";
+//			等价于
+//			$("p").eq(0)[0].innerHTML = "哈哈哈哈哈";
+			
+//			$("p")[1].innerHTML = "哈哈哈哈哈";
+
+			$("p").eq(2).html("哈哈哈哈");
+			$("p").get(0).innerHTML = "嘻嘻嘻嘻";
+			//等价于
+			$("p").eq(2)[0].innerHTML = "0101001";
+			$("p")[1].innerHTML = "呼呼呼呼";
+		</script>
+	</body>
+</html>

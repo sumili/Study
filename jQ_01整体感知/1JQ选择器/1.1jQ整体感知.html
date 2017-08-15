@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			.oDiv{
+				width: 200px;
+				height: 200px;
+				background: red;
+				position: absolute;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="oDiv"> 我是一个div </div>
+		
+		<div id="oDiv1">div1</div>
+		
+		<ul id="oUl">
+			<li>1</li>
+			<li>2</li>
+			<li>3</li>
+			<li>4</li>
+			<li>5</li>
+		</ul>
+		
+		
+		
+		<script src="js/jquery-1.12.3.min.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			
+//			$(".oDiv").css("background","#800080");
+			// $(".oDiv").css("bacaground","red");
+			// $("#oDiv1").css("background","orange");
+//			$("#oDiv1").css("background","orange");
+			
+			
+//			$("#oUl>li:first").css("background","red");
+
+
+
+
+			// $("#oUl>li:first").css("background","blue");
+//			$("#oUl>li:last").css("background","burlywood");
+
+
+
+			// $("#oUl>li:last").css("background","burlywood");
+
+
+//			$("#oUl>li:eq(2)").css("background","greenyellow");
+
+
+
+			// $("#oUl>li:eq(2)").css("background","burlywood");//eq是下标的意识
+
+
+
+//			$("#oUl>li:odd").css("background","#87CEEB");
+
+
+
+			// $("#oUl>li:odd").css("background","red");//下标为奇数的
+//			$("#oUl>li:even").css("background","palevioletred");
+			
+			
+//			$("#oUl>li").click(function(){
+//				$(this).css("background","#87CEEB");
+//			})
+
+
+			// $("#oUl>li").click(function(){
+			// 	$(this).css("background","#f0f");
+			// })
+			
+			// $("#oUl>li").mouseenter(function(){
+			// 	$(this).css("background","blue").siblings().css("background","#000");
+			//});//类似排他
+
+
+			// $("#oUl>li").mouseenter(function(){
+				
+			// 	$(this).css("background","red").siblings().css("background","orange");
+			// })
+
+				$(".oDiv").animate({"left":800,"width":800},3000,function(){
+					console.log("运动完成");
+				})
+			
+			// $(".oDiv").animate({"left":800,"width":800},3000,function(){
+			// 	console.log("运动完成~");
+				
+			// })
+		</script>
+	</body>
+</html>

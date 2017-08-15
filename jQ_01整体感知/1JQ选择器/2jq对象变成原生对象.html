@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			#oDiv{
+				width: 200px;
+				height: 200px;
+				background: red;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="oDiv"></div>
+		
+		<script src="../js/jquery-1.12.3.min.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			
+			// $("#oDiv").click(function(){
+			// 	alert("我是div");
+			// 	$(this).css({
+			// 		"background": "orange",
+			// 	})
+			// })
+
+//			$("#oDiv").click(function(){
+//				alert("我是div");
+//				$(this).css({
+//					"background": "orange",
+//					"width": 300
+//				})
+//			})
+			
+			
+			//通过[]下标方式,变成原生js对象
+			// $("#oDiv")[0].style.background="orange";
+			// $("#oDiv")[0].style.background="orange";
+			$("#oDiv").css("background","orange");
+		</script>
+	</body>
+</html>

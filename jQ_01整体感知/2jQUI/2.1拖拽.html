@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			*{
+				padding:0;
+				margin:0;
+				
+			}
+			.box{
+				width: 600px;
+				height: 600px;
+				position: relative;
+				margin: 100px;
+				background: #ccc;
+			}
+			p{
+				width: 60px;
+				height: 60px;
+				position: absolute;
+				background: skyblue;
+				top:0;
+				left:0;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="box">
+			<p>请拖动</p>
+		</div>
+		
+		
+		<script src="../js/jquery-1.12.3.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../js/jquery-ui.min.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			
+			$("p").draggable({
+				// axis: "y",
+				containment: "parent",
+
+			});
+			//draggable是一个方法(函数)→可传递参数
+			// $("p").draggable({
+			// 	axis: "y",  //约束在某个轴上
+			// 	containment: "parent",  //在父盒子中拖拽
+			// 	drag: function(event,ui){
+			// 		console.log(ui)
+			// 		console.log(ui.position.left,ui.position.top);
+			// 	}
+			// });
+			
+			
+		</script>
+	</body>
+</html>

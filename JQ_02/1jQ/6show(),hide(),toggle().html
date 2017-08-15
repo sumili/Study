@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			div{
+				width: 200px;
+				height: 200px;
+				background: skyblue;
+			}
+		</style>
+	</head>
+	<body>
+		
+		<input type="button" value="show"/>
+		<input type="button" value="hide" />
+		<input type="button" value="toggle" />
+		<input type="button" value="show(2000)" />
+		<input type="button" value="hide(2000)" />
+		<input type="button" value="toggle(1000)" />
+		
+		<div></div>
+		
+		
+		<script src="../js/jquery-1.12.3.min.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+
+		$("input:eq(0)").click(function(){
+			$("div").show();
+		})
+
+		$("input:eq(1)").click( function(){
+			$("div").hide();
+		})
+		// $("input:eq(1)").click(function(){
+		// 		$("div").hide();  //隐藏元素display：none
+		// 	})
+
+		$("input:eq(2)").click( function(){
+			$("div").toggle();
+		})
+		$("input:eq(3)").click( function(){
+			$("div").show(2000);
+		})
+
+		$("input:eq(4)").click( function(){
+			$("div").hide(2000);
+		})
+
+		$("input:eq(5)").click( function(){
+			$("div").toggle(2000,function(){
+				alert("土狗执行完毕")
+			});
+		})
+			
+			// $("input:eq(0)").click(function(){
+			// 	$("div").show();  //让一个本身是display：none的元素显示
+			// })
+			
+			$("input:eq(1)").click(function(){
+				$("div").hide();  //隐藏元素display：none
+			})
+			
+			// $("input:eq(2)").click(function(){
+			// 	$("div").toggle();  //切换显示状态
+			// 						//自行带判断，如果显示就隐藏，如果隐藏就显示
+			// })
+			
+			// $("input:eq(3)").click(function(){
+			// 	$("div").show(2000);  //切换显示状态
+			// 						//自行带判断，如果显示就隐藏，如果隐藏就显示
+			// })
+			
+			// $("input:eq(4)").click(function(){
+			// 	$("div").hide(2000);  //切换显示状态
+			// 						//自行带判断，如果显示就隐藏，如果隐藏就显示
+			// })
+			// $("input:eq(5)").click(function(){
+			// 	$("div").toggle(1000,function(){
+			// 		alert("土狗执行完毕");
+			// 	});  //切换显示状态
+			// 						//自行带判断，如果显示就隐藏，如果隐藏就显示
+			// })
+		</script>
+	</body>
+</html>

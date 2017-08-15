@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			body{
+				height: 10000px;
+				background-image: -webkit-linear-gradient(top,red,orange,yellow,green,blue,purple,white);
+			}
+		</style>
+	</head>
+	<body>
+		<input type="button" value="冲锋" />
+		
+		
+		<script src="../js/jquery-1.12.3.min.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			
+			// $(window).scroll(function(){
+			// 	console.log( $(window).scrollTop() );
+			// })
+			
+			// $('input').click(function(){
+			// 	$("html,body").animate({
+			// 		"scrollTop":8000
+			// 	},2000);
+			// })
+
+			$(window).scroll(function(){
+				console.log($(window).scrollTop);
+			})
+
+			$("input").click (function(){
+				$(html,body).animate({
+					"scrollTop":8000
+				},2000)
+			})
+
+		</script>
+	</body>
+</html>

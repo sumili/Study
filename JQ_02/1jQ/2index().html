@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			div{
+				width: 600px;
+				height: 100px;
+				border: 1px solid brown;
+			}
+			p{
+				width: 60px;
+				height: 60px;
+				float: left;
+				background: #ccc;
+				margin-right: 10px;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="box1">
+			<p class="oP"></p>
+			<p class="oP"></p>
+			<p></p>
+			<p></p>
+		</div>
+		<div class="box2">
+			<p class="oP"></p>
+			<p class="oP">点我，查看下标</p>
+			<p></p>
+			<p></p>
+		</div>
+		
+		
+		<script src="js/jquery-1.12.3.min.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			
+//			$('p').click(function(){
+//				alert( $(this).index()  );
+//			})
+			
+			$('.oP').click(function(){
+				alert( $(this).index()  );
+			})
+
+			// $(".oP").click(function(){
+			// 	alert( $(this).index() );
+			// })
+		</script>
+	</body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			div{
+				width: 200px;
+				height: 200px;
+				background: red;
+			}
+		</style>
+	</head>
+	<body>
+		
+		<input type="button" value="淡入"/>
+		<input type="button" value="淡出" />
+		<input type="button" value="指定点0.6" />
+		<input type="button" value="淡入淡出切换" />
+		
+		<div></div>
+		
+		
+		<script src="js/jquery-1.12.3.min.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			
+			$("input:eq(0)").click(function(){
+				$('div').fadeIn(2000);
+			})
+			
+			$("input:eq(1)").click(function(){
+				$('div').fadeOut(2000);
+			})
+			
+			$("input:eq(2)").click(function(){
+				$("div").fadeTo(2000,0.6);  
+			})
+			
+			$("input:eq(3)").click(function(){
+				$("div").fadeToggle(2000); 
+			})
+		</script>
+	</body>
+</html>

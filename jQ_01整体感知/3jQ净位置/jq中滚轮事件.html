@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			body{
+				height: 5000px;
+			}
+			div{
+				width: 200px;
+				height: 200px;
+				background: yellowgreen;
+			}
+		</style>
+	</head>
+	<body>
+		<div></div>
+		
+		
+		<script src="js/jquery-1.12.3.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/jquery.mousewheel.min.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			
+			$("div").mousewheel(function(event){
+				
+				if(event.preventDefault){
+					event.preventDefault();
+				}else{
+					event.returnValue = false;
+				}
+				
+				$('div').html(event.deltaY);
+				
+			})
+			
+			
+		</script>
+	</body>
+</html>
