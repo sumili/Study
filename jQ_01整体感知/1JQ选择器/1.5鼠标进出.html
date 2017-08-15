@@ -32,7 +32,7 @@
 			// 	//鼠标穿入p标签之后的事情
 			// 	$(this).animate({"width":400},600);
 			// })
-			$("p").mouseenter( function(){
+			$("p").mouseenter( function(){//原生js是mouseover
 				$(this).animate({"width":400},600);
 			})
 			
@@ -40,7 +40,7 @@
 			$("p").mouseleave( function(){
 				$(this).animate({"width":60},600);
 			})
-			// $("p").mouseleave(function(){
+			// $("p").mouseleave(function(){//原生js是mouseout
 				
 			// 	//鼠标穿出p标签之后的事情
 			// 	$(this).animate({"width":60},600);
