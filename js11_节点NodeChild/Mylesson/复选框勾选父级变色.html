@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <style type="text/css">
+            .choose{
+                background-color: yellowgreen;
+            }
+
+        </style>
+    </head>
+    <body>
+        <div class="box" id="box">
+            <ul>
+                <li>
+                    <input type="checkbox" />
+                    吃饭
+                </li>
+
+                <li>
+                    <input type="checkbox" />
+                    睡觉
+                </li>
+
+                <li>
+                    <input type="checkbox" />
+                    打豆豆
+                </li>
+
+            </ul>
+        </div>
+
+
+        <script type="text/javascript">
+            //得到所有的input
+            var inputs = document.getElementsByTagName("input");
+
+
+            for( var i=0;i<inputs.length;i++){
+                inputs[i].onclick=function(){
+                    alert(this.checked);//
+                    //y该事件的遍历不受i影响；for循环里面的function里面没有循环变量i//不需要使用编号或者IIFE
+                    //如果某个复选框被勾选，那么他的爸爸就是choose
+                    // this.parentNode.className = this.checked? "choose" : "";
+                }
+
+
+            }
+
+
+
+        </script>
+    </body>
+</html>

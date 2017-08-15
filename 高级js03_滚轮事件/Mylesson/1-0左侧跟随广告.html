@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <style type="text/css">
+            body{
+                height: 5000px;
+            }
+            div{
+                width: 100px;
+                height: 300px;
+                position: absolute;
+                top:0;
+                left:0;
+                background-color: gold;
+            }
+
+        </style>
+    </head>
+    <body>
+        <div id="box"></div>
+
+
+        <script type="text/javascript" src="js/animate-2.0.2.js"></script>
+        <script type="text/javascript">
+            var oDiv = document.getElementById("box");
+            var A = box.offsetHeight;
+
+            move();
+            window.onscroll = move;  //页面卷动的时候触发
+            window.onresize = move;  //页面尺寸更改的时候触发
+
+            //广告动画居中
+            function move(){
+                var B = document.documentElement.clientHeight; //窗口的高度
+                var C = document.body.scrollTop || document.documentElement.scrollTop;  //卷动值
+
+                var target = C + (B - A)/2;  //让盒子居中//c是卷动值
+
+
+                console.log(A);
+                console.log(B);
+                console.log(C);
+
+                animate(oDiv,{"top":target},2000);
+            }
+        </script>
+    </body>
+</html>

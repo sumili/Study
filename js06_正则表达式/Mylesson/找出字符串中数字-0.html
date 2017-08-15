@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <script type="text/javascript">
+
+            var str = "adf858e698adsf01ada0d84f09adsf12";
+
+
+            function findNum(str){//str传入的需要判断的变量
+                //来个仓库，储存符合条件的数组
+                var arr = [];
+                for( var i = 0 ;i < str.length ;i++){
+
+                    //判断是否符合条件
+                    if( str.charAt(i) <= 9 && str.charAt(i) >= 0){
+
+                        //符合的就放进去
+                        arr.push( str.charAt(i));
+                    }
+                }
+                return arr;
+
+            }
+            alert(findNum(str));
+
+        //      function findNumber(str){
+        //         var arr = [];  //一个空数组，存放符合条件的字符串
+        //         for(var i=0;i<str.length;i++){
+        //             // 判断是不是数字
+        //             if(str.charAt(i)<=9 && str.charAt(i)>=0){
+
+        //                arr.push( str.charAt(i) );
+        //                 
+        //             }
+
+        //      }
+        //     return arr;
+        //     }
+        // alert( findNumber(str) );
+        // </script>
+    </head>
+    <body>
+    </body>
+</html>

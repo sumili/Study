@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Document</title>
+    <style type="text/css">
+        *{
+            /*margin:0;*/
+            /*padding:0;*/
+        }
+        #box1{
+            width: 500px;
+            height: 500px;
+            background-color: yellowgreen;
+            padding-top: 300px;
+            position:relative;
+            /*border:20px solid red;*/
+            padding-left: 30px;
+            left:70px;
+        }
+        #box2{
+            width: 300px;
+            background-color: skyblue;
+            /*padding-top: 100px;*/
+            /*margin-top: 100px;*/
+            position:relative;
+        }
+        #box3{
+            width: 60px;
+            height: 60px;
+            background-color: gold;
+            position:relative;
+            left:20px;
+            /*top:20px;*/
+        }
+    </style>
+</head>
+<body>
+    <div id="box1">
+        <div id="box2">
+            <p>我是文字，文字也会挤走盒子</p>
+            <div id="box3"></div>
+        </div>
+    </div>
+
+    <script type="text/javascript">
+        var box1 =document.getElementById("box1");
+        var box2 =document.getElementById("box2");
+        var box3 =document.getElementById("box3");
+
+
+        //返回这个元素在页面中的净位置
+        //就是这个元素所有offsetParent的offsetTop值得和
+
+        function getAllTop(obj){
+            //累加器，累加器的初始值不是0，而是自己现在的offsetTop
+            //一会儿while语句直接从他父级开始
+            var allTop = obj.offsetTop;
+
+            //当前正算高度的元素
+            var currentObj = obj;
+            while( currentObj = currentObj.offsetParent){
+                allTop += currentObj.offsetTop;
+            }
+
+            return allTop;
+        }
+
+        function getAllLeft(obj){
+            //累加器，累加器的初始值不是0，而是自己现在的offsetLeft
+            //一会儿while语句直接从他父级开始
+            var allLeft = obj.offsetLeft;
+
+            //当前正算高度的元素
+            var currentObj = obj;
+            while( currentObj = currentObj.offsetParent){
+                allLeft += currentObj.offsetLeft;
+            }
+
+            return allLeft;
+        }
+
+        // alert( getAllTop(box1) );  //8
+        // alert( getAllTop(box2) );  //408
+        // alert( getAllTop(box3) );  //581
+
+
+        alert( getAllLeft(box1) );  //
+        alert( getAllLeft(box2) );  //
+        alert( getAllLeft(box3) );  //
+
+
+    </script>
+</body>
+</html>

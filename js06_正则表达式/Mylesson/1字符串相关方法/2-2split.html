@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Document</title>
+    <script type="text/javascript">
+        var str = "a   b   c";
+
+        // \s是空格  +是量词
+        console.log(str.split(""));//切掉空字符串
+        console.log(str.split("")); //
+        console.log(str.split(/\s+/));//切掉空格
+        console.log(str.split(/\s/));//每个都只切了一个
+
+        var str1 = "bbbbbaaaacccccaaaaeeeaaaavvv";
+
+        // 拆分  +是量词
+        console.log(str1.split(/a/));//是一个一个去切除aaaabu
+        console.log( str1.split(/a+/));
+    </script>
+</head>
+<body>
+
+</body>
+</html>

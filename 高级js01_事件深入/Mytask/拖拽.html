@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <style type="text/css">
+            div{
+                width: 100px;
+                height: 100px;
+                background-color: red;
+                position: absolute;
+            }
+            .oDiv1{
+                top:200px;
+                left:200px;
+                background-color: orange;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="oDiv"></div>
+        <div id = "oDiv1" class="oDiv1"></div>
+         
+       
+
+    <script type="text/javascript">
+
+
+        /*
+        拖拽需要的事件
+        1.onmousedown：当鼠标按下 选择元素
+        2.onmousemove：元素跟随
+        3.onmouseup：鼠标抬起元素释放（清空事件）
+         */
+
+         var oDiv = document.getElementById("oDiv");
+         var oDiv = document.getElementById("oDiv");
+    
+
+         // 当oDiv触发onmosedowm事件的情况下
+         oDiv.onmousedown = function(event){
+
+            var disX = event.clientX - this.offsetLeft;
+            var disY = event.clientY - this.offsetTop;
+            console.log(event.clientX);
+            console.log(event.clientY);
+            console.log(this.offsetLeft);
+            console.log(this.offsetTop);
+            console.log(disX);
+            console.loh
+
+            //存储两个值，鼠标当前位置减去鼠标当前拖拽div的left、top
+
+            //鼠标移动时候改变left和top
+            document.onmousemove=function(event){
+                // console.log(disX,disY);
+                oDiv.style.left = event.clientX -disX +"px";
+                oDiv.style.top = event.clientY -disY +"px";
+
+                // 得到当前div的位置：用当前移动的位置减去存好距离
+
+                // 会有一些bug，把oDiv换成document会防止鼠标过快
+            }
+            document.onmouseup=function(){
+                document.onmousemove=document.onmouseup=document.onmousedown=null;
+                console.log(1);
+                //会有一些bug，把oDiv换成document回防止其他元素覆盖后的事件触发
+            }
+            return false;
+         }
+         
+          oDiv1.onmouseup=function(){
+                // document.onmousemove=document.onmouseup=null;
+                console.log(12);
+                //会有一些bug，把oDiv换成document回防止其他元素覆盖后的事件触发
+            }
+         //所有事件的监听都是在鼠标按下的过程中施，所以书鼠标按住事件包含鼠标移动事件和鼠标的移除事件
+    </script>
+    </body>
+</html>

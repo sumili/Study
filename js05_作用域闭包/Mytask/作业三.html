@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <script type="text/javascript">
+
+
+
+            function rev(a){
+
+                var b = 0; //每次调用这个函数的时候，b重置为0；
+
+                while(a){
+
+                    b = b * 10 + a % 10;
+
+                    a = parseInt( a / 10);
+                }
+
+                return b;
+            }
+
+            alert(rev(123456));
+        </script>
+    </head>
+    <body>
+    </body>
+</html>

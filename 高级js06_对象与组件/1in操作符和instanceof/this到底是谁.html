@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			div{
+				width: 100px;
+				height: 100px;
+				background: red;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="box"></div>
+		
+		
+		<script type="text/javascript">
+			var box = document.getElementById("box");
+			
+			box.onclick=function(){
+				fun.apply(this);
+			}
+			
+			function fun(){
+				this.style.background = "orange";
+			}
+		</script>
+	</body>
+</html>

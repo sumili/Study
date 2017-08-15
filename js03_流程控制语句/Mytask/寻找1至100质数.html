@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 质数：只有1和它本身两个因数的自然数/范围：1-100
+        
+
+        for ( var i = 2 ; i<100 ;i++){
+            
+
+            //遍历j到i，得到是否未i的约数，if
+            //计步器 = 2：质数 else 不是
+            
+            var count = 0 ;//计步器
+            for( j = 1 ; j <= i ; j++){
+                if(i%j == 0){
+                    count ++;
+                }
+            }
+
+            var yueshu = count == 2 ?true:false;
+            if (yueshu){
+                console.log(i+"是质数")
+            } 
+        }
+
+
+
+    </script>
+</body>
+</html>

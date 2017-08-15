@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+    </head>
+    <body>
+        <h1>登录表单</h1>
+        <form action="" name="f1">
+            <p>账号：<input type="text" name="un" placeholder="请输入账号" /></p>
+            <p>密码：<input type="password" name="up" placeholder="请输入密码" /></p>
+            <p>重复密码：<input type="password" name="up1" placeholder="请再次输入密码" /></p>
+            <p><input type="reset" /><input type="button" id="btn" value="登陆" /></p>
+        </form>
+
+        <script type="text/javascript">
+            var btn = document.getElementById("btn");
+
+            btn.onclick = function(){
+                if(f1.un.value == ""){
+                    alert("请输入账号！");
+                }else if(f1.up.value == ""){
+                    alert("请输入密码！");
+                }else if(f1.up1.value == ""){
+                    alert("请输入重复密码！");
+                }else if(f1.un.value != "admin"){
+                    alert("账号错误~~");
+                }else if(f1.up.value==f1.up1.value&&f1.up.value==123){
+                    f1.submit();
+                }else{
+                    alert("密码不一致，请重新输入！");
+                }
+            }
+
+
+        </script>
+    </body>
+</html>

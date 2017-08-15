@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <style type="text/css">
+
+            div{
+                width: 200px;
+                height: 200px;
+                background-color: red;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="box"></div>
+
+
+
+     <script type="text/javascript">
+            // DOM  BOM
+
+            function fun(){
+                alert(this);
+            }
+            //（第1种默认全局变量：作为函数单独被定义和调用的时候）→直接用（）调用函数：函数里面的this指的是window
+            // fun();
+
+
+            //第2种：作为方法→函数绑定事件，那么事件发生的时候函数执行，this就是触发事件的那个html对象
+            var box = document.getElementById("box");
+            box.onclick = fun;//fun函数输出的是DIV
+            // 用定时器来调用函数，函数里面的this是window
+            // setInterval(fun,1500);
+
+
+            // 第3种隐式绑定：隐式函数调用时拥有一个上下文对象，就好像这个函数是属于该对象的一样
+            //作为方法【】创建一个对象将这个对象的哈哈属性，设置为刚才的fun函数，那么对象的方法来调用的时候，fun函数里面的this是 这个对象
+            //最后一个调用该函数的对象是传到函数的上下文对象
+            // var obj = {
+            //     name : "二哈",
+            //     sex : "男",
+            //     haha : fun
+            // }
+            // obj.haha();//this就是obj
+         
+            //第3种扩展：失去隐式绑定的情况
+                   function fn() {
+                      console.log( this.a );
+                  }
+                  var obj = {
+                      a: 2,
+                      fn: fn
+                 };
+                  var bar = obj.fn; // 函数引用传递
+                  var a = "全局"; // 定义全局变量
+                 bar(); // "全局"
+            //如上，第54行虽然有隐式绑定，但是它执行的效果明显是把fn赋给bar。这样bar执行的时候，依然是默认绑定全局变量，所以输出结果如上。
+         
+         
+         
+            //第4种显式绑定:bind()\apply()\call()函数接收的第一个参数即是上下文对象并将其赋给this
+            //关于f.apply(o,[1,2])和f.call(o,1,2) 就是以对象o的方法来调用函数f();
+            //我们调用一个函数的时候，可以通过call apply来调用这个函数，此时能够人工设置函数里面的this是谁
+            var obj = {
+                name : "二哈",
+                age : 22
+            }
+            fun.call(obj);
+            fun.apply(obj);
+         
+         
+            //第5种new新对象：this指向新创建的对象
+         function Fn(a){
+             this.a = a;
+         }
+         var bar = new Fn(2);
+         console.log(bar.a);//2
+         
+        </script>
+    </body>
+</html>

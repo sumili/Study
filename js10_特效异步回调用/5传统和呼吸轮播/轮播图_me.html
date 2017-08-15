@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style type="text/css">
+            *{
+                margin:0;
+                padding:0;
+            }
+            .carousel{
+                width: 672px;
+                height: 350px;
+                margin:50px auto;
+                position: relative;
+                overflow: hidden;
+            }
+            .carousel ul{
+                list-style: none;
+            }
+            .carousel ul li{
+                display: none;
+            }
+            .carousel ul li.current{
+                display: block;
+            }
+
+            .carousel span{
+                position:absolute;
+                width: 55px;
+                height:55px;
+                top:130px;
+                cursor: pointer;
+            }
+            .carousel .leftBtn{
+                left:10px;
+                background-image: url('img/slide-btnL.png');
+            }
+            .carousel .rightBtn{
+                right:10px;
+                background-image: url('img/slide-btnR.png');
+            }
+            .carousel .circles{
+                position:absolute;
+                bottom:0px;
+                width: 200px;
+                height: 17px;
+                left:50%;
+                margin-left:-50px;
+
+            }
+            .circles ol{
+                list-style: none;
+            }
+            .circles ol li{
+                float:left;
+                width: 17px;
+                height: 17px;
+                margin-right: 13px;
+                background-color: gold;
+                border-radius: 50%;
+                cursor:pointer;
+            }
+            .circles ol li.current{
+                background-color: purple;
+            }
+        </style>
+</head>
+<body>
+    <div class="carousel">
+            <ul id="aUl">
+                <li class="current">
+                    <a href="#">
+                        <img src="img/aaa.jpg" alt="" />
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <img src="img/bbb.jpg" alt="" />
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <img src="img/ccc.jpg" alt="" />
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <img src="img/ddd.jpg" alt="" />
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <img src="img/eee.jpg" alt="" />
+                    </a>
+                </li>
+            </ul>
+
+        <div class="btns">
+            <span class="leftBtn" id="leftBtn"></span>
+            <span class="rightBtn" id="rightBtn"></span>
+        </div>
+        <div class="circles" id="circles">
+            <ol>
+                <li class="current"></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+            </ol>
+        </div>
+
+    </div>
+    <script>
+        //得到所有元素，左右按钮，焦点(小圆点)，每个图片的li
+        var leftBtn = document.getElementById("leftBtn");
+        var rightBtn = document.getElementById("rightBtn");
+        var aUl = document.getElementById("aUl");
+        var aLis = aUl.getElementsByTagName("li");
+        var circlesLis = document.getElementById("circles").getElementsByTagName("li");
+    
+
+    //信号量
+    var img_idx = 0; //取值范围0，1，2，3，4
+
+    leftBtn.onclick =function(){
+        //改变信号量
+        img_idx--;
+        //信号量范围
+        if(img_idx < 0){
+            img_idx = 4;
+        }
+
+        //调用业务函数
+        chengPic();
+    }
+
+    rightBtn.onclick = function(){
+        //改变信号量
+        img_idx++;
+        //信号量范围
+        if( img_idx > 4){
+            img_idx = 0;
+        }
+
+        //调用函数
+        chengPic();
+    }
+
+
+    //小圆点的监听，需要批量添加
+    //方法1 ITFE
+    for(var i = 0 ; i <circlesLis.length ; i++){
+        (function(a){
+
+            //监听
+            circlesLis[a].onmouseover = function(){
+                
+                img_idx = a;
+
+                //调用函数
+                chengPic();//这个函数帮你换图，帮你换小圆点是橙色还是紫色
+            }
+        })(i);
+    }
+
+    for ( var i = 0 ; i <circlesLis.length ; i++){
+        
+        //先编号:给每个数都强制添加一个名为“index”的属性
+        circlesLis[i].index  = i;
+
+            //监听
+            circlesLis[i].onmouseover = function(){
+                img_idx = this.index;
+
+                //调用函数
+                chengPic();
+            }
+    }
+
+    
+
+
+
+
+
+
+
+    //业务函数
+    function chengPic(){
+
+        //去掉ul 的所有li 的current类名
+        for( var i = 0 ; i < aLis.length ; i++){
+            aLis[i].className = "";
+        }
+
+        //把当前信号量的图片li加上current类名
+        aLis[img_idx].className = "current";
+
+        //去掉所有小圆点current
+        for( var i = 0 ; i<circlesLis.length ; i++){
+            circlesLis[i].className = "";
+        }
+
+        //把当前小圆点的li加上cuuren类名
+        circlesLis[img_idx].className = "current";
+    }
+
+
+
+    
+    
+    
+    </script>
+
+</body>
+</html>

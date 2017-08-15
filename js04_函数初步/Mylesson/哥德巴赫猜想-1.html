@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <script type="text/javascript">
+        //约数的个数函数，能够传入一个数字，吐出来的是约数的个数
+            function yueshugeshu(a){
+                //计算a这个数字约数的个数
+                var count=0;
+                for(var i =1;i<=a;i++){
+                    if(a % i == 0){
+                        count++;
+                    }
+                }
+
+                return count;
+            }
+
+
+
+            //判断是否是质数，如果一个函数的名字去is
+            //就暗示了将返回布尔值，要是是true，要么是false，是通常做法，不是规定
+            //接受一个参数m，返回是否是质数 t 或者 f
+            function iszhishu(m){
+                if( yueshugeshu(m) == 2){
+                    return true;
+                }else{
+                    return false;
+                }
+            }
+
+
+
+            // 拆分，拆分的思想就是穷举思想
+            // 比如用户输入一个48，那么我们就
+            // 看看1,47是不是质数
+            // 看看2,46是不是质数
+            // 看看3,45是不是质数
+
+            // for( var i = 1; i<oushu;i++){
+            //     if( iszhishu(i) && iszhishu( oushu - i) ){
+            //         console.log(oushu + "可以拆分位" + i + "与" +( oushu - i) + "的和");
+            //     }
+            // }
+
+            waiceng:for( var i=4;i<=1000;i+=2){
+                for( var j = 2; j < i ;j++){
+
+                    if( iszhishu(j) && iszhishu( i - j) ){
+                        console.log(i + "可以拆分位" + j + "与" +( i - j) + "的和");
+                        // continue waiceng;
+                    }
+
+                }
+
+
+            }
+        </script>
+    </head>
+    <body>
+    </body>
+</html>

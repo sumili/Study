@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+    </head>
+    <body>
+        <input type="text" id="txt1" />
+
+        <input type="button" value="点击转换" id="btn" />
+
+        <input type="text" id="txt2" />
+
+        <script type="text/javascript">
+            var txt1 = document.getElementById("txt1");
+            var txt2 = document.getElementById("txt2");
+            var btn = document.getElementById("btn");
+
+            btn.onclick=function(){
+                var reg = /接|金钱|什么时候/g;
+
+
+            }
+            btn.onclick=function(){
+
+                var reg = /借|金钱|什么时候/g;
+                //replace第二个参数可以是函数，
+                txt2.value = txt1.value.replace(reg,function(str){
+
+                    // 把符合reg正则表达式的字符串替换成函数的返回值  *
+                    // 函数里面第一个参数，是匹配的内容
+                    var res = '';  //仓库
+                    // 循环匹配内容的长度 += * 号次数
+                    console.log("str 是"+ str);    //原字符串//什么时候(txt1的文本)
+                    for(var i=0;i<str.length;i++){
+                        res+="*";
+                    }
+                    return res;  //返回值
+                });
+
+
+            }
+
+        </script>
+    </body>
+</html>

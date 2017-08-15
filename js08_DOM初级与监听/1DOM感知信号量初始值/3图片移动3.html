@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+        <style>
+            img{
+                position: absolute;
+                left:577px;
+                right:100px;
+            }
+        </style>
+</head>
+<body>
+    <input type="button" value="向左移动">
+    <img src="img/1.jpg" alt="img/1.jpg" id="pic" style="left:577px">;
+    <script>
+        var oImg = document.getElementById("pic");
+        var btn = document.getElementsByTagName("input")[0];
+
+        //信号量=给一个仓库，赋值(初始值)
+        alert(oImg.style.left);
+        var oImgLeft = 577;
+        btn.onclick = function(){
+
+            //范围
+            if(oImgLeft < 0){
+                oImgLeft=0;
+            }else{
+                oImgLeft-=40;
+            }
+
+            //赋值(移动)
+            oImg.style.left = oImgLeft+"px";
+        }
+    </script>
+
+
+</body>
+</html>

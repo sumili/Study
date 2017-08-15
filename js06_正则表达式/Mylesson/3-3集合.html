@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <script type="text/javascript">
+            // 简单类 nba 三个字母组成的集合
+            // var re = /[nba]/;
+
+            // console.log( re.test("xyzn"));  //t
+
+
+            // 范围类 A-Z 大写字母集合
+            var re = /[A-Z]/;
+
+            // console.log( re.test('a'));  //f
+            console.log( re.test('F'));  //t
+
+            // 负向类
+            // var re = /[^9]/;
+
+            // console.log( re.test('9')); //f
+
+
+            //组合类
+            var re = /[0-9a-zA-Z]/;
+
+            console.log( re.test('9a'));//t
+
+
+        </script>
+    </head>
+    <body>
+    </body>
+</html>

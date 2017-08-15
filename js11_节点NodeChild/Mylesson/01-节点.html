@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+    </head>
+    <body>
+        <div>
+            <span>1</span>
+        </div>
+
+
+        <script type="text/javascript">
+            // var oDiv = document.getElementsByTagName("div")[0];
+            /*
+            节点类型
+            元素节点
+                输出 1
+
+            文本节点
+                    3
+            */
+            // console.log(oDiv.nodeType);
+            // console.log( oDiv.childNodes[1].nodeType);
+            // console.log( oDiv.childNodes.length);
+            // console.log( document.nodeType);
+
+
+
+
+
+            // var oDiv = document.getElementsByTagName("div")[0]; //1
+
+            // console.log(oDiv.nodeType) //1 ：div</div>元素节点
+            // console.log(oDiv.childNodes[0].nodeType);//3文本节点：空格
+            // console.log(oDiv.childNodes[1].nodeType);//1 ：span</span>元素节点
+            // console.log(oDiv.childNodes.length); // 节点长度为3
+
+            // console.log(document.nodeType);  // 9
+
+            ////////////////////////////////////////Mycode
+
+            var oDiv = document.getElementsByTagName("div")[0];
+            console.log(oDiv.nodeType);//1 div是元素节点
+            console.log( oDiv.childNodes[1].nodeType);//3 >>1：文本节点 //注意childNode是数组要加下标
+            console.log( oDiv.childNodes.length);//3 //span的前后换行+span节点
+            console.log( document.nodeType) // 9
+
+        </script>
+    </body>
+</html>

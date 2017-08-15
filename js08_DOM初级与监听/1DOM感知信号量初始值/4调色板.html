@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        body{
+            background-color: rgb(111,222,123);
+        }
+    </style>
+</head>
+<body>
+    <p>
+        R:
+        <input type="button" value="-" id="btnR-L">
+        <input type="text" value="111" id="txt-R">
+        <input type="button" value="+" id="btnR-S">
+    </p>
+    <p>
+        G:
+        <input type="button" value="-" id="btnG-L">
+        <input type="text" value="222" id="txt-G">
+        <input type="button" value="+" id="btnG-S">
+    </p>
+    <p>
+        B:
+        <input type="button" value="-" id="btnB-L">
+        <input type="text" value="123" id="txt-B">
+        <input type="button" value="+" id="btnB-S">
+    </p>
+    <p>
+        Go:
+        <input type="button" id="btnGo" value="Go">
+    </p>
+    <script>
+        //获取三个文本框,三个文本框，和7个按钮
+        var txtR = document.getElementById("txt-R");
+        var txtG = document.getElementById("txt-G");
+        var txtB = document.getElementById("txt-B");
+
+        var btnGo = document.getElementById("btnGo");
+        var btnR_L = document.getElementById("btnR-L");
+        var btnR_S = document.getElementById("btnR-S");
+        var btnG_L = document.getElementById("btnG-L");
+        var btnG_S = document.getElementById("btnG-S");
+        var btnB_L = document.getElementById("btnB-L");
+        var btnB_S = document.getElementById("btnB-S");
+        
+        
+        //信号量
+        var r =111;
+        var g =222;
+        var b =123;
+
+
+        //事件监听
+        alert(txtR.value)
+        btnGo.onclick =function(){
+            r = txtR.value;
+            g = txtG.value;
+            b = txtB.value;
+    
+            doucument.body.style.backgroundColor=
+            "rgb(" + r + "," + g + "," + b +")";
+        }
+
+        btnR_L.onclick =function(){
+            //改变信号量
+            r-=10;
+            
+            //调用业务函数
+            changeColor();
+        }
+        btnG_L.onclick =function(){
+            //改变信号量
+            g-=10;
+            
+            //调用业务函数
+            changeColor();
+        }
+        btnB_L.onclick =function(){
+            //改变信号量
+            b-=10;
+            
+            //调用业务函数
+            changeColor();
+        }
+        btnR_S.onclick =function(){
+            //改变信号量
+            r+=10;
+            
+            //调用业务函数
+            changeColor();
+        }
+        btnG_S.onclick =function(){
+            //改变信号量
+            g+=10;
+            
+            //调用业务函数
+            changeColor();
+        }
+        btnB_S.onclick =function(){
+            //改变信号量
+            b+=10;
+            
+            //调用业务函数
+            changeColor();
+        }
+        //业务函数
+        function changeColor(){
+
+            if( r > 255){
+                r = 255;
+            }
+            if( g > 255 ){
+                g=255;
+            }
+            if( b > 255 ){
+                b = 255;
+            }
+            if( r < 0){
+                r = 0;
+            }
+            if( g < 0){
+                g = 0;
+            }
+            if( b < 0 ){
+                b = 0;
+            }
+            //根据当前的信号量来设置颜色
+            document.body.style.backgroundColor=
+            "rgb(" + r + "," + g + "," + b +")";
+            
+            txtR.value = r;
+            txtG.value = g;
+            txtB.value = b;
+        }
+
+        
+        
+    </script>
+</body>
+</html>

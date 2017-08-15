@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <style type="text/css">
+            *{
+                padding:0;
+                margin:0;
+            }
+            .box1{
+                width: 200px;
+                height: 40px;
+                background-color: yellowgreen;
+            }
+            .box2{
+                width: 200px;
+                height: 300px;
+                background-color: #ccc;
+                display: none;
+                margin-top: 30px;
+            }
+        </style>
+        <script type="text/javascript">
+
+            // setTimeout(function(){
+            //     alert("我执行了~");
+            // },3000);
+
+            window.onload=function(){
+                var box1 = document.getElementById("box1");
+                var box2 = document.getElementById("box2");
+                var timer = null;
+                box1.onmouseover =function(){
+                    //清除延时器
+                    clearTimeout(timer);
+
+                    box2.style.display="block";
+                }
+                box1.onmouseout =function(){
+
+                    // 设置延时器
+                    timer=setTimeout(function(){
+                        box2.style.display="none";
+                    },2000);
+
+                }
+                box2.onmouseover =function(){
+                    //清除延时器
+                    clearTimeout(timer);
+
+                    box2.style.display="block";
+                }
+                box2.onmouseout =function(){
+                     timer=setTimeout(function(){
+                        box2.style.display="none";
+                    },2000);
+                }
+
+
+            }
+
+        </script>
+    </head>
+    <body>
+        <div id="box1" class="box1">一级菜单</div>
+        <div id="box2" class="box2">二级菜单</div>
+    </body>
+</html>

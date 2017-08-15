@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <script type="text/javascript">
+        // push在数组最后添加项，可以添加多个
+            // var arr = ["东","南","西","北"];
+
+            // arr.push("中","发","白");
+
+            // console.log(arr);
+
+
+
+          // pop删除数组的最后一项，只能删除最后一项，无法删除多个项，能够返回被删除的元素
+          // var arr = ["东","南","西","北"];
+
+          // arr.pop();  //删除数组的最后一项
+
+          // console.log(arr);
+
+
+          // // unshift在数组开头插入项,可以多个项
+          // var arr = ["东","南","西","北"];
+
+          // arr.unshift("一万","一筒");
+
+          // console.log(arr);
+
+
+          // shift删除数组开头项
+          // var arr = ["东","南","西","北"];
+
+          // arr.shift();
+
+          // console.log(arr);
+
+
+
+          // var arr = ["东","南","西","北"];
+
+          // arr.unshift( arr.pop() );
+
+          // console.log(arr);    //["北","东","南","西"];
+
+          // arr.unshift( arr.pop() );
+
+          // console.log(arr);  //["西","北","东","南"];
+
+          // arr.unshift( arr.pop() );
+
+          // console.log(arr);  //["南","西","北","东"];
+
+          // arr.unshift( arr.pop() );
+
+          // console.log(arr);  //["东","南","西","北"];
+
+
+
+          var arr = ["东","南","西","北"];
+
+          arr.push( arr.shift() );
+
+          console.log(arr);  // ["南","西","北","东"];
+
+
+
+        </script>
+    </head>
+    <body>
+    </body>
+</html>

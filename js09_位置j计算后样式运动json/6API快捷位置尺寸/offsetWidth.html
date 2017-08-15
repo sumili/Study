@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <style type="text/css">
+            *{
+                padding:0;
+                margin:0;
+            }
+            div{
+                padding:10px 20px 30px 40px;
+                border:50px solid red;
+                margin:60px;
+                font-size: 14px;
+                line-height: 30px;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="box">
+            文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字
+        </div>
+
+        <script type="text/javascript">
+            var oDiv = document.getElementsByTagName("div")[0];
+
+            alert(oDiv.offsetWidth);  //1246
+            alert(oDiv.clientWidth);  //1146
+
+            alert(oDiv.offsetHeight);  //170
+            alert(oDiv.clientHeight);  //70
+
+
+        </script>
+    </body>
+</html>

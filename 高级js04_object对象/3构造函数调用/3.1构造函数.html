@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <script type="text/javascript">
+
+        // function People(){
+        //     this.name = "小红";
+        //     this.age = 18;
+        //     this.sex = "男";
+        // }
+
+        // // 使用new关键字来调用函数，那么函数就叫做构造函数。将返回一个对象
+        // var xiaohong = new People();
+
+        // console.log( xiaohong);
+        // console.log( xiaohong.age);
+
+
+        //类，People类
+        //People这个函数一会将用new关键字调用，所以称为构造函数
+        //构造函数里面的语句将执行，并且返回一个对象，所以new多少次，里面语句就会执行多少次，宏观的看，返回的对象，就都有name属性、age属性、sex属性。我们说，这些返回的对象都是相同的属性群，所以可以看做一类东西。那么People这个构造函数，也可以看成类的定义
+        //但是javaScript中，没有类的概念，是通过构造函数的4步走机制来创建类似的对象吧，可以看成类。js这个语言是“基于对象”的语言，不能叫做“面向对象”的语言
+         function People(name,age,sex){
+            this.name = name;
+            this.age = age;
+            this.sex = sex;
+        }
+
+        // function People( name ,age, sex){
+        //     this.name = name ;
+        //     this.age  = age ;
+        //     this.sex = sex;
+        // }
+        // var xiaohong = new People("小红",18,"女");
+        
+        // 使用new关键字来调用函数，那么函数就叫做构造函数。将返回一个对象
+        var xiaohong = new People("小红",18,"女");//构造函数
+        var xiaoming = new People("小明",20,"男");
+
+        console.log( xiaohong );
+        console.log( xiaoming );
+
+        var 
+        </script>
+    </head>
+    <body>
+    </body>
+</html>

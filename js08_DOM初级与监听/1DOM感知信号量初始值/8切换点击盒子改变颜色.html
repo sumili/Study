@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <style type="text/css">
+            div{
+                width: 200px;
+                height: 200px;
+                background-color: orange;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="box"></div>
+
+
+        <script type="text/javascript">
+            var box = document.getElementById("box");
+
+            //信号量
+            // var state = "blue";
+
+
+            // box.onclick =function(){
+            //     if( state == "blue"){
+            //         state="red";
+            //     }else{
+            //         state = "blue";
+            //     }
+
+            //     this.style.backgroundColor=state;
+            // }
+
+            //方法2
+            //信号量
+            var state = 0;  //0蓝色 1红色
+
+            box.onclick =function(){
+                if( state == 0){
+                    state = 1;
+                    this.style.backgroundColor="red";
+
+                }else{
+                    state = 0;
+                    this.style.backgroundColor="blue";
+                }
+            }
+        </script>
+    </body>
+</html>

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        /*body*/
+        div{
+            width: 100px;
+            height: 100px;
+            background-color: #f00;
+            position: absolute;
+            top: 200px;
+            left: 200px;
+            /*margin: 200px auto;*/
+        }
+    </style>
+</head>
+<body>
+    <div id = "box"></div>
+    <script>
+        //使用键盘上的方向键盘控制box的移动方向；
+        
+
+        //获取元素
+        var  oBox = document.getElementById("box");
+
+        //选中document，得
+            // console.log(1);
+        
+        var count_X = 0;
+        var return_X = 0;
+        var oLeft = 437;
+
+        var count_Y = 0;
+        var return_Y = 0;
+        var oTop = 200;
+
+        //除了input可以监听onkeydown，还有document：可以升入扩展
+        document.onkeydown = function(event){
+            var num = parseInt(event.keyCode);
+
+            //alert(event.clientX);
+            //先来个判断，让滑块的的移动返回限制在可视窗口中
+            if(num == 37){
+                count_X++;
+                oLeft = -count_X+oLeft;//必须返回
+                oBox.style.left = oLeft+"px";
+            }else if(num == 39){
+                return_X++;
+                oLeft = return_X+oLeft;//必须返回
+                oBox.style.left = oLeft+"px";                
+            }else if(num==38){
+                count_Y++;
+                oTop = -count_Y + oTop ;
+                oBox.style.top = oTop + "px";
+            }else if( num == 40){
+                 return_Y++;
+                 oTop = return_Y+oTop;
+                oBox.style.top = oTop + "px";                 
+            }
+        }
+            //alert(oBox.offsetTop);
+        //     if(num == 37){
+        //         count_X++;//步伐
+        //         oBox.style.left = -count_X + oLeft+"px";
+        //         return_X = -count_X + oLeft;
+        //     }else if( num == 38){
+        //         count++;//步伐
+        //         oBox.style.top == -count + oTop +"px";
+        //     }else if( num == 39){
+        //         count_x++;//步伐
+        //         oBox.offsetLeft = return_X + count_X+"px";               
+        //     }else if( num == 40){
+        //         count++;//步伐
+        //         oBox.offsetTop = count + oTop +"px";
+        //     }
+            
+        // }
+    </script>
+</body>
+</html>

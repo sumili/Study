@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <style type="text/css">
+            div{
+                width: 200px;
+                background-color: yellowgreen;
+                padding:10px 20px 30px;
+                border:10px solid red;
+            }
+        </style>
+    </head>
+    <body>
+        <div>
+            文字文字文字文字文字文字文字文字文字文字文
+        </div>
+
+        <script>
+            oDiv = document.getElementsByTagName("div")[0];
+
+            //能力判断简单理解就是做兼容处理
+            if( window.getComputedStyle){
+                alert(window.getComputedStyle(oDiv)["paddingLeft"]);
+            }else{
+                alert(oDiv.currentStyle["paddingLeft"]);
+            }
+        </script>
+        <script type="text/javascript">
+          var oDiv = document.getElementsByTagName("div")[0];
+
+          if(window.getComputedStyle){
+            alert( getComputedStyle(oDiv)["paddingLeft"]);
+          }else{
+            alert(oDiv.currentStyle["paddingLeft"]);
+          }
+
+        </script>
+    </body>
+</html>

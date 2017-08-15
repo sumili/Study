@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <script type="text/javascript">
+
+            // var a = 1;  //全局变量
+
+            // function fun(){
+
+            //     var a = 5;
+            //     console.log(a);  //5
+            // }
+
+            // fun();
+
+            // console.log(a);  //1
+
+
+            // 比较复杂
+            var a = 1;  //全局变量
+            var b = 2;  //全局变量
+
+            function outer(){
+
+                var a = 3;  //局部变量
+                function inner(){
+                    var b = 4; // 局部变量
+                    console.log(a);  //3
+                    console.log(b);  //4
+                }
+                inner();
+
+                console.log(a);   //3
+                console.log(b);   //2
+            }
+
+            outer();
+            console.log(a);  //1
+            console.log(b);  //2
+
+        </script>
+    </head>
+    <body>
+    </body>
+</html>

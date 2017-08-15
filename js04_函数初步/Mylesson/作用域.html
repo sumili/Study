@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <script type="text/javascript">
+
+        // 局部变量
+            // function fun(){
+
+            //     var a = 1;   //定义在一个函数里面的变量，局部变量，只有函数里面有定义，
+
+            //     console.log("我是函数里面的语句，我认识a"+a);
+            // }
+
+            // fun();
+            // console.log("我是函数外面的语句，我不认识a"+a);
+
+
+            // 全局变量
+            // var b = 1;  //定义在全局范围内的一个变量，全局变量，在程序任何一个角落都有定义
+
+            // function fun1(){
+            //     console.log(b);
+            // }
+
+            // fun1();
+            // console.log(b);
+
+            // 变量的作用域，就是它var的时候最内层的function
+
+            function outer(){
+
+                var a = 1;  //a的作用域就是outer
+                inner();
+                function inner(){
+                    var b = 2;  //b的作用域就是inner
+                    console.log(a);
+                    console.log(b);
+                }
+                console.log(b);
+            }
+
+            outer();
+        </script>
+    </head>
+    <body>
+    </body>
+</html>

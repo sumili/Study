@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <script type="text/javascript">
+
+        var str = "abcde";
+
+        // 通过indexOf检索str中匹配内容的下标，没有返回-1
+        console.log( str.indexOf("cd"));  //2
+
+        // search可以使用正则
+        // 通过search检索str中匹配内容的下标，没有返回-1
+        console.log( str.search("cd"));  //2
+        console.log( str.search(/cd/));  //2
+        console.log( str .search(/de/));//
+        console.log( str.search(/e/));
+        </script>
+    </head>
+    <body>
+    </body>
+</html>

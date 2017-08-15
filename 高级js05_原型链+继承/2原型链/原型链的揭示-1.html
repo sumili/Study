@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript">
+			//现在是一个字面量的数组
+			var arr = [66,434,23];
+			
+//			寻找原型链的终点,发现是Object.prototype
+			console.log(arr.__proto__.constructor);
+			console.log(arr.__proto__.__proto__.constructor);
+			
+//			函数也是对象
+			function Dog(){
+				
+			}
+			console.log(Dog.__proto__.constructor);
+			
+			
+			//给Function添加一个方法
+			Function.prototype.erha = function(){
+				alert("二哈很萌~");
+			}
+			
+			Dog.erha();
+			
+			//数组
+			var arr = [33,45,66,78,23,4,5];
+			
+//			我们可以利用原型链的机制,给数组对象添加方法
+			Array.prototype.max = function(){
+				var max = -Infinity;
+				
+				for(var i=0;i<this.length;i++){
+					if( this[i] > max){
+						max = this[i];
+					}
+				}
+				return max;
+			}
+			
+			
+			//任何数组都能调用这个函数
+			console.log(arr.max());
+		</script>
+	</head>
+	<body>
+	</body>
+</html>

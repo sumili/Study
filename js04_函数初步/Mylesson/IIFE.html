@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <script type="text/javascript">
+
+
+            // +function(){
+            //     alert("我是IIFE");
+            // }();
+
+            // -function(){
+            //     alert("我是IIFE");
+            // }();
+
+
+            // (function(){
+            //     alert("我是IIFE");
+            // })();
+
+            // 设计一个函数，这个函数接受三个参数，比如sum(4,7,9)
+            // 返回的是前两个数字大的那个数字和第三个数字的和
+            // function sum(a,b,c){
+            //     var max = a >= b ? a : b;
+
+            //     return max+c;
+
+            // }
+
+            // console.log(sum(1,2,3));
+
+
+            function sum(a,b,c){
+
+                return (function(a,b){
+                    return  a >= b ? a : b;
+                })(a,b)+c;
+
+            }
+
+             console.log(sum(1,2,3));
+        </script>
+    </head>
+    <body>
+    </body>
+</html>

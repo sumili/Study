@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			*{
+				padding:0;
+				margin:0;
+				
+			}
+			#oDiv div{
+				width: 200px;
+				height: 200px;
+				border:1px solid black;
+				display: none;
+				text-align: center;
+				line-height: 200px;
+			}
+			.active{
+				background: red;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="oDiv">
+			<input type="button" value="汽车" class="active"/>
+			<input type="button" value="旅游"/>
+			<input type="button" value="动漫"/>
+			<div style="display: block;">汽车汽车汽车</div>
+			<div>旅游旅游旅游</div>
+			<div>动漫动漫动漫</div>
+		</div>
+		
+		
+		<script type="text/javascript">
+			
+			var oDiv = null;
+			var aInput = null;
+			var aDiv = null;
+			
+			 oDiv = document.getElementById("oDiv");
+			 aInput = oDiv.getElementsByTagName("input");
+			 aDiv = oDiv.getElementsByTagName("div");
+			 
+			 init();
+			
+			function init(){
+				for(var i=0;i<aInput.length;i++){
+
+				aInput[i].index = i;
+				
+				aInput[i].onclick=fun;
+				}
+			}
+			
+			
+			function fun(){
+					for(var j=0;j<aInput.length;j++){
+						aInput[j].className="";
+						aDiv[j].style.display="none";
+					}
+					this.className = "active";
+					aDiv[this.index].style.display="block";
+				}
+		</script>
+	</body>
+</html>

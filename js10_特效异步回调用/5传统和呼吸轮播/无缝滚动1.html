@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <style type="text/css">
+            *{
+                padding:0;
+                margin:0;
+            }
+            .rolling{
+                width: 800px;
+                height: 130px;
+                border:10px solid #ccc;
+                margin:100px auto;
+                position:relative;
+                overflow: hidden;
+            }
+            .rolling .m_unit{
+                /*这是运动的单位*/
+                /*这个宽度足以致命，为了让所有li能够排列*/
+                /*这个宽度随便取，大一点*/
+                width: 5000px;
+                position:absolute;
+                top:0;
+                left:0;
+            }
+            .rolling ul{
+                list-style: none;
+            }
+            .rolling ul li{
+                float:left;
+                margin-right: 10px;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="rolling" id="rolling">
+            <div class="m_unit" id="m_unit">
+                <ul>
+                    <li><a href="#"><img src="img/0.png" alt="" /></a></li>
+                    <li><a href="#"><img src="img/1.png" alt="" /></a></li>
+                    <li><a href="#"><img src="img/2.png" alt="" /></a></li>
+                    <li><a href="#"><img src="img/pangzi.png" alt="" /></a></li>
+                    <li><a href="#"><img src="img/pangzi.png" alt="" /></a></li>
+                    <li><a href="#"><img src="img/5.png" alt="" /></a></li>
+                    <li><a href="#"><img src="img/6.png" alt="" /></a></li>
+                    <li><a href="#"><img src="img/7.png" alt="" /></a></li>
+                </ul>
+            </div>
+
+        </div>
+        <button>向左移动</button>
+        <button>向右移动</button>
+
+        <script type="text/javascript">
+            //得到元素
+            //大盒子
+            var rolling = document.getElementById("rolling");
+            // 运动单位
+            var m_unit = document.getElementById("m_unit");
+            //ul
+            var aUl = document.getElementsByTagName("ul")[0];
+            // 图片数量
+            var imgs = document.getElementsByTagName("img");
+
+            // 按钮
+            var oBtn1 = document.getElementsByTagName("button")[0];
+            var oBtn2 = document.getElementsByTagName("button")[1];
+
+            //折返点
+            var lisLength;
+
+            var timer = null;
+
+            //复制一倍的li
+            // alert(aUl.innerHTML);
+            aUl.innerHTML += aUl.innerHTML;
+
+            //得到所有的li，包括新增的li
+            var lis = aUl.getElementsByTagName("li");
+
+            //所有li的个数，包括新li 16个
+            var lisLength = lis.length;
+
+            //计算折返点，但是每个li的宽度不一样，所以现在假火车开头元素的offsetleft就是折返点，这个元素lis[ lisLength/2];比较麻烦的事情，由于churome的机理，要读取offsetleft的值必须保证所有图片加载完毕。
+            for( var i = 0,count=0;i<imgs.length;i++){
+                imgs[i].onload =function(){
+                    //计数器
+                    count++;
+                    // 判断计数器和图片数量是否一致 一致说明图片加载完成
+                    if(count == imgs.length){
+                        //所有图片加载完成，计算折返点
+                        lisLength = lis[lisLength/2].offsetLeft;
+
+                        //计算折返点之后，再开始运动！
+                        move();
+                    }
+                }
+            }
+
+            // 信号量
+            var newLeft = 0;
+            var num = 5;
+
+
+
+            oBtn1.onclick = function(){
+                num = -5;
+            }
+            oBtn2.onclick = function(){
+                num = 5;
+            }
+
+            rolling.onmouseover = function(){
+                clearInterval(timer);
+            }
+            rolling.onmouseout = function(){
+                move();
+            }
+
+            function move(){
+                // 设表先停
+                clearInterval(timer);
+
+                // 运动
+                timer = setInterval(function(){
+                    newLeft+= num ;
+
+                    //范围
+                    if( newLeft  < -lisLength){
+                        newLeft = 0;
+                    }
+                    if( newLeft > 0 ){
+                        newLeft = -lisLength;
+                    }
+
+
+                   m_unit.style.left =  newLeft + "px";
+                },40);
+
+
+            }
+        </script>
+    </body>
+</html>

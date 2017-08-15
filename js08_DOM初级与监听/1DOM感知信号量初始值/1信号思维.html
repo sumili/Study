@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        #oDiv{
+            width:400px;
+            height:400px;
+            background-color: skyblue;
+            position: absolute;
+            top:100px;
+            left:100px;
+            text-align: center;
+        }
+        span{
+            color: #fff;
+            font-size: 12px;
+            line-height: 22px;
+            display: inline-block;
+            margin-top:40%;
+        }
+        .active-1{
+            background-color: #ff0;
+        }
+        .active-2{
+            background-color: #f00;
+        }
+    </style>
+</head>
+<body>
+    <button>+</button>
+    <button>-</button>
+    <button>黄色</button>
+    <button>红色</button>
+    <div id="oDiv">
+        <span style="font-size:18px">
+            通过可编程的对象模型，JavaScript 获得了足够的能力来创建动态的 HTML。
+            JavaScript 能够改变页面中的所有 HTML 元素
+            JavaScript 能够改变页面中的所有 HTML 属性
+            JavaScript 能够改变页面中的所有 CSS 样式
+            JavaScript 能够对页面中的所有事件做出反应
+        </span>
+    </div>
+    <script>
+        //获得5个对象
+        var btn1 = document.getElementsByTagName("button")[0];
+        var btn2 = document.getElementsByTagName("button")[1];
+        var btn3 = document.getElementsByTagName("button")[2];
+        var btn4 = document.getElementsByTagName("button")[3];
+        var oDiv =document.getElementById("oDiv");
+        var oSpan=document.getElementsByTagName("span")[0];
+        //信号量
+        var oSpanSize = 18;
+        //alert(oSpan.style.fontSize);
+        // 只能得到行内样式
+        //每点击一次，信号量就减少2；js没有块作用域
+        btn1.onclick =function(){
+            oSpanSize += 2;
+            oSpan.style.fontSize = oSpanSize+"px";
+        }
+        btn2.onclick =function(){
+            oSpanSize -= 2;
+            oSpan.style.fontSize = oSpanSize+"px";
+        }
+        //信号量2
+        // var oDivBackColor = "#skyblue";
+        // btn3.onclick = function(){
+        //     oDiv
+        // }
+         btn3.onclick = function(){
+             oSpan.className="active-1";
+         }
+         btn4.onclick = function(){
+             oSpan.className="active-2";
+         }
+    </script>
+</body>
+</html>

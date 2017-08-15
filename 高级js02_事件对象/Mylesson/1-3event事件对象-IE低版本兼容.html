@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Document</title>
+</head>
+<body>
+    <h1></h1>
+
+
+    <script type="text/javascript">
+        var oH1 = document.getElementsByTagName("h1")[0];
+
+
+
+        document.onmousemove=function(event){
+            event = event || window.event;
+            oH1.innerHTML = "当前鼠标坐标为" + event.clientX + ","+event.clientY;
+
+
+        }
+
+        // var oH1 = documment.getElementsByTagName("h1");
+
+        // document.onmousemove = function(event){
+        //     event = event || window.event;
+        //     oH1.innerHTML = "当前鼠标坐标为"+ event.clientX+ "," +event.clientY;
+        // }
+    </script>
+</body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <script type="text/javascript">
+        //约数的个数函数，能够传入一个数字，吐出来的是约数的个数
+            function yueshugeshu(a){
+                //计算a这个数字约数的个数
+                var count=0;
+                for(var i =1;i<=a;i++){
+                    if(a % i == 0){
+                        count++;
+                    }
+                }
+
+                return count;
+            }
+
+            // console.log(yueshugeshu(10));  //4
+            // console.log(yueshugeshu(6));  //4
+            // console.log(yueshugeshu(3));  //2
+
+
+            //判断是否是质数，如果一个函数的名字去is
+            //就暗示了将返回布尔值，要是是true，要么是false，是通常做法，不是规定
+            //接受一个参数m，返回是否是质数 t 或者 f
+            function iszhishu(m){
+                if( yueshugeshu(m) == 2){
+                    return true;
+                }else{
+                    return false;
+                }
+            }
+
+            // console.log(iszhishu(3));  //t
+            // console.log(iszhishu(5));  //t
+            // console.log(iszhishu(6));  //f
+            // console.log(iszhishu(10));  //f
+
+            //寻找1-100的质数
+            for( var i = 1;i<=100;i++){
+                if( iszhishu(i) ){
+                    console.log(i);
+                }
+            }
+        </script>
+    </head>
+    <body>
+    </body>
+</html>

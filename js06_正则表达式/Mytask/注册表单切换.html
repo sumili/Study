@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        *{
+            padding:0px;
+            margin: 0px;
+        }
+        li{
+            list-style-type: none;
+            width:550px;
+        }
+        span{
+            color: #000;
+            font-size: 14px;
+            line-height: 50px;
+            font-family: "微软雅黑";
+        }
+        input{
+            
+        }
+    </style>
+</head>
+<body>
+    <div id="box">
+        <form action="">
+            <ul id = "oUl">
+                <li><span>姓名(仅汉字)</span><input type="text" value=""></li>
+                <li><span>年龄(18~60)</span><input type="text" value=""></li>
+                <li><span>手机(11位号码)</span><input type="text"></li>
+                <li><span>邮箱(正确格式)</span><input type="text"></li>
+                <li><span>密码(以字母开头，不含空格)</span><input type="text"></li>
+            </ul>
+            <input type="button" value="提交" id = "oBtn">
+        </form>
+    </div>
+    <script>
+
+        //表单验证
+        //获取所有元素
+        var oForm = document.getElementsByTagName("form")[0];
+        var oUl = document.getElementById("oUl");
+        var oInput = document.getElementsByTagName("input");
+        var oBtn = document.getElementById("oBtn");
+
+        //获取第一个input的文本
+
+        // var str = oInput[0].value;
+
+        oBtn.onclick = function(){
+
+            //验证第一个输入框
+        var str0 = oInput[0].value;
+        var re0 = /^[\u4e00-\u9fa5]+$/;
+            if(re0.test(str0)==false){
+                alert("姓名输入有误")
+            }
+        var str1 = oInput[1].value;//大于18岁<60岁
+        var re1 = /^([2-5]\d{1}|1[8-9]|60)$/;
+            if(re1.test(str1)==false){
+                alert("你的年龄输入有误")
+            }
+        var str2 = oInput[2].value;
+        var re2 = /^1[34578]\d{9}$/;//11位手机号
+            if( re2.test(str2) == false){      
+                alert("手机号输入有误");
+            }
+        
+
+        var str3 = oInput[3].value;//邮箱格式
+        var re3 = /^\w+@\w+\.[a-z]{2,3}$/;
+            if( re3.test(str3) == false){      
+                alert("邮箱输入有误");
+            }
+        
+        var str4 = oInput[4].value;
+        var re4 = /^[a-z]{2,5}+[0-9]{3,5}$/;
+            if( re4.test(str4) == false){      
+                alert("密码输入有误");
+            }
+               
+
+        //判断每一个正则是不是符合
+        var res = "re"+i+".test(oInput["+i+"].value)";
+        var count = 0;
+        for( var i = 0 ; i<oInput.length;i++){
+            if(res[i]){
+                count++;
+            }
+        }
+        if(count ==5){
+        alert("注册成功");
+        }
+        
+    </script>
+</body>
+</html>

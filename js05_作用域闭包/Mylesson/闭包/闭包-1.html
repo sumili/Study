@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <script type="text/javascript">
+           var inner;  //全局变量
+           function outer(){
+
+                var a = 333;  //局部
+                var b = 420;  //局部
+
+                inner=function(){
+                    alert(a);
+                    alert(b);
+                }
+           }
+
+           outer();
+           alert(2);
+           var a = 111;  //全局
+           var b = 222;  //全局
+           inner();   //333 420
+           alert(1);
+
+
+
+        outer() = inner//innery
+
+
+        
+        </script>
+    </head>
+    <body>
+    </body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //求斐波那契数前40个
+
+        function digui(n){//构建一个函数，产生一个数列，符合斐波那契
+
+                if(n == 1 || n == 2){
+                    return 1;
+                }else{
+                    return digui(n-2)+digui(n-1);
+                }
+        }
+
+        var count = 0;
+        for( var i = 1 ; i<=40 ; i++ ){//得到这组数列的前40个数
+                count++
+                console.log(digui(i));
+        }
+        console.log(count);
+
+        //函数递归的本质：就是函数通过名字调用自身
+        
+
+
+    </script>
+</body>
+</html>

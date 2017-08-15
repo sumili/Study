@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <script type="text/javascript">
+            window.onload=function(){
+                var oBtn = document.getElementsByTagName("input")[0];
+
+                oBtn.onclick=function(){
+                    var food = ["蚂蚁上树","大盘鸡","馒头","尖椒肉丝","麻婆鸡丝","鱼香肉丝","爆炒腰花","炒肝","地三鲜"];
+
+                    var r = Math.random();  //获取随机数   //？：为什么r获取的是浮点数
+                        alert (r) ;//0.6344848
+                    var r1  = r*n; // n =9  r1=5.777
+                        alert (r1);
+                    var r2 = Math.floor(r1); //向下取整，就是《=原来的值
+                        alert (r2)  ; //5
+                    document.write( "今天中午该去吃" + food[r2]);
+                }
+            }
+            //     function getRandom(n){
+
+            //         // var a = Math.random();
+            //         // var a2 = a*n;
+            //         // var a3 = Math.floor(a2);
+
+            //         // return a3;
+
+            //         //得到0-9的区间
+            //         var a = Math.floor( Math.random()*n );
+
+            //         return a;
+            //     }
+
+            //     oBtn.onclick=function(){
+
+            //         var food = ["蚂蚁上树","大盘鸡","馒头","尖椒肉丝","麻婆鸡丝","鱼香肉丝","爆炒腰花","炒肝","糖醋排骨","地三鲜"];
+
+            //         var str =  getRandom( food.length);
+
+            //         document.write( food[str] );
+
+            //     }
+
+
+
+            // 
+
+        </script>
+    </head>
+    <body>
+        <input type="button" value="点菜器" />
+    </body>
+</html>

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <style type="text/css">
+            *{
+                padding:0;
+                margin:0;
+            }
+            body{
+                height: 5000px;
+            }
+            .backtotop{
+                position: fixed;
+                width: 120px;
+                height: 120px;
+                right:10px;
+                bottom:30px;
+                background-color: skyblue;
+                display: none;
+            }
+        </style>
+    </head>
+    <body>
+        <a href="javascript:;" class="backtotop" id="backtotop">回到顶部</a>
+
+
+        <script type="text/javascript">
+            var oA =document.getElementById("backtotop");
+
+            window.onscroll=function(){
+                var st = document.body.scrollTop || document.documentElement.scrollTop;
+
+                if( st > 500){
+                    oA.style.display = "block";
+                }else{
+                    oA.style.display = "none";
+                }
+
+            }
+
+            oA.onclick=function(){
+                srcollAnimate(0,3000);
+
+            }
+
+            function srcollAnimate(target,time){
+                var frameNumber = 0; //帧编号
+                var start = document.body.scrollTop || document.documentElement.scrollTop; //当前卷动值
+                var distance = target - start;//变化量
+                var interval = 10; //毫秒
+                var maxFrame = time / interval;  //总帧数
+
+                clearInterval(timer);  //设表先停
+
+                var timer = setInterval(function(){
+                    frameNumber++;
+                    if(frameNumber == maxFrame){
+                         clearInterval(timer);
+                    }
+
+                    // 第一个参数t 当前帧编号
+                    // 第二个参数b 表示起始位置
+                    // 第三个参数c  表示变化量
+                    // 第四个参数d 表示总帧数
+                    document.body.scrollTop=document.documentElement.scrollTop = fun(frameNumber,start,distance,maxFrame);
+
+                },10);
+
+
+                function fun(t,b,c,d){
+                    if((t /=d / 2) < 1) return c / 2 * t * t * t +b;
+                    return c / 2 * ((t -=2 ) * t * t +2) +b;
+                }
+            }
+        </script>
+    </body>
+</html>

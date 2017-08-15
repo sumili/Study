@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div id="lodepage">
+        <form action="index.html">
+            账号：<input type="text" id = "zhanghao">
+            密码：<input type="text" id = "mima1">
+            重复密码：<input type="text" id = "mima2">
+            <input type="button" value="提交" id = "oBtn">
+        </form>
+        <script>
+            
+            var form = document.getElementsByTagName("form")[0];
+            var oInput = document.getElementsByTagName("input");
+            var oBtn = document.getElementById("oBtn");
+
+            oBtn.onclick = function(){
+
+                //验证账号：
+                var str0 = oInput[0].value;
+                re0 = /1321160783/;
+                if( re0.test(str0)==false){
+                    alert("你输入的账号有误，请重新输入~");
+                }
+
+                //验证密码：
+                var str1 = oInput[1].value;
+                re1 = /1996419mmdw/
+                if( re1.test(str1)==false){
+                    alert("你输入的密码有误，请重新输入~");
+                }
+
+
+                //密码重复：
+                var str2 = oInput[2].value;
+                re2 = /1996419mmdw/
+                if( re2.test(str2)==false){
+                    alert("密码重复错误，请再输入~");
+                }
+
+                //空格事件弹窗
+                for(var i = 0 ; i<3;i++){
+                    if (oInput[i].value == undefined){
+                alert(oInput[i].id+"输入空格，请按要求输入");
+
+                    }
+                }
+
+                //判断每一个正则都符合：提示登陆成功
+                var res = "re.test(str["+i+"]";
+                var count = 0
+                for ( var i = 0 ;i<3; i++){
+                    if(res[i] == true){
+                        count++;
+                    }
+                    // alert(count);
+                }
+                if(count == 3){
+                alert("登陆成功");
+                    
+                }
+            }
+
+
+            
+        </script>
+    </div>
+</body>
+</html>

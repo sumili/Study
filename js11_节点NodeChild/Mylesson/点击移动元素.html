@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <style type="text/css">
+            .box1{
+                width: 300px;
+                height: 400px;
+                border:1px solid #000;
+                float:left;
+            }
+            .box2{
+                width: 300px;
+                height: 400px;
+                border:1px solid #000;
+                float:left;
+            }
+            .tools{
+                float:left;
+            }
+            ul{
+                list-style: none;
+            }
+
+        </style>
+    </head>
+    <body>
+        <div class="box1" id="box1">
+            <ul>
+                <li><input type="checkbox" />牛肉</li>
+                <li><input type="checkbox" />饼干</li>
+                <li><input type="checkbox" />生菜</li>
+                <li><input type="checkbox" />蛋糕</li>
+                <li><input type="checkbox" />烤肉</li>
+                <li><input type="checkbox" />方便面</li>
+                <li><input type="checkbox" />糖果</li>
+                <li><input type="checkbox" />苹果</li>
+                <li><input type="checkbox" />提拉米苏</li>
+            </ul>
+        </div>
+        <div class="tools">
+            <p><input type="button" id="btn1" value=">>>>>>>" /></p>
+            <p><input type="button" id="btn2" value="<<<<<<<" /></p>
+        </div>
+        <div class="box2" id="box2">
+            <ul>
+
+            </ul>
+        </div>
+
+
+        <script type="text/javascript">
+            var btn1 = document.getElementById("btn1");
+            var btn2 = document.getElementById("btn2");
+            var box1 = document.getElementById("box1");
+            var box2 = document.getElementById("box2");
+            var box1Input = box1.getElementsByTagName("input");
+            var box2Input = box2.getElementsByTagName("input");
+            var box1Ul = box1.getElementsByTagName("ul")[0];
+            var box2Ul = box2.getElementsByTagName("ul")[0];
+
+            //左边选中的删除，给右边
+            btn1.onclick=function(){
+                var checkedArr = [];  //把已经选中的元素放入数组
+                // 两个for循环，第一个for循环，筛选出来选中的元素，放入数组
+                for( var i =0;i<box1Input.length;i++){
+                    if(box1Input[i].checked){
+
+                        //把选中的input父级放入数组中
+                        checkedArr.push(box1Input[i].parentNode );
+
+                    }
+                }
+
+                //把筛选出来的数组中所有的内容在box1删除，在box2中添加
+                for( var i=0;i<checkedArr.length;i++){
+                    // box1Ul.removeChild(checkedArr[i] );//这个可以不删除
+                    box2Ul.appendChild(checkedArr[i]);
+
+                }
+
+            }
+
+            btn2.onclick=function(){
+                var checkedArr = [];  //把已经选中的元素放入数组
+                // 两个for循环，第一个for循环，筛选出来选中的元素，放入数组
+                for( var i =0;i<box2Input.length;i++){
+                    if(box2Input[i].checked){
+
+                        //把选中的input父级放入数组中
+                        checkedArr.push(box2Input[i].parentNode );
+
+                    }
+                }
+
+                //把筛选出来的数组中所有的内容在box2删除，在box2中添加
+                for( var i=0;i<checkedArr.length;i++){
+                    // box1Ul.removeChild(checkedArr[i] );//这个可以不删除
+                    box1Ul.appendChild(checkedArr[i]);
+
+                }
+
+            }
+
+        </script>
+    </body>
+</html>

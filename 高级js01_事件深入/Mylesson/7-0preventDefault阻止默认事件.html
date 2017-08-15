@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <style type="text/css">
+            body{
+                height: 4000px;
+            }
+            div{
+                width: 200px;
+                height: 200px;
+                background-color: skyblue;
+            }
+            p{
+                width: 100px;
+                height: 500px;
+            }
+        </style>
+    </head>
+    <body>
+        <div></div>
+        
+
+        <a href="http://www.baidu.com">百度</a>
+        <p></p>
+
+        <script type="text/javascript">
+            //当右击鼠标的时候阻止弹出的默认菜单
+            // document.oncontextmenu=function(event){
+            //     //当用户在 <div> 元素 上右击鼠标时执行 JavaScript ：
+            //     // alert(1);
+            //     event.preventDefault();
+            // }
+
+            // var oA =document.getElementsByTagName("a")[0];
+
+            // //阻止a标签的默认跳转
+            // oA.onclick=function(event){
+            //     event.preventDefault();
+            // }
+
+        
+            // // 当鼠标滚轮滚动的时候
+            var oDiv = document.getElementsByTagName("div")[0];
+
+
+            oDiv.onmousewheel=function(event){
+                alert("触发了~");
+                event.preventDefault();//鼠标滚不了了
+                console.log(1);
+            }
+
+        </script>
+    </body>
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <style type="text/css">
+            .oSpan{
+                color:red;
+                display: none;
+            }
+        </style>
+    </head>
+    <body>
+        <form action="" name="f1">
+            <input type="text" name="un" placeholder="用户名" />
+            <span class="oSpan" id="oSpan">*输入错误</span>
+
+            <p><input type="button" value="提交" id="btn" /></p>
+        </form>
+
+        <script type="text/javascript">
+            var btn = document.getElementById("btn");
+            var oSpan = document.getElementById("oSpan");
+
+            // btn.onclick=function(){
+            //     var re = /^[\u4e00-\u9fa5]{0,}$/;
+
+            //     // alert( f1.un.value );
+            //     if( re.test(f1.un.value)){
+            //         alert("用户名符合标准");
+            //     }else{
+            //         alert("用户名不符合标准，请重新输入~");
+            //     }
+
+            // }
+
+            f1.un.onchange=function(){
+                var re = /^[\u4e00-\u9fa5]{0,}$/;
+
+                if( re.test(f1.un.value)){
+                    f1.un.style.backgroundColor="white";
+                    alert("用户名符合标准");
+                }else{
+                    f1.un.style.backgroundColor="red";
+                    oSpan.style.display="block";
+                }
+
+
+
+            }
+        </script>
+    </body>
+</html>

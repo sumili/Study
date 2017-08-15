@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <style type="text/css">
+            .oDiv{
+                width: 200px;
+                height: 200px;
+                background-color: gold;
+                position: absolute;
+                left:10px;
+                top:10px;
+            }
+            .oDiv1{
+                width: 200px;
+                height: 30px;
+                background-color: orange;
+                margin-left: 100px;
+                margin-top: 90px;
+                border-radius: 20px;
+            }
+            .oDiv2{
+                width: 20px;
+                height: 20px;
+                background-color: goldenrod;
+                position: absolute;
+                left:140px;
+                border-radius: 50%;
+            }
+
+        </style>
+    </head>
+    <body>
+        <div class="oDiv" id="oDiv">
+            <div class="oDiv1">
+                <div class="oDiv2" id="oDiv2"></div>
+            </div>
+        </div>
+
+
+        <script type="text/javascript">
+            var oDiv = document.getElementById("oDiv");
+
+            var timer=null;
+            var newLeft = 10;
+            var newTop = 10;
+            var num = 140;
+
+            document.onkeydown = function(event){
+                event = event || window.event;
+
+                var str = event.keyCode;
+                console.log(str);
+
+                switch(str){
+                    case 39 :
+                        newLeft += 10;
+                        oDiv.style.left = newLeft + "px";
+                        break;
+                    case 37 :
+                        newLeft -= 10;
+                        oDiv.style.left = newLeft + "px";
+                        break;
+                    case 38 :
+                        newTop -= 10;
+                        oDiv.style.top = newTop + "px";
+                        break;
+                    case 40 :
+                        newTop += 10;
+                        oDiv.style.top = newTop + "px";
+                        break;
+                    case 90 :
+                        timer = setInterval(fun,200);
+                        break;
+                }
+            }
+
+            function fun(){
+                num += 10;
+                if(num > 900){
+                    num=140;
+                    clearInterval(timer);
+                }
+                oDiv2.style.left = num + "px";
+            }
+        </script>
+    </body>
+</html>

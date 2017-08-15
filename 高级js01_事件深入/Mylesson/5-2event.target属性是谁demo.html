@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        #box1{
+            width: 100px;
+            height:100px;
+            background-color: #f00;
+            border: 10px solid #fff;
+        }
+
+        #box2{
+            width:50px;
+            height:50px;
+            background-color: #ff0;
+        }
+        #box3{
+            width: 20px;
+            height: 20px;
+            background-color: #000;
+        }
+    </style>
+</head>
+<body>
+    <div id="box1">
+        <div id="box2">
+            <div id="box3"></div>
+        </div>
+    </div>
+    <!--<div id="oDiv2">
+        <div id="oDiv2_2"></div>
+    </div>-->
+    <script>
+        var oBox1 =document.getElementById("box1");
+
+        var oBox2 = document.getElementById("box2");
+
+        var oBox3 = document.getElementById("box3");
+
+        // var oDiv1_1 = document.getElementById("oDiv1_1");
+
+        // var oDiv2_2 =document.getElementById("oDiv2_2");
+
+
+        oBox1.onclick =function(event){
+            alert("我是box1");
+            alert(event.target.id);       //点击box2时》》box2；       //点击box3时》》box3
+            alert(event.currentTarget.id);//点击box2时》》box1         //点击box3时》》box1 
+        }
+
+        //关于event.curentTaget和event.target的区别
+        //其中event.currentTarget很好理解，返回自己，和this是同一个元素，如果点击的是儿子，这个歌currenttagrgetf
+        //这个值返回的还是爸爸，currentTarget就是冒泡的最外层，
+        //而event.target则是指当点击最小的盒子，即使这个盒子没有点击事件(他的某一个爸爸有点击事件)，他的event.target就是最小盒子;
+        //而次此时输出的even.currenttarget还是与this相同，是触发事件的元素
+        oBox2.onclick = function(event){
+            alert("我是box2");
+
+        }
+
+    </script>
+</body>
+</html>

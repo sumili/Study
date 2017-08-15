@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Document</title>
+    <script type="text/javascript">
+
+    function People(name,age,sex){
+        this.name = name;
+        this.age = age;
+        this.sex = sex;
+        this.sayHello = function(){
+            alert("你好~我是" + this.name + "，nice to meet you");
+        }
+    }
+
+    function Dog( name ,pinzhong , age , sex){
+        this.name = name;
+        this.pinzhong = pinzhong;
+        this.age = age;
+        this.sex = sex;
+        this.wangwang = function(){
+            alert("汪汪汪汪" + this.name + "，汪汪汪汪");
+        }
+    }
+
+        var xiaohong = new People("小红",19,"女");
+        xiaohong.sayHello();
+        // console.log(xiaohong);
+
+        var xiaobai = new Dog("小白","二哈",1,"公的");
+        xiaobai.wangwang();
+    </script>
+</head>
+<body>
+
+</body>
+</html>

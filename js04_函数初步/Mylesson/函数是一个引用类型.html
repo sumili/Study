@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <script type="text/javascript">
+
+        //基础类型是值得复制
+            // var a = 6;
+            // var b = a;
+
+            // b += 2;
+
+            // console.log(b); //8
+            // console.log(a); //6
+
+
+            var a = function(){
+                alert("我是一个函数，我执行了~");
+            }
+
+            //就是把匿名函数的地址给了b
+            var b = a;
+
+            //给b添加一个属性
+            b.haha = 1;
+
+            // 输出a的haha
+            console.log(a.haha);  //1
+
+            // b的haha属性和a同步更改，因为都是指向同一个对象
+            b.haha++;  //2
+            b.haha++;  //3
+            b.haha++;  //4
+
+            console.log(a.haha);  //4
+
+
+        </script>
+    </head>
+    <body>
+    </body>
+</html>
