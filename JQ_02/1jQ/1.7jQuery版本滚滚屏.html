@@ -64,17 +64,16 @@
 	<script type="text/javascript" src="js/jquery.mousewheel.min.js"></script>
 	<script type="text/javascript">
 		
-		var $container = $("#container");
+		var $container = $("#container");//获取事件监听元素
 		
 		var idx = 0;  //信号量
 		
-		var INARRAY = [];  //里面放的是所有进场动画 INARRAY[1]
-		
+		var INARRAY = [];  //里面放的是所有进场动画 INARRAY[1]	
 		
 		$(document).mousewheel(function(event){
 			//判断是否在运动，如果是  return
 			if( $container.is(":animated")  ){
-				return;
+				return;//效果：不会自动划到底部，每个page需要鼠标滚动
 			}
 			
 			//鼠标滚动往上  信号量+1   event.deltaY +1
@@ -82,9 +81,9 @@
 			//信号量 目前有两个。。一个新的一个旧的
 			var oldIdx = idx;
 			
-			
-			
 			idx -= event.deltaY;
+            //0 = idx(0)-event.deltaY(-1) =1 往下滑动
+            //1 = 1 -(-1)=2 往下滑动
 			
 //			范围
 			if( idx < 0 ){
@@ -93,11 +92,9 @@
 				idx = 4;
 			}
 			
-			
-			if( oldIdx != idx){
+			if( oldIdx != idx){//只要鼠标滑动了就产生动画
 				
-				
-				$container.animate({"top" : -100*idx + "%"},1000,function(){
+				$container.animate({"top" : -100*idx + "%"},1000,function(){//这个回调函数能访问包含他的函数中的变量，也能访问到全局变量
 					
 					//滚动完之后进行动画
 					if( typeof INARRAY[idx] == "function"){
@@ -115,6 +112,10 @@
 			$(".erha").show().animate({"left":500,"top":400},2000);
 		}
 		
+        // 逻辑 : 1 鼠标滚动，page滑动一页(自动)，因此需要先判断当前是否在运动，是就停止：[函数节流]//一般都是先判断在运行
+        //        2 page有范围，因此需要先判断范围，在运行
+        //        3 可以运行动画了
+        //        4 在每一个page可存储动画//初始化一个数组，根据page信号量来判断对应下标的page执行什么动画
 	</script>
 </body>
 </html>	
