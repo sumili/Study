@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<div id="box">
+			<p>哈哈</p>
+			<p>呵呵</p>
+		</div>
+		
+		
+		<script src="../js/jquery-1.12.3.min.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			//语法：父元素.append(子元素)；
+			
+			var $obj = $("<p>嘻嘻</p>")//创建节点:语法 $(html) 返回的是一个jQuery对象
+			
+			$obj.css("background","orange");//样式
+			$("#box").append($obj);
+
+			//直接创建，不使用变量储存
+			$("#box").append("<p>么么哒</p>");
+			
+			
+			//语法 ：子元素.appendTo(父元素)
+
+			$("<p>嘻嘻-1</p>").appendTo($("#box"));
+
+			$("p").append("<span>你好</span>");
+			// $("p").append("<span>span</span>");
+			
+			$("<span>hellow</span>").appendTo($("p"));
+			// $("<span>span</span>").appendTo( $("p") );
+			
+		</script>		
+	</body>
+</html>

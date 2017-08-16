@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			.choose{
+				background: yellowgreen;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="box">
+			<ul>
+				<li><input type="checkbox" />哈哈哈</li>
+				<li><input type="checkbox" />哈哈哈</li>
+				<li><input type="checkbox" />哈哈哈</li>
+				<li><input type="checkbox" />哈哈哈</li>
+				<li><input type="checkbox" />哈哈哈</li>
+			</ul>
+		</div>
+		
+		<script src="../js/jquery-1.12.3.min.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			
+			// $("input").click(function(){
+			// 	if( $(this)[0].checked ){
+					
+			// 		$(this).parent().addClass("choose");
+					
+			// 	}else{
+					
+			// 		$(this).parent().removeClass("choose");
+			// 	}
+				
+				
+			// })
+			
+			$("input").click( function(){
+
+				if($(this)[0].checked){
+					$(this).parent().addClass("choose");
+
+				}else{
+					$(this).parent().removeClass("choose");
+				}
+			})
+			
+			
+		</script>
+	</body>
+</html>

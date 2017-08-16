@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			p{
+				width: 40px;
+				height: 40px;
+				background: skyblue;
+			}
+			.cur{
+				background: gold;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="box">
+			<p></p>
+			<p></p>
+			<p></p>
+			<p></p>
+			<p class="oP">oP</p>
+			<p></p>
+			<p></p>
+			<p></p>
+		</div>
+		
+		<script src="../js/jquery-1.12.3.min.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			
+//			$(".oP").siblings(":odd").css("background","pink");
+			
+			// $('p').mouseenter(function(){
+				
+			// 	$(this).addClass("cur").siblings().removeClass("cur");
+				
+			// })
+			$(".oP").siblings(":odd").css("background","red");//排除自己以后再计算奇偶
+			
+			$("p").mouseenter( function(){
+				$(this).addClass("cur").siblings().removeClass("cur");
+			})
+			//有空亚研究一下啊{{{{{{{{{{{{{}}}}}}}}}}}}}
+		</script>
+	</body>
+</html>

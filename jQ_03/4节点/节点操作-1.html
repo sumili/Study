@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<div id="box">
+			<p>11</p>
+			<p>22</p>
+			<p>33</p>
+			<p>44</p>
+			<p>55</p>
+			<p>66</p>
+		</div>
+		
+		
+		<script src="js/jquery-1.12.3.min.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			
+//			$("#box").after("<h3>我是h3</h3>");
+			
+			$("<p>我是一个p标签</p>").insertBefore($('p').eq(1));
+			
+			
+		</script>		
+	</body>
+</html>

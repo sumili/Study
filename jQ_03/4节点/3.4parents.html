@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			.box{
+				width: 800px;
+				height: 800px;
+				background: orange;
+			}
+			ul{
+				width: 700px;
+				height: 700px;
+				background: green;
+			}
+			li{
+				width: 300px;
+				height: 70px;
+				background: purple;
+			}
+			p{
+				width: 50px;
+				height: 50px;
+				background: #ccc;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="box">
+			<ul>
+				<li><p></p></li>
+				<li><p></p></li>
+				<li><p></p></li>
+				<li><p></p></li>
+			</ul>
+		</div>
+		
+		<script src="../js/jquery-1.12.3.min.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			
+			// $("p").parents("ul").css("background","red");
+			$("p").parents().css("background","#000");
+			
+		</script>
+	</body>
+</html>

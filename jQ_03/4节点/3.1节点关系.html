@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			p{
+				width: 60px;
+				height: 60px;
+				background: red;
+			}
+			h3{
+				width: 40px;
+				height: 40px;
+				background: orange;
+			}
+			
+			
+			
+		</style>
+	</head>
+	<body>
+		<div id="box">
+			文本
+			<h3>1</h3>
+			<h3>2</h3>
+			<p>3</p>
+			<p>4</p>
+			<p>5</p>
+			<p>6</p>
+			<p>7</p>
+			<p>8</p>
+			<p>9</p>
+		</div>
+		
+		
+		<script src="../js/jquery-1.12.3.min.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			
+//			$("#box").children("h3").css("background-color","#0000FF");
+			
+//			alert( $("#box").children().size() );
+			$("#box").children("h3").css("background","red");
+			alert( $("#box").children().size());
+
+			$("#box").children().eq(0).css("background-color","purple");
+			$("#box").children().eq(0).css("background-color","skyblue");
+			
+		</script>
+	</body>
+</html>

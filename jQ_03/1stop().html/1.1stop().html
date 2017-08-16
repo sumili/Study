@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        div{
+            width: 80px;
+            height: 80px;
+            background-color: orange;
+            position:absolute;
+            top:100px;
+            left:100px;
+
+        }
+    </style>
+</head>
+<body>
+
+
+    
+    <input type="button" value="stop(默认false，默认false)">
+    <input type="button" value="stop(true)">
+    <input type="button" value="stop(true,true)">
+    <input type="button" value="stop(false,true)">
+    <input type="button" value="finish()">
+
+    <div></div>
+    <script src="../js/jquery-1.12.3.min.js" type="text/javascript" charset="utf-8"></script>
+    <script>
+        $("div").animate( {"left":800},2000);
+        $("div").animate( {"top":400},2000);
+        $("div").animate( { "left":100},2000,function(){
+            $("div").css("background","red");
+        });
+        $("div").animate( {"top":100},2000 ,function(){
+            $("div").css( {"width":50, "height" : 50});
+        });
+        
+        //语法：stop[(参数1：是否清除队列) ,(参数2：是否瞬间完成当前动画) ]
+        //先依据参数2实现动画队列，在依据参数2是否执行下一步操作
+        //参数1 = false 不清除动画队列                         true = 清除动画队列
+        //参数2 = false 不瞬间完成当前动画，即是停止当前动画     true = 瞬间执行完当前动画
+        $("input:eq(0)").click( function(){
+            $("div").stop(); //不清除动画队列 ，停止当前动画
+        });
+        $("input:eq(1)").click( function(){
+            $("div").stop(true); // 清除动画队列，停止当前动画
+        });
+        $("input:eq(2)").click( function(){
+           $("div").stop( true,  true );  // 清除动画队列 ，当前动画瞬间完成
+        });
+        $("input:eq(3)").click( function(){
+             $("div").stop( false , true); //不清除动画队列 当前动画瞬间完成
+        });
+        $("input:eq(4)").click( function(){
+             $("div").finish();//瞬间执行完毕
+        })
+    </script>
+</body>
+</html>

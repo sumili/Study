@@ -1,0 +1,70 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+		.box1{
+			width: 300px;
+			height: 400px;
+			border: 1px solid #000;
+			float: left;
+		}
+		.box2{
+			width: 300px;
+			height: 400px;
+			border: 1px solid #000;
+			float: left;
+		}
+		.tools{
+			float: left;
+		}
+		ul{
+			list-style: none;
+		}
+	</style>
+</head>
+<body>
+
+	<div class="box1">
+		<ul>
+			<li><input type="checkbox" /> 牛肉</li>
+			<li><input type="checkbox" /> 猪肉</li>
+			<li><input type="checkbox" /> 土豆</li>
+			<li><input type="checkbox" /> 馒头</li>
+			<li><input type="checkbox" /> 鸡肉</li>
+			<li><input type="checkbox" /> 考拉</li>
+			<li><input type="checkbox" /> 乌龟</li>
+			<li><input type="checkbox" /> 树懒</li>
+		</ul>
+	</div>
+
+	<div class="tools">
+		<p><input id="btn1" type="button" value=">>>>>>>>" /></p>
+		<p><input id="btn2" type="button" value="<<<<<<<<" /></p>
+	</div>
+
+	<div class="box2">
+		<ul>
+			 
+		</ul>
+	</div>
+
+	<script type="text/javascript" src="js/jquery-1.12.3.min.js"></script>
+	<script type="text/javascript">
+		$("#btn1").click(function(){
+			//:checked筛选所有选中的复选框、单选按钮：
+			$(".box1 input:checked").parent().remove().appendTo(".box2 ul");
+			//保持所有框框不被选中状态
+			$("input").attr("checked",false);
+		});
+
+		$("#btn2").click(function(){
+			//:checked筛选所有选中的复选框、单选按钮：
+			$(".box2 input:checked").parent().remove().appendTo(".box1 ul");
+			//保持所有框框不被选中状态
+			$("input").attr("checked",false);
+		});
+	</script>
+</body>
+</html>
