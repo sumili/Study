@@ -33,15 +33,18 @@
 		</div>
 		
 		
-		<script src="../js/jquery-1.12.3.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/jquery-1.12.3.min.js" type="text/javascript" charset="utf-8"></script>
 		<script type="text/javascript">
+
+            $("p").each( function(i){
+                $(this).css( "width", (i+1)*10);
+            })//i受到选择器的影响，box1和box2的效果不同，box2的p接着box1计算
+
 			$('p').each(function(){
 				$(this).css("width", ($(this).index()+1 ) * 10);
-			})
-
-			// $("p").each(function(){
-			// 	$(this).css("width",($(this).index()+1)*10);
-			// })
+            
+			})//index()无视选择器怎么选，返回的就是这个元素在兄弟元素中的排名
+			
 			
 		</script>
 	</body>
