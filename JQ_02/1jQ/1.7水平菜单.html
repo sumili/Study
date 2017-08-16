@@ -56,9 +56,13 @@
 		<ul>
 			<li><a href="#">栏目名称</a></li>
 			<li>
+                <!--a的高度和宽度是auto-->
 				<a href="#">公司新闻</a>
 				<div class="dropbox">
 					<div class="inner">
+                        <!--为什么还要一层inner-->
+                        <!--因为如果没有inner，只有dropbox[position：absolution；且与li紧密相挨]-->
+                        <!--若样式上又想让他们看起来是可以不相挨，可以加一个inner-->
 						<p><a href="">北京总部新闻</a></p>
 						<p><a href="">上海分公司新闻</a></p>
 						<p><a href="">东莞分公司新闻</a></p>
@@ -97,12 +101,16 @@
 			
 		})
 		
-		//鼠标穿出li
+		鼠标穿出li
 		$("li").mouseleave(function(){
 			//碰到那个li，让li的儿子。dropbox卷起
 			$(this).children(".dropbox").slideUp();
 			
 		})
+
+        //标题下拉选项框
+        //结构分析
+        //nav>ul>(li>a+div.dropbox>div.inner>(p>a)*5)
 	</script>
 </body>
 </html>	
