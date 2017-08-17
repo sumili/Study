@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="../js/jquery-1.12.3.min.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			
+			$(function(){
+				
+				//给jquery对象丰富插件方法
+//				$.fn.abc =function(){
+//					console.log("abckefg");
+//				}
+
+				$.fn.abc= function(){
+					console.log("bajfjsfdjsf");
+				}
+
+				$.fn.extend({
+					aaa:function(){
+						console.log("aaaaaaa");
+					},
+					ccc:function(){
+						console.log("cccccccc")
+					}
+				})
+
+				console.log($.fn);//$对象
+				$("div").abc();//给[$对象]丰富方法
+				$().abc();//OK所有$对象都能使用这个方法
+				
+				
+//				
+//				$.fn.extend({
+//					aaa: function(){
+//						console.log("aaaaaa");
+//					},
+//					ccc: function(){
+//						console.log("cccccc");
+//					}
+//				})
+//				
+//				
+//				$("div").abc();
+//				$("div").aaa();
+//				$("div").ccc();
+				
+//				$.hello = function(str){
+//					console.log(str+"hello");
+//				}
+//				$.hello("nihao");
+				
+				
+				
+				
+			})
+			
+			
+		</script>
+	</head>
+	<body>
+		<div></div>
+	</body>
+</html>

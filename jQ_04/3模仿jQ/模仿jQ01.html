@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		
+		<p>哈哈p1</p>
+		<p>哈哈p2</p>
+		<p>哈哈p3</p>
+		
+		<div id="box">div,我的id是box</div>
+		
+		<span>1span</span>
+		<span>2span</span>
+		
+		<script src="kuquery.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+		//就是指kq能达到jQuery的部分功能
+			kq("p").css("color","blue");
+			
+			kq("#box").attr("title","我是一个title").css("color","red");
+		
+			kq("span").eq(1).html("今天天气不错~").css("background","skyblue");
+		</script>
+	</body>
+</html>
+

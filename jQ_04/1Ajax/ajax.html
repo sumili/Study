@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			*{
+				margin: 0;
+				padding: 0;
+			}
+			ul{
+				list-style: none;
+				border:1px solid red;
+				overflow: hidden;
+				/*width: 1200px;*/
+			}
+			li{
+				float: left;
+				width: 400px;
+				height: 600px;
+				text-align: center;
+				color: orange;
+				margin-right: 10px;
+			}
+			li>img{
+				width: 400px;
+			}
+			li>img:hover{
+				opacity: 0.5;
+			}
+			nav{
+				overflow: hidden;
+			}
+			nav>a{
+				float: left;
+				width: 200px;
+				height: 60px;
+				line-height: 60px;
+				text-align: center;
+				color: gold;
+				background: orange;
+				font-size: 24px;
+				text-decoration: none;
+			}
+			nav>a:hover{
+				color: white;
+				background: red;
+			}
+		</style>
+	</head>
+	<body>
+		<nav></nav>
+		<div id="box">
+			<ul>
+				 
+				
+			</ul>
+		</div>
+		<!--<input type="button" id="btn" value="点我" />-->
+		
+		
+		<script src="../js/jquery-1.12.3.min.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			
+			
+				
+				$.get("http://h6.duchengjiu.top/shop/api_cat.php",function(data){
+			
+					var obj = data;
+					
+					for( var i = 0 ;i<obj.data.length;i++){
+						
+//						$("<span></span>").html(obj.data[i].cat_name).appendTo($('div'));
+						$("nav").append("<a title='" +obj.data[i].cat_id+ "'>" +obj.data[i].cat_name+ "</a>")
+					}
+					
+				})
+			// $("input").click(function(){
+
+				$.ajax("http://h6.duchengjiu.top/shop/api_goods.php",{
+					"type": "get",
+					"data": {
+						"name" : "xiaoming",
+						"age" : 18
+					},
+					"success": function(data){
+						var obj = data;
+					
+						for(var i = 0 ;i<obj.data.length;i++){
+							
+							$("#box ul").append('<li><img src="' +obj.data[i].goods_thumb+ '" alt=""/><h4>'
+								+obj.data[i].goods_name+ '</h4><span>'
+								+obj.data[i].price+ '</span></li>')
+						};
+					},
+					"error" : function(){
+						alert("请求失败");
+					}
+				});
+			// })
+			
+			
+			
+		</script>
+	</body>
+</html>

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			img{
+				width: 300px;
+				height: 300px;
+			}
+		</style>
+		<script src="../js/jquery-1.12.3.min.js" type="text/javascript" charset="utf-8"></script>
+		<!--<script src="../js/jquery-picAutoChange.js" type="text/javascript" charset="utf-8"></script>-->
+		<script type="text/javascript">
+			
+		$.picAutoChange = function(){//给$对象添加一个方法：picAutoChange
+						
+							function autoPlay(){
+							//获取当前图片的路径 （找到编号）
+							var picId = $("img").attr("src").substr(7,1)
+							
+							var nextId =  ++picId;
+							//范围
+							if(nextId == 5){
+								nextId = 0
+							}
+							
+							$("img").attr("src","images/" + nextId + ".jpg");
+						}
+						setInterval(autoPlay,1000);
+							
+					}
+					
+		$.picAutoChange = function(){
+
+				function autoPlay(){
+
+					//获取当前信号量
+					//attr获取属性，这里获取src路劲：images/0.jpg
+					//attr有两个参数，1什么属性 2：新的值
+					var picId = $("img").attr("src").substr(7,1)
+
+					var nextpicId = ++picId;
+
+					//判断范围
+					if( nexpicId == 5){
+						nextpicId = 0
+					}
+				
+					//当前img的src属性
+					$("img").attr("src" , "images/"+nextpicId+".jpg");
+				}
+				setInterval( picAutoChange ,1000);
+		}
+
+
+
+
+
+
+
+
+			//页面加载完毕调用一个插件方法，使得图片依次播放
+			//百度一下页面加载的几种方式
+			$(function(){
+				
+				$.picAutoChange();
+				
+			})
+
+			$(function(){
+				$.picAutoChange();
+			})
+			
+		</script>
+	</head>
+	<body>
+		<img src="images/0.jpg" alt="" />
+		<!--初始状态-->
+	</body>
+</html>

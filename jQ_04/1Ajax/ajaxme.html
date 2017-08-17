@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			*{
+				padding: 0;
+				margin: 0;
+			}
+			nav{
+				overflow: hidden;
+			}
+			nav>a{
+				float: left;
+				width: 200px;
+				height: 60px;
+				line-height: 60px;
+				text-align: center;
+				color: gold;
+				background: orange;
+				font-size: 24px;
+				text-decoration: none;
+			}
+			nav>a:hover{
+				color: white;
+				background: red;
+			}
+			ul{
+				list-style: none;
+				border:1px solid red;
+				overflow: hidden;	 
+			}
+			li{
+				float: left;
+				width: 400px;
+				height: 600px;
+				text-align: center;
+				color: orange;
+				margin-left: 10px;
+			}
+			li>img{
+				width: 400px;
+			}
+			li>img:hover{
+				opacity: 0.5;
+			}
+			
+		</style>
+	</head>
+	<body>
+		<nav>
+			<!--<a title="obj.data[i].cat_id" href="">obj.data[i].cat_name</a>-->
+			<!--a的title作用是当鼠标放上去时，显示title的文本-->
+		</nav>
+		<div id="box">
+			<ul>
+				<!--<li>-->
+					<!--<img src="obj.data[i].good.thumb" alt="">
+					<h4>obj.data[i].good_name</h4>
+					<span>obj.data[i].price</span>-->
+				<!--</li>-->
+			</ul>
+		</div>
+		<input type="button" id="btn" value="点我" />
+		
+		
+		<script src="../js/jquery-1.12.3.min.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			
+
+			//第一步：使用[get]获取导航栏的数据
+			// $("input").click(function(){
+				
+				$.get("http://h6.duchengjiu.top/shop/api_cat.php",function(data){
+//					var a = data;
+//					$("#box").html(a);
+					//console.log(data);
+					var obj = data ;
+					console.log(typeof obj);//object			
+					for( var i = 0 ; i < obj.data.length ; i++){
+						// $("<span></span>").html(obj.data[i].cat_name).appendTo($("div"));
+						// $("span").wrap("<a></a>");
+						$("nav").append('<a title="'+obj.data[i].cat_id+'" href="">'+obj.data[i].cat_name+"</a>")
+					}
+				})
+				
+			// })
+			//第二步：使用[Ajax]获取内容的数据
+			$("input").click(function(){
+			$.ajax("http://h6.duchengjiu.top/shop/api_goods.php" ,{
+				"type":"get",
+				"data": {
+					"name":"xiaoming",
+					"age":18
+				},
+				"success":function(data){
+					var obj = data ;
+
+					for( var i =0 ; i < obj.data.length ; i++){
+						$("#box ul").append('<li><img src="'+obj.data[i].goods_thumb+' " alt=""/><h4>'
+						+obj.data[i].goods_name+'</h4><span>'
+						+obj.data[i].price+'</span></li>')
+					};
+				},
+				"error" :function(){
+					alert("请求失败");
+				}
+			})
+			
+		})
+			
+		</script>
+	</body>
+</html>

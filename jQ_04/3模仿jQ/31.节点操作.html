@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<!--<p>1</p>
+		<p class="oP">2</p>
+		<p>3</p>
+		<div></div>-->
+		
+		<div id="box">
+			<p>1</p>
+			<p class="oP">2</p>
+			<p>3</p>
+		</div>
+		<script src="../js/jquery-1.12.3.min.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			
+			// $("p").remove();//box还在，其他的p 都被没了
+			
+//			$(".oP").clone().appendTo( $("div"));
+
+
+			$(".oP").clone().appendTo( $(".oP"));//添加到父元素的后面
+
+			// $("#box").remove();//全部都没了
+		</script>
+	</body>
+</html>

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<form id="oForm">
+			<p>
+				请输入用户名：
+				<input type="text" name="userName" id="yonghuming"/>
+			</p>
+			<p>
+				请输入密码：
+				<input type="password" name="up" />
+			</p>
+			<p>
+				请选择性别：
+				<input type="radio" name="sex" value="男"/>男
+				<input type="radio" name="sex" value="女"/>女
+				<input type="radio" name="sex" value="保密"/>保密
+			</p>
+			<p>
+				请选择国籍：
+				<input type="radio" name="nationality" value="中国"/>中国
+				<input type="radio" name="nationality" value="外国"/>外国
+			</p>
+			<p>
+				请选择爱好：
+				<input type="checkbox" name="hobby" value="足球"/>足球
+				<input type="checkbox" name="hobby" value="篮球"/>篮球
+				<input type="checkbox" name="hobby" value="吃饭"/>吃饭
+				<input type="checkbox" name="hobby" value="睡觉"/>睡觉
+				<input type="checkbox" name="hobby" value="打豆豆"/>打豆豆
+			</p>
+			<p>
+				请选择你的省份：
+				<select name="hometown" >
+					<option value="山西">山西</option>
+					<option value="山东">山东</option>
+					<option value="湖南">湖南</option>
+					<option value="陕西">陕西</option>
+				</select>
+			</p>
+			<p>
+				留言：
+				<textarea name="message" cols="30" rows="10"></textarea>
+			</p>
+			<p>
+				<input type="button" id="btn" value="点我提交"/>
+			</p>
+		</form>
+		
+		<script src="js/jquery-1.12.3.min.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			
+			$("#btn").click(function(){
+				
+//				alert($("#yonghuming").val());
+
+				var str = $("#oForm").serialize();
+//				console.log(str);
+				$.get("1.php?"+str,function(data){
+					
+				})
+			})
+			
+		</script>
+	</body>
+</html>
