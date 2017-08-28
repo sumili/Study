@@ -1,0 +1,28 @@
+服务器环境
+echo
+变量$开头  没有var
+连字符 .
+数据类型
+变量的作用域
+运算符
+数组
+http://php.net/manual/zh/index.php
+
+php是弱类型语言
+
+js是弱类型语言
+
+$name = "小明";
+echo $name;
+$name = true;
+echo $name;
+
+弱类型：在赋值时候没有指定类型
+动态类型：变量可以改变类型，随便换
+
+http://chongzhi.jd.com/json/order/search_searchPhone.action?mobile=
+
+超全局变量
+$_SERVER
+$_GET
+$_POST
