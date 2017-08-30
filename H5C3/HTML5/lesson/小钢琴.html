@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			ul{
+				list-style: none;
+			}
+			li{
+				float: left;
+				width: 100px;
+				height: 30px;
+				background-color: #ccc;
+				margin-right: 10px;
+				position: relative;
+				overflow: hidden;
+			}
+			li::before{
+				content: "li";
+				position: absolute;
+				width: 100%;
+				height: 100%;
+				background: yellowgreen;
+				top:100%;
+				transition: all 0.2s ease 0s;
+			}
+			li:nth-child(1)::before{
+				background-color: red;
+			}
+			li:nth-child(2)::before{
+				background-color: orange;
+			}
+			li:nth-child(3)::before{
+				background-color: yellow;
+			}
+			li:nth-child(4)::before{
+				background-color: green;
+			}
+			li:nth-child(5)::before{
+				background-color: navy;
+			}
+			li:nth-child(6)::before{
+				background-color: skyblue;
+			}
+			li:nth-child(7)::before{
+				background-color: purple;
+			}
+			li:nth-child(8)::before{
+				background-color: black;
+			}
+			li:hover::before{
+				top:0;
+			}
+			li.cur::before{
+				top:0;
+			}
+		</style>
+	</head>
+	<body>
+		<ul>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+		</ul>
+		<div class="audio">
+			<audio src="audio/e4.ogg"></audio>
+			<audio src="audio/e4.ogg"></audio>
+			<audio src="audio/e4.ogg"></audio>
+			<audio src="audio/e4.ogg"></audio>
+			<audio src="audio/e4.ogg"></audio>
+			<audio src="audio/e4.ogg"></audio>
+			<audio src="audio/e4.ogg"></audio>
+			<audio src="audio/e4.ogg"></audio>
+		</div>
+		
+		
+		<script type="text/javascript">
+			var lis = document.querySelectorAll("li");
+			var audios = document.querySelectorAll("audio");
+			
+			//循环添加监听
+			for(var i = 0;i<lis.length;i++){
+				//先编号
+				lis[i].index = i;
+				
+				lis[i].onmouseover = function(){
+					
+					audios[this.index].load();  //从新加载
+					audios[this.index].play();	//播放
+				}
+			}
+			
+			//键盘事件 1 ，2，3，4，5，6，7，8
+			document.onkeydown = function(event){
+				console.log(event.keyCode);
+				if(event.keyCode >= 49 && event.keyCode<=49+7){
+					audios[event.keyCode-49].load();  //从新加载
+					audios[event.keyCode-49].play();	//播放
+				}
+				
+				//cur的逻辑
+				for(var i = 0;i<lis.length;i++){
+					lis[i].className='';
+				}
+				lis[event.keyCode-49].className="cur";
+			}
+			
+			//键抬起
+			document.onkeyup = function(){
+				if(event.keyCode >= 49 && event.keyCode<=49+7){
+					lis[event.keyCode-49].className='';
+				}
+			}
+			
+		</script>
+	</body>
+</html>

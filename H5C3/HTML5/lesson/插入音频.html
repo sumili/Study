@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<!--这个embed不是H5的-->
+		<!--<embed src="mp3/cbg.mp3" />-->
+		
+		
+		<!--data 是资源-->
+		<!--<object data="mp3/cbg.mp3" type=""></object>-->
+		
+		
+		<!--<audio src="mp3/cbg.mp3" autoplay controls></audio>-->
+		
+		<audio controls class="audioPlay">
+			<source src="mp3/cbg.mp3"/>
+		</audio>
+		
+		
+		<input type="button" id="play" value="播放" />
+		<input type="button" id="muted" value="静音" />
+		
+		<input type="number" id="volume" value="100" min="0" max="100"/>
+		<script type="text/javascript">
+			var audioPlay = document.querySelector(".audioPlay");
+			var play = document.querySelector("#play");
+			var muted = document.querySelector("#muted");
+			var volume = document.querySelector("#volume");
+			//播放和暂停切换
+			play.onclick=function(){
+				if( play.value == "播放"){
+					this.value="暂停";
+					audioPlay.play();
+				}else{
+					this.value="播放";
+					audioPlay.pause();
+				}
+			}
+			//静音切换
+			muted.onclick=function(){
+				console.log(audioPlay.muted);
+				audioPlay.muted = !audioPlay.muted;
+			}
+			//控制音量大小  
+			volume.onchange=function(){
+				audioPlay.volume = parseInt(this.value)/100;
+			}
+		</script>
+	</body>
+</html>
