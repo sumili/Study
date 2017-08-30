@@ -61,12 +61,16 @@ echo 'this','string','was','made','with multiple paramter'
 
 ### 增：从前端页面获取数据添加到数据库
 >
- - 
+ - SQL语句：INSERT INTO 表名称(col1 , col2 ...) VALUES( v1 , v2 , ...)
+ - 实例：$result = mysql_query("INSERT INTO xuexizhuangkuang(timu1,timu2,timu3) VALUES ('{$timu1}','{$timu2}','{$timu3}')");
+
+ps：此例中花括号{}用来界定变量,与字符串模板的${}不同，php$变量定义，放在{}里面
+ - if判断
 
 ### 查：查询数据库并返回数组
 >
  - SQL语句：SELECT */列名称 FORM 表名称
- - 执行SQL语句：$result = mysql_query("SQL语句")
+ - 实例：执行SQL语句：$result = mysql_query("SQL语句")
 
  - MySQL函数：mysql_fetch_arry(数据,数据类型[可选])
  - 循环打印获取
@@ -79,6 +83,7 @@ echo 'this','string','was','made','with multiple paramter'
 PHP把单引号中的数据视为普通字符串，不再处理。
 而双引号还要对其中的字符串进行处理，比如遇到$了会把其后的内容视为变量等。
 
+ - 
 ## 关于php中html在什么情况下需用用php标签包裹
 
 ## 注意php中代码注释，即使注释任何高亮的符号都会导致代码程序出错
@@ -95,4 +100,7 @@ PHP把单引号中的数据视为普通字符串，不再处理。
 
 ## 在浏览器窗口中输入键值对获取get传参时，v不需要加双引号
 
-## 知识点遗漏，php浑浊状态：编号1-1
+##  六、总结知识点遗漏，
+6.1 php浑浊状态：编号1-1
+6.2 form的action 属性规定当提交表单时，向何处发送表单数据。
+6.3 $_POST 和 $_GET 已经 标签的**name**值获取前端页面相应的参数

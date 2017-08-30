@@ -17,9 +17,6 @@
 			mysql_query("SET NAMES UTF8");
 			
 			//执行一条SQL语句，SQL语句操作数据库，SQL是独立的语言
-
-			$str = mysql_query("SELECT * FROM xuesheng");
-			print_r( $str );
 			$result = mysql_query("SELECT * FROM xuesheng");
 			
 			
@@ -34,6 +31,20 @@
 			//关闭数据库
 			mysql_close($conn);
 		?>
-	
+
+		<?php
+			$conn = mysql_connect("localhost","root","root");
+
+			mysql_select_db("kaoladeshujuku",$conn);
+
+			mysql_query("SET NAMES UTF8");
+
+			$result = mysql_query("SELECT * FORM xuesheng");
+
+			while( $row = mysql_fetch_array($result) ){
+				print_r($row);
+				echo "<br />";
+			}
+		?>
 	</body>
 </html>
