@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			*{
+				padding: 0;
+				margin: 0;
+			}
+			body{
+				background: black;
+				color: #ccc;
+				cursor: pointer;
+			}
+			.stage{
+				width: 800px;
+				height: 400px;
+				margin: 0 auto;
+				perspective: 900px;
+				border: 1px solid #000;
+			}
+			.stage .unit{
+				width: 800px;
+				height: 400px;
+				position: relative;
+				transform-style: preserve-3d;
+				transition: all 1s ease 0s;
+			}
+			.stage .unit ul{
+				list-style: none;
+			}
+			.stage .unit ul li{
+				position: absolute;
+				left: 300px;
+				top: 135px;
+			}
+			
+		</style>
+	</head>
+	<body>
+		<h1>请滚动滚轮</h1>
+
+
+		<!--舞台-->
+		<div class="stage">
+			<div class="unit">
+				<ul>
+					<li><img src="img/1.png"/></li>
+					<li><img src="img/2.png"/></li>
+					<li><img src="img/3.png"/></li>
+					<li><img src="img/4.png"/></li>
+					<li><img src="img/5.png"/></li>
+					<li><img src="img/6.png"/></li>
+					<li><img src="img/7.png"/></li>
+					<li><img src="img/8.png"/></li>
+					<li><img src="img/9.png"/></li>
+				</ul>
+			</div>
+		</div>
+
+
+
+
+		
+		<script src="js/jquery-1.12.3.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/jquery.mousewheel.min.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			var $unit = $(".unit");
+			
+			
+			//初始化，遍历每个li，让每个li旋转不一样的度数deg
+			$(".unit ul li").each(function(i){
+				$(this).css("transform","rotateY(" + (i * 40) + "deg) translateZ(400px)");
+			});
+			
+			
+			//信号量
+			var num = 0;
+			var lock = true; //函数节流
+			
+			//滚轮事件
+			$(".stage").mousewheel(function(event,delta){
+				
+				//函数节流
+				if(!lock)  return;
+				
+				//阻止默认事件
+				event.preventDefault();
+				
+				
+//				console.log(delta);
+				//信号量根据鼠标滚轮方向 改变
+				num -= delta * 40;
+				
+				$unit.css("transform","rotateY(" +num+ "deg)");
+				
+				//关闭锁
+				lock = false;
+				
+//				延时器，因为过度是1秒执行 所有锁上1秒
+				setTimeout(function(){
+					lock = true;  //打开锁
+				},1000);
+			});
+			
+			
+			
+		</script>
+	</body>
+</html>

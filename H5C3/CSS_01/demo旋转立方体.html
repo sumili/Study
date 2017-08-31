@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .stage{
+            width: 258px;
+            height: 258px;
+            margin: 100px;
+            perspective: 1500px;
+        }
+        .unit{
+            width: 258px;
+            height: 258px;
+            position: relative;
+        }
+        .unit img{
+            position: absolute;
+            top:0;
+            left:0;
+            width: 258px;
+            height: 258px;
+        }
+        .unit img.img1{
+            transform: rotateY(0deg) translateZ(129px);
+            /*z-index: 4*/
+        }
+        .unit img.img2{
+            transform: rotateY(90deg) translateZ(129px);
+        }
+        .unit img.img3{
+            transform: rotateY(180deg) translateZ(129px);
+        }
+        .unit img.img4{
+            transform: rotateY(-90deg) translateZ(129px)
+        }
+        .unit img.img5{   
+            /*把5放在顶部*/
+            transform: rotateX(90deg) translateZ(129px);
+            /**/
+        }
+        .unit img.img6{
+            transform: rotateX(270deg) translateZ(129px);
+            /*z-index: 3;*/
+        }
+        
+        .unit{
+            transform-style: preserve-3d;
+            transform:none;
+            transition: all 10s ease 0s;
+        }
+        .stage:hover .unit{
+            transform: rotateX(360deg) rotateY(360deg);
+        }
+    </style>
+</head>
+<body>
+    <div class="stage">
+        <div class="unit">
+            <img src="img/1.png" alt="" class="img1"/>
+            <img src="img/2.png" alt="" class="img2"/>
+            <img src="img/3.png" alt="" class="img3"/>
+            <img src="img/4.png" alt="" class="img4"/>
+            <img src="img/5.png" alt="" class="img5"/>
+            <img src="img/6.png" alt="" class="img6"/>   
+        </div>
+    </div>
+</body>
+</html>

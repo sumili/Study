@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        div{
+            width: 258px;
+			height: 258px;
+            position: relative;
+            perspective: 500px;
+        }
+        img{
+            transition: all 5s ease 0s;
+            border:1px solid #000;
+            transform: none;
+            /*position: absolute;*/
+            /*top:0;
+            left:0;*/
+        }
+        div.fei img{
+            transform: rotateX(240deg);
+        }
+    </style>
+</head>
+<body>
+    <input type="button" value="按我发射黄晓明">
+    <div>
+		<img src="img/xiaoming.png" alt="" class="xiaoming"/>
+	</div>
+    <script>
+        var input = document.getElementsByTagName("input")[0];
+        var box = document.getElementsByTagName("div")[0];
+
+        input.onclick=function(){
+            box.className="fei";
+        }
+    </script>
+</body>
+</html>
