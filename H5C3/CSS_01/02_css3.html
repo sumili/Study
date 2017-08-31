@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			div{
+				width: 200px;
+				height: 200px;
+				border: 1px solid black;
+			}
+			div[title]{
+				/*background: red;*/
+			}
+			div[title="haitao"]{
+				/*background: orange;*/
+			}
+			[title]{
+				/*background: gold;*/
+			}
+			[title^="h"]{  /*开头匹配,h字母*/
+				/*background: gold;*/
+			}
+			[title$="i"]{  /*结尾匹配,hi字母*/
+				/*background: blueviolet;*/
+			}
+			[title~="ab"]{  /*空格匹配,ab字母*/
+				/*background: violet;*/
+			}
+			[title|="ab"]{  /*短横匹配,内容是开头ab字母-*/
+				/*background: purple;*/
+			}
+			[title*="i"]{  /*任意匹配,内容字母有i的内容*/
+				background: greenyellow;
+			}
+		</style>
+		<style>
+			div[title]
+			div[div="haitao"]
+			[title]
+			[title^="h"]
+			[title$="i"]
+			[title~="ab"]
+			[title|="ab"]
+			[title*="i"]
+		</style>
+	</head>
+	<body>
+		<div title="haitao">haitao</div>
+		<div title="kaikai">kaikai</div>
+		<div title="xiaoshi">xiaoshi</div>
+		<div title="zhangxue">zhangxue</div>
+		<div class="zhangxue">zhangxue</div>
+	</body>
+</html>
