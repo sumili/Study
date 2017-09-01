@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			div{  /*舞台*/
+				width: 256px;
+				height: 256px;
+				border: 1px solid black;
+				/*你的眼睛到div的距离*/
+				perspective: 600px;
+				margin:100px;
+			}
+			img{
+				border:1px solid black;
+				transform: rotateX(360deg) rotateY(90deg);
+				transition: all 5s ease 0s;
+			}
+			img:hover{
+				transform: none;
+			}
+		</style>
+	</head>
+	<body>
+		<div>
+			<img src="img/erha.jpg" alt="" />
+		</div>
+	</body>
+</html>

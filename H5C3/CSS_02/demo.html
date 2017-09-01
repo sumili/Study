@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>text-of-circle</title>
+    <style>
+        div{
+            width: 60px;
+            height: 60px;
+            position: absolute;
+            top:200px;
+            left:200px;
+            background: orange;
+            border-radius: 100%;
+        }
+    </style>
+</head>
+<body>
+    <div></div>
+    <div></div>
+    <script>    
+        //根据草图分析，要得到旋转元素的当前left和top。需要得到旋转的角度，根据三角函数计算位置
+        //在flash里规定:在旋转角度（rotation）里的角，以“度”为单位；在三角函数里的角要以“弧度”为单位。
+         
+         //第一步：获取需要的信号量,以及事件对象
+         var degree = 0;
+         var oDiv = document.querySelector("div");
+
+         //第二步：运动圆心与半径
+        var moveHeart = {x:200,y:200}//刚好与静圆的位置相同
+        
+        //因为效果达到的效果是动圆以静圆为中心旋转，所以必须静圆的位置要与动圆的运动
+        //圆心相同
+        //注意，这里都不是真实的圆心，而是元素[两个圆]的左上角为参照
+        var moveR = 60;//大于静圆的直径
+
+
+
+        //第三步：封装函数：把角度转化为弧度
+
+         function degreeToRad(degree){
+            return degree*( Math.PI / 180)
+         }
+         //第四步：封装运动函数
+         function circlemove(degree){
+            //left和top改变
+			oDiv.style.left = moveHeart.x + moveR * Math.sin(degreeToRad(degree)) + "px";
+            oDiv.style.top = moveHeart.y - moveR * Math.cos(degreeToRad(degree)) + "px";
+
+         }
+
+         //自动运动定时器
+
+         setInterval(function(){
+            //改变信号量
+            degree++;
+            if( degree >=360){
+                degree = 0;
+            }
+            //调用函数
+            circlemove(degree);
+
+         },40)
+    </script>
+</body>
+</html>

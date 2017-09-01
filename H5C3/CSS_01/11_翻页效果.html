@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			div{
+				width: 258px;
+				height: 258px;
+				border: 1px solid red;
+				margin: 100px;
+				perspective: 500px;
+				position: relative;
+			}
+			img{
+				position: absolute;
+				top:0;
+				left: 0;
+				/*背景隐藏*/
+				/*如果不加这条属性，那么正面显示时未nbaby：下层覆盖上层标签*/
+				backface-visibility: hidden;
+				transition: all 5s ease 0s;
+			}
+			img.baby{
+				transform: rotateY(-180deg);
+			}
+			img.xiaoming{
+				transform: rotateY(0deg);
+			}
+			div:hover .xiaoming{
+				transform: rotateY(180deg);
+			}
+			div:hover .baby{
+				transform: rotateY(0deg);
+			}
+		</style>
+	</head>
+	<body>
+		<div>
+			<img src="img/xiaoming.png" alt="" class="xiaoming"/>
+			<img src="img/baby.png" alt="" class="baby"/>
+		</div>
+		
+	</body>
+</html>

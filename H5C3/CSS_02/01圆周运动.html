@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			div{
+				width: 60px;
+				height: 60px;
+				background-color: orange;
+				position: absolute;
+				top: 200px;
+				left: 200px;
+				border-radius: 50%;
+			}
+		</style>
+	</head>
+	<body>
+		<div>1</div>
+		<div>1</div>
+		
+		<script type="text/javascript">
+			
+			var oDiv = document.querySelector("div");
+			
+			//圆心位置坐标
+			var yuanxin = {a:200,b:200};
+			
+			//半径
+			var r = 60;
+			
+			//信号量
+			degree = 0;
+			
+			setInterval(function(){
+				degree++;
+				go(degree);
+				
+			},40);
+			
+			
+			//设置这一个角度的时候，盒子应该在的位置
+			function go(degree){
+				oDiv.style.left = yuanxin.a + r * Math.sin(degreeToRad(degree)) + "px";
+				oDiv.style.top = yuanxin.b - r * Math.cos(degreeToRad(degree)) + "px";
+			}
+			
+			//实用函数，把角度制换成弧度制，为什么要有这个函数，因为js中正弦等方法都是用弧度制的
+			function degreeToRad(degree){
+			  return	degree * Math.PI / 180
+			}
+		</script>
+	</body>
+</html>

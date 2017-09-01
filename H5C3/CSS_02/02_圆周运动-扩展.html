@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			div{
+				width: 60px;
+				height: 60px;
+				background-color: orange;
+				position: absolute;
+				top: 200px;
+				left: 200px;
+				border-radius: 50%;
+			}
+		</style>
+	</head>
+	<body>
+		<div></div>
+		<div></div>
+		<div></div>
+		<div></div>
+		<div></div>
+		
+		
+		<script type="text/javascript">
+			//得到盒子
+			var divs = document.querySelectorAll("div");
+			
+			circleMove({
+				"obj": divs[0],  //对象
+				"yuanxin": [200,200],  //圆心
+				"r":  150,  //半径
+				"looptime": 4000        //时间
+			});
+			circleMove({
+				"obj": divs[1],  //对象
+				"yuanxin": [200,200],  //圆心
+				"r":  170,  //半径
+				"looptime": 4000,        //时间
+				"degree": 90           //角度
+			});
+			circleMove({
+				"obj": divs[2],  //对象
+				"yuanxin": [200,200],  //圆心
+				"r":  200,  //半径
+				"looptime": 4000,        //时间
+				"degree": 180           //角度
+			});
+			circleMove({
+				"obj": divs[3],  //对象
+				"yuanxin": [200,200],  //圆心
+				"r":  250,  //半径
+				"looptime": 4000,        //时间
+				"degree": 270           //角度
+			});
+			
+			function circleMove(argsJSON){
+				//要运动的对象
+				var o = argsJSON.obj;
+				//圆心
+				var a = argsJSON.yuanxin[0];
+				var b = argsJSON.yuanxin[1];
+				//半径
+				var r = argsJSON.r;
+				//方向
+				var direction = argsJSON.direction || 1;
+				
+				//信号量，当前的角度数，0度就是12点方向，顺时针
+				var degree = argsJSON.degree || 0;
+				
+				//动画每帧运动间隔
+				var interval = 40;
+				
+				//运动一圈的时间
+				var looptime = argsJSON.looptime;
+				
+				//运动一圈的帧数（次数）
+				var loopframes = looptime / interval;
+				
+				//运动一圈一定是360度，所以每帧改变的就是
+				var degreeDelta = 360 / loopframes;
+				
+				setInterval(function(){
+//					console.log(loopframes);
+//					console.log(degreeDelta);
+					degree += degreeDelta * direction;
+					
+					if( degree >= 360){
+						degree = 0;
+					}
+					go(degree);
+				},interval);
+				
+				
+				function go(degree){
+					o.style.left = a + r * Math.sin(degreeToRad(degree)) + "px";
+					o.style.top = b - r * Math.cos(degreeToRad(degree)) + "px";
+				}
+				
+				//实用函数，把角度制换成弧度制，为什么要有这个函数，因为js中正弦等方法都是用弧度制的
+				function degreeToRad(degree){
+				  return	degree * Math.PI / 180
+				}
+				
+			}
+			
+		</script>
+	</body>
+</html>
