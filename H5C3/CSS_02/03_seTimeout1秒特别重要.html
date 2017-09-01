@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			div{
+				width: 200px;
+				height: 200px;
+				background: skyblue;
+				transition: all 5s ease 0s;
+			}
+		</style>
+	</head>
+	<body>
+		
+		
+		<script src="js/jquery-1.12.3.min.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			//创建一个元素
+			$("<div></div>").appendTo("body");
+			
+			
+			//改变css，我们预想的是，用过渡实现这个效果，不是干嘣
+			//因为浏览器没有反应过来，你可以认为transition是需要准备时间的
+			
+			setTimeout(function(){
+				$("div").css("width",1000);
+			},1);
+			
+			
+		</script>
+	</body>
+</html>
