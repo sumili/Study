@@ -94,6 +94,39 @@
 				num -= delta * 40;
 				
 				$unit.css("transform","rotateY(" +num+ "deg)");
+
+
+				//添加拖拽事件
+				$(document).mousedown(function(event){
+
+					var oldX = event.clientX;
+					var oldY = event.clientY;
+					// console.log( oldX ,oldY);
+
+					//当出发鼠标按住移动
+					$(document).mousemove(function(event){
+						// console.log(1);
+						console.log(event.clientX,event.clientY);
+
+						//把鼠标变化量赋值给新的变量
+						var newX = event.clientX -oldX;
+						var newY = event.clientY -oldY;
+						console.log(newX,newY);
+
+						//先停止过度元素的过渡，否则效果不好又卡顿
+
+						$(".unit").css("transition","none");
+
+						//根据变化的鼠标量按比例变化unit的transform变形
+
+						$unit.css("tranform"," rotateX(" + -newY+ "deg) rotateY(" + oldX + "deg) ")
+
+						//恢复过渡效果
+						$unit.css("transition","transition: all 1s ease 0s");
+						
+						
+					})
+				})
 				
 				//关闭锁
 				lock = false;
@@ -102,6 +135,9 @@
 				setTimeout(function(){
 					lock = true;  //打开锁
 				},1000);
+
+
+				
 			});
 			
 			
