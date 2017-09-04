@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width" />
+		<title></title>
+		<link rel="stylesheet" href="css/swiper-3.4.2.min.css" />
+		<link rel="stylesheet" href="css/animate.min.css" />
+		<style type="text/css">
+			.swiper-container {
+			    width: 600px;
+			    height: 300px;
+			} 
+			.no1{
+				background: skyblue;
+			}
+			.no2{
+				background: orange;
+			}
+			.no3{
+				background: gold;
+			}
+			.oP1{
+				color: purple;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="swiper-container">
+		    <div class="swiper-wrapper">
+		        <div class="swiper-slide no1">
+		        	<!--类名加上ani，加上属性可以实现动画效果-->
+		        	<!--swiper-animate-effect：切换效果-->
+		        	<!--swiper-animate-duration：可选，动画持续时间（单位秒），例如 0.5s-->
+					<!--swiper-animate-delay：可选，动画延迟时间（单位秒），例如 0.3s-->
+		        	<p 
+		        		class="ani oP"
+		        		swiper-animate-effect="swing"
+		        		swiper-animate-duration="3s"
+		        	>展示内容</p>
+		        	<p 
+		        		class="ani oP1" 
+		        		swiper-animate-effect="fadeInRight"
+		        		swiper-animate-duration="3s"
+		        		swiper-animate-delay="0.8s"
+		        		>
+		        		从右边飞过来的内容
+		        	</p>
+		        </div>
+		        <div class="swiper-slide no2">Slide 2</div>
+		        <div class="swiper-slide no3">Slide 3</div>
+		    </div>
+		    <!-- 如果需要分页器 -->
+		    <div class="swiper-pagination"></div>
+		    
+		    <!-- 如果需要导航按钮 -->
+		    <div class="swiper-button-prev"></div>
+		    <div class="swiper-button-next"></div>
+		    
+		</div>
+		<!--导航等组件可以放在container之外-->
+		
+		
+		<script src="js/swiper-3.4.2.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/swiper.animate1.0.2.min.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			 var mySwiper = new Swiper ('.swiper-container', {
+			    // 如果需要分页器
+			    pagination: '.swiper-pagination',
+			    
+			    // 如果需要前进后退按钮
+			    nextButton: '.swiper-button-next',
+			    prevButton: '.swiper-button-prev',
+			    
+			    onInit: function(swiper){ //Swiper2.x的初始化是onFirstInit
+				    swiperAnimateCache(swiper); //隐藏动画元素 
+				    swiperAnimate(swiper); //初始化完成开始动画
+				}, 
+				  onSlideChangeEnd: function(swiper){ 
+				    swiperAnimate(swiper); //每个slide切换结束时也运行当前slide动画
+				} 
+			    
+			  })        
+		</script>
+	</body>
+</html>

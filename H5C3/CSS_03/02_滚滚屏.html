@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			*{
+				padding: 0;
+				margin: 0;
+			}
+			html,body{
+				height: 100%;
+				overflow: hidden;
+			}
+			.container{
+				width: 100%;
+				height: 100%;
+				position: absolute;
+			}
+			.page{
+				width: 100%;
+				height: 100%;
+			}
+			.no1{
+				background: skyblue;
+			}
+			.no2{
+				background: orange;
+			}
+			.no3{
+				background: gold;
+			}
+			.no4{
+				background: red;
+			}
+			.no5{
+				background: greenyellow;
+			}
+		</style>
+	</head>
+	<body>
+		<!--div.container>div.page.no1+div.page.no2+div.page.no3+div.page.no4+div.page.no5-->
+		<div class="container">
+			<div class="page no1"></div>
+			<div class="page no2"></div>
+			<div class="page no3"></div>
+			<div class="page no4"></div>
+			<div class="page no5"></div>
+		</div>
+		
+		<script src="js/jquery-1.12.3.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/jquery.mousewheel.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/jquery.easie.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			//容器
+			var $container = $(".container");
+			
+			//信号量  合法范围1，2，3，4，5
+			var idx = 1;
+			
+			//函数节流
+			var lock = true;
+			
+			$(document).mousewheel(function(event,delta){
+				
+				if(!lock) return;
+				
+				event.preventDefault();
+				
+				//鼠标滚轮向下滚动，delta值是-1，但是我们希望页面从第一页到第二页
+				//所以-（-1）就是+1
+				idx -= delta;
+				
+				//范围
+				if(idx > 5) idx = 5;
+				if(idx < 1) idx = 1;
+				
+				//过河拆桥，把锁锁上，防止动画累积
+				lock = false;
+				
+				//主要的动画语句,让容器移动
+				$container.animate(
+					{ "top": -100* (idx -1) + "%"},
+					2000,
+					"easieEaseInQuint",
+					function(){
+						//回调函数，动画完成后打开锁
+						lock = true; 
+					}
+					
+					)
+				
+			})
+			
+			
+		</script>
+	</body>
+</html>
