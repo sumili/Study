@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <!--<meta name="viewport" content="width=device-width, initial-scale=1.0">-->
+     <meta name="viewport" content="width=640,user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>招行IT转角,遇到Ta</title>
+    <link rel="stylesheet" href="styles/reset.css">
+    <link rel="stylesheet" href="styles/animate.min.css">
+    <link rel="stylesheet" href="styles/swiper.min.css">
+    <link rel="stylesheet" href="styles/main.css">
+</head>
+<body>
+    <!--div.swiper-container>div.swiper-wraper>div.swiper-slide{*}*9-->
+
+    <div class="swiper-container">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide">
+
+                <!--第一页面-->
+                <!--在需要运动的元素上面增加类名  ani   ，
+                //和其他的类似插件相同，Swiper Animate需要指定几个参数-->
+                <!--div.index-txt>img.ani*3-->
+                <div class="index-txt">
+                    <img src="images/indexTxt.png" alt="转角遇到你" class="ani">
+                    <img src="images/indexFlowers01.png" alt="向日葵一" class="ani">
+                    <img src="images/indexFlowers02.png" alt="向日葵二" class="ani">
+                </div>
+
+                <!--div.inde-flight.ani>img[src="indexFlinght.png alt"]-->
+                <div class="index-flight ani">
+                    <img src="images/indexFlight.png" alt="飞机">
+                </div>
+
+                <!--div.index-element.ani>img[str""   alt=""]-->
+                <div class="index-element ani">
+                    <img src="images/indexElements.png" alt="">
+                </div>
+                
+                <!--div.index-cloud.ani>img[src="images/indexCloud.png"]-->
+                <div class="index-cloud ani">
+                    <img src="images/indexCloud.png" alt="">
+                </div>
+                
+                <div class="index-stars ani">
+                    <img src="images/indexStars.png" alt="星星">
+                </div>
+
+                <div class="index-building ani">
+                    <img src="images/indexBuilding.png" alt="城市">
+                </div>
+            </div>
+
+
+            <div class="swiper-slide">2</div>
+            <div class="swiper-slide">3</div>
+            <div class="swiper-slide">4</div>
+            <div class="swiper-slide">5</div>
+            <div class="swiper-slide">6</div>
+            <div class="swiper-slide">7</div>
+            <div class="swiper-slide">8</div>
+            <div class="swiper-slide">9</div>
+        </div>
+        <div class="swiper-pagination"></div>
+    </div>
+    
+    <script src="scripts/swiper.min.js"></script>
+    <script src="scripts/swiper.animate.min.js"></script>
+    <script>
+        var myswiper = new Swiper( '.swiper-container',{
+
+            //分页器
+            pagination: '.swiper-pagination',
+
+            //是否能点击
+            paginationClickable: true,
+
+            //方向
+            direction: 'vertical',
+
+            //复制网站代码
+            onInit: function(swiper){ //Swiper2.x的初始化是onFirstInit
+                swiperAnimateCache(swiper); //隐藏动画元素 
+                swiperAnimate(swiper); //初始化完成开始动画
+            }, 
+            onSlideChangeEnd: function(swiper){ 
+                swiperAnimate(swiper); //每个slide切换结束时也运行当前slide动画
+            } 
+        })
+
+    </script>
+</body>
+</html>
