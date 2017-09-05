@@ -164,9 +164,9 @@ body{
 
 
 /*第三页*/
-.swiper-slide:nth-cihld(3) {
+.swiper-slide.Num3 {
   z-index: 10;
-  background-color: #01172c;
+  background-color: #00162C;
 }
 .early-bg {
   position: absolute;
