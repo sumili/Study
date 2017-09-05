@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>两边固定，中间自适应</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        /*方法1:[父元素：display:webkit-box]*/
+        /*div{
+            display: -webkit-box;
+        }
+        p:nth-child(1){
+            width:200px;
+            background-color: #f0f;
+        }
+        p:nth-child(2){
+            -webkit-box-flex: 1;
+            background-color: #f00;
+            
+        }
+        p:nth-child(3){
+            width:200px;
+            background-color: #f0f;
+        }*/
+        /*方法2:[定位+padding]*/
+        /*div{
+            position: relative;
+        }
+        p:nth-child(1){
+            position: absolute;
+            top:0;
+            left:0;
+            width:200px;
+            background-color: #f0f;
+        }
+        p:nth-child(2){
+
+            width:100%;
+            background-color: #f00;
+            
+        }
+        p:nth-child(3){
+            position: absolute;
+            top:0;
+            right:0;            
+            width:200px;
+            background-color: #f0f;
+        }*/
+        /*方法3:[calc样式表计算器]*/
+        div>p{
+            float: left;
+        }
+        p:nth-child(1){
+            width:200px;
+            background-color: #f0f;
+        }
+        p:nth-child(2){
+            background-color: #f00;
+            
+        }
+        p:nth-child(3){           
+            width:200px;
+            background-color: #f0f;
+        }
+    </style>
+</head>
+<body>
+
+    <div>
+        <P>1</P>
+        <P>2</P>
+        <P>3</P>
+    </div>
+
+    <!--方法四：js实现-->
+
+    <script>
+        //获取元素
+        var Ps = document.querySelectorAll("p");
+
+        window.onresize = set;
+
+        set();
+
+        function set(){
+           
+            var Ps2 = parseInt( getComputedStyle(Ps[1])["width"]);
+            
+            Ps[0].style.width
+        }
+    </script>
+</body>
+</html>

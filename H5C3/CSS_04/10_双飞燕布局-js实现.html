@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			*{
+				padding: 0;
+				margin: 0;
+			}
+			div:nth-child(1){
+				float: left;
+				width: 220px;
+				height: 100px;
+				background: red;
+			}
+			div:nth-child(2){
+				float: left;
+				height: 100px;
+				background: orange;
+			}
+			div:nth-child(3){
+				float: right;
+				width: 220px;
+				height: 100px;
+				background: green;
+			}
+		</style>
+	</head>
+	<body>
+		<div>div1</div>
+		<div>div2</div>
+		<div>div3</div>
+		
+		
+		<script type="text/javascript">
+			var div2 = document.querySelectorAll("div")[1];
+			
+			div2.style.width = document.documentElement.clientWidth - 440  + "px";
+		
+			window.onresize = function(){
+				
+				div2.style.width = document.documentElement.clientWidth - 440  + "px";
+				
+			}
+		
+		</script>
+	</body>
+</html>
