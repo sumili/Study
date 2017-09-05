@@ -125,71 +125,157 @@
       </div>
 
       <!-- 第三张 -->
-      <div class="swiper-slide Num3">
+      <div class="swiper-slide Num3" >
           <!-- 第一幕：夜景 -->
           <div class="esrly-bg ani"
                 swiper-animate-effect = "fadeIn"
                 swiper-animate-duration = "0.5s"
                 swiper-animate-delay = "1.0ss">     
-                <img src="images/earlyBg.jpg" alt=""> 
-          </div>  
-          <!-- 在第一幕夜景之上：先出现建筑后文字，最后一起消失-->
-          <div class="ani"
-                swiper-animate-effect = "fadeOut"
-                swiper-animate-duration = "1.0s"
-                swiper-animate-delay = "5s">
-              <!-- 建筑 -->
-              <div class="b-build ani"
-                    swiper-animate-effect = "fadeIn"
-                    swiper-animate-duration = "0.5s"
-                    swiper-animate-delay = "1.5s">
-                 <img class="fadeIn" src="images/earlyBuilding.png" alt=""> 
-              </div>
-    
-              <!-- 文字 -->
-              <h4 class="title ani"
-                  swiper-animate-effect="fadeIn"
-                  swiper-animate-duration="1s"
-                  swiper-animate-delay="2s">
-                  <img src="images/earlyTitle.png" alt="">
-              </h4>
-          </div>
-          <!-- 在第一幕夜景之上： 同时出现建筑2和文字凌晨之后-->
-          <!-- 公交车出现 人物稍慢一点出现 ，最后建筑2、文字凌晨、人物，一起消失-->
-          <div class="block-page block-lastbus-wrap ani"
-                swiper-animate-effect="fadeOut"
-                swiper-animate-duration="1s"
-                swiper-animate-delay="10s">
+                <img src="images/earlyBg.jpg" alt="" class="ani"
+                      swiper-animate-effect = "fadeOut"
+                      swiper-animate-duration = "0.5s"
+                      swiper-animate-delay = "10s">  
 
-                <!--最后一班车文字-->
-                <h4 class="title abs ani"
+
+            <!-- 在第一幕夜景之上：先出现建筑后文字，最后一起消失-->
+            <div class="ani"
+                  swiper-animate-effect = "fadeOut"
+                  swiper-animate-duration = "1.0s"
+                  swiper-animate-delay = "5s">
+                <!-- 建筑 -->
+                <div class="b-build ani"
+                      swiper-animate-effect = "fadeIn"
+                      swiper-animate-duration = "0.5s"
+                      swiper-animate-delay = "1.5s">
+                  <img class="fadeIn" src="images/earlyBuilding.png" alt=""> 
+                </div>
+      
+                <!-- 文字 -->
+                <h4 class="title ani"
                     swiper-animate-effect="fadeIn"
                     swiper-animate-duration="1s"
-                    swiper-animate-delay="5s">
-                    <img src="images/lastBusTitle.png" alt="">
+                    swiper-animate-delay="2s">
+                    <img src="images/earlyTitle.png" alt="">
                 </h4>
-                <!--车站场景-->
-                <div class="b-build last-bus-station abs ani"
+            </div>
+            <!-- 在第一幕夜景之上： 同时出现建筑2和文字凌晨之后-->
+            <!-- 公交车出现 人物稍慢一点出现 ，最后建筑2、文字凌晨、人物，一起消失-->
+            <div class="block-page block-lastbus-wrap ani"
+                  swiper-animate-effect="fadeOut"
+                  swiper-animate-duration="0.5s"
+                  swiper-animate-delay="10s">
+
+                  <!--最后一班车文字-->
+                  <h4 class="title abs ani"
                       swiper-animate-effect="fadeIn"
                       swiper-animate-duration="1s"
                       swiper-animate-delay="5s">
-                      <img src="images/lastBusStation.png" alt="">
+                      <img src="images/lastBusTitle.png" alt="">
+                  </h4>
+                  <!--车站场景-->
+                  <div class="b-build last-bus-station abs ani"
+                        swiper-animate-effect="fadeIn"
+                        swiper-animate-duration="1s"
+                        swiper-animate-delay="5s">
+                        <img src="images/lastBusStation.png" alt="">
+                  </div>
+
+                  <!--公交车-->
+                  <div class="last-bus abs ani"
+                        swiper-animate-effect="fadeIn"
+                        swiper-animate-duration="1s"
+                        swiper-animate-delay="7s">
+                        <img class="ani" src="images/bus.png" alt="" 
+                              swiper-animate-effect="bounceOutLeft"
+                              swiper-animate-duration="2s"
+                              swiper-animate-delay="7s">
+                  </div>
+                  <!--人物追车-->
+                  <div class="bus-avatar abs ani"
+                        swiper-animate-effect="bounceInRight"
+                        swiper-animate-duration="3.5s"
+                        swiper-animate-delay="6s">
+                        <img src="images/lastBusAvatar.png" alt="">
                 </div>
-                <!--公交车-->
-                <div class="last-bus abs ani"
-                      swiper-animate-effect="bounceOutLeft"
-                      swiper-animate-duration="1s"
-                      swiper-animate-delay="7s">
-                      <img src="images/bus.png" alt="">
-                </div>
-                <!--人物追车-->
-                <div class="bus-avatar abs ani"
-                      swiper-animate-effect="bounceInRight"
-                      swiper-animate-duration="3.0s"
-                      swiper-animate-delay="7s">
-                      <img src="images/lastBusAvatar.png" alt="">
               </div>
+          </div>  
+
+            <!--最后一个页面的内容-第一幕背景淡出，这一幕背景淡入-->
+            <!--第二幕：楼顶背景-->
+            <div class="block-page block-where-wrap">
+
+                <!--第二幕的背景淡入-->
+                <div class="where-bg abs ani"
+                      swiper-animate-effect="fadeIn"
+                      swiper-animate-duration="2s"
+                      swiper-animate-delay="10.0s">
+                      <img src="images/myTeamBg.jpg" alt="">
+                </div>
+
+                <!--楼顶本身-->
+                <div class="where-wall abs ani"
+                    swiper-animate-effect="fadeIn"
+                    swiper-animate-duration="2s"
+                    swiper-animate-delay="12s">
+                    <img src="images/myTeamWall.png" alt="">
+                </div>
+
+                <!--人物出现-->
+                <div class="where-avatar abs ani"
+                    swiper-animate-effect="fadeIn"
+                    swiper-animate-duration="3s"
+                    swiper-animate-delay="12.6s">
+                    <img src="images/myTeamAvatar.png" alt="">
+                </div>
+
+                <!--左边第一排文字与人物同时出现，下面间隔一点时间-->
+
+                <!--左边文字-->
+                <div class="where-myteam abs">
+                    <!--第一行-->
+                    <div class="zoomIn ani"
+                          swiper-animate-effect="zoomIn"
+                          swiper-animate-duration="2s"
+                          swiper-animate-delay="13s">
+                          <img src="images/myTeamTxt.png" alt="">
+                    </div>
+                    <!--第二行-->
+                    <div class="zoomIn ani"
+                          swiper-animate-effect="zoomIn"
+                          swiper-animate-duration="2s"
+                          swiper-animate-delay="13.5s">
+                          <img src="images/myTeamTxt01.png" alt="">
+                    </div>
+                    <!--第三行-->
+                    <div class="zoomIn ani"
+                          swiper-animate-effect="zoomIn"
+                          swiper-animate-duration="2s"
+                          swiper-animate-delay="14s">
+                          <img src="images/myTeamTxt02.png" alt="">
+                    </div>
+                    <!--第四行-->
+                    <div class="zoomIn ani"
+                          swiper-animate-effect="zoomIn"
+                          swiper-animate-duration="2s"
+                          swiper-animate-delay="14.5s">
+                          <img src="images/myTeamTxt03.png" alt="">
+                    </div>
+                </div>
+
+
+                <!--底部文字-->
+                <div class="where-txt abs ani"
+                      swiper-animate-effect="fadeIn"
+                      swiper-animate-duration="2s"
+                      swiper-animate-delay="13s">
+                      <img src="images/myteamWhereTxt.png" alt="">
+                </div>
+
+
+
+
             </div>
+
 
       </div>
 
@@ -197,7 +283,10 @@
 
 
 
-        <div class="swiper-slide">4</div>
+        <div class="swiper-slide Num4">
+            div.
+
+        </div>
         <div class="swiper-slide">5</div>
         <div class="swiper-slide">6</div>
         <div class="swiper-slide">7</div>
