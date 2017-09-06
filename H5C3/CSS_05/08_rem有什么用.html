@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			*{
+				padding: 0;
+				margin: 0;
+			}
+			@media(min-width:600px){
+				html{
+					font-size: 14px;
+				}
+				a{
+					background: blue;
+				}
+			}
+		
+			@media(min-width:800px){
+				html{
+					font-size: 16px;
+				}
+				a{
+					background: green;
+				}
+			}
+			@media(min-width:1000px){
+				html{
+					font-size: 18px;
+				}
+				a{
+					background: pink;
+				}
+			}
+			
+			header{
+				height: 2.5rem;
+				position: relative;
+			}
+			header .logo{
+				position: absolute;
+				top: 0;
+				left: 0;
+				width: 7.5rem;
+				height: 2.5rem;
+				background: purple;
+			}
+			header nav{
+				width: 100%;
+				height: 2.5rem;
+				padding: 0 7.5rem;
+				box-sizing: border-box;
+				background: skyblue;
+				overflow: hidden;
+			}
+			header .btn{
+				position: absolute;
+				top: 0;
+				right: 0;
+				width: 7.5rem;
+				height: 2.5rem;
+				background: mediumaquamarine;
+				
+			}
+			header ul{
+				list-style: none;
+				
+			}
+			header ul li{
+				float: left;
+				margin-right: 0.625rem;
+				line-height: 2.5rem;
+				font-size: 1rem;
+			}
+			/*css样式: 位 大 字 背 其*/
+		</style>
+	</head>
+	<body>
+		<!--header>div.logo+(nav>ul>li*6>a[href="#"]{网站栏目})+div.btn-->
+		<header>
+			<div class="logo"></div>
+			<nav>
+				<ul>
+					<li><a href="#">网站栏目</a></li>
+					<li><a href="#">网站栏目</a></li>
+					<li><a href="#">网站栏目</a></li>
+					<li><a href="#">网站栏目</a></li>
+					<li><a href="#">网站栏目</a></li>
+					<li><a href="#">网站栏目</a></li>
+				</ul>
+			</nav>
+			<div class="btn"></div>
+		</header>
+	</body>
+</html>

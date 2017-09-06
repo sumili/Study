@@ -34,7 +34,13 @@
         均是对元素计算尺寸的模型：width，heigh，padding,border以及元素实际尺寸的计算关系
 
         不同之处：计算方法不同
-            -W3C：ele空间高度 = content height + padding + border + margin
+        
+            -W3C： (   外盒尺寸/元素空间尺寸  = content height + padding + border+ margin 
+                       内盒尺寸/元素大小  = content height + padding + border
+                       height为内容高度
+                    } 
+            -IE:  {ele空间高度 = content height + padding + border + margin (外盒尺寸/元素空间尺寸)
+                   ele Height = content height + padding + border (内盒尺寸/元素大小) }(包括元素内容宽度，边框宽度，内距宽度)
     </span>
 </body>
 </html>
