@@ -64,7 +64,7 @@ header .soso_box{
 	box-shadow: 0px 1px 1px rgba(111,111,111,0.8);
 	position: relative;
 	top: 8px;
-	background-color: white;
+	background-color: rgb(242, 242, 242);
 	padding-left: 30px;
 	box-sizing: border-box;
 	-webkit-box-sizing: border-box;
@@ -108,7 +108,7 @@ nav{
 	padding: 4px;
 	box-sizing: border-box;
 	-webkit-box-sizing: border-box;
-	background-color: white;
+	background-color: rgb(242, 242, 242);
 	overflow: hidden;
 }
 nav .row{
@@ -166,6 +166,7 @@ nav ul li>div a{
 	color: white;
 	text-shadow: 1px 1px 1px rgba(111,111,111,0.8);
 	position: relative;
+	padding-top: 10px;
 }
 nav ul li:nth-child(1)>div a{
 	height: 90px;
@@ -173,7 +174,7 @@ nav ul li:nth-child(1)>div a{
 nav .row ul li:nth-child(1)>div a::before{
 	content: "";
 	position: absolute;
-	bottom: 10px;
+	bottom: 20px;
 	left: 50%;
 	transform: translateX(-50%);
 	-webkit-transform: translateX(-50%);
@@ -210,4 +211,201 @@ nav .row:nth-child(4) ul li:nth-child(6) div{
 
 nav .row:nth-child(4) ul li:nth-child(1)>div a::before{
 	display: none;
+}
+
+section.subNav-entry{
+
+	width:100%;
+	max-width: 540px;
+	margin: 0 auto;
+	padding: 4px;
+	background-color: rgb(242, 242, 242);
+	overflow: hidden;
+}
+section.subNav-entry>ul{
+	overflow: hidden;
+	border-radius: 8px;
+}
+.subNav-entry>ul>li{
+	float: left;
+	/* 这里为什么行不通用cacl */
+	/* width:cacl(25%-2px); */
+	width: 25%;
+	height: 60px;
+	margin-bottom: 2px;
+	/* margin-right: 2px; */
+}
+.subNav-entry>ul>li{
+	float: left;
+	width: 24.555%;
+	box-sizing:border-box;
+	-webkit-box-sizing: border-box;
+	border-bottom: 1px solid rgb(242, 242, 242);
+	border-right: 1px solid rgb(242, 242, 242);
+
+}
+.subNav-entry>ul>li>div>a{
+	position: relative;
+	display: block;
+	/* width:100%; */
+	color: #000;
+	padding-top: 35px;
+	height: 25px;
+	/* margin-right: 2px; */
+	background-color: #fff;
+	text-align: center;
+	text-decoration: none;
+}
+.subNav-entry ul li>div a::before{
+	content: "";
+	position: absolute;
+	bottom: 30px;
+	left: 50%;
+	transform: translateX(-50%);
+	-webkit-transform: translateX(-50%);
+	width:40px;
+	height: 21px;
+	background: url(../img/icons2.png) no-repeat 7px -80px;
+	background-size: 20px 315px;
+}
+.subNav-entry ul li:nth-child(1)>div a::before{
+	content: "";
+	position: absolute;
+	bottom: 30px;
+	left: 50%;
+	transform: translateX(-50%);
+	-webkit-transform: translateX(-50%);
+	width:40px;
+	height: 21px;
+	background: url(../img/icons2.png) no-repeat 7px -80px;
+	background-size: 20px 315px;
+}
+.subNav-entry ul li:nth-child(2)>div a::before{
+	background: url(../img/icons2.png) no-repeat no-repeat 9px -292px;
+	background-size: 20px 315px;
+}
+.subNav-entry ul li:nth-child(3)>div a::before{
+	background: url(../img/icons2.png) no-repeat no-repeat 9px -119px;
+	background-size: 20px 315px;
+}
+.subNav-entry ul li:nth-child(4)>div a::before{
+	background: url(../img/icons2.png) no-repeat no-repeat 9px -139px;
+	background-size: 20px 315px;
+}
+.subNav-entry ul li:nth-child(5)>div a::before{
+	background: url(../img/icons2.png) no-repeat no-repeat 9px -160px;
+	background-size: 20px 315px;
+}
+.subNav-entry ul li:nth-child(6)>div a::before{
+	background: url(../img/icons2.png) no-repeat no-repeat 9px -179px;
+	background-size: 20px 315px;
+}
+.subNav-entry ul li:nth-child(7)>div a::before{
+	background: url(../img/icons2.png) no-repeat no-repeat 9px -199px;
+	background-size: 20px 315px;
+}
+.subNav-entry ul li:nth-child(8)>div a::before{
+	background: url(../img/icons2.png) no-repeat no-repeat 9px -217px;
+	background-size: 20px 315px;
+}
+.subNav-entry ul li:nth-child(9)>div a::before{
+	background: url(../img/icons2.png) no-repeat no-repeat 9px -18px;
+	background-size: 20px 315px;
+}
+.subNav-entry ul li:nth-child(10)>div a::before{
+	background: url(../img/icons2.png) no-repeat no-repeat 9px -259px;
+	background-size: 20px 315px;
+}
+.subNav-entry ul li:nth-child(11)>div a::before{
+	background: url(../img/play56.png) no-repeat no-repeat 9px 0px;
+	background-size: 28px 28px;
+}
+.subNav-entry ul li:nth-child(12)>div a::before{
+	background: url(../img/icons2.png) no-repeat no-repeat 9px -58px;
+	background-size: 20px 315px;
+}
+/* 特卖会部分 */
+.sales-box.sales-tmh{
+	overflow: hidden;
+	width: 100%;
+	max-width: 540px;
+	height: 261px;
+    background-color: rgb(242, 242, 242);
+	background-color: #fff;
+    margin: 0 auto;
+	border-bottom: 8px solid rgb(242, 242, 242);
+}
+/* 加上boxsing之后，padding+width刚好为100% */
+.sales-box>.sales-hd{
+	width: 100%;
+	height: 44px;
+	padding: 0 8px;
+	box-sizing: border-box;
+	position: relative;
+}
+.sales-box .sales-hd .title{
+	position: relative;
+	overflow: hidden;
+	height: 44px;
+}
+.sales-box .sales-hd .title::after{
+	content: "";
+	position: absolute;
+	left: 50%;
+	transform: translateX(-50%);
+	-webkit-transform: translateX(-50%);
+	/* width:100px; */
+	height: 35px;
+	background: url(../img/sales-hd.png) no-repeat 0px 17px;
+	padding-left: 360px;
+	background-size: 79px 57px;
+	background-color: #fff;
+
+}
+.sales-box .sales-hd a{
+	position: absolute;
+	z-index: 6;
+    right: 8px;
+    top: 11px;
+    display: inline-block;
+    padding: 0 18px 0 12px;
+    height: 20px;
+    line-height: 20px;
+    color: #fff;
+    border-radius: 10px;
+	font-size: 12px;
+	text-decoration: none;
+	background: linear-gradient(to right,#ff4e63,#ff6cc9);
+}
+
+/* 热门活动部分 */
+.sales-box.sales-huodong{
+	overflow: hidden;
+	width: 100%;
+	max-width: 540px;
+	height: 327px;
+	background-color: #fff;
+    margin: 0 auto;
+	border-bottom: 8px solid rgb(242, 242, 242);
+}
+.sales-box .sales-hd .title-hd{
+	color: #fff;
+}
+.sales-box .sales-hd .title-hd::after{
+	height: 22px;
+	top:10px;
+	background: url(../img/sales-hd.png) no-repeat 0px -16px;	
+	background-size: 79px 57px;	
+	background-color: #fff;
+}
+.sales-hd .title-hd>i.icon-gg{
+	position: absolute;
+    z-index: 5;
+    top: 0;
+    left: 85px;
+    display: block;
+    width: 72px;
+    height: 34px;
+    background: url(../img/gg.png) no-repeat 0px 14px;
+    background-size: 36px 15px;
 }
