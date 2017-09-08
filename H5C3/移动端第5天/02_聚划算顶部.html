@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name=viewport content="width=device-width,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no,minimal-ui">
+		<title></title>
+		<style type="text/css">
+			*{
+				padding: 0;
+				margin: 0;
+			}
+			header{
+				position: relative;
+				height: 40px;
+				width: 100%;
+				background: #E51650;
+			}
+			header .logo{
+				position: absolute;
+				top: 0;
+				left: 0;
+				width:100px;
+				height: 40px;
+				background-color: skyblue;
+				z-index: 999;
+			}
+			header .btn{
+				position: absolute;
+				top: 0;
+				right: 0;
+				width: 60px;
+				height: 40px;
+				background-color: gold;
+				z-index: 999;
+			}
+			header nav{
+				width: 100%;
+				height: 40px;
+				padding: 0 60px 0 100px;
+				box-sizing: border-box;
+				-webkit-box-sizing: border-box;
+				overflow: hidden;
+			}
+			#unit{
+				width: 100%;
+				height: 40px;
+			}
+			header nav ul{
+				list-style: none;
+				width: 1000px;
+				height: 40px;
+				padding-left: 10px;
+			}
+			header ul li{
+				float: left;
+				width: 60px;
+				line-height: 40px;
+			}
+			header ul li a{
+				text-decoration: none;
+				color: white;
+			}
+		</style>
+	</head>
+	<body>
+		<!--header>(div.logo{聚划算})+(nav#nav>div#unit>ul>li*12>a[href=#]{购物$$$})+(div.btn)-->
+		<header>
+			<div class="logo">聚划算</div>
+			<nav id="nav">
+				<div id="unit">
+					<ul>
+						<!--<li><a href="#">购物001</a></li>
+						<li><a href="#">购物002</a></li>
+						<li><a href="#">购物003</a></li>
+						<li><a href="#">购物004</a></li>
+						<li><a href="#">购物005</a></li>
+						<li><a href="#">购物006</a></li>
+						<li><a href="#">购物007</a></li>
+						<li><a href="#">购物008</a></li>
+						<li><a href="#">购物009</a></li>
+						<li><a href="#">购物010</a></li>
+						<li><a href="#">购物011</a></li>
+						<li><a href="#">购物012</a></li>-->
+						<li><a>购物001</a></li>
+						<li><a>购物002</a></li>
+						<li><a>购物003</a></li>
+						<li><a>购物004</a></li>
+						<li><a>购物005</a></li>
+						<li><a>购物006</a></li>
+						<li><a>购物007</a></li>
+						<li><a>购物008</a></li>
+						<li><a>购物009</a></li>
+						<li><a>购物010</a></li>
+						<li><a>购物011</a></li>
+						<li><a>购物012</a></li>
+					</ul>
+				</div>
+			</nav>
+			<div class="btn"></div>
+		</header>
+		
+		
+		
+		
+		<script type="text/javascript">
+			//得到导航条//其实不需要获取这个对象
+			// var nav = document.querySelector("#nav");//宽度为100%；
+
+			var unit = document.querySelector("#unit");//宽度为100% 
+			var ul = document.querySelector("ul");//宽度为1000px;
+
+			//所有li的宽度,一个li的宽度为60px
+			var alllength = unit.querySelectorAll("li").length * 60;
+			//console.log(alllength);720
+			//屏幕的宽度
+			var windowWidth = document.documentElement.clientWidth;
+			
+			//左边最小的translataX的值
+			var min = alllength - (windowWidth - 100 -60);
+			
+			//起点的位置，变化量。误差值
+			var deltaX;
+			//信号量
+			var newX = 0;
+			//移动的数组
+			var movearr = [0,0];
+			
+			//触摸开始
+			unit.addEventListener("touchstart",function(event){
+				event.preventDefault();
+				
+				//去掉过渡
+				ul.style.transition = "none"
+				
+				//记录初始值
+				deltaX = event.touches[0].clientX -newX;
+			},false);
+			
+			//触摸移动
+			unit.addEventListener("touchmove",function(event){
+				event.preventDefault();
+				
+				//信号量改变
+				newX = event.touches[0].clientX - deltaX;
+				
+				ul.style.transform = "translateX("+ newX +"px)";
+				ul.style.webkitTransform = "translateX("+ newX +"px)";
+				
+				movearr.push(event.touches[0].clientX);
+				
+			},false);
+			
+			unit.addEventListener("touchend",function(event){
+				event.preventDefault();
+				
+				//得到数组中最后两个值得间距
+				var s = movearr[movearr.length-1]-movearr[movearr.length-2];
+				//新的目标位置
+				var targetx = newX + s*3;
+				
+				//判断范围和加上过渡
+				if( targetx < -min){
+					targetx = -min;
+					ul.style.transition = "all 4.6s cubic-bezier(0.15, 0.85, 0.15, 2.08)";
+					
+				}else if(targetx > 0){
+					targetx = 0;
+					ul.style.transition = "all 4.6s cubic-bezier(0.15, 0.85, 0.15, 2.08)";
+					
+				}else{
+					ul.style.transition = "all 0.6s cubic-bezier(0.15, 0.85, 0.15, 2.08)";
+					
+				}
+				
+				//用过渡实现效果
+				ul.style.transform = "translateX("+ targetx +"px)";
+				ul.style.webkitTransform = "translateX("+ targetx +"px)";
+				
+				//更新信号量
+				newX = targetx;
+			},false);
+		</script>
+	</body>
+</html>

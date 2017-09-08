@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1.0">
+		<title></title>
+		<style type="text/css">
+			*{
+				padding: 0;
+				margin: 0;
+			}
+			body{
+				overflow: hidden;
+			}
+			.carousel{
+				width: 100%;
+				height: 300px;
+				overflow: hidden;
+				border-bottom: 11px solid black;
+				position: relative;
+			}
+			.carousel ul{
+				list-style: none;
+			}
+			.carousel ul li{
+				position: absolute;
+				width: 100%;
+				left: 0;
+				top: 0;
+			}
+			.carousel ul li img{
+				width: 100%;
+			}
+			.cir{
+				position: absolute;
+				bottom: 0;
+				left: 33%;
+				z-index: 66;
+			}
+			.cir ol{
+				list-style: none;
+			}
+			.cir ol li{
+				float: left;
+				width: 20px;
+				height: 20px;
+				border-radius: 50%;
+				background: #ccc;
+				margin-right: 10px;
+			}
+			.cir ol li.cur{
+				background: orange;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="carousel" id="carousel">
+			<div class="imageList">
+				<ul>
+					<li><a href="#"><img src="img/0.png" alt="" /></a></li>
+					<li><a href="#"><img src="img/1.png" alt="" /></a></li>
+					<li><a href="#"><img src="img/2.png" alt="" /></a></li>
+					<li><a href="#"><img src="img/3.png" alt="" /></a></li>
+					<li><a href="#"><img src="img/4.png" alt="" /></a></li>
+				</ul>
+			</div>
+			<div class="cir">
+				<ol>
+					<li class="cur"></li>
+					<li></li>
+					<li></li>
+					<li></li>
+					<li></li>
+				</ol>
+			</div>
+		</div>	
+		
+		<script type="text/javascript">
+			//得到轮播图中li
+			var carousel = document.querySelector("#carousel");
+			var imageLis = document.querySelectorAll(".imageList ul li");
+			var olLis = document.querySelectorAll(".cir ol li");
+			
+//			信号量
+			var idx = 0;  //当前中间图片
+			var next = 1;	//下一张图片
+			var prev = 4; 	//上一张图片
+			
+			var windowWidth;
+			
+			init();
+			window.onresize = init;
+			
+			function init(){
+				//屏幕的宽度
+				windowWidth = document.documentElement.clientWidth;
+				
+//				设置盒子的高度
+				carousel.style.height = windowWidth / ( 200 / 130) + "px";
+			
+				//设置li的默认位置
+				for(var i=0;i<imageLis.length;i++){
+					imageLis[i].style.webkitTransform = "translateX(" + windowWidth +"px)";
+				}
+				imageLis[idx].style.transition = "none";
+				imageLis[prev].style.transition = "none";
+				imageLis[next].style.transition = "none";
+				
+//				新的位置
+				imageLis[idx].style.webkitTransform = "translateX(0)";
+				imageLis[prev].style.webkitTransform = "translateX(" + -windowWidth+ ")";
+				imageLis[next].style.webkitTransform = "translateX(" + windowWidth + ")";
+			}
+			
+//			事件监听
+			carousel.addEventListener("touchstart",touchstartHandler,false);
+			carousel.addEventListener("touchmove",touchmoveHandler,false);
+			carousel.addEventListener("touchend",touchendHandler,false);
+			
+			//手指偏移量
+			var deltaX;
+			//触摸开始时候的手指位置
+			var startX;
+			//时间戳  从1970年1月1日0：00到现在的毫秒数
+			var startTime;
+			
+			var timer = setInterval(function(){
+				showNext();
+			},2000);
+			
+			function showNext(){
+//				向左移动成功
+				console.log("向左移动成功");
+				
+				//先改变信号量
+				prev = idx;
+				idx = next;
+				
+				//改变next
+				next++;
+				if(next > 4){
+					next = 0;
+				}
+				imageLis[next].style.transition = "none";
+				imageLis[next].style.webkitTransform = "translateX(" + windowWidth+ "px)";
+				
+				imageLis[prev].style.transition = "all 0.3s ease 0s";
+				imageLis[idx].style.transition = "all 0.3s ease 0s";
+				
+				//移动
+				imageLis[prev].style.webkitTransform =  "translateX(" + -windowWidth+ "px)";
+				imageLis[idx].style.webkitTransform =  "translateX(0px)";
+				
+				//调用焦点事件
+				cir();
+			}
+			function showPrev(){
+//				向右移动成功
+				console.log("向右移动成功");
+				
+				//先改变信号量
+				next = idx;
+				idx = prev;
+				
+				//改变next
+				prev--;
+				if(prev < 0 ){
+					prev = 4;
+				}
+				
+				imageLis[idx].style.transition = "all 0.3s ease 0s";
+				imageLis[next].style.transition = "all 0.3s ease 0s";
+				
+				//移动
+				imageLis[next].style.webkitTransform =  "translateX(" + windowWidth+ "px)";
+				imageLis[idx].style.webkitTransform =  "translateX(0px)";
+				
+				//调用焦点事件
+				cir();
+			}
+			//触摸开始
+			function touchstartHandler(event){
+				//阻止默认事件
+				event.preventDefault();
+				
+				//判断手指个数
+				if(event.touches.length > 1){
+					return;
+				}
+				
+				clearInterval(timer);
+				
+				//记录偏移量
+				deltaX = event.touches[0].clientX;
+				
+				//记录手指位置
+				startX = event.touches[0].clientX;
+				
+				//去掉过渡，移动的时候我希望实时跟随鼠标，而不是过渡效果
+				imageLis[idx].style.transition = "none";
+				imageLis[prev].style.transition = "none";
+				imageLis[next].style.transition = "none";
+				
+				//记录时间戳
+				startTime = new Date();
+				
+//				就绪（这个事没必要，纯粹为了防穿帮）
+				imageLis[idx].style.webkitTransform = "translateX(0)";
+				imageLis[prev].style.webkitTransform = "translateX(" + -windowWidth+ ")";
+				imageLis[next].style.webkitTransform = "translateX(" + windowWidth + ")";
+			}
+			//触摸后手指移动的时候
+			function touchmoveHandler(event){
+				//阻止默认事件
+				event.preventDefault();
+				
+				//判断手指个数
+				if(event.touches.length > 1){
+					return;
+				}
+				
+				clearInterval(timer);
+				
+				var clientX = event.touches[0].clientX;
+				
+				imageLis[idx].style.webkitTransform = "translateX("+ (clientX-deltaX) +"px)"
+				imageLis[next].style.webkitTransform = "translateX("+ (windowWidth+clientX-deltaX) +"px)"
+				imageLis[prev].style.webkitTransform = "translateX("+ (-windowWidth+clientX-deltaX) +"px)"
+				
+			}
+			
+			function touchendHandler(event){
+				event.preventDefault();
+				
+				//判断滑动是否成功
+				var distance = event.changedTouches[0].clientX - startX;
+				console.log(distance);
+				
+				//滑动的时间
+				var time = new Date() - startTime;
+//				console.log(time);
+				
+				//如果向右边滑动超过了屏幕的一半，或者向右滑动时间小于300，就认为滑动成功
+				if( distance >= windowWidth / 2 || (distance > 30 && time < 300) ){
+					showPrev();
+				}else if( distance <= -windowWidth / 2 || (distance < -30 && time < 300)){
+					showNext();
+				}else{
+					console.log("不成功！");
+				
+				//加上过渡
+				imageLis[prev].style.transition = "all 0.3s ease 0s";
+				imageLis[idx].style.transition = "all 0.3s ease 0s";
+				imageLis[next].style.transition = "all 0.3s ease 0s";
+				
+				//移动(位置修正到拖动前状态)
+				imageLis[prev].style.webkitTransform =  "translateX(" + -windowWidth+ "px)";
+				imageLis[next].style.webkitTransform =  "translateX(" + windowWidth+ "px)";
+				imageLis[idx].style.webkitTransform =  "translateX(0px)";
+				}
+				
+				clearInterval(timer);
+				timer = setInterval(function(){
+					showNext();
+				},2000);
+			}
+			
+			function cir(){
+				for(var i=0;i<olLis.length;i++){
+					olLis[i].className="";
+				}
+				olLis[idx].className="cur";
+			}
+		</script>
+	</body>
+</html>
+<!--1.页面宽度调整
+2.布局 和实现原理
+3.移动的成功条件和失败处理
+4.定时器
+5.判断手指个数
+6.过渡动画-->

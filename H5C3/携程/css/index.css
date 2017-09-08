@@ -622,8 +622,10 @@ section.subNav-entry>ul{
 
 /* 脚步信息 */
 footer{
-	width:100%;
-	height: 105px;
+	width: 100%;
+    height: 105px;
+    max-width: 540px;
+    margin: 0 auto;
 }
 footer>.tool.cn{
 	background-color: #fff;
@@ -641,10 +643,17 @@ footer>.tool.cn>a{
 }
 footer>.tool.cn>a::before{
 	position: absolute;
-	content: "";
-	left: 50%;
-	transform: translateX(-50%);
-	background: url('../img/icons.png') no-repeat 5px -100px;
-	background-size:104px 328px;
+    top: 0px;
+    content: "";
+    width: 35px;
+    height: 27px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: url('../img/icons.png') no-repeat -52px -147px;
+    background-size: 104px 328px;
 }
+footer>.tool.cn>a:nth-child(2)::before{
+	background-position: -52px 5px;
+}
+
 
