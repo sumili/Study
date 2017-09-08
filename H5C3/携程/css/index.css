@@ -64,10 +64,10 @@ header .soso_box{
 	box-shadow: 0px 1px 1px rgba(111,111,111,0.8);
 	position: relative;
 	top: 8px;
-	background-color: rgb(242, 242, 242);
 	padding-left: 30px;
 	box-sizing: border-box;
 	-webkit-box-sizing: border-box;
+	background-color: #fff;
 }
 header .soso_box::before{
 	content: "";
@@ -508,7 +508,7 @@ section.subNav-entry>ul{
 .sale-hd .row.down-96>*{
 	float: left;
 	width: 50%;
-	height: 96px;
+	height: 125px;
 	border-right: 2px solid #fff;
 	box-sizing: border-box;
 	-webkit-box-sizing: border-box;
@@ -653,7 +653,52 @@ footer>.tool.cn>a::before{
     background-size: 104px 328px;
 }
 footer>.tool.cn>a:nth-child(2)::before{
-	background-position: -52px 5px;
+	background-position: -52px -171px;
+	height: 23px;
 }
-
-
+footer>.tool.cn>a:nth-child(3)::before{
+	background-position: -52px -306px;
+	height: 25px;	
+}
+footer>.ver{
+	text-align: center;
+}
+footer>.ver>a{
+	font-size: 12px;
+	color: #666;
+	text-align: center;
+	text-decoration: none;
+}
+footer>.ver .icon-globsl{
+	display: inline-block;
+	width: 11px;
+	height: 11px;
+	background: url('../img/un_icon_sites.png') no-repeat;
+	background-position: 0 -160px;
+	margin-right: 5px;
+	background-size: 30px auto;
+}
+footer>.ver .triangle{
+	display: inline-block;
+	border: 1px solid #666;
+	border-width: 0 1px 1px 0;
+	width:5px;
+	height: 5px;
+	transform: rotate(45deg);
+	vertical-align: 2px;
+	margin: 0 3px;
+	color:#666;
+	font-size: 12px;
+}
+footer>p{
+	width:100%;
+	height: 18px;
+	padding: 5px 0;
+	text-align: center;
+	color: #999;
+	font-size: 12px;
+}
+footer>p>a{
+	text-decoration: none;
+	color: #999;
+}
