@@ -1,0 +1,46 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        /*.box1{
+            background-color: gold;
+        }*/
+        .box2{
+            width:100px;
+            height: 100px;
+            padding: 10px;
+            border: 20px solid skyblue;
+            margin: 30px;
+            background-color: orange;
+        }
+    </style>
+</head>
+<body>
+    <div class="box1">
+        <div class="box2">
+        </div>
+    </div>
+
+    <span>
+        Box model分为两种 
+            - W3C的标准模型
+            - IE的传统模型
+        均是对元素计算尺寸的模型：width，heigh，padding,border以及元素实际尺寸的计算关系
+
+        不同之处：计算方法不同
+        
+            -W3C： (   外盒尺寸/元素空间尺寸  = content height + padding + border+ margin 
+                       内盒尺寸/元素大小  = content height + padding + border
+                       height为内容高度
+                    } 
+            -IE:  {ele空间高度 = content height + padding + border + margin (外盒尺寸/元素空间尺寸)
+                   ele Height = content height + padding + border (内盒尺寸/元素大小) }(包括元素内容宽度，边框宽度，内距宽度)
+    </span>
+</body>
+</html>

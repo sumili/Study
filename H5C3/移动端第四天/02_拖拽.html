@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1.0">
+		<title></title>
+		<style type="text/css">
+			img{
+				position: absolute;
+				top: 0;
+				left: 0;
+				width: 90px;
+			}
+		</style>
+	</head>
+	<body>
+		<img src="img/cat.jpg"/>
+		
+		<script type="text/javascript">
+			var img = document.querySelector("img");
+			
+			
+			//手指距离图片左上角的误差
+			var deltaX,deltaY;
+			//信号量
+			var newX = 0;
+			var newY = 0;
+			
+			//开始触摸
+			img.addEventListener("touchstart",function(event){
+				event.preventDefault();
+				
+				console.log(event.touches[0].clientX)
+				console.log(event.touches[0].clientY)
+				console.log(newX)
+				console.log(newY)
+				
+				deltaX = event.touches[0].clientX - newX;
+				deltaY = event.touches[0].clientY - newY;
+				
+				
+			},false);
+			
+			//移动
+			img.addEventListener("touchmove",function(event){
+				event.preventDefault();
+				
+//				改变信号量
+				newX  = event.touches[0].clientX - deltaX;
+				newY  = event.touches[0].clientY - deltaY;
+				
+				//赋值
+				img.style.left = newX + "px";
+				img.style.top = newY + "px";
+				
+//				console.log(newX,newY)
+			},false)
+		</script>
+	</body>
+</html>

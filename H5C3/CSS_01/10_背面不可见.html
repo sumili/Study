@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			div{  /*舞台*/
+				width: 256px;
+				height: 256px;
+				border: 1px solid black;
+				/*你的眼睛到div的距离*/
+				perspective: 600px;
+				margin:100px;
+			}
+			img{
+				border:1px solid black;
+				transform: rotateY(0deg);
+				transition: all 10s ease 0s;
+				/*backface-visibility: hidden;  */
+				/*背面的可视:隐藏*/
+				position: absolute;
+			}
+			img:hover{
+				transform: rotateY(360deg);
+			}
+		</style>
+	</head>
+	<body>
+		<div>
+			<img src="img/xiaoming.png" alt="" />
+		</div>
+	</body>
+</html>

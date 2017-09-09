@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<form action="">
+			<p>
+				请输入年龄：
+				<input type="number" id="age" min="10" max="80" step="1"/>
+				<!--<span id="age-error"></span>-->
+			</p>
+			<p>
+				请输入邮箱：
+				<input type="email" />
+			</p>
+			<p>
+				请输入手机号：
+				<input type="tel" pattern="^1[3,4,5,7,8]\d{9}$" />
+			</p>
+			<p>
+				请输入你的生日：
+				<input type="date" />
+			</p>
+			<p>
+				请输入你的搜索内容：
+				<input type="search" autofocus/>
+			</p>
+			<p>
+				请输入你喜欢的颜色：
+				<input type="color" id="color"/>
+			</p>
+			<p>
+				测试刷新
+				<input type="text" id="oText">
+			</p>
+			<p>
+				<input type="submit" />
+			</p>
+		</form>
+		
+		
+		
+		<!--<script type="text/javascript">
+			var age = document.querySelector("#age");
+			var ageError = document.querySelector("#age-error");
+			
+			var color = document.querySelector("#color");
+			
+			// ele.addEventListener(event[事件，不需要加"on"],function,boolen[默认falese])
+			age.addEventListener("invalid",function(event){
+				//oninvalid:当元素无效时运行脚本
+				console.log(1);
+				event.preventDefault();
+				ageError.innerText = "年龄区间是10岁到80岁之间！";
+			})
+			
+			//onchange()在元素值改变时候触发
+			//HTMl中语法：<element onchange="script[函数调用]">，在js中声明该函数
+			//js中语法：object.onchange=function(){SomeJavaScriptCode};
+			//以下实在js中实现
+			color.onchange=function(){
+				console.log(this.value);
+				document.body.bgColor=this.value;
+			}
+			
+		</script>-->
+
+		<script>
+			// 测试获取input按回车enter之后，是刷新当前页面还是提交了数据
+
+        
+			var xhr = new XMLHttpRequest();
+
+			xhr.onreadystatechange=function(){
+				
+				if( xhr.readyState == 4){
+
+
+					var oInput = document.getElementById("oText");
+					document.onkeydown =function(event){
+						if( event.keyCode == 13){
+							
+							location.href = "file:///C:/Users/Administrator/Desktop/Study/H5C3/HTML5/lesson/1.0%E6%96%B0%E7%9A%84%E8%A1%A8%E5%8D%95%E5%85%83%E7%B4%A0.html?="+oInput.value
+							location.href = "checkout.html?sum=" + sum;
+						}
+					}
+					// var obj =JSON.parse(xhr.responseText);
+					// console.log(obj);
+					// var html = '';
+					// for( var i = 0 ; i < obj.length ; i++){
+					// 	html += '<option value="'+obj[i]+'">'+obj[i]+'</option>';
+								
+					// }
+					// datalist.innerHTML = html;
+				}
+			}
+
+			xhr.open("GET","city.json", true);
+			xhr.send(null);
+		</script>
+	</body>
+</html>

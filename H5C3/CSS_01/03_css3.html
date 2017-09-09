@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			*{
+				padding: 0;
+				margin: 0;
+			}
+			ul{
+				list-style: none;
+			}
+			li{
+				float: left;
+				width: 200px;
+				height: 300px;
+				background: skyblue;
+				margin-top: 10px;
+				margin-right: 10px;
+			}
+			ul li:first-child{
+				/*background: red;*/
+			}
+			ul li:last-child{
+				/*background: black;*/
+			}
+			ul li:nth-child(3){
+				/*background: orange;*/
+			}
+			ul li:nth-child(2n){   /*n是从0开始*/
+				background: orange;
+			}
+			ul li:nth-child(2n+1){
+				background: navy;
+			}
+		</style>
+	</head>
+	<body>
+		<ul>
+			<li>1</li>
+			<li>2</li>
+			<li>3</li>
+			<li>4</li>
+			<li>5</li>
+			<li>6</li>
+			<li>7</li>
+			<li>8</li>
+		</ul>
+	</body>
+</html>

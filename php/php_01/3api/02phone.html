@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<input type="text" placeholder="请输入手机号" id="mobile"/>
+		<input type="button" value="点击获取" id="btn"/>
+		<div id="oDiv">
+			
+		</div>
+		
+		<script type="text/javascript">
+			var oMobile = document.getElementById("mobile");
+			var btn = document.getElementById("btn");
+			var oDiv = document.getElementById("oDiv");
+			
+			btn.onclick=function(){
+//				console.log( oMobile.value);
+				var str = oMobile.value;  //获取手机号
+				
+				
+				//第一步
+				var xhr = new XMLHttpRequest();
+				//第二步
+				xhr.onreadystatechange=function(responseText){
+					if( xhr.readyState == 4){
+						
+						console.log(xhr.responseText);
+						console.log(typeof xhr.responseText )
+						var obj = JSON.parse(xhr.responseText);
+						console.log(obj)
+						
+						oDiv.innerHTML = "<p>地区是:"+obj.areaName+"</p><p>厂商是:" +obj.providerName+"</p>"  ;
+					}
+				}
+				//第三步
+				xhr.open("GET","01pho_api.php?str=" + str,true );
+				//第四步
+				xhr.send(null);
+			}
+			
+			
+		</script>
+		
+		<!--<script></script>-->
+	</body>
+</html>

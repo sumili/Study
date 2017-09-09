@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name=viewport content="width=device-width,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no,minimal-ui">
+		<title></title>
+		<style type="text/css">
+			body{
+				perspective: 500px;
+				overflow: hidden;
+			}
+			div{
+				width: 200px;
+				height: 200px;
+				background: red;
+			}
+		</style>
+	</head>
+	<body>
+		<div></div>
+		<div></div>
+		<div></div>
+		
+		<script src="js/zepto.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/zeptoTouch.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/zeptoFX.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+//			$("div").on("touchstart",function(){
+//				$(this).css("background","blue");
+//			})
+			
+			$("div").on("touchstart",function(event){
+				event.preventDefault();
+				$(this).animate(
+					{"rotate":"-360deg"},
+					2000,
+					function(){
+						$(this).css("background","orange");
+					}
+				)
+			})
+		</script>
+	</body>
+</html>

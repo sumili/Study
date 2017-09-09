@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			*{
+				padding: 0;
+				margin: 0;
+			}
+			nav{
+				width: 960px;
+				height: 40px;
+				margin:50px auto;
+				border: 1px solid #000;
+			}
+			nav ul{
+				list-style: none;
+			}
+			nav ul li{
+				float: left;
+				width: 120px;
+				height: 40px;
+				perspective: 500px;  /*舞台*/
+			}
+			nav ul li .unit{   /* 演员*/
+				width: 120px;
+				height: 40px;
+				position: relative;
+				/*当一个组合体（内部有3D），自己要进行旋转，那么一定要加上属性：*/
+				transform-style: preserve-3d;
+				transition: all 2s ease 0s;
+			}
+			nav ul li .unit span{
+				position: absolute;
+				top:0;
+				left: 0;
+				width: 120px;
+				height: 40px;
+				text-align: center;
+				line-height: 40px;
+			}
+			nav ul li .unit span.chinese{
+				background: skyblue;
+				/*正面*/
+				transform: translateZ(20px);
+			}
+			nav ul li .unit span.english{
+				background: orange;
+				/*底面*/
+				transform: rotateX(-90deg) translateZ(20px);
+			}
+			nav ul li:hover .unit{
+				transform: rotateX(90deg);
+			}
+		</style>
+	</head>
+	<body>
+		<nav>
+			<ul>
+				<li>
+					<a href="#">
+						<div class="unit">
+							<span class="chinese">网站栏目</span>
+							<span class="english">wangzhanlanmu</span>
+						</div>
+					</a>
+				</li>
+				<li>
+					<a href="#">
+						<div class="unit">
+							<span class="chinese">网站栏目</span>
+							<span class="english">wangzhanlanmu</span>
+						</div>
+					</a>
+				</li>
+				<li>
+					<a href="#">
+						<div class="unit">
+							<span class="chinese">网站栏目</span>
+							<span class="english">wangzhanlanmu</span>
+						</div>
+					</a>
+				</li>
+				<li>
+					<a href="#">
+						<div class="unit">
+							<span class="chinese">网站栏目</span>
+							<span class="english">wangzhanlanmu</span>
+						</div>
+					</a>
+				</li>
+				<li>
+					<a href="#">
+						<div class="unit">
+							<span class="chinese">网站栏目</span>
+							<span class="english">wangzhanlanmu</span>
+						</div>
+					</a>
+				</li>
+				<li>
+					<a href="#">
+						<div class="unit">
+							<span class="chinese">网站栏目</span>
+							<span class="english">wangzhanlanmu</span>
+						</div>
+					</a>
+				</li>
+				<li>
+					<a href="#">
+						<div class="unit">
+							<span class="chinese">网站栏目</span>
+							<span class="english">wangzhanlanmu</span>
+						</div>
+					</a>
+				</li>
+				<li>
+					<a href="#">
+						<div class="unit">
+							<span class="chinese">网站栏目</span>
+							<span class="english">wangzhanlanmu</span>
+						</div>
+					</a>
+				</li>
+			</ul>
+		</nav>
+	</body>
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			div{
+				width: 258px;
+				height: 258px;
+				border: 1px solid #000000;
+				perspective: 400px;
+			}
+			img{
+				border: 1px solid #000000;
+			}
+			p{
+				width: 258px;
+				height: 258px;
+				background: red;
+			}
+		</style>
+	</head>
+	<body>
+		<input type="button" value="点我" />
+		
+		<div>
+			<img src="img/xiaoming.png"/>
+		</div>
+		
+		<p>p</p>
+		<script src="js/jquery-1.12.3.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/velocity.min.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+//			$("input").click(function(){
+//				$("img").velocity({
+//					"rotateZ":"40deg"
+//				},2000);
+//			})
+
+//			$("input").click(function(){
+//				$("img").velocity({
+//					"rotateX":"40deg",
+//					"rotateY":"40deg",
+//					"translateZ":"300px",
+//				},2000,function(){
+//					//回调函数
+//					$(this).fadeOut();
+//				});
+//			})
+			$("input").click(function(){
+				$("body").velocity({"backgroundColor":"#006699"},2000);
+			})
+		</script>
+	</body>
+</html>

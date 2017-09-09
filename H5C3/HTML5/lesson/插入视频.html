@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		
+			
+		<!--<embed src='http://player.youku.com/player.php/sid/XMjk2MTU4Mjk2MA==/v.swf' allowFullScreen='true' quality='high' width='480' height='400' align='middle' allowScriptAccess='always' type='application/x-shockwave-flash'></embed>-->
+		
+			
+		<!--自动播放 autoplay 配置选项 controls-->
+		<!--<video src="video/trailer.mp4" controls autoplay></video>-->
+	
+		<!--poster 在不播放状态下显示图片-->
+		<video src="video/trailer.mp4" poster="img/1.jpg" controls width="500" height="300"></video>
+		
+		
+		<input type="button" id="playBtn" value="开始"/>
+		<input type="button" id="stopBtn" value="暂停"/>
+		
+		<script type="text/javascript">
+			var oVideo = document.querySelector("video");
+			var playBtn = document.querySelector("#playBtn");
+			var stopBtn = document.querySelector("#stopBtn");
+			
+			playBtn.onclick=function(){
+				oVideo.play();
+			}
+			stopBtn.onclick=function(){
+				oVideo.pause();
+			}
+			
+		</script>
+	</body>
+</html>

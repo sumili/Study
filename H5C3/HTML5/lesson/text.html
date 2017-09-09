@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<input type="text" list="datalist"/>
+		<datalist id="datalist">
+			<!--<option value="石景山">石景山</option>
+			<option value="海淀">海淀</option>
+			<option value="门头沟">门头沟</option>
+			<option value="朝阳">朝阳</option>-->
+		</datalist>
+		
+		
+		<script type="text/javascript">
+			var datalist = document.querySelector("#datalist");
+			
+			var xhr = new XMLHttpRequest();
+			
+			xhr.onreadystatechange=function(){
+				if(xhr.readyState == 4){
+					var obj = JSON.parse(xhr.responseText);
+					console.log(obj);
+					var html ='';
+					for(var i=0;i<obj.length;i++){
+						html += '<option value="'+obj[i]+'">'+obj[i]+'</option>';
+					}
+					datalist.innerHTML=html;
+				}
+			}
+			
+			xhr.open("GET","data.json",true);
+			
+			xhr.send(null);
+			
+			
+		</script>
+	</body>
+</html>

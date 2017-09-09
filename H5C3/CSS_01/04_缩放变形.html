@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			img{
+				/*transform: scale(0.1,1);*/
+				/*完全等价于*/
+				transform: scaleX(0.1) scaleY(1);  /*变形:缩放x/ 缩放y*/
+				transition: all 3s ease 0s;
+			}
+			img:hover{
+				transform: scale(1,1);
+				
+			}
+
+			img{
+				transform: scale(0.1,1);
+				transform:  all 3s ease 0s;
+			}
+		</style>
+	</head>
+	<body>
+		<img src="img/1.jpg" alt="" />
+	</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			div{
+				float: left;
+				width: 100px;
+				height: 100px;
+				border: 1px solid #000;
+			}
+			.cur{
+				background: yellowgreen;
+			}
+		</style>
+	</head>
+	<body>
+		<section>
+			<div></div>
+			<div></div>
+			<div></div>
+			<div></div>
+			<div></div>
+			<div></div>
+			<div></div>
+			<div></div>
+			<div>1</div>
+		</section>
+		
+		
+		<script src="js/zepto.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+//			$("div").css("background","red");
+//			$("div:first-child").css("background","green");
+//			$("div:nth-child(2n+1)").addClass("cur");
+			$("div:nth-child(n+4)").addClass("cur");
+			$("<div></div>").appendTo("section");
+			alert($("div:nth-child(7)").offset().left);
+		</script>
+	</body>
+</html>
