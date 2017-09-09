@@ -5,10 +5,10 @@ html,body{
 .container{
     width:200px;
     height:200px;
-    background-color: #ff0;
+    /*background-color: #ff0;*/
     /*float:left;*/
 }
-.son{
+/*.son{
     float:left;
     transition: all 0.55s;
     width:100px;
@@ -27,7 +27,7 @@ html,body{
 }
 .son4:hover{
     border-bottom-right-radius: 100px;
-}
+}*/
 .bannerbox{
     width:1600px;
     height: 900px;

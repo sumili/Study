@@ -1,0 +1,74 @@
+/*initialization*/
+html,body{
+    padding:0px;
+    margin:0px;
+}
+.clear-top::before{
+    content:"";
+    display:block;
+    overflow:hidden;
+}
+.clear-float::after{
+    content:"";
+    display:block;
+    clear:both;
+}
+
+/*nav*/
+#nav{
+    width:100%;
+    height:78px;
+    background:#ec0;
+    background-image:url('./images/logo.gif');
+    background-repeat: no-repeat;
+    background-position-x: 187px;
+    
+}
+.nav_{
+    float:left;
+    /*display: inline-block;*/
+}
+/*.navLogo>*/
+a{ 
+    display: inline-block;
+    width:300px;
+    height:78px;
+    /*background: #000;*/
+    margin-left: 187px;  
+}
+.navMessage{
+    width:611px;
+    height:78px;
+    background-image:url('./images/nav-on.gif');
+    /*使该标签不随窗口大小改变而移动位置*/
+    position: absolute;
+    top:0px;
+    left:487px;
+    /*显示框：122×78*/
+}
+.nav-on{
+    width: 611px;
+    height: 78px;
+    background-image:url('./images/nva-on.gif');
+    /*background-color: rgba(0,0,0,0.5);*/
+    margin-left: 56px;
+}
+.nav-on ul{
+    display: inline;
+}
+.nav-on li{
+    width: 126px;
+    height: 76px;
+    border: 1px solid beige;
+    float: left;
+    list-style-type: none;
+}
+.nav-on a:hover{
+    width:126px;
+    height:76px;      
+} 
+/*logo300*78*/
+
+
+
+/*banner*/
